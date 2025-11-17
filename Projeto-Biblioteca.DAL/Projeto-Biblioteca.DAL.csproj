@@ -24,4 +24,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto-Biblioteca.DTO\Projeto-Biblioteca.DTO.csproj" />
+  </ItemGroup>
+
 </Project>

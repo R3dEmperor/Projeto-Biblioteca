@@ -19,15 +19,9 @@ namespace Projeto_Biblioteca.DTO
         [Phone, MaxLength(20)]
         public string Telefone { get; set; } = string.Empty;
 
-        public DateTime DataNascimento { get; set; }
-
         [MaxLength(14)]
         public string CPF { get; set; } = string.Empty;
 
-        [MaxLength(20)]
-        public string Sexo { get; set; } = "Não informado";
-
-        public string? UrlFoto { get; set; }
 
         // ========================
         // Contas / Login

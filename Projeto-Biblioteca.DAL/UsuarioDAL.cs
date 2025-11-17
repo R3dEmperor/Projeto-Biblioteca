@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.DAL
 {
     public class UsuarioDAL : Connection
     {
 
-        public void Create( usuario)
+        public void Create(UsuarioDTO usuario)
         {
             Conectar();
             SqlTransaction transaction = conexao.BeginTransaction();
@@ -18,18 +19,15 @@ namespace Projeto_Biblioteca.DAL
             {
                 command = new SqlCommand
                     (
-                     @"INSERT INTO pessoa (Nome, Email,Telefone, DataNascimento,CPF,Sexo,UrlFoto) VALUES
-                     (@Nome,@Email,@Telefone,@DataNascimento,@CPF,@Sexo,@UrlFoto)SELECT CAST(SCOPE_IDENTITY() AS int);"
+                     @"INSERT INTO pessoa (Nome, Email,Telefone,CPF) VALUES
+                     (@Nome,@Email,@Telefone,@CPF)SELECT CAST(SCOPE_IDENTITY() AS int);"
                      , conexao, transaction
                     );
                 command.Parameters.AddWithValue("@Nome", usuario.Usuario);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-                command.Parameters.AddWithValue("@DataNascimento", usuario.DataNascimento);
                 command.Parameters.AddWithValue("@CPF", usuario.CPF);
-                command.Parameters.AddWithValue("@Sexo", usuario.Sexo);
-                command.Parameters.AddWithValue("@UrlFoto", (object)usuario.UrlFoto ?? DBNull.Value);
 
                 int idPessoa = Convert.ToInt32(command.ExecuteScalar());
 
