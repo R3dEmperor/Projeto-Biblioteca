@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Projeto_Biblioteca.DTO
 {
-    internal class UsuarioDTO
+    public class UsuarioDTO
     {
+
     }
 }
