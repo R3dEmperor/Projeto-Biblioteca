@@ -2,7 +2,7 @@
 
 namespace Projeto_Biblioteca.DTO
 {
-    public class FuncionarioDTO
+    public class FuncionarioDTO : UsuarioDTO
     {
         [Key]
         public int IdTipoUsuario { get; set; }
@@ -11,5 +11,7 @@ namespace Projeto_Biblioteca.DTO
         public string DescricaoTipoUsuario { get; set; } = string.Empty;
 
         public virtual ICollection<UsuarioDTO>? Usuarios { get; set; }
+
+
     }
 }

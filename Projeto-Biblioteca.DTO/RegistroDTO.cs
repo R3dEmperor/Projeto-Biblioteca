@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Projeto_Biblioteca.DTO
 {
-    public class RegistroDTO
+    public class RegistroDTO 
     {
+
+        public int IdRegistro { get; set; }
+
+        public int ReservaRegistro { get; set; }
+
+        public DateTime DevolucaoRegistro { get; set; }
     }
 }

@@ -8,5 +8,12 @@ namespace Projeto_Biblioteca.DTO
 {
     public class ProdutoDTO
     {
+         public int IdProduto { get; set; }
+
+        public string NomeProduto { get; set; }
+
+        public string GeneroProduto { get; set; }
+
+        public string AutorProduto { get;  set; }
     }
 }
