@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projeto_Biblioteca.WEB.Models
 {
+    [Table("Registro")]
     public class Registro
     {
         [Key]

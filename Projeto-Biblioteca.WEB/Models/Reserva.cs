@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projeto_Biblioteca.WEB.Models
 {
+    [Table("Reserva")]
     public class Reserva
     {
         [Key]
