@@ -38,7 +38,7 @@ namespace Projeto_Biblioteca.DAL
                 command.Parameters.AddWithValue("@Id", idPessoa);
                 command.Parameters.AddWithValue("@Usuario", usuario.Usuario);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
-                command.Parameters.AddWithValue("@TpUsuario", usuario.TipoUsuario);
+                command.Parameters.AddWithValue("@TpUsuario", usuario.TipoUsuarioId);
 
 
                 command.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace Projeto_Biblioteca.DAL
                         usuario = new UsuarioDTO();
                         usuario.Usuario = dataReader["Usuario"].ToString();
                         usuario.Senha = dataReader["Senha"].ToString();
-                        usuario.TipoUsuario.IdTipoUsuario = (int)dataReader["TpUsuario"];
+                        usuario.TipoUsuarioId = (int)dataReader["TpUsuario"];
                     }
                 }
                 return usuario;
