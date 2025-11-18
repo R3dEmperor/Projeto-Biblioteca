@@ -48,7 +48,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario");
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "IdTipoUsuario");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
@@ -82,7 +82,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
@@ -118,7 +118,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
