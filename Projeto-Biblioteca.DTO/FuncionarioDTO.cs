@@ -2,7 +2,7 @@
 
 namespace Projeto_Biblioteca.DTO
 {
-    public class TipoUsuarioDTO
+    public class FuncionarioDTO
     {
         [Key]
         public int IdTipoUsuario { get; set; }

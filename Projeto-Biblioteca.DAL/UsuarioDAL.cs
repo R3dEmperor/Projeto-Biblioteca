@@ -86,9 +86,9 @@ namespace Projeto_Biblioteca.DAL
                 throw new Exception(erro.Message);
             }
         }
-        public List<TipoUsuarioDTO> GetTipoUsuario()
+        public List<FuncionarioDTO> GetTipoUsuario()
         {
-            List<TipoUsuarioDTO> tipos = new List<TipoUsuarioDTO>();
+            List<FuncionarioDTO> tipos = new List<FuncionarioDTO>();
 
             try
             {
@@ -99,7 +99,7 @@ namespace Projeto_Biblioteca.DAL
 
                 while (dataReader.Read())
                 {
-                    tipos.Add(new TipoUsuarioDTO
+                    tipos.Add(new FuncionarioDTO
                     {
                         IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
                         DescricaoTipoUsuario = dataReader["DescricaoTipoUsuario"].ToString()
