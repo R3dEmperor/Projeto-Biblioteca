@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Projeto_Biblioteca.WEB.Models
 {
     [Table("Funcionario")]
-    public class Funcionario : Usuario
+    public class Funcionario 
     {
         [Key]
         public int IdTipoUsuario { get; set; }
@@ -12,7 +12,6 @@ namespace Projeto_Biblioteca.WEB.Models
         [Display(Name = "Cargo Funcionario")]
         [StringLength(150)]
         public int Descricao_Tipo { get; set; }
-
         public List<Usuario> usuarios { get; set; }
     }
 }
