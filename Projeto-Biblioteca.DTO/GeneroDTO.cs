@@ -13,5 +13,5 @@ namespace Projeto_Biblioteca.DTO
         public string NomeGenero { get; set; }
 
         public string ClassificacaoGenero { get; set; }
-    }
+    }     
 }
