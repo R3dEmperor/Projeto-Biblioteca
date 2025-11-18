@@ -12,6 +12,5 @@ namespace Projeto_Biblioteca.WEB.Models
         [Display(Name = "Cargo Funcionario")]
         [StringLength(150)]
         public int Descricao_Tipo { get; set; }
-        public List<Usuario> usuarios { get; set; }
     }
 }
