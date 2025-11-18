@@ -11,7 +11,5 @@ namespace Projeto_Biblioteca.DTO
         public string DescricaoTipoUsuario { get; set; } = string.Empty;
 
         public virtual ICollection<UsuarioDTO>? Usuarios { get; set; }
-
-
     }
 }
