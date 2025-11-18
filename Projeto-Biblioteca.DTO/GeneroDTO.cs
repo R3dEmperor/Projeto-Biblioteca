@@ -8,10 +8,10 @@ namespace Projeto_Biblioteca.DTO
 {
     public class GeneroDTO
     {
-        public int IdGenero { get; set; }
+         public int IdGenero { get; set; }
 
-        public string NomeGenero { get; set; }
+         public string NomeGenero { get; set; }
 
-        public string ClassificacaoGenero { get; set; }
+         public string ClassificacaoGenero { get; set; }
     }     
 }
