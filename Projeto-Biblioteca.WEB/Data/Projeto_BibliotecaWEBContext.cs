@@ -16,5 +16,9 @@ namespace Projeto_Biblioteca.WEB.Data
 
         public DbSet<Projeto_Biblioteca.WEB.Models.Usuario> Usuario { get; set; } = default!;
         public DbSet<Projeto_Biblioteca.WEB.Models.Funcionario> Funcionario { get; set; } = default!;
+        public DbSet<Projeto_Biblioteca.WEB.Models.Genero> Genero { get; set; } = default!;
+        public DbSet<Projeto_Biblioteca.WEB.Models.Produto> Produto { get; set; } = default!;
+        public DbSet<Projeto_Biblioteca.WEB.Models.Reserva> Reserva { get; set; } = default!;
+        public DbSet<Projeto_Biblioteca.WEB.Models.Registro> Registro { get; set; } = default!;
     }
 }
