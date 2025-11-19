@@ -25,7 +25,8 @@ namespace Projeto_Biblioteca.BLL
             reserva.Ativa = true;
 
             // Aqui de fato salva no banco (chamando o DAL)
-            dal.Criar(reserva);
+            dal.Create(reserva);
+
         }
 
         // Método que retorna uma lista de todas as reservas existentes no banco
