@@ -1,0 +1,178 @@
+﻿using Microsoft.Data.SqlClient;
+using Projeto_Biblioteca.DTO;
+using System;
+using System.Collections.Generic;
+
+namespace Projeto_Biblioteca.DAL
+{
+    public class ProdutoDAL : Connection
+    {
+       
+        //        CADASTRAR PRODUTO
+   
+        public void Create(ProdutoDTO livro)
+        {
+            try
+            {
+                Conectar();
+
+                string sql = @"
+                    INSERT INTO Produto (NomeProduto, GeneroProduto, AutorProduto)
+                    VALUES (@NomeProduto, @GeneroProduto, @AutorProduto);";
+
+                command = new SqlCommand(sql, conexao);
+                command.Parameters.AddWithValue("@NomeProduto", livro.NomeProduto);
+                command.Parameters.AddWithValue("@GeneroProduto", livro.GeneroProduto);
+                command.Parameters.AddWithValue("@AutorProduto", livro.AutorProduto);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao cadastrar produto: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+ 
+        //        LISTAR PRODUTOS
+     
+        public List<ProdutoDTO> Listar()
+        {
+            List<ProdutoDTO> produtos = new List<ProdutoDTO>();
+
+            try
+            {
+                Conectar();
+
+                string sql = "SELECT * FROM Produto";
+
+                command = new SqlCommand(sql, conexao);
+                dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    produtos.Add(new ProdutoDTO
+                    {
+                        IdProduto = Convert.ToInt32(dataReader["IdProduto"]),
+                        NomeProduto = dataReader["NomeProduto"].ToString(),
+                        GeneroProduto = dataReader["GeneroProduto"].ToString(),
+                        AutorProduto = dataReader["AutorProduto"].ToString()
+                    });
+                }
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao listar produtos: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return produtos;
+        }
+
+  
+        //        REMOVER PRODUTO
+       
+        public void Remover(int id)
+        {
+            try
+            {
+                Conectar();
+
+                string sql = "DELETE FROM Produto WHERE IdProduto = @Id";
+
+                command = new SqlCommand(sql, conexao);
+                command.Parameters.AddWithValue("@Id", id);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao remover produto: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+    
+        //        BUSCAR POR ID
+     
+        public ProdutoDTO BuscarPorId(int id)
+        {
+            try
+            {
+                Conectar();
+
+                string sql = "SELECT * FROM Produto WHERE IdProduto = @Id";
+
+                command = new SqlCommand(sql, conexao);
+                command.Parameters.AddWithValue("@Id", id);
+
+                dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    return new ProdutoDTO
+                    {
+                        IdProduto = Convert.ToInt32(dataReader["IdProduto"]),
+                        NomeProduto = dataReader["NomeProduto"].ToString(),
+                        GeneroProduto = dataReader["GeneroProduto"].ToString(),
+                        AutorProduto = dataReader["AutorProduto"].ToString()
+                    };
+                }
+
+                return null;
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao buscar produto: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+      
+        //        ATUALIZAR PRODUTO
+   
+        public void Atualizar(ProdutoDTO livro)
+        {
+            try
+            {
+                Conectar();
+
+                string sql = @"
+                    UPDATE Produto
+                    SET NomeProduto = @NomeProduto,
+                        GeneroProduto = @GeneroProduto,
+                        AutorProduto = @AutorProduto
+                    WHERE IdProduto = @IdProduto";
+
+                command = new SqlCommand(sql, conexao);
+                command.Parameters.AddWithValue("@NomeProduto", livro.NomeProduto);
+                command.Parameters.AddWithValue("@GeneroProduto", livro.GeneroProduto);
+                command.Parameters.AddWithValue("@AutorProduto", livro.AutorProduto);
+                command.Parameters.AddWithValue("@IdProduto", livro.IdProduto);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao atualizar produto: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+    }
+}
