@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.BLL
@@ -10,7 +11,7 @@ namespace Projeto_Biblioteca.BLL
     public class ProdutoBLL
     {
         // Instancia o DAL, que acessa o banco de dados
-        private readonly ProdutoDal dal = new();
+        private readonly ProdutoDAL dal = new();
 
 
         // Método para cadastrar um livro
@@ -20,7 +21,7 @@ namespace Projeto_Biblioteca.BLL
             ValidarCampos(produto);
 
             // Envia o produto para o banco através do DAL
-            dal.Inserir(produto);
+            dal.Create(produto);
         }
 
         // Método para editar um livro já existente

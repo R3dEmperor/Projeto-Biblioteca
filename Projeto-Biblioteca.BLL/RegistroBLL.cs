@@ -23,7 +23,7 @@ namespace Projeto_Biblioteca.BLL
             registro.DevolucaoRegistro = DateTime.Now.AddDays(7);
             // exemplo: devolução prevista para daqui 7 dias
 
-            dal.Criar(registro);
+            dal.Create(registro);
         }
 
         // ======================================================

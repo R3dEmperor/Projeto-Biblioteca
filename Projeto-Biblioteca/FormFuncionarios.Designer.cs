@@ -44,6 +44,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,10 +59,15 @@
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             txtTipoUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
-            pbFoto = new PictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            txtCPF = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTelefone = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2DataGridView1
@@ -81,10 +93,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(49, 284);
+            guna2DataGridView1.Location = new Point(293, 81);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.Size = new Size(483, 215);
+            guna2DataGridView1.Size = new Size(483, 322);
             guna2DataGridView1.TabIndex = 0;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -114,9 +126,10 @@
             guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = SystemColors.Highlight;
             guna2CircleButton1.Font = new Font("Segoe UI", 9F);
             guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(950, 12);
+            guna2CircleButton1.Location = new Point(740, 1);
             guna2CircleButton1.Name = "guna2CircleButton1";
             guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -136,12 +149,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(49, 242);
+            txtPesquisa.Location = new Point(290, 39);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            txtPesquisa.Size = new Size(400, 36);
+            txtPesquisa.Size = new Size(483, 36);
             txtPesquisa.TabIndex = 2;
             // 
             // btnExcluir
@@ -152,9 +165,10 @@
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnExcluir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnExcluir.Font = new Font("Segoe UI", 9F);
+            btnExcluir.FillColor = SystemColors.Highlight;
+            btnExcluir.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(786, 429);
+            btnExcluir.Location = new Point(188, 368);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnExcluir.Size = new Size(80, 45);
@@ -169,9 +183,10 @@
             btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAtualizar.Font = new Font("Segoe UI", 9F);
+            btnAtualizar.FillColor = SystemColors.Highlight;
+            btnAtualizar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(690, 429);
+            btnAtualizar.Location = new Point(103, 368);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnAtualizar.Size = new Size(79, 45);
@@ -186,14 +201,15 @@
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCadastrar.Font = new Font("Segoe UI", 9F);
+            btnCadastrar.FillColor = SystemColors.Highlight;
+            btnCadastrar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(576, 429);
+            btnCadastrar.Location = new Point(12, 368);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnCadastrar.Size = new Size(85, 45);
             btnCadastrar.TabIndex = 3;
-            btnCadastrar.Text = "cadastrar";
+            btnCadastrar.Text = "Cadastrar";
             // 
             // txtTipoUsuario
             // 
@@ -207,12 +223,12 @@
             txtTipoUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTipoUsuario.Font = new Font("Segoe UI", 9F);
             txtTipoUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTipoUsuario.Location = new Point(576, 358);
+            txtTipoUsuario.Location = new Point(12, 190);
             txtTipoUsuario.Name = "txtTipoUsuario";
             txtTipoUsuario.PlaceholderText = "Tipo de Usuário";
             txtTipoUsuario.SelectedText = "";
             txtTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            txtTipoUsuario.Size = new Size(290, 36);
+            txtTipoUsuario.Size = new Size(255, 36);
             txtTipoUsuario.TabIndex = 2;
             // 
             // txtNome
@@ -227,52 +243,130 @@
             txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNome.Font = new Font("Segoe UI", 9F);
             txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Location = new Point(576, 282);
+            txtNome.Location = new Point(12, 148);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.SelectedText = "";
             txtNome.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            txtNome.Size = new Size(290, 36);
+            txtNome.Size = new Size(255, 36);
             txtNome.TabIndex = 2;
-            // 
-            // pbFoto
-            // 
-            pbFoto.Location = new Point(49, 23);
-            pbFoto.Name = "pbFoto";
-            pbFoto.Size = new Size(128, 197);
-            pbFoto.TabIndex = 4;
-            pbFoto.TabStop = false;
             // 
             // lblCaminhodaFoto
             // 
             lblCaminhodaFoto.BackColor = Color.Transparent;
-            lblCaminhodaFoto.Location = new Point(66, 226);
+            lblCaminhodaFoto.Location = new Point(94, 125);
             lblCaminhodaFoto.Name = "lblCaminhodaFoto";
-            lblCaminhodaFoto.Size = new Size(97, 17);
+            lblCaminhodaFoto.Size = new Size(95, 17);
             lblCaminhodaFoto.TabIndex = 5;
-            lblCaminhodaFoto.Text = "guna2HtmlLabel1";
+            lblCaminhodaFoto.Text = "Caminho da Foto";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(82, 12);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(107, 98);
+            guna2CirclePictureBox1.TabIndex = 6;
+            guna2CirclePictureBox1.TabStop = false;
+            // 
+            // txtCPF
+            // 
+            txtCPF.BorderRadius = 20;
+            txtCPF.CustomizableEdges = customizableEdges15;
+            txtCPF.DefaultText = "";
+            txtCPF.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtCPF.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtCPF.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtCPF.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtCPF.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtCPF.Font = new Font("Segoe UI", 9F);
+            txtCPF.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtCPF.Location = new Point(12, 232);
+            txtCPF.Name = "txtCPF";
+            txtCPF.PlaceholderText = "CPF";
+            txtCPF.SelectedText = "";
+            txtCPF.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtCPF.Size = new Size(255, 36);
+            txtCPF.TabIndex = 2;
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.BorderRadius = 20;
+            txtTelefone.CustomizableEdges = customizableEdges17;
+            txtTelefone.DefaultText = "";
+            txtTelefone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTelefone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTelefone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTelefone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTelefone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTelefone.Font = new Font("Segoe UI", 9F);
+            txtTelefone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTelefone.Location = new Point(12, 274);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.PlaceholderText = "Telefone";
+            txtTelefone.SelectedText = "";
+            txtTelefone.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtTelefone.Size = new Size(255, 36);
+            txtTelefone.TabIndex = 2;
+            // 
+            // txtSenha
+            // 
+            txtSenha.BorderRadius = 20;
+            txtSenha.CustomizableEdges = customizableEdges19;
+            txtSenha.DefaultText = "";
+            txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSenha.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSenha.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSenha.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSenha.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSenha.Font = new Font("Segoe UI", 9F);
+            txtSenha.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSenha.Location = new Point(12, 316);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PlaceholderText = "Senha";
+            txtSenha.SelectedText = "";
+            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtSenha.Size = new Size(255, 36);
+            txtSenha.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.FundoLivros;
+            pictureBox1.Location = new Point(2, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(789, 435);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // FormFuncionarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 245, 240);
-            ClientSize = new Size(995, 621);
+            ClientSize = new Size(788, 435);
+            Controls.Add(guna2CirclePictureBox1);
             Controls.Add(lblCaminhodaFoto);
-            Controls.Add(pbFoto);
             Controls.Add(btnCadastrar);
             Controls.Add(btnAtualizar);
             Controls.Add(btnExcluir);
             Controls.Add(txtNome);
+            Controls.Add(txtSenha);
+            Controls.Add(txtTelefone);
+            Controls.Add(txtCPF);
             Controls.Add(txtTipoUsuario);
             Controls.Add(txtPesquisa);
             Controls.Add(guna2CircleButton1);
             Controls.Add(guna2DataGridView1);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormFuncionarios";
             Text = "FormFuncionarios";
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbFoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,7 +381,11 @@
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
         private Guna.UI2.WinForms.Guna2TextBox txtTipoUsuario;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
-        private PictureBox pbFoto;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCaminhodaFoto;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtCPF;
+        private Guna.UI2.WinForms.Guna2TextBox txtTelefone;
+        private Guna.UI2.WinForms.Guna2TextBox txtSenha;
+        private PictureBox pictureBox1;
     }
 }

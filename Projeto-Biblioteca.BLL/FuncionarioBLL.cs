@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.BLL
@@ -19,7 +20,7 @@ namespace Projeto_Biblioteca.BLL
         {
             ValidarFuncionario(funcionario);
 
-            dal.Criar(funcionario);
+            dal.Create(funcionario);
         }
 
        
@@ -53,7 +54,7 @@ namespace Projeto_Biblioteca.BLL
         {
             ValidarFuncionario(funcionario);
 
-            dal.Atualizar(funcionario);
+            dal.Update(funcionario);
         }
 
        
@@ -64,7 +65,7 @@ namespace Projeto_Biblioteca.BLL
             if (id <= 0)
                 throw new Exception("Id inválido.");
 
-            dal.Remover(id);
+            dal.Delete(id);
         }
 
    
