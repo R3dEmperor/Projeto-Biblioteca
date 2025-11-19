@@ -14,6 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Projeto-Biblioteca.BLL\Projeto-Biblioteca.BLL.csproj" />
+    <ProjectReference Include="..\Projeto-Biblioteca.DTO\Projeto-Biblioteca.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

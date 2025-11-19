@@ -44,10 +44,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            txtTitulo = new Guna.UI2.WinForms.Guna2TextBox();
+            txtProduto = new Guna.UI2.WinForms.Guna2TextBox();
             txtGenero = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisarTitulo = new Guna.UI2.WinForms.Guna2TextBox();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
@@ -55,6 +57,7 @@
             btnExcluir = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pictureBox2 = new PictureBox();
+            txtAutorProduto = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -62,7 +65,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(67, 51);
+            pictureBox1.Location = new Point(38, 26);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(136, 164);
             pictureBox1.TabIndex = 0;
@@ -76,7 +79,7 @@
             guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2CircleButton1.Font = new Font("Segoe UI", 9F);
             guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(915, 12);
+            guna2CircleButton1.Location = new Point(760, 1);
             guna2CircleButton1.Name = "guna2CircleButton1";
             guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -107,10 +110,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(447, 201);
+            guna2DataGridView1.Location = new Point(386, 215);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.Size = new Size(470, 164);
+            guna2DataGridView1.Size = new Size(370, 179);
             guna2DataGridView1.TabIndex = 2;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -134,27 +137,27 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // txtTitulo
+            // txtProduto
             // 
-            txtTitulo.BackColor = Color.PapayaWhip;
-            txtTitulo.BorderColor = Color.PapayaWhip;
-            txtTitulo.BorderRadius = 20;
-            txtTitulo.CustomizableEdges = customizableEdges2;
-            txtTitulo.DefaultText = "";
-            txtTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTitulo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTitulo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTitulo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTitulo.Font = new Font("Segoe UI", 9F);
-            txtTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTitulo.Location = new Point(12, 248);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.PlaceholderText = "Título";
-            txtTitulo.SelectedText = "";
-            txtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            txtTitulo.Size = new Size(312, 36);
-            txtTitulo.TabIndex = 3;
+            txtProduto.BackColor = Color.PapayaWhip;
+            txtProduto.BorderColor = Color.PapayaWhip;
+            txtProduto.BorderRadius = 20;
+            txtProduto.CustomizableEdges = customizableEdges2;
+            txtProduto.DefaultText = "";
+            txtProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtProduto.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtProduto.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtProduto.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtProduto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtProduto.Font = new Font("Segoe UI", 9F);
+            txtProduto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtProduto.Location = new Point(12, 215);
+            txtProduto.Name = "txtProduto";
+            txtProduto.PlaceholderText = "Título";
+            txtProduto.SelectedText = "";
+            txtProduto.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            txtProduto.Size = new Size(312, 36);
+            txtProduto.TabIndex = 3;
             // 
             // txtGenero
             // 
@@ -170,12 +173,12 @@
             txtGenero.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGenero.Font = new Font("Segoe UI", 9F);
             txtGenero.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGenero.Location = new Point(12, 310);
+            txtGenero.Location = new Point(12, 271);
             txtGenero.Name = "txtGenero";
             txtGenero.PlaceholderText = "Gênero";
             txtGenero.SelectedText = "";
             txtGenero.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            txtGenero.Size = new Size(228, 36);
+            txtGenero.Size = new Size(228, 42);
             txtGenero.TabIndex = 3;
             // 
             // txtPesquisarTitulo
@@ -192,12 +195,12 @@
             txtPesquisarTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisarTitulo.Font = new Font("Segoe UI", 9F);
             txtPesquisarTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisarTitulo.Location = new Point(447, 145);
+            txtPesquisarTitulo.Location = new Point(377, 173);
             txtPesquisarTitulo.Name = "txtPesquisarTitulo";
             txtPesquisarTitulo.PlaceholderText = "Pesquisar";
             txtPesquisarTitulo.SelectedText = "";
             txtPesquisarTitulo.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtPesquisarTitulo.Size = new Size(457, 36);
+            txtPesquisarTitulo.Size = new Size(379, 36);
             txtPesquisarTitulo.TabIndex = 3;
             // 
             // btnCadastrar
@@ -217,6 +220,7 @@
             btnCadastrar.Size = new Size(88, 45);
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnAtualizar
             // 
@@ -268,25 +272,48 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.FundoLivros;
-            pictureBox2.Location = new Point(-1, 0);
+            pictureBox2.Location = new Point(1, 1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(956, 479);
+            pictureBox2.Size = new Size(788, 435);
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
+            // 
+            // txtAutorProduto
+            // 
+            txtAutorProduto.BackColor = Color.PapayaWhip;
+            txtAutorProduto.BorderColor = Color.PapayaWhip;
+            txtAutorProduto.BorderRadius = 20;
+            txtAutorProduto.CustomizableEdges = customizableEdges14;
+            txtAutorProduto.DefaultText = "";
+            txtAutorProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAutorProduto.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAutorProduto.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAutorProduto.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAutorProduto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAutorProduto.Font = new Font("Segoe UI", 9F);
+            txtAutorProduto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAutorProduto.Location = new Point(12, 323);
+            txtAutorProduto.Name = "txtAutorProduto";
+            txtAutorProduto.PlaceholderText = "Autor";
+            txtAutorProduto.SelectedText = "";
+            txtAutorProduto.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            txtAutorProduto.Size = new Size(228, 42);
+            txtAutorProduto.TabIndex = 3;
             // 
             // FormProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 245, 240);
-            ClientSize = new Size(956, 479);
+            ClientSize = new Size(788, 435);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnExcluir);
             Controls.Add(btnAtualizar);
             Controls.Add(btnCadastrar);
+            Controls.Add(txtAutorProduto);
             Controls.Add(txtGenero);
             Controls.Add(txtPesquisarTitulo);
-            Controls.Add(txtTitulo);
+            Controls.Add(txtProduto);
             Controls.Add(guna2DataGridView1);
             Controls.Add(guna2CircleButton1);
             Controls.Add(pictureBox1);
@@ -307,7 +334,7 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2TextBox txtTitulo;
+        private Guna.UI2.WinForms.Guna2TextBox txtProduto;
         private Guna.UI2.WinForms.Guna2TextBox txtGenero;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisarTitulo;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
@@ -315,5 +342,6 @@
         private Guna.UI2.WinForms.Guna2Button btnExcluir;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtAutorProduto;
     }
 }

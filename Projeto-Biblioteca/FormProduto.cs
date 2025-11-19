@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using Projeto_Biblioteca.DTO;
+using Projeto_Biblioteca.BLL;
 namespace Projeto_Biblioteca
 {
     public partial class FormProduto : Form
@@ -23,6 +15,11 @@ namespace Projeto_Biblioteca
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
         }

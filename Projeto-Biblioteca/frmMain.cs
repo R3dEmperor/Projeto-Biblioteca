@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca
 {
-    public partial class FormReserva : Form
+    public partial class frmMain : Form
     {
-        public FormReserva()
+        public frmMain()
         {
             InitializeComponent();
         }

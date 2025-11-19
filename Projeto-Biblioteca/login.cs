@@ -1,8 +1,8 @@
 namespace Projeto_Biblioteca
 {
-    public partial class FormUsuario : Form
+    public partial class login : Form
     {
-        public FormUsuario()
+        public login()
         {
             InitializeComponent();
         }

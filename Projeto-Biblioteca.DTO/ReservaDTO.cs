@@ -17,5 +17,6 @@ namespace Projeto_Biblioteca.DTO
         public DateTime DataReserva { get; set; }
 
         public DateTime DataDevolucao { get; set; }
+        public bool Ativa { get; set; }
     }
 }

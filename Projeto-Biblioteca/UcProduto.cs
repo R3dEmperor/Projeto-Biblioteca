@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca
 {
-    public partial class FormGenero : Form
+    public partial class UcProduto : UserControl
     {
-        public FormGenero()
+        public UcProduto()
         {
             InitializeComponent();
-        }
-
-        private void FormGenero_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
