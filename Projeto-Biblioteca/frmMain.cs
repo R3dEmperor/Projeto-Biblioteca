@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca
 {
-    public partial class FormFuncionarios : Form
+    public partial class frmMain : Form
     {
-        public FormFuncionarios()
+        public frmMain()
         {
             InitializeComponent();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
+}

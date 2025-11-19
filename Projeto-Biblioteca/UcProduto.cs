@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca
 {
-    public partial class FormRegistro : Form
+    public partial class UcProduto : UserControl
     {
-        public FormRegistro()
+        public UcProduto()
         {
             InitializeComponent();
         }
