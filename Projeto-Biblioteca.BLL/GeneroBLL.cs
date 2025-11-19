@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.BLL
@@ -19,7 +20,7 @@ namespace Projeto_Biblioteca.BLL
         {
             ValidarCampos(genero);
 
-            dal.Criar(genero);
+            dal.Create(genero);
         }
 
         // =====================================================

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.BLL
@@ -22,7 +23,7 @@ namespace Projeto_Biblioteca.BLL
             registro.DevolucaoRegistro = DateTime.Now.AddDays(7);
             // exemplo: devolução prevista para daqui 7 dias
 
-            dal.Criar(registro);
+            dal.Create(registro);
         }
 
         // ======================================================
