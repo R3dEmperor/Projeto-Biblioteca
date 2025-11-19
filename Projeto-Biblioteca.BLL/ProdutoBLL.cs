@@ -12,8 +12,9 @@ namespace Projeto_Biblioteca.BLL
         // Instancia o DAL, que acessa o banco de dados
         private readonly ProdutoDal dal = new();
 
+
         // Método para cadastrar um livro
-        public void CadastrarProduto(ProdutoDTO produto)
+        public  void CadastrarProduto(ProdutoDTO produto)
         {
             // Verifica se os campos obrigatórios foram preenchidos
             ValidarCampos(produto);
