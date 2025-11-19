@@ -39,7 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormUsuario";
             Text = "Form1";
-            Load += this.FormUsuario_Load;
+            //Load += this.FormUsuario_Load;
             ResumeLayout(false);
         }
 
