@@ -1,94 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
-
-
-namespace Projeto_Biblioteca.DAL
-{
-    public static class Database
-    {
-        public static List<UsuarioDTO> Usuarios { get; set; } = new();
-    }
-}
-
 
 namespace Projeto_Biblioteca.BLL
 {
     public class UsuarioBLL
     {
-        UsuarioDAL usuarioDAL = new();
-       
+        private readonly UsuarioDAL usuarioDAL = new();
+
+        
+        //                CADASTRAR USUÁRIO
+  
         public void CadastrarUsuario(UsuarioDTO usuario)
         {
-            
+            ValidarCamposObrigatorios(usuario);
+
             usuarioDAL.Create(usuario);
         }
 
+     
+        //                       LOGIN
+  
         public UsuarioDTO Login(string login, string senha)
         {
-           
-            return usuarioDAL.Autenticar(login, senha);
-        }
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(senha))
+                throw new Exception("Login e senha são obrigatórios.");
 
-        public List<UsuarioDTO> ListarUsuarios()
-        {
-            return Database.Usuarios.OrderBy(u => u.Nome).ToList();
-        }
+            var usuario = usuarioDAL.Autenticar(login, senha);
 
-       
-        public UsuarioDTO BuscarPorId(int id)
-        {
-            var usuario = Database.Usuarios.FirstOrDefault(u => u.Id == id);
             if (usuario == null)
-                throw new Exception("Usuário não encontrado.");
+                throw new Exception("Usuário ou senha inválidos.");
+
             return usuario;
         }
-
-        public void AtualizarUsuario(UsuarioDTO usuarioDTO)
-        {
-            ValidarCamposObrigatorios(usuarioDTO);
-
-            var usuarios = Database.Usuarios;
-            var usuarioExistente = usuarios.FirstOrDefault(u => u.Id == usuarioDTO.Id);
-
-            if (usuarioExistente == null)
-                throw new Exception("Usuário não encontrado.");
-
-            // Verifica duplicidade de login (outro usuário com o mesmo login)
-            if (usuarios.Any(u =>
-                    u.Usuario.Equals(usuarioDTO.Usuario, StringComparison.OrdinalIgnoreCase) &&
-                    u.Id != usuarioDTO.Id))
-                throw new Exception("Já existe outro usuário com este login.");
-
-            // Atualiza dados
-            usuarioExistente.Nome = usuarioDTO.Nome;
-            usuarioExistente.Email = usuarioDTO.Email;
-            usuarioExistente.Telefone = usuarioDTO.Telefone;
-            usuarioExistente.CPF     = usuarioDTO.CPF;
-
-            Database.Usuarios = usuarios; 
-
-        }
-
-        public void RemoverUsuario(int id)
-        {
-            var usuarios = Database.Usuarios;
-            var usuario = usuarios.FirstOrDefault(u => u.Id == id);
-
-            if (usuario == null)
-                throw new Exception("Usuário não encontrado.");
-
-            usuarios.Remove(usuario);
-            Database.Usuarios = usuarios;
-        }
-        private static void ValidarCamposObrigatorios(UsuarioDTO usuario)
+   
+      
+        //                VALIDAÇÃO DE CAMPOS
+        private void ValidarCamposObrigatorios(UsuarioDTO usuario)
         {
             if (usuario == null)
-                throw new Exception("Objeto usuário inválido.");
+                throw new Exception("Usuário inválido.");
 
             if (string.IsNullOrWhiteSpace(usuario.Nome))
                 throw new Exception("Nome é obrigatório.");
