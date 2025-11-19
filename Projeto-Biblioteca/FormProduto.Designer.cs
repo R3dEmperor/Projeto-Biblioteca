@@ -79,7 +79,7 @@
             guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2CircleButton1.Font = new Font("Segoe UI", 9F);
             guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(915, 12);
+            guna2CircleButton1.Location = new Point(760, 1);
             guna2CircleButton1.Name = "guna2CircleButton1";
             guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -110,10 +110,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(447, 201);
+            guna2DataGridView1.Location = new Point(386, 215);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.Size = new Size(470, 164);
+            guna2DataGridView1.Size = new Size(370, 179);
             guna2DataGridView1.TabIndex = 2;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -195,12 +195,12 @@
             txtPesquisarTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisarTitulo.Font = new Font("Segoe UI", 9F);
             txtPesquisarTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisarTitulo.Location = new Point(447, 145);
+            txtPesquisarTitulo.Location = new Point(377, 173);
             txtPesquisarTitulo.Name = "txtPesquisarTitulo";
             txtPesquisarTitulo.PlaceholderText = "Pesquisar";
             txtPesquisarTitulo.SelectedText = "";
             txtPesquisarTitulo.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtPesquisarTitulo.Size = new Size(457, 36);
+            txtPesquisarTitulo.Size = new Size(379, 36);
             txtPesquisarTitulo.TabIndex = 3;
             // 
             // btnCadastrar
@@ -272,9 +272,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.FundoLivros;
-            pictureBox2.Location = new Point(-1, 0);
+            pictureBox2.Location = new Point(1, 1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(956, 479);
+            pictureBox2.Size = new Size(788, 435);
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
@@ -305,7 +305,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 245, 240);
-            ClientSize = new Size(956, 479);
+            ClientSize = new Size(788, 435);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnExcluir);
             Controls.Add(btnAtualizar);
