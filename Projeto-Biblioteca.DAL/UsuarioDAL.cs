@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using Projeto_Biblioteca;
 using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca.DAL
