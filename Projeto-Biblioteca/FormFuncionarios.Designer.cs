@@ -167,7 +167,7 @@
             btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnAtualizar.Font = new Font("Segoe UI", 9F);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(597, 490);
+            btnAtualizar.Location = new Point(597, 489);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnAtualizar.Size = new Size(71, 45);
@@ -232,7 +232,7 @@
             // 
             pbFoto.Location = new Point(39, 68);
             pbFoto.Name = "pbFoto";
-            pbFoto.Size = new Size(224, 136);
+            pbFoto.Size = new Size(400, 197);
             pbFoto.TabIndex = 4;
             pbFoto.TabStop = false;
             // 
