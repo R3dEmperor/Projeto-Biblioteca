@@ -51,7 +51,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.PapayaWhip;
+            btnEntrar.BackColor = Color.FromArgb(0, 0, 0, 1);
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
             btnEntrar.CustomizableEdges = customizableEdges1;
