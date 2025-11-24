@@ -116,6 +116,7 @@
             btnCadastrar.Size = new Size(85, 45);
             btnCadastrar.TabIndex = 15;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnAtualizar
             // 

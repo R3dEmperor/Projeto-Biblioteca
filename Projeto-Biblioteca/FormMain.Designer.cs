@@ -160,7 +160,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._19_de_nov__de_2025__21_44_41;
+           
             pictureBox1.Location = new Point(8, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(764, 154);
@@ -187,7 +187,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.download;
+           
             pictureBox2.Location = new Point(737, 6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 36);

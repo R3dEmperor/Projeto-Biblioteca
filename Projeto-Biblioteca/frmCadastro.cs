@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca
 {
-    public partial class ucFuncinarios : UserControl
+    public partial class frmCadastro : Form
     {
-        public ucFuncinarios()
+        public frmCadastro()
         {
             InitializeComponent();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
