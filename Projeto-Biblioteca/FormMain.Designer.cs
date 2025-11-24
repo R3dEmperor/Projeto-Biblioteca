@@ -71,13 +71,14 @@
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            PbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
             bntProduto = new Guna.UI2.WinForms.Guna2Button();
             bntSair = new Guna.UI2.WinForms.Guna2Button();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
+            lblFotoCaminho = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -85,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel4.SuspendLayout();
             guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
@@ -242,7 +243,7 @@
             guna2Panel5.Location = new Point(275, 215);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel5.Size = new Size(856, 392);
+            guna2Panel5.Size = new Size(788, 435);
             guna2Panel5.TabIndex = 1;
             // 
             // guna2Panel6
@@ -253,19 +254,19 @@
             guna2Panel6.Location = new Point(275, 12);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel6.Size = new Size(856, 173);
+            guna2Panel6.Size = new Size(788, 173);
             guna2Panel6.TabIndex = 2;
             // 
-            // guna2CirclePictureBox2
+            // PbFoto
             // 
-            guna2CirclePictureBox2.ImageRotate = 0F;
-            guna2CirclePictureBox2.Location = new Point(74, 30);
-            guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox2.Size = new Size(91, 85);
-            guna2CirclePictureBox2.TabIndex = 3;
-            guna2CirclePictureBox2.TabStop = false;
+            PbFoto.ImageRotate = 0F;
+            PbFoto.Location = new Point(74, 30);
+            PbFoto.Name = "PbFoto";
+            PbFoto.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            PbFoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            PbFoto.Size = new Size(91, 85);
+            PbFoto.TabIndex = 3;
+            PbFoto.TabStop = false;
             // 
             // guna2CircleButton2
             // 
@@ -275,7 +276,7 @@
             guna2CircleButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2CircleButton2.Font = new Font("Segoe UI", 9F);
             guna2CircleButton2.ForeColor = Color.White;
-            guna2CircleButton2.Location = new Point(1138, 12);
+            guna2CircleButton2.Location = new Point(1069, 12);
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -285,12 +286,14 @@
             // 
             // btnFuncionario
             // 
+            btnFuncionario.BorderRadius = 20;
             btnFuncionario.CustomizableEdges = customizableEdges11;
             btnFuncionario.DisabledState.BorderColor = Color.DarkGray;
             btnFuncionario.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFuncionario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnFuncionario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFuncionario.Font = new Font("Segoe UI", 9F);
+            btnFuncionario.FillColor = Color.SaddleBrown;
+            btnFuncionario.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnFuncionario.ForeColor = Color.White;
             btnFuncionario.Location = new Point(11, 13);
             btnFuncionario.Name = "btnFuncionario";
@@ -301,14 +304,16 @@
             // 
             // bntProduto
             // 
+            bntProduto.BorderRadius = 20;
             bntProduto.CustomizableEdges = customizableEdges9;
             bntProduto.DisabledState.BorderColor = Color.DarkGray;
             bntProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             bntProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bntProduto.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            bntProduto.Font = new Font("Segoe UI", 9F);
+            bntProduto.FillColor = Color.SaddleBrown;
+            bntProduto.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntProduto.ForeColor = Color.White;
-            bntProduto.Location = new Point(9, 147);
+            bntProduto.Location = new Point(11, 139);
             bntProduto.Name = "bntProduto";
             bntProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             bntProduto.Size = new Size(180, 45);
@@ -317,12 +322,14 @@
             // 
             // bntSair
             // 
+            bntSair.BorderRadius = 20;
             bntSair.CustomizableEdges = customizableEdges7;
             bntSair.DisabledState.BorderColor = Color.DarkGray;
             bntSair.DisabledState.CustomBorderColor = Color.DarkGray;
             bntSair.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bntSair.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            bntSair.Font = new Font("Segoe UI", 9F);
+            bntSair.FillColor = Color.SaddleBrown;
+            bntSair.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntSair.ForeColor = Color.White;
             bntSair.Location = new Point(11, 265);
             bntSair.Name = "bntSair";
@@ -336,7 +343,7 @@
             pictureBox3.Image = Properties.Resources._19_de_nov1;
             pictureBox3.Location = new Point(14, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(826, 160);
+            pictureBox3.Size = new Size(755, 160);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -344,26 +351,38 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.download;
-            pictureBox4.Location = new Point(803, 3);
+            pictureBox4.Location = new Point(701, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(37, 27);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 1;
             pictureBox4.TabStop = false;
             // 
+            // lblFotoCaminho
+            // 
+            lblFotoCaminho.BackColor = Color.Transparent;
+            lblFotoCaminho.Location = new Point(74, 123);
+            lblFotoCaminho.Name = "lblFotoCaminho";
+            lblFotoCaminho.Size = new Size(95, 17);
+            lblFotoCaminho.TabIndex = 5;
+            lblFotoCaminho.Text = "Caminho da Foto";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1185, 628);
+            BackColor = Color.Bisque;
+            ClientSize = new Size(1109, 671);
+            Controls.Add(lblFotoCaminho);
             Controls.Add(guna2CircleButton2);
-            Controls.Add(guna2CirclePictureBox2);
+            Controls.Add(PbFoto);
             Controls.Add(guna2Panel6);
             Controls.Add(guna2Panel5);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMain";
             Text = "FormMain";
+            Load += FormMain_Load;
             guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             guna2Panel3.ResumeLayout(false);
@@ -371,10 +390,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel4.ResumeLayout(false);
             guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -392,7 +412,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox PbFoto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private PictureBox pictureBox4;
@@ -400,5 +420,6 @@
         private Guna.UI2.WinForms.Guna2Button bntSair;
         private Guna.UI2.WinForms.Guna2Button bntProduto;
         private Guna.UI2.WinForms.Guna2Button btnFuncionario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblFotoCaminho;
     }
 }
