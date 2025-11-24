@@ -199,12 +199,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1216, 616);
-            Controls.Add(guna2CircleButton1);
-            Controls.Add(guna2Panel3);
-            Controls.Add(guna2CirclePictureBox1);
-            Controls.Add(guna2Panel1);
-            Controls.Add(guna2Panel2);
+            ClientSize = new Size(800, 450);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMain";
             Text = "FormMain";
