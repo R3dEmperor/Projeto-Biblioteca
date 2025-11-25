@@ -72,7 +72,7 @@
             bntSair = new Guna.UI2.WinForms.Guna2Button();
             bntProduto = new Guna.UI2.WinForms.Guna2Button();
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
-            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            panelConteudo = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -231,7 +231,7 @@
             guna2Panel4.Controls.Add(bntProduto);
             guna2Panel4.Controls.Add(btnFuncionario);
             guna2Panel4.CustomizableEdges = customizableEdges13;
-            guna2Panel4.Location = new Point(29, 146);
+            guna2Panel4.Location = new Point(28, 189);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel4.Size = new Size(200, 461);
@@ -254,6 +254,7 @@
             bntSair.Size = new Size(180, 45);
             bntSair.TabIndex = 0;
             bntSair.Text = "Sair";
+            bntSair.Click += bntSair_Click;
             // 
             // bntProduto
             // 
@@ -272,6 +273,7 @@
             bntProduto.Size = new Size(180, 45);
             bntProduto.TabIndex = 0;
             bntProduto.Text = "Produto";
+            bntProduto.Click += bntProduto_Click;
             // 
             // btnFuncionario
             // 
@@ -290,15 +292,16 @@
             btnFuncionario.Size = new Size(180, 45);
             btnFuncionario.TabIndex = 0;
             btnFuncionario.Text = "Funcionario";
+            btnFuncionario.Click += btnFuncionario_Click;
             // 
-            // guna2Panel5
+            // panelConteudo
             // 
-            guna2Panel5.CustomizableEdges = customizableEdges5;
-            guna2Panel5.Location = new Point(275, 215);
-            guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel5.Size = new Size(788, 435);
-            guna2Panel5.TabIndex = 1;
+            panelConteudo.CustomizableEdges = customizableEdges5;
+            panelConteudo.Location = new Point(275, 202);
+            panelConteudo.Name = "panelConteudo";
+            panelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            panelConteudo.Size = new Size(788, 435);
+            panelConteudo.TabIndex = 1;
             // 
             // guna2Panel6
             // 
@@ -308,7 +311,7 @@
             guna2Panel6.Location = new Point(275, 12);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel6.Size = new Size(788, 173);
+            guna2Panel6.Size = new Size(788, 184);
             guna2Panel6.TabIndex = 2;
             // 
             // pictureBox4
@@ -326,7 +329,7 @@
             pictureBox3.Image = Properties.Resources._19_de_nov1;
             pictureBox3.Location = new Point(14, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(755, 160);
+            pictureBox3.Size = new Size(755, 178);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -334,7 +337,7 @@
             // PbFoto
             // 
             PbFoto.ImageRotate = 0F;
-            PbFoto.Location = new Point(74, 30);
+            PbFoto.Location = new Point(74, 58);
             PbFoto.Name = "PbFoto";
             PbFoto.ShadowDecoration.CustomizableEdges = customizableEdges2;
             PbFoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -362,11 +365,12 @@
             // lblFotoCaminho
             // 
             lblFotoCaminho.BackColor = Color.Transparent;
-            lblFotoCaminho.Location = new Point(74, 123);
+            lblFotoCaminho.Location = new Point(74, 149);
             lblFotoCaminho.Name = "lblFotoCaminho";
             lblFotoCaminho.Size = new Size(95, 17);
             lblFotoCaminho.TabIndex = 5;
             lblFotoCaminho.Text = "Caminho da Foto";
+            lblFotoCaminho.Click += lblFotoCaminho_Click;
             // 
             // FormMain
             // 
@@ -378,7 +382,7 @@
             Controls.Add(guna2CircleButton2);
             Controls.Add(PbFoto);
             Controls.Add(guna2Panel6);
-            Controls.Add(guna2Panel5);
+            Controls.Add(panelConteudo);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMain";
@@ -415,7 +419,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PbFoto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel panelConteudo;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2Button bntSair;
