@@ -21,7 +21,7 @@ namespace Projeto_Biblioteca
         private void FormMain_Load(object sender, EventArgs e)
         {
             AtualizarUsuarioLogado();
-            AbrirUserControl(new UcProduto());
+            AbrirUserControl(new ucFuncinarios());
         }
 
         private void PanelConteudo_Paint(object sender, PaintEventArgs e)
@@ -30,13 +30,13 @@ namespace Projeto_Biblioteca
         }
         private void AbrirUserControl(UserControl uc)
         {
-            //Limpa o que tiver no painel
-            PanelConteudo.Controls.Clear();
 
-            // Configura o novo User Control
+            panelConteudo.Controls.Clear();
+
+
             uc.Dock = DockStyle.Fill;
 
-            PanelConteudo.Controls.Add(uc);
+            panelConteudo.Controls.Add(uc);
         }
         private void FecharMain()
         {
@@ -53,7 +53,8 @@ namespace Projeto_Biblioteca
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            PanelConteudo.Controls.Clear();
+            panelConteudo.Controls.Clear();
+
             AbrirUserControl(new ucFuncinarios());
         }
 
@@ -86,6 +87,22 @@ namespace Projeto_Biblioteca
                 PanelConteudo.BackColor = darkPanelColor;
                 pbColorMode.Image = Properties.Resources.lightmodeprojeto;
             }
+        }
+
+        private void bntProduto_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcProduto());
+        }
+
+        private void bntSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panelConteudo_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
