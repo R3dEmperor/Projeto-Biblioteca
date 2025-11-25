@@ -51,7 +51,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            pictureBox1 = new PictureBox();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
@@ -65,19 +64,9 @@
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.FundoLivros;
-            pictureBox1.Location = new Point(3, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(788, 435);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // guna2CirclePictureBox1
             // 
@@ -345,6 +334,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             Controls.Add(guna2CirclePictureBox1);
             Controls.Add(lblCaminhodaFoto);
             Controls.Add(btnCadastrar);
@@ -358,10 +348,8 @@
             Controls.Add(txtPesquisa);
             Controls.Add(guna2CircleButton1);
             Controls.Add(guna2DataGridView1);
-            Controls.Add(pictureBox1);
             Name = "ucFuncinarios";
             Size = new Size(788, 435);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ResumeLayout(false);
@@ -369,8 +357,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCaminhodaFoto;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;

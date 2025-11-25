@@ -326,9 +326,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
-            pictureBox3.Location = new Point(365, 69);
+            pictureBox3.Location = new Point(16, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 94);
+            pictureBox3.Size = new Size(740, 151);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;

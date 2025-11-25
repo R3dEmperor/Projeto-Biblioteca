@@ -54,7 +54,6 @@
             btnEntrar.BackColor = Color.FromArgb(0, 0, 0, 1);
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
-            btnEntrar.CustomizableEdges = customizableEdges11;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -64,7 +63,6 @@
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(25, 334);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnEntrar.Size = new Size(200, 45);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
