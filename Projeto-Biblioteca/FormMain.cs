@@ -50,5 +50,42 @@ namespace Projeto_Biblioteca
             lblFotoCaminho.Left = PbFoto.Left + 4 + (PbFoto.Width - lblFotoCaminho.Width) / 2;
             lblFotoCaminho.Top = PbFoto.Bottom + 4;
         }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            PanelConteudo.Controls.Clear();
+            AbrirUserControl(new ucFuncinarios());
+        }
+
+        private void pbColorMode_Click(object sender, EventArgs e)
+        {
+            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
+
+            if (isDarkMode)
+            {
+                //Modo Claro - LigthMode
+                Color ligthBackColor = SystemColors.ButtonHighlight;
+                Color ligthPanelColor = Color.Bisque;
+
+                this.BackColor = ligthBackColor;
+                this.ForeColor = ligthPanelColor;
+
+                PanelConteudo.BackColor = ligthPanelColor;
+                pbColorMode.Image = Properties.Resources.darkmodeprojeto;
+
+            }
+            else
+            {
+                //Modo Escuro - DarkMode
+                Color darkBackColor = Color.FromArgb(32, 32, 32);
+                Color darkPanelColor = Color.FromArgb(45, 45, 45);
+
+                this.BackColor = darkBackColor;
+                this.ForeColor = darkPanelColor;
+
+                PanelConteudo.BackColor = darkPanelColor;
+                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
+            }
+        }
     }
 }
