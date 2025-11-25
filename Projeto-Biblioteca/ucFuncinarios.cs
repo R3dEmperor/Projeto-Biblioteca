@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_Biblioteca.BLL;
+using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca
 {
@@ -21,6 +22,14 @@ namespace Projeto_Biblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            var funcionario = new FuncionarioDTO
+            {
+                Nome = txtNome.Text,
+                DescricaoTipoUsuario = txtTipoUsuario.Text,
+                CPF = txtCPF.Text,
+                Telefone = txtTelefone.Text,
+                Senha = txtSenha.Text,
+            };
             funcionarioBLL.CadastrarFuncionario(funcionario);
         }
     }
