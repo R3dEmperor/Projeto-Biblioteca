@@ -325,11 +325,11 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources._19_de_nov1;
-            pictureBox3.Location = new Point(14, 3);
+            pictureBox3.Image = Properties.Resources.Projeto_Icone;
+            pictureBox3.Location = new Point(365, 69);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(755, 160);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.Size = new Size(100, 94);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
