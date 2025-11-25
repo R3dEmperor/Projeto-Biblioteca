@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -60,8 +59,8 @@
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEntrar.FillColor = SystemColors.Highlight;
-            btnEntrar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnEntrar.FillColor = Color.SaddleBrown;
+            btnEntrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(25, 334);
             btnEntrar.Name = "btnEntrar";
@@ -77,10 +76,10 @@
             btxClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btxClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btxClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btxClose.FillColor = SystemColors.Highlight;
-            btxClose.Font = new Font("Segoe UI", 9F);
+            btxClose.FillColor = Color.SaddleBrown;
+            btxClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btxClose.ForeColor = Color.White;
-            btxClose.Location = new Point(227, 12);
+            btxClose.Location = new Point(240, -2);
             btxClose.Name = "btxClose";
             btxClose.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btxClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -170,18 +169,11 @@
             // PbFundo
             // 
             PbFundo.Image = Properties.Resources.FundoLivros;
-            PbFundo.Location = new Point(0, 1);
+            PbFundo.Location = new Point(1, -2);
             PbFundo.Name = "PbFundo";
             PbFundo.Size = new Size(274, 415);
             PbFundo.TabIndex = 5;
             PbFundo.TabStop = false;
-            // 
-            // guna2BorderlessForm1
-            // 
-            guna2BorderlessForm1.BorderRadius = 20;
-            guna2BorderlessForm1.ContainerControl = this;
-            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // login
             // 

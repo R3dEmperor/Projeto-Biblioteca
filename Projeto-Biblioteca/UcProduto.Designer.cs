@@ -83,9 +83,9 @@
             btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnExcluir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnExcluir.FillColor = Color.SaddleBrown;
-            btnExcluir.Font = new Font("Segoe UI", 9F);
+            btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(203, 356);
+            btnExcluir.Location = new Point(220, 359);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnExcluir.Size = new Size(92, 45);
@@ -102,9 +102,9 @@
             btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnAtualizar.FillColor = Color.SaddleBrown;
-            btnAtualizar.Font = new Font("Segoe UI", 9F);
+            btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(105, 356);
+            btnAtualizar.Location = new Point(114, 356);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAtualizar.Size = new Size(92, 45);
@@ -121,12 +121,12 @@
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCadastrar.FillColor = Color.SaddleBrown;
-            btnCadastrar.Font = new Font("Segoe UI", 9F);
+            btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Location = new Point(11, 356);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnCadastrar.Size = new Size(88, 45);
+            btnCadastrar.Size = new Size(97, 45);
             btnCadastrar.TabIndex = 16;
             btnCadastrar.Text = "Cadastrar";
             // 
@@ -276,7 +276,7 @@
             guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2CircleButton1.FillColor = Color.SaddleBrown;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2CircleButton1.ForeColor = Color.White;
             guna2CircleButton1.Location = new Point(759, 0);
             guna2CircleButton1.Name = "guna2CircleButton1";
