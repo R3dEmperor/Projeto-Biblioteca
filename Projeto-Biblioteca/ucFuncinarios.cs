@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_Biblioteca.BLL;
 
 namespace Projeto_Biblioteca
 {
     public partial class ucFuncinarios : UserControl
     {
+        FuncionarioBLL funcionarioBLL = new();
         public ucFuncinarios()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace Projeto_Biblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
+            funcionarioBLL.CadastrarFuncionario(funcionario);
         }
     }
 }

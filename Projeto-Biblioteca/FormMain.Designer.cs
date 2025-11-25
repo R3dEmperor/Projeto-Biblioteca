@@ -301,6 +301,7 @@
             panelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             panelConteudo.Size = new Size(788, 435);
             panelConteudo.TabIndex = 1;
+            panelConteudo.Paint += panelConteudo_Paint_1;
             // 
             // guna2Panel6
             // 
@@ -316,7 +317,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.darkmodeprojeto;
-            pictureBox4.Location = new Point(675, 19);
+            pictureBox4.Location = new Point(685, 0);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(100, 58);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -326,15 +327,16 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
-            pictureBox3.Location = new Point(365, 69);
+            pictureBox3.Location = new Point(113, 0);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(782, 178);
+            pictureBox3.Size = new Size(518, 178);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
             // PbFoto
             // 
+            PbFoto.Image = Properties.Resources.lightmodeprojeto;
             PbFoto.ImageRotate = 0F;
             PbFoto.Location = new Point(74, 58);
             PbFoto.Name = "PbFoto";
