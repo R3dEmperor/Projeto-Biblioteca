@@ -325,8 +325,8 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.ChatGPT_Image;
-            pictureBox3.Location = new Point(3, 3);
+            pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
+            pictureBox3.Location = new Point(365, 69);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(782, 178);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
