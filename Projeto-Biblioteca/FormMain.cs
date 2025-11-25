@@ -11,9 +11,9 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Projeto_Biblioteca
 {
-    public partial class FormMain : Form
+    public partial class gunafundo : Form
     {
-        public FormMain()
+        public gunafundo()
         {
             InitializeComponent();
         }
@@ -58,36 +58,7 @@ namespace Projeto_Biblioteca
             AbrirUserControl(new ucFuncinarios());
         }
 
-        private void pbColorMode_Click(object sender, EventArgs e)
-        {
-            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
 
-            if (isDarkMode)
-            {
-                //Modo Claro - LigthMode
-                Color ligthBackColor = SystemColors.ButtonHighlight;
-                Color ligthPanelColor = Color.Bisque;
-
-                this.BackColor = ligthBackColor;
-                this.ForeColor = ligthPanelColor;
-
-                PanelConteudo.BackColor = ligthPanelColor;
-                pbColorMode.Image = Properties.Resources.darkmodeprojeto;
-
-            }
-            else
-            {
-                //Modo Escuro - DarkMode
-                Color darkBackColor = Color.FromArgb(32, 32, 32);
-                Color darkPanelColor = Color.FromArgb(45, 45, 45);
-
-                this.BackColor = darkBackColor;
-                this.ForeColor = darkPanelColor;
-
-                PanelConteudo.BackColor = darkPanelColor;
-                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
-            }
-        }
 
         private void bntProduto_Click(object sender, EventArgs e)
         {
@@ -103,6 +74,75 @@ namespace Projeto_Biblioteca
         private void panelConteudo_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pbdarkmode_Click(object sender, EventArgs e)
+        {
+
+            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
+
+            if (isDarkMode)
+            {
+                //Modo Claro - LigthMode
+                Color ligthBackColor = SystemColors.ButtonHighlight;
+                Color ligthPanelColor = Color.Bisque;
+
+                this.BackColor = ligthBackColor;
+                this.ForeColor = ligthPanelColor;
+
+                PanelConteudo.BackColor = ligthPanelColor;
+                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
+
+            }
+            else
+            {
+                //Modo Escuro - DarkMode
+                Color darkBackColor = Color.FromArgb(32, 32, 32);
+                Color darkPanelColor = Color.FromArgb(45, 45, 45);
+
+                this.BackColor = darkBackColor;
+                this.ForeColor = darkPanelColor;
+
+                PanelConteudo.BackColor = darkPanelColor;
+                pbColorMode.Image = Properties.Resources.darkmodeprojeto;
+            }
+        }
+
+        private void pbNot_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (int.TryParse(npNotifica.Text, out int qtdNotifica))
+                {
+                    if (qtdNotifica > 0)
+                    {
+                        qtdNotifica--;
+                        npNotifica.Text = qtdNotifica > 0 ?
+                            qtdNotifica.ToString() : string.Empty;
+
+                        npNotifica.FillColor = qtdNotifica > 0 ?
+                            npNotifica.FillColor : Color.Transparent;
+
+                        string mensagem = qtdNotifica > 0 ?
+                            "Aqui serão exibidas as notificações" : "Não há notificações";
+
+                        mdNotifica.Show(mensagem);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void pbConf_Click(object sender, EventArgs e)
+        {
+            //frmConfig config = new();
+            //config.ShowDialog();
         }
     }
 }
