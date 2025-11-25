@@ -16,5 +16,10 @@ namespace Projeto_Biblioteca
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
