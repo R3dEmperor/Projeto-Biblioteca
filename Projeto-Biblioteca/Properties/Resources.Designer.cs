@@ -134,6 +134,16 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icone_Projeto_Claro {
+            get {
+                object obj = ResourceManager.GetObject("Icone_Projeto_Claro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icone1 {
             get {
                 object obj = ResourceManager.GetObject("Icone1", resourceCulture);

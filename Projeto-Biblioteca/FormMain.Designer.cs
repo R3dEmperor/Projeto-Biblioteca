@@ -323,7 +323,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Projeto_Icone;
+            pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
             pictureBox3.Location = new Point(365, 69);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 94);
