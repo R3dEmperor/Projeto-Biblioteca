@@ -72,7 +72,7 @@
             bntSair = new Guna.UI2.WinForms.Guna2Button();
             bntProduto = new Guna.UI2.WinForms.Guna2Button();
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
-            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            PanelConteudo = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -207,7 +207,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+       
             // 
             // guna2CircleButton1
             // 
@@ -291,14 +291,15 @@
             btnFuncionario.TabIndex = 0;
             btnFuncionario.Text = "Funcionario";
             // 
-            // guna2Panel5
+            // PanelConteudo
             // 
-            guna2Panel5.CustomizableEdges = customizableEdges5;
-            guna2Panel5.Location = new Point(275, 215);
-            guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel5.Size = new Size(788, 435);
-            guna2Panel5.TabIndex = 1;
+            PanelConteudo.CustomizableEdges = customizableEdges5;
+            PanelConteudo.Location = new Point(275, 215);
+            PanelConteudo.Name = "PanelConteudo";
+            PanelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            PanelConteudo.Size = new Size(788, 435);
+            PanelConteudo.TabIndex = 1;
+            PanelConteudo.Paint += PanelConteudo_Paint;
             // 
             // guna2Panel6
             // 
@@ -378,7 +379,7 @@
             Controls.Add(guna2CircleButton2);
             Controls.Add(PbFoto);
             Controls.Add(guna2Panel6);
-            Controls.Add(guna2Panel5);
+            Controls.Add(PanelConteudo);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMain";
@@ -415,7 +416,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PbFoto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel PanelConteudo;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2Button bntSair;
