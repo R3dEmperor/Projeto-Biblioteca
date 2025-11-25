@@ -57,15 +57,13 @@
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
             // 
-            guna2HtmlLabel1.BackColor = Color.PapayaWhip;
+            guna2HtmlLabel1.BackColor = Color.Bisque;
             guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(331, 25);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
@@ -85,7 +83,7 @@
             btnExcluir.FillColor = Color.SaddleBrown;
             btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(220, 359);
+            btnExcluir.Location = new Point(223, 356);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnExcluir.Size = new Size(92, 45);
@@ -132,7 +130,7 @@
             // 
             // txtAutorProduto
             // 
-            txtAutorProduto.BackColor = Color.PapayaWhip;
+            txtAutorProduto.BackColor = Color.Bisque;
             txtAutorProduto.BorderColor = Color.PapayaWhip;
             txtAutorProduto.BorderRadius = 20;
             txtAutorProduto.CustomizableEdges = customizableEdges7;
@@ -154,7 +152,7 @@
             // 
             // txtGenero
             // 
-            txtGenero.BackColor = Color.PapayaWhip;
+            txtGenero.BackColor = Color.Bisque;
             txtGenero.BorderColor = Color.PapayaWhip;
             txtGenero.BorderRadius = 20;
             txtGenero.CustomizableEdges = customizableEdges9;
@@ -198,7 +196,7 @@
             // 
             // txtProduto
             // 
-            txtProduto.BackColor = Color.PapayaWhip;
+            txtProduto.BackColor = Color.Bisque;
             txtProduto.BorderColor = Color.PapayaWhip;
             txtProduto.BorderRadius = 20;
             txtProduto.CustomizableEdges = customizableEdges13;
@@ -294,19 +292,11 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.FundoLivros;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(788, 435);
-            pictureBox2.TabIndex = 18;
-            pictureBox2.TabStop = false;
-            // 
             // UcProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnExcluir);
             Controls.Add(btnAtualizar);
@@ -318,12 +308,10 @@
             Controls.Add(guna2DataGridView1);
             Controls.Add(guna2CircleButton1);
             Controls.Add(pictureBox1);
-            Controls.Add(pictureBox2);
             Name = "UcProduto";
             Size = new Size(788, 435);
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,6 +329,5 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }
