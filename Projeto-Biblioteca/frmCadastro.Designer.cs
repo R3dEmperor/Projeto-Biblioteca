@@ -42,6 +42,7 @@
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             PbFoto = new PictureBox();
+            txtFotoCaminho = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
             SuspendLayout();
@@ -49,7 +50,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.FundoLivros;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(1, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(384, 445);
             pictureBox1.TabIndex = 0;
@@ -133,20 +134,37 @@
             btnCadastrar.Size = new Size(180, 45);
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // PbFoto
             // 
-            PbFoto.Location = new Point(102, 52);
+            PbFoto.BackColor = Color.PapayaWhip;
+            PbFoto.Image = Properties.Resources._4____;
+            PbFoto.Location = new Point(113, 32);
             PbFoto.Name = "PbFoto";
             PbFoto.Size = new Size(135, 93);
+            PbFoto.SizeMode = PictureBoxSizeMode.Zoom;
             PbFoto.TabIndex = 5;
             PbFoto.TabStop = false;
+            PbFoto.Click += PbFoto_Click;
+            // 
+            // txtFotoCaminho
+            // 
+            txtFotoCaminho.AutoSize = true;
+            txtFotoCaminho.BackColor = Color.AntiqueWhite;
+            txtFotoCaminho.ForeColor = SystemColors.ControlText;
+            txtFotoCaminho.Location = new Point(140, 128);
+            txtFotoCaminho.Name = "txtFotoCaminho";
+            txtFotoCaminho.Size = new Size(83, 15);
+            txtFotoCaminho.TabIndex = 6;
+            txtFotoCaminho.Text = "Foto Caminho";
             // 
             // frmCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 445);
+            Controls.Add(txtFotoCaminho);
             Controls.Add(PbFoto);
             Controls.Add(btnCadastrar);
             Controls.Add(txtNome);
@@ -159,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -169,5 +188,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
         private PictureBox PbFoto;
+        private Label txtFotoCaminho;
     }
 }

@@ -28,7 +28,7 @@ namespace Projeto_Biblioteca
 
         private void guna2TextBox2_KeyDown(object sender, KeyEventArgs e)
         {
-         
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace Projeto_Biblioteca
         }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbFundo_Click(object sender, EventArgs e)
         {
 
         }
