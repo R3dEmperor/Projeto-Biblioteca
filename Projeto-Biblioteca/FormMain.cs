@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Projeto_Biblioteca
 {
@@ -18,47 +18,74 @@ namespace Projeto_Biblioteca
             InitializeComponent();
         }
 
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            AtualizarUsuarioLogado();
+            AbrirUserControl(new UcProduto());
         }
 
-        private void lblFotoCaminho_Click(object sender, EventArgs e)
+        private void PanelConteudo_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void bntSair_Click(object sender, EventArgs e)
+        private void AbrirUserControl(UserControl uc)
         {
+            //Limpa o que tiver no painel
+            PanelConteudo.Controls.Clear();
 
+            // Configura o novo User Control
+            uc.Dock = DockStyle.Fill;
+
+            PanelConteudo.Controls.Add(uc);
+        }
+        private void FecharMain()
+        {
+            Close();
+            login telaLogin = new();
+            telaLogin.ShowDialog();
+        }
+        public void AtualizarUsuarioLogado()
+        {
+            //Centralizar Horizontalmente em relação a pbFoto
+            lblFotoCaminho.Left = PbFoto.Left + 4 + (PbFoto.Width - lblFotoCaminho.Width) / 2;
+            lblFotoCaminho.Top = PbFoto.Bottom + 4;
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            panelConteudo.Controls.Clear();
+            PanelConteudo.Controls.Clear();
             AbrirUserControl(new ucFuncinarios());
         }
-        private void AbrirUserControl(UserControl uc)
+
+        private void pbColorMode_Click(object sender, EventArgs e)
         {
+            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
 
-            panelConteudo.Controls.Clear();
+            if (isDarkMode)
+            {
+                //Modo Claro - LigthMode
+                Color ligthBackColor = SystemColors.ButtonHighlight;
+                Color ligthPanelColor = Color.Bisque;
 
-            uc.Dock = DockStyle.Fill;
+                this.BackColor = ligthBackColor;
+                this.ForeColor = ligthPanelColor;
 
-            panelConteudo.Controls.Add(uc);
-        }
+                PanelConteudo.BackColor = ligthPanelColor;
+                pbColorMode.Image = Properties.Resources.darkmodeprojeto;
 
-        private void bntProduto_Click(object sender, EventArgs e)
-        {
-            panelConteudo.Controls.Clear();
-            AbrirUserControl(new UcProduto() );
+            }
+            else
+            {
+                //Modo Escuro - DarkMode
+                Color darkBackColor = Color.FromArgb(32, 32, 32);
+                Color darkPanelColor = Color.FromArgb(45, 45, 45);
 
+                this.BackColor = darkBackColor;
+                this.ForeColor = darkPanelColor;
+
+                PanelConteudo.BackColor = darkPanelColor;
+                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
+            }
         }
     }
 }

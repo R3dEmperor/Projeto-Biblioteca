@@ -72,9 +72,9 @@
             bntSair = new Guna.UI2.WinForms.Guna2Button();
             bntProduto = new Guna.UI2.WinForms.Guna2Button();
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
-            panelConteudo = new Guna.UI2.WinForms.Guna2Panel();
+            PanelConteudo = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            pictureBox4 = new PictureBox();
+            pbColorMode = new PictureBox();
             pictureBox3 = new PictureBox();
             PbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel4.SuspendLayout();
             guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbColorMode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
             SuspendLayout();
@@ -207,7 +207,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // guna2CircleButton1
             // 
@@ -294,18 +293,19 @@
             btnFuncionario.Text = "Funcionario";
             btnFuncionario.Click += btnFuncionario_Click;
             // 
-            // panelConteudo
+            // PanelConteudo
             // 
-            panelConteudo.CustomizableEdges = customizableEdges5;
-            panelConteudo.Location = new Point(275, 202);
-            panelConteudo.Name = "panelConteudo";
-            panelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            panelConteudo.Size = new Size(788, 435);
-            panelConteudo.TabIndex = 1;
+            PanelConteudo.CustomizableEdges = customizableEdges5;
+            PanelConteudo.Location = new Point(275, 215);
+            PanelConteudo.Name = "PanelConteudo";
+            PanelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            PanelConteudo.Size = new Size(788, 435);
+            PanelConteudo.TabIndex = 1;
+            PanelConteudo.Paint += PanelConteudo_Paint;
             // 
             // guna2Panel6
             // 
-            guna2Panel6.Controls.Add(pictureBox4);
+            guna2Panel6.Controls.Add(pbColorMode);
             guna2Panel6.Controls.Add(pictureBox3);
             guna2Panel6.CustomizableEdges = customizableEdges3;
             guna2Panel6.Location = new Point(275, 12);
@@ -314,23 +314,24 @@
             guna2Panel6.Size = new Size(788, 184);
             guna2Panel6.TabIndex = 2;
             // 
-            // pictureBox4
+            // pbColorMode
             // 
-            pictureBox4.Image = Properties.Resources.download;
-            pictureBox4.Location = new Point(701, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(37, 27);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
+            pbColorMode.Image = Properties.Resources.darkmodeprojeto;
+            pbColorMode.Location = new Point(701, 3);
+            pbColorMode.Name = "pbColorMode";
+            pbColorMode.Size = new Size(37, 27);
+            pbColorMode.SizeMode = PictureBoxSizeMode.Zoom;
+            pbColorMode.TabIndex = 1;
+            pbColorMode.TabStop = false;
+            pbColorMode.Click += pbColorMode_Click;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources._19_de_nov1;
-            pictureBox3.Location = new Point(14, 3);
+            pictureBox3.Image = Properties.Resources.Projeto_Icone;
+            pictureBox3.Location = new Point(365, 69);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(755, 178);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.Size = new Size(100, 94);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
@@ -382,7 +383,7 @@
             Controls.Add(guna2CircleButton2);
             Controls.Add(PbFoto);
             Controls.Add(guna2Panel6);
-            Controls.Add(panelConteudo);
+            Controls.Add(PanelConteudo);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMain";
@@ -395,7 +396,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel4.ResumeLayout(false);
             guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbColorMode).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
             ResumeLayout(false);
@@ -419,8 +420,8 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PbFoto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Panel panelConteudo;
-        private PictureBox pictureBox4;
+        private Guna.UI2.WinForms.Guna2Panel PanelConteudo;
+        private PictureBox pbColorMode;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2Button bntSair;
         private Guna.UI2.WinForms.Guna2Button bntProduto;

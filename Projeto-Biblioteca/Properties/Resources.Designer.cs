@@ -104,6 +104,26 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap darkmode {
+            get {
+                object obj = ResourceManager.GetObject("darkmode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darkmodeprojeto {
+            get {
+                object obj = ResourceManager.GetObject("darkmodeprojeto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -117,6 +137,36 @@ namespace Projeto_Biblioteca.Properties {
         internal static System.Drawing.Bitmap FundoLivros {
             get {
                 object obj = ResourceManager.GetObject("FundoLivros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icone {
+            get {
+                object obj = ResourceManager.GetObject("Icone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icone1 {
+            get {
+                object obj = ResourceManager.GetObject("Icone1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icone2 {
+            get {
+                object obj = ResourceManager.GetObject("Icone2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -144,9 +194,39 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lightmodeprojeto {
+            get {
+                object obj = ResourceManager.GetObject("lightmodeprojeto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ligthmode {
+            get {
+                object obj = ResourceManager.GetObject("ligthmode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_an_old_bookcase_in_a_library_picture_image_2760144 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-an-old-bookcase-in-a-library-picture-image_2760144", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Projeto_Icone {
+            get {
+                object obj = ResourceManager.GetObject("Projeto_Icone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
