@@ -54,7 +54,7 @@
             btnEntrar.BackColor = Color.FromArgb(0, 0, 0, 1);
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
-            btnEntrar.CustomizableEdges = customizableEdges11;
+            btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -64,7 +64,7 @@
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(25, 334);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(200, 45);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
@@ -81,18 +81,17 @@
             btxClose.ForeColor = Color.White;
             btxClose.Location = new Point(240, -2);
             btxClose.Name = "btxClose";
-            btxClose.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            btxClose.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btxClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             btxClose.Size = new Size(35, 32);
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
-            btxClose.Click += guna2CircleButton1_Click;
             // 
             // txtEmail
             // 
             txtEmail.BackColor = Color.PapayaWhip;
             txtEmail.BorderRadius = 20;
-            txtEmail.CustomizableEdges = customizableEdges14;
+            txtEmail.CustomizableEdges = customizableEdges4;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -105,7 +104,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges5;
             txtEmail.Size = new Size(200, 36);
             txtEmail.TabIndex = 3;
             txtEmail.TextChanged += txtEmail_TextChanged;
@@ -114,7 +113,7 @@
             // 
             txtNome.BackColor = Color.PapayaWhip;
             txtNome.BorderRadius = 20;
-            txtNome.CustomizableEdges = customizableEdges16;
+            txtNome.CustomizableEdges = customizableEdges6;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtNome.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -127,10 +126,9 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.SelectedText = "";
-            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges7;
             txtNome.Size = new Size(200, 36);
             txtNome.TabIndex = 3;
-            txtNome.KeyDown += guna2TextBox2_KeyDown;
             // 
             // pbFotoLogin
             // 
@@ -138,7 +136,7 @@
             pbFotoLogin.ImageRotate = 0F;
             pbFotoLogin.Location = new Point(72, 27);
             pbFotoLogin.Name = "pbFotoLogin";
-            pbFotoLogin.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            pbFotoLogin.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pbFotoLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pbFotoLogin.Size = new Size(116, 100);
             pbFotoLogin.TabIndex = 4;
@@ -148,7 +146,7 @@
             // 
             txtSenha.BackColor = Color.PapayaWhip;
             txtSenha.BorderRadius = 20;
-            txtSenha.CustomizableEdges = customizableEdges19;
+            txtSenha.CustomizableEdges = customizableEdges9;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -161,17 +159,17 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Senha";
             txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtSenha.Size = new Size(200, 36);
             txtSenha.TabIndex = 3;
+            txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // PbFundo
             // 
-            PbFundo.Image = Properties.Resources.FundoLivros;
             PbFundo.Location = new Point(2, -3);
             PbFundo.Name = "PbFundo";
-            PbFundo.Size = new Size(274, 415);
+            PbFundo.Size = new Size(532, 415);
             PbFundo.TabIndex = 5;
             PbFundo.TabStop = false;
             PbFundo.Click += PbFundo_Click;

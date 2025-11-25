@@ -4,6 +4,7 @@ namespace Projeto_Biblioteca.DTO
 {
     public class UsuarioDTO
     {
+        public static object UsuarioLogado { get; set; }
         [Key]
         public int Id { get; set; }
 
