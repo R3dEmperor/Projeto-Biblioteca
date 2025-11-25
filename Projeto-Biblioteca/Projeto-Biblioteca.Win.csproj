@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Projeto-Biblioteca.BLL\Projeto-Biblioteca.BLL.csproj" />
+    <ProjectReference Include="..\Projeto-Biblioteca.DAL\Projeto-Biblioteca.DAL.csproj" />
     <ProjectReference Include="..\Projeto-Biblioteca.DTO\Projeto-Biblioteca.DTO.csproj" />
   </ItemGroup>
 
