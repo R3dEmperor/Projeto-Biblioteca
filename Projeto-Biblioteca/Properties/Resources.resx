@@ -121,16 +121,25 @@
   <data name="FundoLivros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FundoLivros.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabela-da-biblioteca-conceito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabela-da-biblioteca-conceito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="19 de nov1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\19 de nov. de 2025, 21_44_411.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="19 de nov. de 2025, 21_44_41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\19 de nov. de 2025, 21_44_41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="istockphoto-528740757-612x612 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-528740757-612x612 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="istockphoto-528740757-612x612 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-528740757-612x612 (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabela-da-biblioteca-conceito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabela-da-biblioteca-conceito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="19 de nov1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\19 de nov. de 2025, 21_44_411.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-an-old-bookcase-in-a-library-picture-image_2760144" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

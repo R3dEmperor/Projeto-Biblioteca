@@ -21,5 +21,9 @@ namespace Projeto_Biblioteca
         {
 
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-}

@@ -110,5 +110,35 @@ namespace Projeto_Biblioteca.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_528740757_612x612__1_ {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-528740757-612x612 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_528740757_612x612__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-528740757-612x612 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_an_old_bookcase_in_a_library_picture_image_2760144 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-an-old-bookcase-in-a-library-picture-image_2760144", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
