@@ -31,6 +31,7 @@ namespace Projeto_Biblioteca
                 Senha = txtSenha.Text,
             };
             funcionarioBLL.CadastrarFuncionario(funcionario);
+
         }
     }
 }
