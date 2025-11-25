@@ -108,12 +108,12 @@
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCadastrar.FillColor = Color.SaddleBrown;
-            btnCadastrar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(12, 378);
+            btnCadastrar.Location = new Point(7, 378);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            btnCadastrar.Size = new Size(85, 45);
+            btnCadastrar.Size = new Size(100, 45);
             btnCadastrar.TabIndex = 15;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.Click += btnCadastrar_Click;
@@ -127,12 +127,12 @@
             btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnAtualizar.FillColor = Color.SaddleBrown;
-            btnAtualizar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(103, 378);
+            btnAtualizar.Location = new Point(110, 378);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            btnAtualizar.Size = new Size(79, 45);
+            btnAtualizar.Size = new Size(86, 45);
             btnAtualizar.TabIndex = 16;
             btnAtualizar.Text = "Atualizar";
             // 
@@ -145,9 +145,9 @@
             btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnExcluir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnExcluir.FillColor = Color.SaddleBrown;
-            btnExcluir.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(188, 378);
+            btnExcluir.Location = new Point(201, 377);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnExcluir.Size = new Size(80, 45);
