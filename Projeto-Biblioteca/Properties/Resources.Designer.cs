@@ -83,9 +83,10 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4____ {
+        internal static System.Drawing.Bitmap _64110645_trabalhador_bibliotecário_plano_ou_leitor_na_ilustração_vetorial_da_tabela_da_biblioteca_conceito {
             get {
-                object obj = ResourceManager.GetObject("4 - \'", resourceCulture);
+                object obj = ResourceManager.GetObject("64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabe" +
+                        "la-da-biblioteca-conceito", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,10 +94,9 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _64110645_trabalhador_bibliotecário_plano_ou_leitor_na_ilustração_vetorial_da_tabela_da_biblioteca_conceito {
+        internal static System.Drawing.Bitmap ChatGPT_Image {
             get {
-                object obj = ResourceManager.GetObject("64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabe" +
-                        "la-da-biblioteca-conceito", resourceCulture);
+                object obj = ResourceManager.GetObject("ChatGPT Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -217,16 +217,6 @@ namespace Projeto_Biblioteca.Properties {
         internal static System.Drawing.Bitmap pngtree_an_old_bookcase_in_a_library_picture_image_2760144 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-an-old-bookcase-in-a-library-picture-image_2760144", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Projeto_Icone {
-            get {
-                object obj = ResourceManager.GetObject("Projeto_Icone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

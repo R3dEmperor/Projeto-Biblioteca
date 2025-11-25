@@ -30,10 +30,10 @@ namespace Projeto_Biblioteca
         }
         private void AbrirUserControl(UserControl uc)
         {
-            //Limpa o que tiver no painel
+
             PanelConteudo.Controls.Clear();
 
-            // Configura o novo User Control
+
             uc.Dock = DockStyle.Fill;
 
             PanelConteudo.Controls.Add(uc);
@@ -53,7 +53,8 @@ namespace Projeto_Biblioteca
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            PanelConteudo.Controls.Clear();
+
+
             AbrirUserControl(new ucFuncinarios());
         }
 
@@ -86,6 +87,16 @@ namespace Projeto_Biblioteca
                 PanelConteudo.BackColor = darkPanelColor;
                 pbColorMode.Image = Properties.Resources.lightmodeprojeto;
             }
+        }
+
+        private void bntProduto_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new UcProduto());
+        }
+
+        private void bntSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
