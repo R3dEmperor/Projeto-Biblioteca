@@ -99,7 +99,7 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(7, 378);
+            btnCadastrar.Location = new Point(12, 378);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnCadastrar.Size = new Size(100, 45);
