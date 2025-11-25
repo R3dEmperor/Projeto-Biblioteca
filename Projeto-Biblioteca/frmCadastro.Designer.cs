@@ -43,7 +43,7 @@
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             PbFoto = new PictureBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            txtFotoCaminho = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
             SuspendLayout();
@@ -51,7 +51,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.FundoLivros;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(1, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(384, 445);
             pictureBox1.TabIndex = 0;
@@ -136,38 +136,37 @@
             btnCadastrar.Size = new Size(180, 45);
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // PbFoto
             // 
-            PbFoto.Location = new Point(102, 52);
+            PbFoto.BackColor = Color.PapayaWhip;
+            PbFoto.Image = Properties.Resources._4____;
+            PbFoto.Location = new Point(113, 32);
             PbFoto.Name = "PbFoto";
             PbFoto.Size = new Size(135, 93);
+            PbFoto.SizeMode = PictureBoxSizeMode.Zoom;
             PbFoto.TabIndex = 5;
             PbFoto.TabStop = false;
+            PbFoto.Click += PbFoto_Click;
             // 
-            // guna2CircleButton1
+            // txtFotoCaminho
             // 
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.SaddleBrown;
-            guna2CircleButton1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(350, 0);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(34, 33);
-            guna2CircleButton1.TabIndex = 6;
-            guna2CircleButton1.Text = "X";
+            txtFotoCaminho.AutoSize = true;
+            txtFotoCaminho.BackColor = Color.AntiqueWhite;
+            txtFotoCaminho.ForeColor = SystemColors.ControlText;
+            txtFotoCaminho.Location = new Point(140, 128);
+            txtFotoCaminho.Name = "txtFotoCaminho";
+            txtFotoCaminho.Size = new Size(83, 15);
+            txtFotoCaminho.TabIndex = 6;
+            txtFotoCaminho.Text = "Foto Caminho";
             // 
             // frmCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 445);
-            Controls.Add(guna2CircleButton1);
+            Controls.Add(txtFotoCaminho);
             Controls.Add(PbFoto);
             Controls.Add(btnCadastrar);
             Controls.Add(txtNome);
@@ -180,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -190,6 +190,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
         private PictureBox PbFoto;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Label txtFotoCaminho;
     }
 }

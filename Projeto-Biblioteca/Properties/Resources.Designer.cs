@@ -83,6 +83,16 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4____ {
+            get {
+                object obj = ResourceManager.GetObject("4 - \'", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _64110645_trabalhador_bibliotecário_plano_ou_leitor_na_ilustração_vetorial_da_tabela_da_biblioteca_conceito {
             get {
                 object obj = ResourceManager.GetObject("64110645-trabalhador-bibliotecário-plano-ou-leitor-na-ilustração-vetorial-da-tabe" +
