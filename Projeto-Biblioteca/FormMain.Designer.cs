@@ -79,6 +79,9 @@
             PbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             lblFotoCaminho = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            pbNot = new PictureBox();
+            pbConf = new PictureBox();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -89,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNot).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbConf).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -191,7 +196,6 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.download;
             pictureBox2.Location = new Point(737, 6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 36);
@@ -247,7 +251,7 @@
             bntSair.FillColor = Color.SaddleBrown;
             bntSair.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntSair.ForeColor = Color.White;
-            bntSair.Location = new Point(11, 265);
+            bntSair.Location = new Point(3, 404);
             bntSair.Name = "bntSair";
             bntSair.ShadowDecoration.CustomizableEdges = customizableEdges8;
             bntSair.Size = new Size(180, 45);
@@ -266,7 +270,7 @@
             bntProduto.FillColor = Color.SaddleBrown;
             bntProduto.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntProduto.ForeColor = Color.White;
-            bntProduto.Location = new Point(11, 139);
+            bntProduto.Location = new Point(11, 99);
             bntProduto.Name = "bntProduto";
             bntProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             bntProduto.Size = new Size(180, 45);
@@ -305,29 +309,32 @@
             // 
             // guna2Panel6
             // 
-            guna2Panel6.Controls.Add(pictureBox4);
+            guna2Panel6.Controls.Add(pbConf);
             guna2Panel6.Controls.Add(pictureBox3);
+            guna2Panel6.Controls.Add(pbNot);
+            guna2Panel6.Controls.Add(pbColorMode);
             guna2Panel6.CustomizableEdges = customizableEdges3;
-            guna2Panel6.Location = new Point(275, 12);
+            guna2Panel6.Location = new Point(275, 58);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel6.Size = new Size(788, 184);
+            guna2Panel6.Size = new Size(788, 127);
             guna2Panel6.TabIndex = 2;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.darkmodeprojeto;
-            pictureBox4.Location = new Point(685, 0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 58);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
+            pbColorMode.Image = Properties.Resources.darkmodeprojeto;
+            pbColorMode.Location = new Point(736, 3);
+            pbColorMode.Name = "pbColorMode";
+            pbColorMode.Size = new Size(37, 27);
+            pbColorMode.SizeMode = PictureBoxSizeMode.Zoom;
+            pbColorMode.TabIndex = 1;
+            pbColorMode.TabStop = false;
+            pbColorMode.Click += pbColorMode_Click;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
-            pictureBox3.Location = new Point(113, 0);
+            pictureBox3.Image = Properties.Resources.Projeto_Icone;
+            pictureBox3.Location = new Point(334, 15);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(518, 178);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -338,7 +345,7 @@
             // 
             PbFoto.Image = Properties.Resources.lightmodeprojeto;
             PbFoto.ImageRotate = 0F;
-            PbFoto.Location = new Point(74, 58);
+            PbFoto.Location = new Point(78, 32);
             PbFoto.Name = "PbFoto";
             PbFoto.ShadowDecoration.CustomizableEdges = customizableEdges2;
             PbFoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -372,6 +379,37 @@
             lblFotoCaminho.TabIndex = 5;
             lblFotoCaminho.Text = "Caminho da Foto";
             // 
+            // guna2MessageDialog1
+            // 
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Caption = null;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            guna2MessageDialog1.Parent = null;
+            guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            guna2MessageDialog1.Text = null;
+            // 
+            // pbNot
+            // 
+            pbNot.Image = Properties.Resources.notification;
+            pbNot.Location = new Point(693, 3);
+            pbNot.Name = "pbNot";
+            pbNot.Size = new Size(37, 27);
+            pbNot.SizeMode = PictureBoxSizeMode.Zoom;
+            pbNot.TabIndex = 1;
+            pbNot.TabStop = false;
+            pbNot.Click += pbColorMode_Click;
+            // 
+            // pbConf
+            // 
+            pbConf.Image = Properties.Resources.settings;
+            pbConf.Location = new Point(650, 3);
+            pbConf.Name = "pbConf";
+            pbConf.Size = new Size(37, 27);
+            pbConf.SizeMode = PictureBoxSizeMode.Zoom;
+            pbConf.TabIndex = 1;
+            pbConf.TabStop = false;
+            pbConf.Click += pbColorMode_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -398,6 +436,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNot).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbConf).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -428,5 +468,8 @@
         private Guna.UI2.WinForms.Guna2Button bntProduto;
         private Guna.UI2.WinForms.Guna2Button btnFuncionario;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFotoCaminho;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private PictureBox pbConf;
+        private PictureBox pbNot;
     }
 }
