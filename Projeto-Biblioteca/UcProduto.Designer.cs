@@ -89,6 +89,7 @@
             btnExcluir.Size = new Size(92, 45);
             btnExcluir.TabIndex = 14;
             btnExcluir.Text = "Excluir";
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnAtualizar
             // 
@@ -108,6 +109,7 @@
             btnAtualizar.Size = new Size(92, 45);
             btnAtualizar.TabIndex = 15;
             btnAtualizar.Text = "Atualizar";
+            btnAtualizar.Click += btnAtualizar_Click;
             // 
             // btnCadastrar
             // 
@@ -127,6 +129,7 @@
             btnCadastrar.Size = new Size(97, 45);
             btnCadastrar.TabIndex = 16;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtAutorProduto
             // 
@@ -208,7 +211,7 @@
             txtProduto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtProduto.Font = new Font("Segoe UI", 9F);
             txtProduto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtProduto.Location = new Point(3, 193);
+            txtProduto.Location = new Point(11, 194);
             txtProduto.Name = "txtProduto";
             txtProduto.PlaceholderText = "Título";
             txtProduto.SelectedText = "";
