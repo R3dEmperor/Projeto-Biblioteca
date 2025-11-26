@@ -38,5 +38,7 @@ namespace Projeto_Biblioteca.DTO
         // ========================
         public int TipoUsuarioId { get; set; }
         public virtual FuncionarioDTO? TipoUsuario { get; set; }
+
+        public string? UrlFoto { get; set; }
     }
 }

@@ -51,7 +51,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            pbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             btnAtualizar = new Guna.UI2.WinForms.Guna2Button();
@@ -63,21 +63,21 @@
             txtTipoUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
+            ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
             // 
-            // guna2CirclePictureBox1
+            // pbFoto
             // 
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(82, 22);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(107, 98);
-            guna2CirclePictureBox1.TabIndex = 19;
-            guna2CirclePictureBox1.TabStop = false;
+            pbFoto.ImageRotate = 0F;
+            pbFoto.Location = new Point(82, 22);
+            pbFoto.Name = "pbFoto";
+            pbFoto.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            pbFoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            pbFoto.Size = new Size(107, 98);
+            pbFoto.TabIndex = 19;
+            pbFoto.TabStop = false;
             // 
             // lblCaminhodaFoto
             // 
@@ -99,7 +99,7 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(12, 378);
+            btnCadastrar.Location = new Point(4, 378);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnCadastrar.Size = new Size(100, 45);
@@ -124,6 +124,7 @@
             btnAtualizar.Size = new Size(86, 45);
             btnAtualizar.TabIndex = 16;
             btnAtualizar.Text = "Atualizar";
+            btnAtualizar.Click += btnAtualizar_Click;
             // 
             // btnExcluir
             // 
@@ -280,10 +281,10 @@
             guna2CircleButton1.TabIndex = 8;
             guna2CircleButton1.Text = "X";
             // 
-            // guna2DataGridView1
+            // dgUsuarios
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -291,9 +292,9 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 4;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgUsuarios.ColumnHeadersHeight = 4;
+            dgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -301,41 +302,43 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(293, 91);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.Size = new Size(483, 322);
-            guna2DataGridView1.TabIndex = 7;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
+            dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
+            dgUsuarios.Location = new Point(293, 91);
+            dgUsuarios.Name = "dgUsuarios";
+            dgUsuarios.RowHeadersVisible = false;
+            dgUsuarios.Size = new Size(483, 322);
+            dgUsuarios.TabIndex = 7;
+            dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgUsuarios.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgUsuarios.ThemeStyle.BackColor = Color.White;
+            dgUsuarios.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgUsuarios.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgUsuarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgUsuarios.ThemeStyle.HeaderStyle.Height = 4;
+            dgUsuarios.ThemeStyle.ReadOnly = false;
+            dgUsuarios.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgUsuarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgUsuarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgUsuarios.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgUsuarios.ThemeStyle.RowsStyle.Height = 25;
+            dgUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgUsuarios.CellClick += guna2DataGridView1_CellClick;
+            dgUsuarios.CellContentClick += dgUsuarios_CellContentClick;
             // 
             // ucFuncinarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
-            Controls.Add(guna2CirclePictureBox1);
+            Controls.Add(pbFoto);
             Controls.Add(lblCaminhodaFoto);
             Controls.Add(btnCadastrar);
             Controls.Add(btnAtualizar);
@@ -347,17 +350,18 @@
             Controls.Add(txtTipoUsuario);
             Controls.Add(txtPesquisa);
             Controls.Add(guna2CircleButton1);
-            Controls.Add(guna2DataGridView1);
+            Controls.Add(dgUsuarios);
             Name = "ucFuncinarios";
             Size = new Size(788, 435);
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            Load += ucFuncinarios_Load;
+            ((System.ComponentModel.ISupportInitialize)pbFoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pbFoto;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCaminhodaFoto;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
         private Guna.UI2.WinForms.Guna2Button btnAtualizar;
@@ -369,6 +373,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTipoUsuario;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgUsuarios;
     }
 }

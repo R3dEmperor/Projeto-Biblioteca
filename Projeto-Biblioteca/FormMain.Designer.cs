@@ -74,6 +74,7 @@
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
             panelConteudo = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            pbConf = new PictureBox();
             pictureBox3 = new PictureBox();
             pbdarkmode = new PictureBox();
             pbNot = new PictureBox();
@@ -93,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel4.SuspendLayout();
             guna2Panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbConf).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbdarkmode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbNot).BeginInit();
@@ -325,6 +327,17 @@
             guna2Panel6.Size = new Size(788, 153);
             guna2Panel6.TabIndex = 2;
             // 
+            // pbConf
+            // 
+            pbConf.Image = Properties.Resources.settings;
+            pbConf.Location = new Point(696, 0);
+            pbConf.Name = "pbConf";
+            pbConf.Size = new Size(37, 27);
+            pbConf.SizeMode = PictureBoxSizeMode.Zoom;
+            pbConf.TabIndex = 1;
+            pbConf.TabStop = false;
+            pbConf.Click += pbColorMode_Click;
+            // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
@@ -471,6 +484,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel4.ResumeLayout(false);
             guna2Panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbConf).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNot).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbdarkmode).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbNot).EndInit();
