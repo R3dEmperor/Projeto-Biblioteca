@@ -47,7 +47,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -62,7 +61,6 @@
             txtCPF = new Guna.UI2.WinForms.Guna2TextBox();
             txtTipoUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
@@ -263,23 +261,7 @@
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges19;
             txtPesquisa.Size = new Size(483, 36);
             txtPesquisa.TabIndex = 14;
-            // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.SaddleBrown;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(740, 11);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(33, 32);
-            guna2CircleButton1.TabIndex = 8;
-            guna2CircleButton1.Text = "X";
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // dgUsuarios
             // 
@@ -349,7 +331,6 @@
             Controls.Add(txtCPF);
             Controls.Add(txtTipoUsuario);
             Controls.Add(txtPesquisa);
-            Controls.Add(guna2CircleButton1);
             Controls.Add(dgUsuarios);
             Name = "ucFuncinarios";
             Size = new Size(788, 435);
@@ -372,7 +353,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCPF;
         private Guna.UI2.WinForms.Guna2TextBox txtTipoUsuario;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2DataGridView dgUsuarios;
     }
 }

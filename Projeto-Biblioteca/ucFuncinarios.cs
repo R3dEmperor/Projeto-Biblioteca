@@ -27,7 +27,7 @@ namespace Projeto_Biblioteca
             var funcionario = new FuncionarioDTO
             {
                 Nome = txtNome.Text,
-                DescricaoTipoUsuario = txtTipoUsuario.Text,
+                TipoUsuarioId = int.Parse(txtTipoUsuario.Text),
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
                 Senha = txtSenha.Text,
@@ -138,6 +138,31 @@ namespace Projeto_Biblioteca
         private void ucFuncinarios_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
+        }
+        private void BuscarFuncionarios()
+        {
+            string termo = txtPesquisa.Text.Trim().ToLower();
+
+            var filtrados = funcionarioBLL.ListarFuncionarios()
+                                    .Where(funcionario => funcionario.Nome.ToLower().Contains(termo))
+                                    .Select(funcionario => new
+                                    {
+                                        funcionario.Id,
+                                        funcionario.Nome,
+                                        funcionario.Senha,
+                                        funcionario.Email,
+                                        funcionario.Telefone,
+                                        funcionario.CPF,
+                                        funcionario.UrlFoto
+
+                                    }).ToList();
+
+            dgUsuarios.DataSource = filtrados;
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            BuscarFuncionarios();
         }
     }
 }
