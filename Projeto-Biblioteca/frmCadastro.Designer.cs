@@ -141,7 +141,6 @@
             // PbFoto
             // 
             PbFoto.BackColor = Color.PapayaWhip;
-            PbFoto.Image = Properties.Resources.darkmode;
             PbFoto.Location = new Point(113, 32);
             PbFoto.Name = "PbFoto";
             PbFoto.Size = new Size(135, 93);
