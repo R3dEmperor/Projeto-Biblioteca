@@ -19,7 +19,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 conexao = new SqlConnection(
                     @"Data Source=(localdb)\MSSQLLocalDB;
-                    Initial Catalog=TransformeseBD;
+                    Initial Catalog=Projeto_Biblioteca;
                     Integrated Security = true");
                 conexao.Open();
             }

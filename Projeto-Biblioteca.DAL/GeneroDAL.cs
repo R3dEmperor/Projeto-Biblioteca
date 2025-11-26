@@ -47,7 +47,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT * FROM Genero";
+                string sql = "SELECT * FROM Generos";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();

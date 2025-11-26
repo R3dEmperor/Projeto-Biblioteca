@@ -336,7 +336,7 @@
             pbConf.SizeMode = PictureBoxSizeMode.Zoom;
             pbConf.TabIndex = 1;
             pbConf.TabStop = false;
-            pbConf.Click += pbColorMode_Click;
+       
             // 
             // pictureBox3
             // 

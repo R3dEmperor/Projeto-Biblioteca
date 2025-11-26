@@ -17,8 +17,8 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT IdTipoUsuario, DescricaoTipoUsuario 
-                               FROM TipoUsuario";
+                string sql = @"SELECT IdTipoUsuario, Descricao_Tipo 
+                               FROM Funcionario";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
@@ -28,7 +28,7 @@ namespace Projeto_Biblioteca.DAL
                     lista.Add(new FuncionarioDTO
                     {
                         IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["DescricaoTipoUsuario"].ToString()
+                        DescricaoTipoUsuario = dataReader["Cargo Funcionario"].ToString()
                     });
                 }
 
