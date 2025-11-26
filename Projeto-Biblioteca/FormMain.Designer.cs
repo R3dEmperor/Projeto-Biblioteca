@@ -74,14 +74,14 @@
             btnFuncionario = new Guna.UI2.WinForms.Guna2Button();
             panelConteudo = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            pictureBox4 = new PictureBox();
+            pbConf = new PictureBox();
             pictureBox3 = new PictureBox();
+            pbNot = new PictureBox();
+            pictureBox4 = new PictureBox();
             PbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             lblFotoCaminho = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            pbNot = new PictureBox();
-            pbConf = new PictureBox();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -89,11 +89,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel4.SuspendLayout();
             guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbNot).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbConf).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNot).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -312,7 +312,6 @@
             guna2Panel6.Controls.Add(pbConf);
             guna2Panel6.Controls.Add(pictureBox3);
             guna2Panel6.Controls.Add(pbNot);
-            guna2Panel6.Controls.Add(pbColorMode);
             guna2Panel6.CustomizableEdges = customizableEdges3;
             guna2Panel6.Location = new Point(275, 58);
             guna2Panel6.Name = "guna2Panel6";
@@ -320,26 +319,45 @@
             guna2Panel6.Size = new Size(788, 127);
             guna2Panel6.TabIndex = 2;
             // 
-            // pictureBox4
+            // pbConf
             // 
-            pbColorMode.Image = Properties.Resources.darkmodeprojeto;
-            pbColorMode.Location = new Point(736, 3);
-            pbColorMode.Name = "pbColorMode";
-            pbColorMode.Size = new Size(37, 27);
-            pbColorMode.SizeMode = PictureBoxSizeMode.Zoom;
-            pbColorMode.TabIndex = 1;
-            pbColorMode.TabStop = false;
-            pbColorMode.Click += pbColorMode_Click;
+            pbConf.Image = Properties.Resources.settings;
+            pbConf.Location = new Point(696, 0);
+            pbConf.Name = "pbConf";
+            pbConf.Size = new Size(37, 27);
+            pbConf.SizeMode = PictureBoxSizeMode.Zoom;
+            pbConf.TabIndex = 1;
+            pbConf.TabStop = false;
+            pbConf.Click += pbColorMode_Click;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Projeto_Icone;
-            pictureBox3.Location = new Point(334, 15);
+            pictureBox3.Image = Properties.Resources.Icone_Projeto_Claro;
+            pictureBox3.Location = new Point(126, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(518, 178);
+            pictureBox3.Size = new Size(518, 124);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
+            // 
+            // pbNot
+            // 
+            pbNot.Image = Properties.Resources.darkmodeprojeto;
+            pbNot.Location = new Point(748, 0);
+            pbNot.Name = "pbNot";
+            pbNot.Size = new Size(37, 27);
+            pbNot.SizeMode = PictureBoxSizeMode.Zoom;
+            pbNot.TabIndex = 1;
+            pbNot.TabStop = false;
+            pbNot.Click += pbColorMode_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Location = new Point(0, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(100, 50);
+            pictureBox4.TabIndex = 0;
+            pictureBox4.TabStop = false;
             // 
             // PbFoto
             // 
@@ -388,28 +406,6 @@
             guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             guna2MessageDialog1.Text = null;
             // 
-            // pbNot
-            // 
-            pbNot.Image = Properties.Resources.notification;
-            pbNot.Location = new Point(693, 3);
-            pbNot.Name = "pbNot";
-            pbNot.Size = new Size(37, 27);
-            pbNot.SizeMode = PictureBoxSizeMode.Zoom;
-            pbNot.TabIndex = 1;
-            pbNot.TabStop = false;
-            pbNot.Click += pbColorMode_Click;
-            // 
-            // pbConf
-            // 
-            pbConf.Image = Properties.Resources.settings;
-            pbConf.Location = new Point(650, 3);
-            pbConf.Name = "pbConf";
-            pbConf.Size = new Size(37, 27);
-            pbConf.SizeMode = PictureBoxSizeMode.Zoom;
-            pbConf.TabIndex = 1;
-            pbConf.TabStop = false;
-            pbConf.Click += pbColorMode_Click;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -433,11 +429,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel4.ResumeLayout(false);
             guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbNot).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbConf).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNot).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
