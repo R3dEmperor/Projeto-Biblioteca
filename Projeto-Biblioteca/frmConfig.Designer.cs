@@ -124,6 +124,7 @@
             txtCPF.ShadowDecoration.CustomizableEdges = customizableEdges13;
             txtCPF.Size = new Size(200, 36);
             txtCPF.TabIndex = 1;
+            txtCPF.Click += txtCPF_Click;
             // 
             // txtSenha
             // 
@@ -164,6 +165,7 @@
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges9;
             txtEmail.Size = new Size(200, 36);
             txtEmail.TabIndex = 1;
+            txtEmail.Click += txtEmail_Click;
             // 
             // txtUser
             // 
@@ -184,6 +186,7 @@
             txtUser.ShadowDecoration.CustomizableEdges = customizableEdges7;
             txtUser.Size = new Size(200, 36);
             txtUser.TabIndex = 1;
+            txtUser.Click += txtUser_Click;
             // 
             // txtNome
             // 
@@ -225,6 +228,7 @@
             txtTelefone.ShadowDecoration.CustomizableEdges = customizableEdges5;
             txtTelefone.Size = new Size(200, 36);
             txtTelefone.TabIndex = 1;
+            txtTelefone.Click += txtTelefone_Click;
             // 
             // guna2CirclePictureBox1
             // 

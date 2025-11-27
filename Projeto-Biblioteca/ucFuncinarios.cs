@@ -16,6 +16,11 @@ namespace Projeto_Biblioteca
     public partial class ucFuncinarios : UserControl
     {
 
+        string diretorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\Biblioteca\usuarios";
+
+        string diretorioImagens = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}";
+
+
         FuncionarioBLL funcionarioBLL = new();
         UsuarioDAL usuarioDAL = new();
         private int? FuncionarioSelecionadoId = null;
@@ -26,7 +31,7 @@ namespace Projeto_Biblioteca
         }
         public void conversao()
         {
-            if(cboTipoUsuario.Text == "Administrador")
+            if (cboTipoUsuario.Text == "Administrador")
             {
                 tipousuario = 1;
             }
@@ -42,7 +47,8 @@ namespace Projeto_Biblioteca
                 TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
-                Senha = txtSenha.Text,              
+                Senha = txtSenha.Text,
+                Email = txtEmail.Text,
             };
             usuarioDAL.Create(funcionario);
 
@@ -121,7 +127,7 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Foto", typeof(Image));
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
-            dt.Columns.Add("DescriçaoTipoUsuario", typeof (string));
+            dt.Columns.Add("DescriçaoTipoUsuario", typeof(string));
             dt.Columns.Add("CPF", typeof(string));
             dt.Columns.Add("Login", typeof(string));
             dt.Columns.Add("Senha", typeof(string));
@@ -145,14 +151,14 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome,u.DescricaoTipoUsuario, u.CPF, u.Usuario, u.Senha,u.UrlFoto);
+                dt.Rows.Add(img, u.Id, u.Nome, u.DescricaoTipoUsuario, u.CPF, u.Usuario, u.Senha, u.UrlFoto);
             }
             dgUsuarios.DataSource = dt;
         }
         private void Atualizarcbo()
         {
             var lista = funcionarioBLL.ListarFuncionarios().Select(x => x.DescricaoTipoUsuario).ToList();
-                 cboTipoUsuario.DataSource = lista;
+            cboTipoUsuario.DataSource = lista;
         }
         private void ucFuncinarios_Load(object sender, EventArgs e)
         {
@@ -188,6 +194,30 @@ namespace Projeto_Biblioteca
         private void cboTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbFoto_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(diretorio))
+            {
+                Directory.CreateDirectory(diretorio);
+            }
+
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.InitialDirectory = diretorioImagens;
+            openFileDialog.Filter = "Arquivos de imagens |*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Escolha a imagem e se transforme";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = openFileDialog.FileName;
+
+                //Exibe a imagem escolhida no pictureBox
+                pbFoto.Image = Image.FromFile(nomeArquivoImagem);
+
+                //Salva o caminho da foto
+                lblCaminhodaFoto.Text = nomeArquivoImagem;
+            }
         }
     }
 }

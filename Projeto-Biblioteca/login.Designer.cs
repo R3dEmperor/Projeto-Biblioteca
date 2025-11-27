@@ -82,6 +82,7 @@
             btxClose.Size = new Size(35, 32);
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
+           
             // 
             // txtNome
             // 

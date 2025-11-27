@@ -76,6 +76,7 @@
             pbFoto.Size = new Size(107, 98);
             pbFoto.TabIndex = 19;
             pbFoto.TabStop = false;
+            pbFoto.Click += pbFoto_Click;
             // 
             // lblCaminhodaFoto
             // 
@@ -85,6 +86,7 @@
             lblCaminhodaFoto.Size = new Size(95, 17);
             lblCaminhodaFoto.TabIndex = 18;
             lblCaminhodaFoto.Text = "Caminho da Foto";
+            lblCaminhodaFoto.Visible = false;
             // 
             // btnCadastrar
             // 

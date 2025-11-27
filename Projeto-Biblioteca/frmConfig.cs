@@ -14,6 +14,8 @@ namespace Projeto_Biblioteca
 {
     public partial class frmConfig : Form
     {
+        private FuncionarioDTO funcionarioAtual;
+
         private readonly FuncionarioBLL funcionarioBLL = new();
         private readonly UsuarioBLL usuarioBLL = new();
 
@@ -29,13 +31,15 @@ namespace Projeto_Biblioteca
 
         private void txtNome_Click(object sender, EventArgs e)
         {
-
+            txtNome.Text = string.Empty;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             try
             {
+                var usuarioBLL = new UsuarioBLL(); 
+
                 var usuarioAtualizado = new FuncionarioDTO
                 {
                     Nome = txtNome.Text,
@@ -55,6 +59,26 @@ namespace Projeto_Biblioteca
             {
                 MessageBox.Show($"Erro: {ex.Message}");
             }
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = string.Empty;
+        }
+
+        private void txtCPF_Click(object sender, EventArgs e)
+        {
+            txtCPF.Text = string.Empty;
+        }
+
+        private void txtTelefone_Click(object sender, EventArgs e)
+        {
+            txtTelefone.Text = string.Empty;
+        }
+
+        private void txtUser_Click(object sender, EventArgs e)
+        {
+            txtUser.Text = string.Empty;
         }
     }
 }
