@@ -107,6 +107,7 @@
             // 
             // txtCPF
             // 
+            txtCPF.BorderRadius = 15;
             txtCPF.CustomizableEdges = customizableEdges12;
             txtCPF.DefaultText = "CPF";
             txtCPF.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -126,6 +127,7 @@
             // 
             // txtSenha
             // 
+            txtSenha.BorderRadius = 15;
             txtSenha.CustomizableEdges = customizableEdges10;
             txtSenha.DefaultText = "Senha";
             txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -145,6 +147,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.BorderRadius = 15;
             txtEmail.CustomizableEdges = customizableEdges8;
             txtEmail.DefaultText = "Email";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -164,6 +167,7 @@
             // 
             // txtUser
             // 
+            txtUser.BorderRadius = 15;
             txtUser.CustomizableEdges = customizableEdges6;
             txtUser.DefaultText = "Usuario";
             txtUser.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -183,6 +187,7 @@
             // 
             // txtNome
             // 
+            txtNome.BorderRadius = 15;
             txtNome.CustomizableEdges = customizableEdges2;
             txtNome.DefaultText = "Nome";
             txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -203,6 +208,7 @@
             // 
             // txtTelefone
             // 
+            txtTelefone.BorderRadius = 15;
             txtTelefone.CustomizableEdges = customizableEdges4;
             txtTelefone.DefaultText = "Telefone";
             txtTelefone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

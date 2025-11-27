@@ -47,7 +47,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.FromArgb(0, 0, 0, 1);
+            btnEntrar.BackColor = Color.Bisque;
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
             btnEntrar.CustomizableEdges = customizableEdges1;
@@ -83,9 +83,31 @@
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
             // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.Bisque;
+            txtEmail.BorderRadius = 20;
+            txtEmail.CustomizableEdges = customizableEdges4;
+            txtEmail.DefaultText = "";
+            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Font = new Font("Segoe UI", 9F);
+            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Location = new Point(25, 214);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.SelectedText = "";
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            txtEmail.Size = new Size(200, 36);
+            txtEmail.TabIndex = 3;
+            txtEmail.TextChanged += txtEmail_TextChanged;
+            // 
             // txtNome
             // 
-            txtNome.BackColor = Color.PapayaWhip;
+            txtNome.BackColor = Color.Bisque;
             txtNome.BorderRadius = 20;
             txtNome.CustomizableEdges = customizableEdges4;
             txtNome.DefaultText = "";
@@ -106,7 +128,7 @@
             // 
             // pbFotoLogin
             // 
-            pbFotoLogin.BackColor = Color.PapayaWhip;
+            pbFotoLogin.BackColor = Color.Bisque;
             pbFotoLogin.ImageRotate = 0F;
             pbFotoLogin.Location = new Point(69, 42);
             pbFotoLogin.Name = "pbFotoLogin";
@@ -118,7 +140,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.BackColor = Color.PapayaWhip;
+            txtSenha.BackColor = Color.Bisque;
             txtSenha.BorderRadius = 20;
             txtSenha.CustomizableEdges = customizableEdges7;
             txtSenha.DefaultText = "";
@@ -141,12 +163,13 @@
             // 
             // CaminhoFoto
             // 
-            CaminhoFoto.AutoSize = true;
-            CaminhoFoto.Location = new Point(82, 145);
-            CaminhoFoto.Name = "CaminhoFoto";
-            CaminhoFoto.Size = new Size(94, 15);
-            CaminhoFoto.TabIndex = 5;
-            CaminhoFoto.Text = "CaminhoDaFoto";
+            PbFundo.BackColor = Color.Bisque;
+            PbFundo.Location = new Point(2, -3);
+            PbFundo.Name = "PbFundo";
+            PbFundo.Size = new Size(532, 415);
+            PbFundo.TabIndex = 5;
+            PbFundo.TabStop = false;
+            PbFundo.Click += PbFundo_Click;
             // 
             // login
             // 
