@@ -36,17 +36,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             btxClose = new Guna.UI2.WinForms.Guna2CircleButton();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
             pbFotoLogin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
-            PbFundo = new PictureBox();
+            CaminhoFoto = new Label();
             ((System.ComponentModel.ISupportInitialize)pbFotoLogin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbFundo).BeginInit();
             SuspendLayout();
             // 
             // btnEntrar
@@ -79,7 +75,7 @@
             btxClose.FillColor = Color.SaddleBrown;
             btxClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btxClose.ForeColor = Color.White;
-            btxClose.Location = new Point(240, -2);
+            btxClose.Location = new Point(242, 0);
             btxClose.Name = "btxClose";
             btxClose.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btxClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -87,33 +83,11 @@
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
             // 
-            // txtEmail
-            // 
-            txtEmail.BackColor = Color.PapayaWhip;
-            txtEmail.BorderRadius = 20;
-            txtEmail.CustomizableEdges = customizableEdges4;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(25, 214);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "Email";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            txtEmail.Size = new Size(200, 36);
-            txtEmail.TabIndex = 3;
-            txtEmail.TextChanged += txtEmail_TextChanged;
-            // 
             // txtNome
             // 
             txtNome.BackColor = Color.PapayaWhip;
             txtNome.BorderRadius = 20;
-            txtNome.CustomizableEdges = customizableEdges6;
+            txtNome.CustomizableEdges = customizableEdges4;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtNome.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -122,11 +96,11 @@
             txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNome.Font = new Font("Segoe UI", 9F);
             txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Location = new Point(25, 158);
+            txtNome.Location = new Point(25, 207);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.SelectedText = "";
-            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges5;
             txtNome.Size = new Size(200, 36);
             txtNome.TabIndex = 3;
             // 
@@ -134,9 +108,9 @@
             // 
             pbFotoLogin.BackColor = Color.PapayaWhip;
             pbFotoLogin.ImageRotate = 0F;
-            pbFotoLogin.Location = new Point(72, 27);
+            pbFotoLogin.Location = new Point(69, 42);
             pbFotoLogin.Name = "pbFotoLogin";
-            pbFotoLogin.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            pbFotoLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pbFotoLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pbFotoLogin.Size = new Size(116, 100);
             pbFotoLogin.TabIndex = 4;
@@ -146,7 +120,7 @@
             // 
             txtSenha.BackColor = Color.PapayaWhip;
             txtSenha.BorderRadius = 20;
-            txtSenha.CustomizableEdges = customizableEdges9;
+            txtSenha.CustomizableEdges = customizableEdges7;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSenha.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -159,49 +133,47 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Senha";
             txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtSenha.Size = new Size(200, 36);
             txtSenha.TabIndex = 3;
             txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
             // 
-            // PbFundo
+            // CaminhoFoto
             // 
-            PbFundo.Location = new Point(2, -3);
-            PbFundo.Name = "PbFundo";
-            PbFundo.Size = new Size(532, 415);
-            PbFundo.TabIndex = 5;
-            PbFundo.TabStop = false;
-            PbFundo.Click += PbFundo_Click;
+            CaminhoFoto.AutoSize = true;
+            CaminhoFoto.Location = new Point(82, 145);
+            CaminhoFoto.Name = "CaminhoFoto";
+            CaminhoFoto.Size = new Size(94, 15);
+            CaminhoFoto.TabIndex = 5;
+            CaminhoFoto.Text = "CaminhoDaFoto";
             // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(248, 245, 240);
-            ClientSize = new Size(274, 415);
+            BackColor = Color.PapayaWhip;
+            ClientSize = new Size(277, 415);
+            Controls.Add(CaminhoFoto);
             Controls.Add(pbFotoLogin);
             Controls.Add(txtNome);
             Controls.Add(txtSenha);
-            Controls.Add(txtEmail);
             Controls.Add(btxClose);
             Controls.Add(btnEntrar);
-            Controls.Add(PbFundo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "login";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbFotoLogin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbFundo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnEntrar;
         private Guna.UI2.WinForms.Guna2CircleButton btxClose;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbFotoLogin;
         private Guna.UI2.WinForms.Guna2TextBox txtSenha;
-        private PictureBox PbFundo;
+        private Label CaminhoFoto;
     }
 }

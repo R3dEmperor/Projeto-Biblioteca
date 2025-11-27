@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Biblioteca
 {
-    partial class gunafundo
+    partial class FormMAin
     {
         /// <summary>
         /// Required designer variable.
