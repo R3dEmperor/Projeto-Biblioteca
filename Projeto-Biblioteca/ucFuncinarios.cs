@@ -212,12 +212,16 @@ namespace Projeto_Biblioteca
             {
                 string nomeArquivoImagem = openFileDialog.FileName;
 
-                //Exibe a imagem escolhida no pictureBox
                 pbFoto.Image = Image.FromFile(nomeArquivoImagem);
 
-                //Salva o caminho da foto
+              
                 lblCaminhodaFoto.Text = nomeArquivoImagem;
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

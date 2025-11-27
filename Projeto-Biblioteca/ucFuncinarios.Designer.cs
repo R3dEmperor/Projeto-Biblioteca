@@ -143,6 +143,7 @@
             btnExcluir.Size = new Size(80, 45);
             btnExcluir.TabIndex = 17;
             btnExcluir.Text = "Excluir";
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // txtNome
             // 
