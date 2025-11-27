@@ -11,9 +11,9 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Projeto_Biblioteca
 {
-    public partial class gunafundo : Form
+    public partial class FormMAin : Form
     {
-        public gunafundo()
+        public FormMAin()
         {
             InitializeComponent();
         }
