@@ -87,9 +87,9 @@ namespace Projeto_Biblioteca.DAL
                 throw new Exception(erro.Message);
             }
         }
-        public List<FuncionarioDTO> GetTipoUsuario()
+        public List<UsuarioDTO> GetTipoUsuario()
         {
-            List<FuncionarioDTO> tipos = new List<FuncionarioDTO>();
+            List<UsuarioDTO> tipos = new List<UsuarioDTO>();
 
             try
             {
@@ -118,5 +118,63 @@ namespace Projeto_Biblioteca.DAL
                 Desconectar();
             }
         }
+
+        public List<UsuarioDTO> Listar()
+        {
+            List<UsuarioDTO> lista = new();
+
+            try
+            {
+                Conectar();
+                string sql = @"SELECT IdTipoUsuario, Descricao_Tipo 
+                               FROM Funcionario";
+
+                command = new SqlCommand(sql, conexao);
+                dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    lista.Add(new FuncionarioDTO
+                    {
+                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
+                        DescricaoTipoUsuario = dataReader["Cargo Funcionario"].ToString()
+                    });
+                }
+
+                return lista;
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao listar tipos de usuário: " + erro.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public void Update(UsuarioDTO usuario)
+        {
+            Conectar();
+            string sql = @"UPDATE Usuario 
+                           SET Nome = @Nome, Usuario = @Usuario, Senha = @Senha, UrlFoto = @UrlFoto
+                           WHERE Id = @Id";
+
+            command = new SqlCommand(sql, conexao);
+
+            command.Parameters.AddWithValue("@Id", usuario.Id);
+            command.Parameters.AddWithValue("@Nome", usuario.Nome);
+            command.Parameters.AddWithValue("@Usuario", usuario.Usuario);
+            command.Parameters.AddWithValue("@Senha", usuario.Senha);
+            command.Parameters.AddWithValue("@UrlFoto", usuario.UrlFoto ?? "");
+
+            int linhas = command.ExecuteNonQuery();
+
+            Desconectar();
+
+            if (linhas == 0)
+                throw new Exception("Nenhum registro foi atualizado. Verifique o ID.");
+        }
+
     }
 }
