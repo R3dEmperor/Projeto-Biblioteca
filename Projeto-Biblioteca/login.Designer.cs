@@ -51,7 +51,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.FromArgb(0, 0, 0, 1);
+            btnEntrar.BackColor = Color.Bisque;
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
             btnEntrar.CustomizableEdges = customizableEdges1;
@@ -89,7 +89,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.BackColor = Color.PapayaWhip;
+            txtEmail.BackColor = Color.Bisque;
             txtEmail.BorderRadius = 20;
             txtEmail.CustomizableEdges = customizableEdges4;
             txtEmail.DefaultText = "";
@@ -111,7 +111,7 @@
             // 
             // txtNome
             // 
-            txtNome.BackColor = Color.PapayaWhip;
+            txtNome.BackColor = Color.Bisque;
             txtNome.BorderRadius = 20;
             txtNome.CustomizableEdges = customizableEdges6;
             txtNome.DefaultText = "";
@@ -132,7 +132,7 @@
             // 
             // pbFotoLogin
             // 
-            pbFotoLogin.BackColor = Color.PapayaWhip;
+            pbFotoLogin.BackColor = Color.Bisque;
             pbFotoLogin.ImageRotate = 0F;
             pbFotoLogin.Location = new Point(72, 27);
             pbFotoLogin.Name = "pbFotoLogin";
@@ -144,7 +144,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.BackColor = Color.PapayaWhip;
+            txtSenha.BackColor = Color.Bisque;
             txtSenha.BorderRadius = 20;
             txtSenha.CustomizableEdges = customizableEdges9;
             txtSenha.DefaultText = "";
@@ -167,6 +167,7 @@
             // 
             // PbFundo
             // 
+            PbFundo.BackColor = Color.Bisque;
             PbFundo.Location = new Point(2, -3);
             PbFundo.Name = "PbFundo";
             PbFundo.Size = new Size(532, 415);
