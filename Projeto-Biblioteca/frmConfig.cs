@@ -17,6 +17,7 @@ namespace Projeto_Biblioteca
         private FuncionarioDTO funcionarioAtual;
 
         private readonly FuncionarioBLL funcionarioBLL = new();
+        private readonly UsuarioBLL usuarioBLL = new();
 
         string diretorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\bibliot\usuarios";
 
@@ -41,7 +42,6 @@ namespace Projeto_Biblioteca
 
                 var usuarioAtualizado = new FuncionarioDTO
                 {
-               
                     Nome = txtNome.Text,
                     Usuario = txtUser.Text,
                     Email = txtEmail.Text,
@@ -52,7 +52,6 @@ namespace Projeto_Biblioteca
                 };
 
                 usuarioBLL.AtualizarUsuario(usuarioAtualizado);
-
                 MessageBox.Show($"Usuário {usuarioAtualizado.Nome} atualizado com sucesso!");
                 Close();
             }
