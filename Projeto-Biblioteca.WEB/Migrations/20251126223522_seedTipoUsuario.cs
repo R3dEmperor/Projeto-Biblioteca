@@ -12,6 +12,10 @@ namespace Projeto_Biblioteca.WEB.Migrations
         {
             migrationBuilder.Sql("ALTER TABLE Funcionario ALTER COLUMN Descricao_Tipo VARCHAR(100)");
             migrationBuilder.Sql("INSERT INTO Funcionario (Descricao_Tipo) VALUES ('Administrador'),('Funcionario')");
+            migrationBuilder.Sql("INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,TipoUsuarioId) VALUES ('Administrador','123','Administrador@gmail.com',1),('Funcionario','123','Funcionario@gmail.com',2)");
+            migrationBuilder.Sql("ALTER TABLE Usuario ALTER COLUMN Email_Usuario VARCHAR(100)");
+            migrationBuilder.Sql("ALTER TABLE Usuario ALTER COLUMN Endereco_Usuario VARCHAR(100)");
+            migrationBuilder.Sql("ALTER TABLE Usuario ALTER COLUMN Senha_Usuario VARCHAR(100)");
         }
 
         /// <inheritdoc />

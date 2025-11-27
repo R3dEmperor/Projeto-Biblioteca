@@ -20,15 +20,16 @@ namespace Projeto_Biblioteca.DAL
             {
                 command = new SqlCommand
                     (
-                     @"INSERT INTO pessoa (Nome, Email,Telefone,CPF) VALUES
-                     (@Nome,@Email,@Telefone,@CPF)SELECT CAST(SCOPE_IDENTITY() AS int);"
+                     @"INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade) VALUES
+                     (@Nome,@Senha,@Email,@Endereço,@TipoUsuarioId,@Atividade)SELECT CAST(SCOPE_IDENTITY() AS int);"
                      , conexao, transaction
                     );
-                command.Parameters.AddWithValue("@Nome", usuario.Usuario);
+                command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
-                command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-                command.Parameters.AddWithValue("@CPF", usuario.CPF);
+                command.Parameters.AddWithValue("@Endereço", usuario.Endereco);
+                command.Parameters.AddWithValue("@TipoUsuarioId", usuario.TipoUsuarioId);
+                command.Parameters.AddWithValue("@Atividade", usuario.atividade);
 
                 int idPessoa = Convert.ToInt32(command.ExecuteScalar());
 

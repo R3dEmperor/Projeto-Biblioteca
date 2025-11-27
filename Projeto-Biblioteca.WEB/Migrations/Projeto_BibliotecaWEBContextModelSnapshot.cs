@@ -49,7 +49,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Classificacao_Genero")
                         .HasMaxLength(2)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(2)");
 
                     b.Property<string>("Descricao_Genero")
                         .IsRequired()
@@ -135,7 +135,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("UsuarioReserva")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("IdReserva");
 
@@ -164,11 +164,11 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Email_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("Endereco_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -177,7 +177,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Senha_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("TipoUsuarioId")
                         .HasColumnType("int");

@@ -7,9 +7,9 @@ namespace Projeto_Biblioteca.DAL
 {
     public class FuncionarioDAL : Connection
     {
-   
+
         //                     LISTAR
-     
+
         public List<FuncionarioDTO> Listar()
         {
             List<FuncionarioDTO> lista = new();
@@ -28,10 +28,9 @@ namespace Projeto_Biblioteca.DAL
                     lista.Add(new FuncionarioDTO
                     {
                         IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["Cargo Funcionario"].ToString()
+                        DescricaoTipoUsuario = dataReader["Descricao_Tipo"].ToString()
                     });
                 }
-
                 return lista;
             }
             catch (Exception erro)
@@ -44,7 +43,7 @@ namespace Projeto_Biblioteca.DAL
             }
         }
 
-      
+
         //                 BUSCAR POR ID
 
         public FuncionarioDTO BuscarPorId(int id)

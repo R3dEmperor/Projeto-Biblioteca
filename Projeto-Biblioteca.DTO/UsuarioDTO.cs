@@ -22,8 +22,8 @@ namespace Projeto_Biblioteca.DTO
 
         [MaxLength(14)]
         public string CPF { get; set; } = string.Empty;
-
-
+        [MaxLength(14)]
+        public string Endereco { get; set; } = string.Empty;
         // ========================
         // Contas / Login
         // ========================
@@ -32,7 +32,7 @@ namespace Projeto_Biblioteca.DTO
 
         [Required, MaxLength(50)]
         public string Senha { get; set; } = string.Empty;
-
+        public bool atividade { get; set; } = true;
         // ========================
         // Tipo de Usuário (FK)
         // ========================

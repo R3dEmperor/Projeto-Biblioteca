@@ -15,24 +15,37 @@ namespace Projeto_Biblioteca
 {
     public partial class ucFuncinarios : UserControl
     {
+
         FuncionarioBLL funcionarioBLL = new();
+        UsuarioDAL usuarioDAL = new();
         private int? FuncionarioSelecionadoId = null;
+        int tipousuario;
         public ucFuncinarios()
         {
             InitializeComponent();
         }
+        public void conversao()
+        {
+            if(cboTipoUsuario.Text == "Administrador")
+            {
+                tipousuario = 1;
+            }
+            tipousuario = 2;
+        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            conversao();
             var funcionario = new FuncionarioDTO
             {
                 Nome = txtNome.Text,
-                TipoUsuarioId = int.Parse(txtTipoUsuario.Text),
+                TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
                 Senha = txtSenha.Text,
+                Email = txtEmail.Text,                
             };
-            funcionarioBLL.CadastrarFuncionario(funcionario);
+            usuarioDAL.Create(funcionario);
 
             MessageBox.Show($"Usuário {funcionario.Nome} cadastrado com sucesso!");
             AtualizarGrid();
@@ -96,9 +109,10 @@ namespace Projeto_Biblioteca
 
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Name = "Id" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DescricaoTipoUsuario", HeaderText = "DescricaoTipoUsuario", Name = "DescricaoTipoUsuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DescricaoTipoUsuario", HeaderText = "Cargo", Name = "DescricaoTipoUsuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Telefone", HeaderText = "Telefone", Name = "Telefone" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Login", HeaderText = "Login", Name = "Login" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha", HeaderText = "Senha", Name = "Senha" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UrlFoto", HeaderText = "UrlFoto", Name = "UrlFoto" });
 
@@ -108,6 +122,8 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Foto", typeof(Image));
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("DescriçaoTipoUsuario", typeof (string));
+            dt.Columns.Add("CPF", typeof(string));
             dt.Columns.Add("Login", typeof(string));
             dt.Columns.Add("Senha", typeof(string));
             dt.Columns.Add("UrlFoto", typeof(string));
@@ -130,13 +146,18 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome, u.Usuario, u.Senha, u.UrlFoto);
+                dt.Rows.Add(img, u.Id, u.Nome,u.DescricaoTipoUsuario, u.CPF, u.Usuario, u.Senha,u.UrlFoto);
             }
             dgUsuarios.DataSource = dt;
         }
-
+        private void Atualizarcbo()
+        {
+            var lista = funcionarioBLL.ListarFuncionarios().Select(x => x.DescricaoTipoUsuario).ToList();
+                 cboTipoUsuario.DataSource = lista;
+        }
         private void ucFuncinarios_Load(object sender, EventArgs e)
         {
+            Atualizarcbo();
             AtualizarGrid();
         }
         private void BuscarFuncionarios()
@@ -163,6 +184,11 @@ namespace Projeto_Biblioteca
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             BuscarFuncionarios();
+        }
+
+        private void cboTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
