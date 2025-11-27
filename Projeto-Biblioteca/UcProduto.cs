@@ -32,8 +32,6 @@ namespace Projeto_Biblioteca
 
             using (SqlConnection conn = new SqlConnection(conexao))
             {
-                conn.Open();
-
                 string sql = @"INSERT INTO Livros (Titulo, Autor, Genero, Ano, ISBN)
                        VALUES (@titulo, @autor, @genero, @ano, @isbn)";
 
@@ -103,6 +101,45 @@ namespace Projeto_Biblioteca
             }
 
             MessageBox.Show("Livro excluído com sucesso!");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Imagens (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pbCaminhodaFoto.Image = Image.FromFile(ofd.FileName);
+                txtCaminhodaFoto.Text = ofd.FileName; // salva o caminho no textbox
+            }
+        }
+
+        private void txtPesquisarTitulo_TextChanged(object sender, EventArgs e)
+        {
+            string texto = txtPesquisarTitulo.Text;
+
+            string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(conexao))
+            {
+                conn.Open();
+
+                string sql = @"SELECT Id, Titulo, Autor, Genero, Ano, ISBN, CaminhoImagem
+                       FROM Livros
+                       WHERE Titulo LIKE @titulo + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@titulo", texto);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    DataGridView.DataSource = dt;
+                }
+            }
         }
     }
 }
