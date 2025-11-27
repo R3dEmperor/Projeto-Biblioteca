@@ -11,6 +11,6 @@ namespace Projeto_Biblioteca.WEB.Models
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Cargo Funcionario")]
         [StringLength(150)]
-        public int Descricao_Tipo { get; set; }
+        public string Descricao_Tipo { get; set; }
     }
 }

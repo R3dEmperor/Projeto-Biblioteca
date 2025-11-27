@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Projeto_Biblioteca.DAL
 {
-    public class Connection
+    public class Connection 
     {
         protected SqlConnection conexao;
         protected SqlCommand command;

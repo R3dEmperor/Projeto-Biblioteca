@@ -45,12 +45,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
@@ -60,10 +61,10 @@
             txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             txtTelefone = new Guna.UI2.WinForms.Guna2TextBox();
             txtCPF = new Guna.UI2.WinForms.Guna2TextBox();
-            txtTipoUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
+            cboTipoUsuario = new Guna.UI2.WinForms.Guna2ComboBox();
+            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
@@ -224,30 +225,10 @@
             txtCPF.Size = new Size(255, 36);
             txtCPF.TabIndex = 12;
             // 
-            // txtTipoUsuario
-            // 
-            txtTipoUsuario.BorderRadius = 20;
-            txtTipoUsuario.CustomizableEdges = customizableEdges16;
-            txtTipoUsuario.DefaultText = "";
-            txtTipoUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTipoUsuario.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTipoUsuario.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTipoUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTipoUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTipoUsuario.Font = new Font("Segoe UI", 9F);
-            txtTipoUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTipoUsuario.Location = new Point(12, 200);
-            txtTipoUsuario.Name = "txtTipoUsuario";
-            txtTipoUsuario.PlaceholderText = "Tipo de Usuário";
-            txtTipoUsuario.SelectedText = "";
-            txtTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtTipoUsuario.Size = new Size(255, 36);
-            txtTipoUsuario.TabIndex = 13;
-            // 
             // txtPesquisa
             // 
             txtPesquisa.BorderRadius = 20;
-            txtPesquisa.CustomizableEdges = customizableEdges18;
+            txtPesquisa.CustomizableEdges = customizableEdges16;
             txtPesquisa.DefaultText = "";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPesquisa.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -260,26 +241,10 @@
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
-            txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
             txtPesquisa.Size = new Size(483, 36);
             txtPesquisa.TabIndex = 14;
-            // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.SaddleBrown;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(740, 11);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(33, 32);
-            guna2CircleButton1.TabIndex = 8;
-            guna2CircleButton1.Text = "X";
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // dgUsuarios
             // 
@@ -333,11 +298,50 @@
             dgUsuarios.CellClick += guna2DataGridView1_CellClick;
             dgUsuarios.CellContentClick += dgUsuarios_CellContentClick;
             // 
+            // cboTipoUsuario
+            // 
+            cboTipoUsuario.BackColor = Color.Transparent;
+            cboTipoUsuario.CustomizableEdges = customizableEdges18;
+            cboTipoUsuario.DrawMode = DrawMode.OwnerDrawFixed;
+            cboTipoUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTipoUsuario.FocusedColor = Color.FromArgb(94, 148, 255);
+            cboTipoUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cboTipoUsuario.Font = new Font("Segoe UI", 10F);
+            cboTipoUsuario.ForeColor = Color.FromArgb(68, 88, 112);
+            cboTipoUsuario.ItemHeight = 30;
+            cboTipoUsuario.Location = new Point(29, 200);
+            cboTipoUsuario.Name = "cboTipoUsuario";
+            cboTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            cboTipoUsuario.Size = new Size(222, 36);
+            cboTipoUsuario.TabIndex = 20;
+            cboTipoUsuario.SelectedIndexChanged += cboTipoUsuario_SelectedIndexChanged;
+            // 
+            // txtEmail
+            // 
+            txtEmail.CustomizableEdges = customizableEdges20;
+            txtEmail.DefaultText = "";
+            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Font = new Font("Segoe UI", 9F);
+            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Location = new Point(201, 7);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "";
+            txtEmail.SelectedText = "";
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            txtEmail.Size = new Size(200, 36);
+            txtEmail.TabIndex = 21;
+            // 
             // ucFuncinarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
+            Controls.Add(txtEmail);
+            Controls.Add(cboTipoUsuario);
             Controls.Add(pbFoto);
             Controls.Add(lblCaminhodaFoto);
             Controls.Add(btnCadastrar);
@@ -347,9 +351,7 @@
             Controls.Add(txtSenha);
             Controls.Add(txtTelefone);
             Controls.Add(txtCPF);
-            Controls.Add(txtTipoUsuario);
             Controls.Add(txtPesquisa);
-            Controls.Add(guna2CircleButton1);
             Controls.Add(dgUsuarios);
             Name = "ucFuncinarios";
             Size = new Size(788, 435);
@@ -370,9 +372,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSenha;
         private Guna.UI2.WinForms.Guna2TextBox txtTelefone;
         private Guna.UI2.WinForms.Guna2TextBox txtCPF;
-        private Guna.UI2.WinForms.Guna2TextBox txtTipoUsuario;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2DataGridView dgUsuarios;
+        private Guna.UI2.WinForms.Guna2ComboBox cboTipoUsuario;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
     }
 }

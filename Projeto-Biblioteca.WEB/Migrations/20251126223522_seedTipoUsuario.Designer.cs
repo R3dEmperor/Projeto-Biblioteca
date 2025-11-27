@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Biblioteca.WEB.Data;
 
@@ -11,9 +12,11 @@ using Projeto_Biblioteca.WEB.Data;
 namespace Projeto_Biblioteca.WEB.Migrations
 {
     [DbContext(typeof(Projeto_BibliotecaWEBContext))]
-    partial class Projeto_BibliotecaWEBContextModelSnapshot : ModelSnapshot
+    [Migration("20251126223522_seedTipoUsuario")]
+    partial class seedTipoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,8 +34,8 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTipoUsuario"));
 
                     b.Property<int>("Descricao_Tipo")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(150)
+                        .HasColumnType("int");
 
                     b.HasKey("IdTipoUsuario");
 
@@ -49,7 +52,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Classificacao_Genero")
                         .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Descricao_Genero")
                         .IsRequired()
@@ -135,7 +138,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("UsuarioReserva")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.HasKey("IdReserva");
 
@@ -164,11 +167,11 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Email_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.Property<int>("Endereco_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -177,7 +180,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Senha_Usuario")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.Property<int>("TipoUsuarioId")
                         .HasColumnType("int");

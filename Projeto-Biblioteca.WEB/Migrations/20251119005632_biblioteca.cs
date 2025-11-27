@@ -17,7 +17,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                 {
                     IdTipoUsuario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao_Tipo = table.Column<int>(type: "int", maxLength: 150, nullable: false)
+                    Descricao_Tipo = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,9 +46,9 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Senha_Usuario = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    Endereco_Usuario = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    Email_Usuario = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    Senha_Usuario = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Endereco_Usuario = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email_Usuario = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     TipoUsuarioId = table.Column<int>(type: "int", nullable: false),
                     Atividade = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -69,7 +69,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                 {
                     Id_Produto = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Genero_Produto = table.Column<int>(type: "int", nullable: false),
+                    Genero_Produto = table.Column<int>(type: "nvarchar(100)", nullable: false),
                     GeneroId_Genero = table.Column<int>(type: "int", nullable: false),
                     Autor_Produto = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
