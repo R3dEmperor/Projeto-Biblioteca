@@ -83,28 +83,6 @@
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
             // 
-            // txtEmail
-            // 
-            txtEmail.BackColor = Color.Bisque;
-            txtEmail.BorderRadius = 20;
-            txtEmail.CustomizableEdges = customizableEdges4;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(25, 214);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "Email";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            txtEmail.Size = new Size(200, 36);
-            txtEmail.TabIndex = 3;
-            txtEmail.TextChanged += txtEmail_TextChanged;
-            // 
             // txtNome
             // 
             txtNome.BackColor = Color.Bisque;
@@ -160,16 +138,6 @@
             txtSenha.TabIndex = 3;
             txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
-            // 
-            // CaminhoFoto
-            // 
-            PbFundo.BackColor = Color.Bisque;
-            PbFundo.Location = new Point(2, -3);
-            PbFundo.Name = "PbFundo";
-            PbFundo.Size = new Size(532, 415);
-            PbFundo.TabIndex = 5;
-            PbFundo.TabStop = false;
-            PbFundo.Click += PbFundo_Click;
             // 
             // login
             // 

@@ -42,8 +42,7 @@ namespace Projeto_Biblioteca
                 TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
-                Senha = txtSenha.Text,
-                Email = txtEmail.Text,                
+                Senha = txtSenha.Text,              
             };
             usuarioDAL.Create(funcionario);
 

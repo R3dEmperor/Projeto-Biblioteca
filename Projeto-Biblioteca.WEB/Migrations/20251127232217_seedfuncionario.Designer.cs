@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Biblioteca.WEB.Data;
 
@@ -11,9 +12,11 @@ using Projeto_Biblioteca.WEB.Data;
 namespace Projeto_Biblioteca.WEB.Migrations
 {
     [DbContext(typeof(Projeto_BibliotecaWEBContext))]
-    partial class Projeto_BibliotecaWEBContextModelSnapshot : ModelSnapshot
+    [Migration("20251127232217_seedfuncionario")]
+    partial class seedfuncionario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
