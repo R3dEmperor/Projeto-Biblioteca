@@ -30,7 +30,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTipoUsuario"));
 
-                    b.Property<int>("Descricao_Tipo")
+                    b.Property<string>("Descricao_Tipo")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -134,7 +134,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsuarioReserva")
+                    b.Property<string>("UsuarioReserva")
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("IdReserva");
@@ -162,11 +162,11 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Email_Usuario")
+                    b.Property<string>("Email_Usuario")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Endereco_Usuario")
+                    b.Property<string>("Endereco_Usuario")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(100)");
 
@@ -175,7 +175,7 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Senha_Usuario")
+                    b.Property<string>("Senha_Usuario")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(100)");
 

@@ -15,6 +15,7 @@ namespace Projeto_Biblioteca
     public partial class frmConfig : Form
     {
         private readonly FuncionarioBLL funcionarioBLL = new();
+        private readonly UsuarioBLL usuarioBLL = new();
 
         string diretorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\bibliot\usuarios";
 
@@ -37,7 +38,6 @@ namespace Projeto_Biblioteca
             {
                 var usuarioAtualizado = new FuncionarioDTO
                 {
-                    Id = 
                     Nome = txtNome.Text,
                     Usuario = txtUser.Text,
                     Email = txtEmail.Text,
@@ -47,7 +47,7 @@ namespace Projeto_Biblioteca
                     UrlFoto = lblCaminhoFoto.Text
                 };
 
-                funcionarioBLL.AtualizarFuncionario(usuarioAtualizado);
+                usuarioBLL.AtualizarUsuario(usuarioAtualizado);
                 MessageBox.Show($"Usuário {usuarioAtualizado.Nome} atualizado com sucesso!");
                 Close();
             }
