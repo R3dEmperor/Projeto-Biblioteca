@@ -25,27 +25,16 @@ namespace Projeto_Biblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string Produto = txtProduto.Text;
-            string autor = txtAutorProduto.Text;
-            string genero = txtGenero.Text;
-
-            string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
-
-            using (SqlConnection connection = new SqlConnection(conexao))
+            var produto = new ProdutoDTO
             {
-                string sql = @"INSERT INTO Livros (Titulo, Autor, Genero, Ano, ISBN)
-                       VALUES (@titulo, @autor, @genero, @ano, @isbn)";
-
-                using (SqlCommand cmd = new SqlCommand(sql, connection))
-                {
-                    cmd.Parameters.AddWithValue("@titulo", Produto);
-                    cmd.Parameters.AddWithValue("@autor", autor);
-                    cmd.Parameters.AddWithValue("@genero", genero);
-                   
-                }
-            }
+               NomeProduto = txtProduto.Text,
+               AutorProduto = txtProduto.Text,
+                GeneroProduto = txtGenero.Text,
+            };
+            produtoBLL.CadastrarProduto(produto);
 
             MessageBox.Show("Livro cadastrado com sucesso!");
+            AtualizarGrid();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -95,20 +84,18 @@ namespace Projeto_Biblioteca
                     }
                 }
 
-               produtoBLL.AtualizarProduto(new ProdutoDTO
-               {
-                   IdProduto = id,
-                   NomeProduto = Produto,
-                   AutorProduto = autor,
-                   GeneroProduto = genero
-               });
-
-                produtoBLL.AtualizarProduto();
+                produtoBLL.AtualizarProduto(new ProdutoDTO
+                {
+                    IdProduto = id,
+                    NomeProduto = Produto,
+                    AutorProduto = autor,
+                    GeneroProduto = genero
+                });
 
                 MessageBox.Show("Livro atualizado com sucesso!", "Sucesso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                
+
 
 
             }
@@ -189,20 +176,20 @@ namespace Projeto_Biblioteca
 
         private void AtualizarGrid()
         {
-          dgProdutos.Columns.Clear();
-          dgProdutos.AutoGenerateColumns = false;
-          dgProdutos.RowTemplate.Height = 60;
-          dgProdutos.AllowUserToAddRows = false;
+            dgProdutos.Columns.Clear();
+            dgProdutos.AutoGenerateColumns = false;
+            dgProdutos.RowTemplate.Height = 60;
+            dgProdutos.AllowUserToAddRows = false;
 
-          var colFoto = new DataGridViewImageColumn
-          {
-              HeaderText = "Foto",
-              Name = "Foto",
-              Width = 60,
-              ImageLayout = DataGridViewImageCellLayout.Zoom
-          };
+            var colFoto = new DataGridViewImageColumn
+            {
+                HeaderText = "Foto",
+                Name = "Foto",
+                Width = 60,
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
 
-          dgProdutos.Columns.Add(colFoto);
+            dgProdutos.Columns.Add(colFoto);
 
             dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Titulo", HeaderText = "Titulo", Name = "Titulo" });
             dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Autor", HeaderText = "Autor", Name = "Autor" });
@@ -217,8 +204,13 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Autor", typeof(string));
             dt.Columns.Add("Genero", typeof(string));
 
-           dgProdutos.DataSource = dt;
+            dgProdutos.DataSource = dt;
 
+        }
+
+        private void UcProduto_Load(object sender, EventArgs e)
+        {
+            AtualizarGrid();
         }
     }
 }
