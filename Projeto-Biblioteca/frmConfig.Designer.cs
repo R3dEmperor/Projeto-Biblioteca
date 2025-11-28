@@ -146,6 +146,8 @@
             txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges11;
             txtSenha.Size = new Size(200, 36);
             txtSenha.TabIndex = 1;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.Click += txtSenha_Click;
             // 
             // txtEmail
             // 
@@ -283,6 +285,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmConfig";
             Text = "Selecione a Foto";
+            Load += frmConfig_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

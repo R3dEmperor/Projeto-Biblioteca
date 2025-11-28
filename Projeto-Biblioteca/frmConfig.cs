@@ -109,5 +109,15 @@ namespace Projeto_Biblioteca
         {
 
         }
+
+        private void txtSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.Text = string.Empty;
+        }
+
+        private void frmConfig_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
