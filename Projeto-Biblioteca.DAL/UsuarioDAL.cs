@@ -34,13 +34,13 @@ namespace Projeto_Biblioteca.DAL
                 int idPessoa = Convert.ToInt32(command.ExecuteScalar());
 
                 command = new SqlCommand(@"
-                INSERT INTO Usuario (Id, Usuario, Senha, TpUsuario)
-                VALUES (@Id, @Usuario, @Senha, @TpUsuario);", conexao, transaction);
+                INSERT INTO Usuario ( Nome, Senha_Usuario, TipoUsuarioId,Atividade)
+                VALUES ( @Nome, @Senha, @TipoUsuarioId,@Atividade);", conexao, transaction);
 
-                command.Parameters.AddWithValue("@Id", idPessoa);
-                command.Parameters.AddWithValue("@Usuario", usuario.Usuario);
+                command.Parameters.AddWithValue("@Nome", usuario.Usuario);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
-                command.Parameters.AddWithValue("@TpUsuario", usuario.TipoUsuarioId);
+                command.Parameters.AddWithValue("@TipoUsuarioId", usuario.TipoUsuarioId);
+                command.Parameters.AddWithValue("@Atividade", usuario.atividade);
 
 
                 command.ExecuteNonQuery();
@@ -127,18 +127,22 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT IdTipoUsuario, Descricao_Tipo 
-                               FROM Funcionario";
+                string sql = @"SELECT Id,Nome,Senha_Usuario,Endereco_Usuario,Email_Usuario,Atividade
+                               FROM Usuario";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    lista.Add(new FuncionarioDTO
+                    lista.Add(new UsuarioDTO
                     {
-                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["Cargo Funcionario"].ToString()
+                        Id = Convert.ToInt32(dataReader["Id"]),
+                        Nome = dataReader["Nome"].ToString(),
+                        Senha = dataReader["Senha_Usuario"].ToString(),
+                        Endereco = dataReader["Endereco_Usuario"].ToString(),
+                        Email = dataReader["Email_Usuario"].ToString(),
+                        atividade = dataReader["Atividade"].Equals(true),
                     });
                 }
 

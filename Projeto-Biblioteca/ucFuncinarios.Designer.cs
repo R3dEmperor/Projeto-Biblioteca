@@ -50,8 +50,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
@@ -64,7 +62,6 @@
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             cboTipoUsuario = new Guna.UI2.WinForms.Guna2ComboBox();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
@@ -146,6 +143,7 @@
             btnExcluir.Size = new Size(80, 45);
             btnExcluir.TabIndex = 17;
             btnExcluir.Text = "Excluir";
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // txtNome
             // 
@@ -298,7 +296,6 @@
             dgUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgUsuarios.CellClick += guna2DataGridView1_CellClick;
-            dgUsuarios.CellContentClick += dgUsuarios_CellContentClick;
             // 
             // cboTipoUsuario
             // 
@@ -318,31 +315,11 @@
             cboTipoUsuario.TabIndex = 20;
             cboTipoUsuario.SelectedIndexChanged += cboTipoUsuario_SelectedIndexChanged;
             // 
-            // txtEmail
-            // 
-            txtEmail.CustomizableEdges = customizableEdges20;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(201, 7);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            txtEmail.Size = new Size(200, 36);
-            txtEmail.TabIndex = 21;
-            // 
             // ucFuncinarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
-            Controls.Add(txtEmail);
             Controls.Add(cboTipoUsuario);
             Controls.Add(pbFoto);
             Controls.Add(lblCaminhodaFoto);
@@ -377,6 +354,5 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
         private Guna.UI2.WinForms.Guna2DataGridView dgUsuarios;
         private Guna.UI2.WinForms.Guna2ComboBox cboTipoUsuario;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
     }
 }

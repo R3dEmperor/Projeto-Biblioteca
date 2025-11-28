@@ -48,7 +48,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             btnAtualizar = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnExcluirConta = new Guna.UI2.WinForms.Guna2Button();
             txtCPF = new Guna.UI2.WinForms.Guna2TextBox();
             txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -87,23 +87,24 @@
             btnAtualizar.Text = "Atualizar Dados";
             btnAtualizar.Click += btnAtualizar_Click;
             // 
-            // guna2Button1
+            // btnExcluirConta
             // 
-            guna2Button1.BorderRadius = 20;
-            guna2Button1.CustomizableEdges = customizableEdges14;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Maroon;
-            guna2Button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(290, 375);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2Button1.Size = new Size(127, 47);
-            guna2Button1.TabIndex = 0;
-            guna2Button1.Text = "Excluir Conta";
+            btnExcluirConta.BorderRadius = 20;
+            btnExcluirConta.CustomizableEdges = customizableEdges14;
+            btnExcluirConta.DisabledState.BorderColor = Color.DarkGray;
+            btnExcluirConta.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnExcluirConta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnExcluirConta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnExcluirConta.FillColor = Color.Maroon;
+            btnExcluirConta.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExcluirConta.ForeColor = Color.White;
+            btnExcluirConta.Location = new Point(305, 375);
+            btnExcluirConta.Name = "btnExcluirConta";
+            btnExcluirConta.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            btnExcluirConta.Size = new Size(127, 47);
+            btnExcluirConta.TabIndex = 0;
+            btnExcluirConta.Text = "Excluir Conta";
+            btnExcluirConta.Click += btnExcluirConta_Click;
             // 
             // txtCPF
             // 
@@ -242,6 +243,7 @@
             guna2CirclePictureBox1.Size = new Size(126, 132);
             guna2CirclePictureBox1.TabIndex = 2;
             guna2CirclePictureBox1.TabStop = false;
+            guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
             // 
             // lblCaminhoFoto
             // 
@@ -278,7 +280,7 @@
             Controls.Add(txtEmail);
             Controls.Add(txtSenha);
             Controls.Add(txtCPF);
-            Controls.Add(guna2Button1);
+            Controls.Add(btnExcluirConta);
             Controls.Add(btnAtualizar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmConfig";
@@ -292,7 +294,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnExcluirConta;
         private Guna.UI2.WinForms.Guna2Button btnAtualizar;
         private Guna.UI2.WinForms.Guna2TextBox txtUser;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;

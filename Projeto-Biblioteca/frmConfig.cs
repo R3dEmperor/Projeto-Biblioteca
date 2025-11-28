@@ -81,6 +81,35 @@ namespace Projeto_Biblioteca
             txtUser.Text = string.Empty;
         }
 
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(diretorio))
+            {
+                Directory.CreateDirectory(diretorio);
+            }
+
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.InitialDirectory = diretorioImagens;
+            openFileDialog.Filter = "Arquivos de imagens |*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Escolha a imagem e se transforme";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = openFileDialog.FileName;
+
+                
+                guna2CirclePictureBox1.Image = Image.FromFile(nomeArquivoImagem);
+
+               
+                lblCaminhoFoto.Text = nomeArquivoImagem;
+            }
+        }
+
+        private void btnExcluirConta_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtSenha_Click(object sender, EventArgs e)
         {
             txtSenha.Text = string.Empty;
