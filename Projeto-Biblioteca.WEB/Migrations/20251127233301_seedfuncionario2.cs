@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
