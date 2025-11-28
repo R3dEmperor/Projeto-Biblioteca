@@ -81,6 +81,13 @@ namespace Projeto_Biblioteca
 
             bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
 
+            // Garantir que os componentes não são nulos
+            if (PanelConteudo == null || pbColorMode == null)
+            {
+                MessageBox.Show("Erro: PanelConteudo ou pbColorMode não foram inicializados.");
+                return;
+            }
+
             if (isDarkMode)
             {
                 //Modo Claro - LigthMode
@@ -88,11 +95,10 @@ namespace Projeto_Biblioteca
                 Color ligthPanelColor = Color.Bisque;
 
                 this.BackColor = ligthBackColor;
-                this.ForeColor = ligthPanelColor;
+                this.ForeColor = Color.Black;
 
                 PanelConteudo.BackColor = ligthPanelColor;
                 pbColorMode.Image = Properties.Resources.lightmodeprojeto;
-
             }
             else
             {
@@ -101,11 +107,12 @@ namespace Projeto_Biblioteca
                 Color darkPanelColor = Color.FromArgb(45, 45, 45);
 
                 this.BackColor = darkBackColor;
-                this.ForeColor = darkPanelColor;
+                this.ForeColor = Color.White;
 
                 PanelConteudo.BackColor = darkPanelColor;
                 pbColorMode.Image = Properties.Resources.darkmodeprojeto;
             }
+
         }
 
         private void pbNot_Click(object sender, EventArgs e)
