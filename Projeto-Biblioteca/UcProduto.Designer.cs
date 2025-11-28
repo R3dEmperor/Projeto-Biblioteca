@@ -53,10 +53,10 @@
             txtGenero = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisarTitulo = new Guna.UI2.WinForms.Guna2TextBox();
             txtProduto = new Guna.UI2.WinForms.Guna2TextBox();
-            DataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
             pbCaminhodaFoto = new PictureBox();
             txtCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgProdutos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCaminhodaFoto).BeginInit();
             SuspendLayout();
             // 
@@ -166,7 +166,7 @@
             txtGenero.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGenero.Font = new Font("Segoe UI", 9F);
             txtGenero.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGenero.Location = new Point(11, 249);
+            txtGenero.Location = new Point(13, 254);
             txtGenero.Name = "txtGenero";
             txtGenero.PlaceholderText = "Gênero";
             txtGenero.SelectedText = "";
@@ -219,10 +219,10 @@
             txtProduto.Size = new Size(312, 36);
             txtProduto.TabIndex = 13;
             // 
-            // DataGridView
+            // dgProdutos
             // 
             dataGridViewCellStyle4.BackColor = Color.White;
-            DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
@@ -230,9 +230,9 @@
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            DataGridView.ColumnHeadersHeight = 4;
-            DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgProdutos.ColumnHeadersHeight = 4;
+            dgProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -240,34 +240,35 @@
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            DataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            DataGridView.Location = new Point(385, 214);
-            DataGridView.Name = "DataGridView";
-            DataGridView.RowHeadersVisible = false;
-            DataGridView.Size = new Size(370, 179);
-            DataGridView.TabIndex = 9;
-            DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            DataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            DataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            DataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            DataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            DataGridView.ThemeStyle.BackColor = Color.White;
-            DataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            DataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            DataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataGridView.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            DataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            DataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DataGridView.ThemeStyle.HeaderStyle.Height = 4;
-            DataGridView.ThemeStyle.ReadOnly = false;
-            DataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
-            DataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DataGridView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            DataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            DataGridView.ThemeStyle.RowsStyle.Height = 25;
-            DataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            DataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgProdutos.DefaultCellStyle = dataGridViewCellStyle6;
+            dgProdutos.GridColor = Color.FromArgb(231, 229, 255);
+            dgProdutos.Location = new Point(385, 214);
+            dgProdutos.Name = "dgProdutos";
+            dgProdutos.RowHeadersVisible = false;
+            dgProdutos.Size = new Size(370, 179);
+            dgProdutos.TabIndex = 9;
+            dgProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgProdutos.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgProdutos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgProdutos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgProdutos.ThemeStyle.BackColor = Color.White;
+            dgProdutos.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgProdutos.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgProdutos.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgProdutos.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgProdutos.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgProdutos.ThemeStyle.HeaderStyle.Height = 4;
+            dgProdutos.ThemeStyle.ReadOnly = false;
+            dgProdutos.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgProdutos.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgProdutos.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgProdutos.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgProdutos.ThemeStyle.RowsStyle.Height = 25;
+            dgProdutos.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgProdutos.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgProdutos.CellClick += DataGridView_CellClick;
             // 
             // pbCaminhodaFoto
             // 
@@ -288,6 +289,7 @@
             txtCaminhodaFoto.Size = new Size(95, 17);
             txtCaminhodaFoto.TabIndex = 18;
             txtCaminhodaFoto.Text = "Caminho da Foto";
+            txtCaminhodaFoto.Visible = false;
             // 
             // UcProduto
             // 
@@ -303,11 +305,11 @@
             Controls.Add(txtGenero);
             Controls.Add(txtPesquisarTitulo);
             Controls.Add(txtProduto);
-            Controls.Add(DataGridView);
+            Controls.Add(dgProdutos);
             Controls.Add(pbCaminhodaFoto);
             Name = "UcProduto";
             Size = new Size(788, 435);
-            ((System.ComponentModel.ISupportInitialize)DataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgProdutos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCaminhodaFoto).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -323,7 +325,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGenero;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisarTitulo;
         private Guna.UI2.WinForms.Guna2TextBox txtProduto;
-        private Guna.UI2.WinForms.Guna2DataGridView DataGridView;
+        private Guna.UI2.WinForms.Guna2DataGridView dgProdutos;
         private PictureBox pbCaminhodaFoto;
         private Guna.UI2.WinForms.Guna2HtmlLabel txtCaminhodaFoto;
     }

@@ -89,10 +89,7 @@ namespace Projeto_Biblioteca
             }
         }
 
-        private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void AtualizarGrid()
         {

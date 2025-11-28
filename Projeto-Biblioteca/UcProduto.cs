@@ -17,6 +17,7 @@ namespace Projeto_Biblioteca
 {
     public partial class UcProduto : UserControl
     {
+        ProdutoBLL produtoBLL = new ProdutoBLL();
         public UcProduto()
         {
             InitializeComponent();
@@ -30,18 +31,17 @@ namespace Projeto_Biblioteca
 
             string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
 
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection connection = new SqlConnection(conexao))
             {
                 string sql = @"INSERT INTO Livros (Titulo, Autor, Genero, Ano, ISBN)
                        VALUES (@titulo, @autor, @genero, @ano, @isbn)";
 
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
                 {
                     cmd.Parameters.AddWithValue("@titulo", Produto);
                     cmd.Parameters.AddWithValue("@autor", autor);
                     cmd.Parameters.AddWithValue("@genero", genero);
-
-                    cmd.ExecuteNonQuery();
+                   
                 }
             }
 
@@ -50,17 +50,35 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            string Produto = txtProduto.Text;
-            string autor = txtAutorProduto.Text;
-            string genero = txtGenero.Text;
 
-            string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
-
-            using (SqlConnection conn = new SqlConnection(conexao))
+            try
             {
-                conn.Open();
+                if (dgProdutos.CurrentRow == null)
+                {
+                    MessageBox.Show("Selecione um livro para atualizar.", "Aviso",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                string sql = @"UPDATE Livros 
+                int id = Convert.ToInt32(dgProdutos.CurrentRow.Cells["Id"].Value);
+
+                string diretorio = Path.Combine(Application.StartupPath, "Imagens");
+                if (!Directory.Exists(diretorio))
+
+                    Directory.CreateDirectory(diretorio);
+
+
+
+                string Produto = txtProduto.Text;
+                string autor = txtAutorProduto.Text;
+                string genero = txtGenero.Text;
+
+                string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
+
+                using (SqlConnection connection = new SqlConnection(conexao))
+                {
+
+                    string sql = @"UPDATE Livros 
                        SET Titulo = @titulo, 
                            Autor = @autor, 
                            Genero = @genero, 
@@ -68,14 +86,36 @@ namespace Projeto_Biblioteca
                            ISBN = @isbn
                        WHERE Id = @id";
 
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@titulo", Produto);
-                    cmd.Parameters.AddWithValue("@autor", autor);
-                    cmd.Parameters.AddWithValue("@genero", genero);
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@titulo", Produto);
+                        cmd.Parameters.AddWithValue("@autor", autor);
+                        cmd.Parameters.AddWithValue("@genero", genero);
 
-                    cmd.ExecuteNonQuery();
+                    }
                 }
+
+               produtoBLL.AtualizarProduto(new ProdutoDTO
+               {
+                   IdProduto = id,
+                   NomeProduto = Produto,
+                   AutorProduto = autor,
+                   GeneroProduto = genero
+               });
+
+                produtoBLL.AtualizarProduto();
+
+                MessageBox.Show("Livro atualizado com sucesso!", "Sucesso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar o livro: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             MessageBox.Show("Livro atualizado com sucesso!");
@@ -83,20 +123,17 @@ namespace Projeto_Biblioteca
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int Produto = int.Parse(txtProduto.Text);
-
+            string produto = txtProduto.Text;
             string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
 
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection connection = new SqlConnection(conexao))
             {
-                conn.Open();
 
                 string sql = "DELETE FROM Livros WHERE Id = @id";
 
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
                 {
-                    cmd.Parameters.AddWithValue("@id", Produto);
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@id", produto);
                 }
             }
 
@@ -121,25 +158,67 @@ namespace Projeto_Biblioteca
 
             string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
 
-            using (SqlConnection conn = new SqlConnection(conexao))
+            using (SqlConnection connection = new SqlConnection(conexao))
             {
-                conn.Open();
 
                 string sql = @"SELECT Id, Titulo, Autor, Genero, Ano, ISBN, CaminhoImagem
                        FROM Livros
                        WHERE Titulo LIKE @titulo + '%'";
 
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
                 {
                     cmd.Parameters.AddWithValue("@titulo", texto);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
-                    da.Fill(dt);
 
-                    DataGridView.DataSource = dt;
+                    dgProdutos.DataSource = dt;
                 }
             }
+        }
+
+        private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            var row = dgProdutos.Rows[e.RowIndex];
+
+            txtProduto.Text = row.Cells["Titulo"].Value?.ToString();
+            txtAutorProduto.Text = row.Cells["Autor"].Value?.ToString();
+            txtGenero.Text = row.Cells["Genero"].Value?.ToString();
+        }
+
+        private void AtualizarGrid()
+        {
+          dgProdutos.Columns.Clear();
+          dgProdutos.AutoGenerateColumns = false;
+          dgProdutos.RowTemplate.Height = 60;
+          dgProdutos.AllowUserToAddRows = false;
+
+          var colFoto = new DataGridViewImageColumn
+          {
+              HeaderText = "Foto",
+              Name = "Foto",
+              Width = 60,
+              ImageLayout = DataGridViewImageCellLayout.Zoom
+          };
+
+          dgProdutos.Columns.Add(colFoto);
+
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Titulo", HeaderText = "Titulo", Name = "Titulo" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Autor", HeaderText = "Autor", Name = "Autor" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genero", HeaderText = "Genero", Name = "Genero" });
+
+            var produtos = produtoBLL.ListarProdutos();
+
+            var dt = new DataTable();
+
+            dt.Columns.Add("Foto", typeof(Image));
+            dt.Columns.Add("Titulo", typeof(string));
+            dt.Columns.Add("Autor", typeof(string));
+            dt.Columns.Add("Genero", typeof(string));
+
+           dgProdutos.DataSource = dt;
+
         }
     }
 }
