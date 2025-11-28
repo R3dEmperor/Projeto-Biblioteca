@@ -59,6 +59,16 @@ namespace Projeto_Biblioteca.BLL
                 throw new Exception("Senha é obrigatória.");
         }
 
+       
+        
+            private UsuarioDAL usuarioDAL = new UsuarioDAL();
+
+            public void Excluir(int id)
+            {
+                usuarioDAL.Excluir(id);
+            }
+        
+
 
     }
 }

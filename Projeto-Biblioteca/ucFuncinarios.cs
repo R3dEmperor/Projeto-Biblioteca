@@ -112,20 +112,23 @@ namespace Projeto_Biblioteca
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TipoUsuarioId", HeaderText = "Cargo", Name = "TipoUsuarioId" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Endereco_Usuario", HeaderText = "Endereço", Name = "Endereco_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Telefone", HeaderText = "Telefone", Name = "Telefone" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha_Usuario", HeaderText = "Senha", Name = "Senha_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email_Usuario", HeaderText = "Email", Name = "Email_Usuario" });
-
+       
             var funcionarios = usuarioBLL.ListarUsuarios();
 
             var dt = new DataTable();
-            dt.Columns.Add("Foto", typeof(Image));
+            dt.Columns.Add("UrlFoto", typeof(Image));
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
             dt.Columns.Add("TipoUsuarioId", typeof(string));
             dt.Columns.Add("Endereco_Usuario", typeof(string));
+            dt.Columns.Add("CPF", typeof(string));
             dt.Columns.Add("Senha", typeof(string));
             dt.Columns.Add("Email_Usuario", typeof(string));
+        
 
             foreach (var u in funcionarios)
             {
@@ -215,7 +218,27 @@ namespace Projeto_Biblioteca
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (dgUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um aluno para excluir");
+                return;
+            }
 
+            int id = Convert.ToInt32(dgUsuarios.SelectedRows[0].Cells["Id"].Value);
+            string nome = dgUsuarios.SelectedRows[0].Cells["Nome"].Value.ToString();
+
+            var confirmacao = MessageBox.Show(
+                $"Tem certeza que deseja excluir o aluno {nome}?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirmacao == DialogResult.Yes)
+            {
+                usuarioBLL.Excluir(id);
+                MessageBox.Show($"Usuário {nome} removido com sucesso!");
+                AtualizarGrid();
+            }
         }
     }
 }
