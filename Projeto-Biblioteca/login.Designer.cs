@@ -83,6 +83,9 @@
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
            
+            // 
+            // txtNome
+            // 
             txtNome.BackColor = Color.Bisque;
             txtNome.BorderRadius = 20;
             txtNome.CustomizableEdges = customizableEdges4;
@@ -136,10 +139,6 @@
             txtSenha.TabIndex = 3;
             txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
-            // 
-            // CaminhoFoto
-            // 
-          
             // 
             // login
             // 

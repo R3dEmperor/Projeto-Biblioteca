@@ -22,7 +22,7 @@ namespace Projeto_Biblioteca
 
 
         FuncionarioBLL funcionarioBLL = new();
-        UsuarioDAL usuarioDAL = new();
+        UsuarioBLL usuarioBLL = new();
         private int? FuncionarioSelecionadoId = null;
         int tipousuario;
         public ucFuncinarios()
@@ -48,9 +48,8 @@ namespace Projeto_Biblioteca
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
                 Senha = txtSenha.Text,
-                Email = txtEmail.Text,
             };
-            usuarioDAL.Create(funcionario);
+            usuarioBLL.CadastrarUsuario(funcionario);
 
             MessageBox.Show($"Usuário {funcionario.Nome} cadastrado com sucesso!");
             AtualizarGrid();
@@ -111,24 +110,22 @@ namespace Projeto_Biblioteca
 
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Name = "Id" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DescricaoTipoUsuario", HeaderText = "Cargo", Name = "DescricaoTipoUsuario" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TipoUsuarioId", HeaderText = "Cargo", Name = "TipoUsuarioId" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Endereco_Usuario", HeaderText = "Endereço", Name = "Endereco_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Telefone", HeaderText = "Telefone", Name = "Telefone" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Login", HeaderText = "Login", Name = "Login" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha", HeaderText = "Senha", Name = "Senha" });
-            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UrlFoto", HeaderText = "UrlFoto", Name = "UrlFoto" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha_Usuario", HeaderText = "Senha", Name = "Senha_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email_Usuario", HeaderText = "Email", Name = "Email_Usuario" });
 
-            var funcionarios = funcionarioBLL.ListarFuncionarios();
+            var funcionarios = usuarioBLL.ListarUsuarios();
 
             var dt = new DataTable();
             dt.Columns.Add("Foto", typeof(Image));
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
-            dt.Columns.Add("DescriçaoTipoUsuario", typeof(string));
-            dt.Columns.Add("CPF", typeof(string));
-            dt.Columns.Add("Login", typeof(string));
+            dt.Columns.Add("TipoUsuarioId", typeof(string));
+            dt.Columns.Add("Endereco_Usuario", typeof(string));
             dt.Columns.Add("Senha", typeof(string));
-            dt.Columns.Add("UrlFoto", typeof(string));
+            dt.Columns.Add("Email_Usuario", typeof(string));
 
             foreach (var u in funcionarios)
             {
@@ -148,7 +145,7 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome, u.DescricaoTipoUsuario, u.CPF, u.Usuario, u.Senha, u.UrlFoto);
+                dt.Rows.Add(img, u.Id, u.Nome,u.TipoUsuarioId, u.Endereco, u.Senha, u.Email);
             }
             dgUsuarios.DataSource = dt;
         }
@@ -209,12 +206,16 @@ namespace Projeto_Biblioteca
             {
                 string nomeArquivoImagem = openFileDialog.FileName;
 
-                //Exibe a imagem escolhida no pictureBox
                 pbFoto.Image = Image.FromFile(nomeArquivoImagem);
 
-                //Salva o caminho da foto
+              
                 lblCaminhodaFoto.Text = nomeArquivoImagem;
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

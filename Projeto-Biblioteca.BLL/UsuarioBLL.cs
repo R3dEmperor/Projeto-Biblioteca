@@ -55,9 +55,6 @@ namespace Projeto_Biblioteca.BLL
             if (string.IsNullOrWhiteSpace(usuario.Nome))
                 throw new Exception("Nome é obrigatório.");
 
-            if (string.IsNullOrWhiteSpace(usuario.Usuario))
-                throw new Exception("Login é obrigatório.");
-
             if (string.IsNullOrWhiteSpace(usuario.Senha))
                 throw new Exception("Senha é obrigatória.");
         }
