@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -56,15 +57,17 @@
             dgProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
             pbCaminhodaFoto = new PictureBox();
             txtCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             ((System.ComponentModel.ISupportInitialize)dgProdutos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCaminhodaFoto).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
             // 
-            guna2HtmlLabel1.BackColor = Color.Bisque;
+            guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(331, 25);
+            guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
+            guna2HtmlLabel1.Location = new Point(308, 14);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(142, 59);
             guna2HtmlLabel1.TabIndex = 17;
@@ -72,8 +75,8 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.BackColor = Color.PapayaWhip;
-            btnExcluir.BorderRadius = 20;
+            btnExcluir.BackColor = Color.Transparent;
+            btnExcluir.BorderRadius = 15;
             btnExcluir.CustomizableEdges = customizableEdges1;
             btnExcluir.DisabledState.BorderColor = Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -82,7 +85,7 @@
             btnExcluir.FillColor = Color.SaddleBrown;
             btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(223, 356);
+            btnExcluir.Location = new Point(224, 367);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnExcluir.Size = new Size(92, 45);
@@ -92,8 +95,8 @@
             // 
             // btnAtualizar
             // 
-            btnAtualizar.BackColor = Color.PapayaWhip;
-            btnAtualizar.BorderRadius = 20;
+            btnAtualizar.BackColor = Color.Transparent;
+            btnAtualizar.BorderRadius = 15;
             btnAtualizar.CustomizableEdges = customizableEdges3;
             btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
             btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -102,7 +105,7 @@
             btnAtualizar.FillColor = Color.SaddleBrown;
             btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(114, 356);
+            btnAtualizar.Location = new Point(120, 367);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAtualizar.Size = new Size(92, 45);
@@ -112,8 +115,8 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.BackColor = Color.PapayaWhip;
-            btnCadastrar.BorderRadius = 20;
+            btnCadastrar.BackColor = Color.Transparent;
+            btnCadastrar.BorderRadius = 15;
             btnCadastrar.CustomizableEdges = customizableEdges5;
             btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -122,7 +125,7 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(11, 356);
+            btnCadastrar.Location = new Point(10, 367);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnCadastrar.Size = new Size(97, 45);
@@ -132,9 +135,9 @@
             // 
             // txtAutorProduto
             // 
-            txtAutorProduto.BackColor = Color.Bisque;
+            txtAutorProduto.BackColor = Color.Transparent;
             txtAutorProduto.BorderColor = Color.PapayaWhip;
-            txtAutorProduto.BorderRadius = 20;
+            txtAutorProduto.BorderRadius = 15;
             txtAutorProduto.CustomizableEdges = customizableEdges7;
             txtAutorProduto.DefaultText = "";
             txtAutorProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -149,14 +152,14 @@
             txtAutorProduto.PlaceholderText = "Autor";
             txtAutorProduto.SelectedText = "";
             txtAutorProduto.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtAutorProduto.Size = new Size(228, 42);
+            txtAutorProduto.Size = new Size(312, 42);
             txtAutorProduto.TabIndex = 10;
             // 
             // txtGenero
             // 
-            txtGenero.BackColor = Color.Bisque;
+            txtGenero.BackColor = Color.Transparent;
             txtGenero.BorderColor = Color.PapayaWhip;
-            txtGenero.BorderRadius = 20;
+            txtGenero.BorderRadius = 15;
             txtGenero.CustomizableEdges = customizableEdges9;
             txtGenero.DefaultText = "";
             txtGenero.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -166,19 +169,19 @@
             txtGenero.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGenero.Font = new Font("Segoe UI", 9F);
             txtGenero.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGenero.Location = new Point(13, 254);
+            txtGenero.Location = new Point(11, 253);
             txtGenero.Name = "txtGenero";
             txtGenero.PlaceholderText = "Gênero";
             txtGenero.SelectedText = "";
             txtGenero.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtGenero.Size = new Size(228, 42);
+            txtGenero.Size = new Size(312, 42);
             txtGenero.TabIndex = 11;
             // 
             // txtPesquisarTitulo
             // 
-            txtPesquisarTitulo.BackColor = Color.PapayaWhip;
+            txtPesquisarTitulo.BackColor = Color.Transparent;
             txtPesquisarTitulo.BorderColor = Color.PapayaWhip;
-            txtPesquisarTitulo.BorderRadius = 20;
+            txtPesquisarTitulo.BorderRadius = 15;
             txtPesquisarTitulo.CustomizableEdges = customizableEdges11;
             txtPesquisarTitulo.DefaultText = "";
             txtPesquisarTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -188,20 +191,20 @@
             txtPesquisarTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisarTitulo.Font = new Font("Segoe UI", 9F);
             txtPesquisarTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisarTitulo.Location = new Point(376, 172);
+            txtPesquisarTitulo.Location = new Point(385, 172);
             txtPesquisarTitulo.Name = "txtPesquisarTitulo";
             txtPesquisarTitulo.PlaceholderText = "Pesquisar";
             txtPesquisarTitulo.SelectedText = "";
             txtPesquisarTitulo.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtPesquisarTitulo.Size = new Size(379, 36);
+            txtPesquisarTitulo.Size = new Size(370, 36);
             txtPesquisarTitulo.TabIndex = 12;
             txtPesquisarTitulo.TextChanged += txtPesquisarTitulo_TextChanged;
             // 
             // txtProduto
             // 
-            txtProduto.BackColor = Color.Bisque;
+            txtProduto.BackColor = Color.Transparent;
             txtProduto.BorderColor = Color.PapayaWhip;
-            txtProduto.BorderRadius = 20;
+            txtProduto.BorderRadius = 15;
             txtProduto.CustomizableEdges = customizableEdges13;
             txtProduto.DefaultText = "";
             txtProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -274,7 +277,7 @@
             // 
             pbCaminhodaFoto.BorderStyle = BorderStyle.Fixed3D;
             pbCaminhodaFoto.Cursor = Cursors.Hand;
-            pbCaminhodaFoto.Location = new Point(11, 14);
+            pbCaminhodaFoto.Location = new Point(33, 14);
             pbCaminhodaFoto.Name = "pbCaminhodaFoto";
             pbCaminhodaFoto.Size = new Size(136, 164);
             pbCaminhodaFoto.TabIndex = 7;
@@ -291,11 +294,19 @@
             txtCaminhodaFoto.Text = "Caminho da Foto";
             txtCaminhodaFoto.Visible = false;
             // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.BorderRadius = 20;
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // UcProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Bisque;
+            BackColor = Color.Transparent;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(txtCaminhodaFoto);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnExcluir);
@@ -308,7 +319,7 @@
             Controls.Add(dgProdutos);
             Controls.Add(pbCaminhodaFoto);
             Name = "UcProduto";
-            Size = new Size(788, 435);
+            Size = new Size(786, 433);
             Load += UcProduto_Load;
             ((System.ComponentModel.ISupportInitialize)dgProdutos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCaminhodaFoto).EndInit();
@@ -329,5 +340,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgProdutos;
         private PictureBox pbCaminhodaFoto;
         private Guna.UI2.WinForms.Guna2HtmlLabel txtCaminhodaFoto;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

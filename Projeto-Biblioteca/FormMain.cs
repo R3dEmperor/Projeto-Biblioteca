@@ -90,7 +90,7 @@ namespace Projeto_Biblioteca
                 if (PanelConteudo != null)
                     PanelConteudo.BackColor = Color.Bisque;
 
-                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
+                pbdarkmode.Image = Properties.Resources.lightmodeprojeto;
             }
             else
             {
