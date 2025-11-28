@@ -38,7 +38,7 @@ namespace Projeto_Biblioteca
         {
             try
             {
-                var usuarioBLL = new UsuarioBLL(); 
+                var usuarioBLL = new UsuarioBLL();
 
                 var usuarioAtualizado = new FuncionarioDTO
                 {
@@ -79,6 +79,16 @@ namespace Projeto_Biblioteca
         private void txtUser_Click(object sender, EventArgs e)
         {
             txtUser.Text = string.Empty;
+        }
+
+        private void txtSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.Text = string.Empty;
+        }
+
+        private void frmConfig_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
