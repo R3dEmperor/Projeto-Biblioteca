@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,12 +63,15 @@
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             cboTipoUsuario = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
             // 
             // pbFoto
             // 
+            pbFoto.Cursor = Cursors.Hand;
+            pbFoto.FillColor = Color.Wheat;
             pbFoto.ImageRotate = 0F;
             pbFoto.Location = new Point(82, 22);
             pbFoto.Name = "pbFoto";
@@ -90,7 +94,7 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.BorderRadius = 20;
+            btnCadastrar.BorderRadius = 15;
             btnCadastrar.CustomizableEdges = customizableEdges2;
             btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -99,7 +103,7 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(4, 378);
+            btnCadastrar.Location = new Point(0, 377);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnCadastrar.Size = new Size(100, 45);
@@ -109,7 +113,7 @@
             // 
             // btnAtualizar
             // 
-            btnAtualizar.BorderRadius = 20;
+            btnAtualizar.BorderRadius = 15;
             btnAtualizar.CustomizableEdges = customizableEdges4;
             btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
             btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -118,7 +122,7 @@
             btnAtualizar.FillColor = Color.SaddleBrown;
             btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(110, 378);
+            btnAtualizar.Location = new Point(106, 377);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnAtualizar.Size = new Size(86, 45);
@@ -128,7 +132,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.BorderRadius = 20;
+            btnExcluir.BorderRadius = 15;
             btnExcluir.CustomizableEdges = customizableEdges6;
             btnExcluir.DisabledState.BorderColor = Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -137,7 +141,7 @@
             btnExcluir.FillColor = Color.SaddleBrown;
             btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(201, 377);
+            btnExcluir.Location = new Point(198, 377);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnExcluir.Size = new Size(80, 45);
@@ -147,7 +151,7 @@
             // 
             // txtNome
             // 
-            txtNome.BorderRadius = 20;
+            txtNome.BorderRadius = 15;
             txtNome.CustomizableEdges = customizableEdges8;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -167,7 +171,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.BorderRadius = 20;
+            txtSenha.BorderRadius = 15;
             txtSenha.CustomizableEdges = customizableEdges10;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -187,7 +191,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.BorderRadius = 20;
+            txtTelefone.BorderRadius = 15;
             txtTelefone.CustomizableEdges = customizableEdges12;
             txtTelefone.DefaultText = "";
             txtTelefone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -207,7 +211,7 @@
             // 
             // txtCPF
             // 
-            txtCPF.BorderRadius = 20;
+            txtCPF.BorderRadius = 15;
             txtCPF.CustomizableEdges = customizableEdges14;
             txtCPF.DefaultText = "";
             txtCPF.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -227,7 +231,7 @@
             // 
             // txtPesquisa
             // 
-            txtPesquisa.BorderRadius = 20;
+            txtPesquisa.BorderRadius = 15;
             txtPesquisa.CustomizableEdges = customizableEdges16;
             txtPesquisa.DefaultText = "";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -237,12 +241,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(290, 49);
+            txtPesquisa.Location = new Point(277, 49);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPesquisa.Size = new Size(483, 36);
+            txtPesquisa.Size = new Size(508, 36);
             txtPesquisa.TabIndex = 14;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -269,10 +273,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgUsuarios.Location = new Point(293, 91);
+            dgUsuarios.Location = new Point(277, 91);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersVisible = false;
-            dgUsuarios.Size = new Size(483, 322);
+            dgUsuarios.Size = new Size(508, 322);
             dgUsuarios.TabIndex = 7;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -300,6 +304,7 @@
             // cboTipoUsuario
             // 
             cboTipoUsuario.BackColor = Color.Transparent;
+            cboTipoUsuario.BorderRadius = 15;
             cboTipoUsuario.CustomizableEdges = customizableEdges18;
             cboTipoUsuario.DrawMode = DrawMode.OwnerDrawFixed;
             cboTipoUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -308,18 +313,26 @@
             cboTipoUsuario.Font = new Font("Segoe UI", 10F);
             cboTipoUsuario.ForeColor = Color.FromArgb(68, 88, 112);
             cboTipoUsuario.ItemHeight = 30;
-            cboTipoUsuario.Location = new Point(29, 200);
+            cboTipoUsuario.Location = new Point(12, 200);
             cboTipoUsuario.Name = "cboTipoUsuario";
             cboTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            cboTipoUsuario.Size = new Size(222, 36);
+            cboTipoUsuario.Size = new Size(255, 36);
             cboTipoUsuario.TabIndex = 20;
             cboTipoUsuario.SelectedIndexChanged += cboTipoUsuario_SelectedIndexChanged;
+            // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.BorderRadius = 20;
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // ucFuncinarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Bisque;
+            BackColor = Color.Transparent;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(cboTipoUsuario);
             Controls.Add(pbFoto);
             Controls.Add(lblCaminhodaFoto);
@@ -333,7 +346,7 @@
             Controls.Add(txtPesquisa);
             Controls.Add(dgUsuarios);
             Name = "ucFuncinarios";
-            Size = new Size(788, 435);
+            Size = new Size(786, 433);
             Load += ucFuncinarios_Load;
             ((System.ComponentModel.ISupportInitialize)pbFoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).EndInit();
@@ -354,5 +367,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
         private Guna.UI2.WinForms.Guna2DataGridView dgUsuarios;
         private Guna.UI2.WinForms.Guna2ComboBox cboTipoUsuario;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

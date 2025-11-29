@@ -235,6 +235,7 @@
             // 
             // guna2CirclePictureBox1
             // 
+            guna2CirclePictureBox1.Cursor = Cursors.Hand;
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(209, 73);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -284,6 +285,7 @@
             Controls.Add(btnAtualizar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmConfig";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Selecione a Foto";
             Load += frmConfig_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();

@@ -78,34 +78,31 @@ namespace Projeto_Biblioteca
 
         private void pbdarkmode_Click(object sender, EventArgs e)
         {
-
-            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
+            bool isDarkMode = this.BackColor == Color.Bisque;
 
             if (isDarkMode)
             {
-                //Modo Claro - LigthMode
-                Color ligthBackColor = SystemColors.ButtonHighlight;
-                Color ligthPanelColor = Color.Bisque;
+                // --- MODO ESCURO ---
+                this.BackColor = Color.FromArgb(12, 13, 10);
+                this.ForeColor = Color.White;
 
-                this.BackColor = ligthBackColor;
-                this.ForeColor = ligthPanelColor;
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.FromArgb(12, 13, 10);
 
-                PanelConteudo.BackColor = ligthPanelColor;
-                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
-
+                pbdarkmode.Image = Properties.Resources.lightmodeprojeto; // ícone para voltar ao claro
             }
             else
             {
-                //Modo Escuro - DarkMode
-                Color darkBackColor = Color.FromArgb(32, 32, 32);
-                Color darkPanelColor = Color.FromArgb(45, 45, 45);
+                // --- MODO CLARO ---
+                this.BackColor = Color.Bisque;
+                this.ForeColor = Color.FromArgb(12, 13, 10);
 
-                this.BackColor = darkBackColor;
-                this.ForeColor = darkPanelColor;
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.Bisque;
 
-                PanelConteudo.BackColor = darkPanelColor;
-                pbColorMode.Image = Properties.Resources.darkmodeprojeto;
+                pbdarkmode.Image = Properties.Resources.darkmodeprojeto; // ícone para voltar ao escuro
             }
+
         }
 
         private void pbNot_Click(object sender, EventArgs e)
@@ -141,8 +138,8 @@ namespace Projeto_Biblioteca
 
         private void pbConf_Click(object sender, EventArgs e)
         {
-            //frmConfig config = new();
-            //config.ShowDialog();
+            frmConfig config = new();
+            config.ShowDialog();
         }
     }
 }
