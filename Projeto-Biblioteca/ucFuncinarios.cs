@@ -57,7 +57,51 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dgUsuarios.CurrentRow == null)
+                {
+                    MessageBox.Show("Selecione um usuário na tabela.", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                int id = Convert.ToInt32(dgUsuarios.CurrentRow.Cells["Id"].Value);
+
+                string diretorio = Path.Combine(Application.StartupPath, "ImagensUsuarios");
+                if (!Directory.Exists(diretorio))
+                    Directory.CreateDirectory(diretorio);
+
+             
+                string nomeImg = $"{id} - {txtNome.Text}.jpg";
+                string caminhoImagem = Path.Combine(diretorio, nomeImg);
+
+             
+                if (pbFoto.Image != null)
+                    pbFoto.Image.Save(caminhoImagem);
+
+              
+                UsuarioDTO usuario = new UsuarioDTO
+                {
+                    Id = id,
+                    Nome = txtNome.Text.Trim(),
+                    Usuario = txtNome.Text.Trim(),
+                    Senha = txtSenha.Text.Trim(),
+                    UrlFoto = caminhoImagem 
+                };
+
+                usuarioBLL.AtualizarUsuario(usuario);
+
+                MessageBox.Show("Funcionario atualizado com sucesso!", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                AtualizarGrid(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao atualizar Funcionario: {ex.Message}",
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

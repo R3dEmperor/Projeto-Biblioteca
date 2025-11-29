@@ -68,6 +68,7 @@
             // 
             // pbFoto
             // 
+            pbFoto.FillColor = Color.Wheat;
             pbFoto.ImageRotate = 0F;
             pbFoto.Location = new Point(82, 22);
             pbFoto.Name = "pbFoto";
