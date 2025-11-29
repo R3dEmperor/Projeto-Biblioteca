@@ -285,6 +285,7 @@
             Controls.Add(btnAtualizar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmConfig";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Selecione a Foto";
             Load += frmConfig_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
