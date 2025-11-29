@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using NuGet.Packaging.Signing;
 using Projeto_Biblioteca.BLL;
 using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
@@ -18,6 +20,8 @@ namespace Projeto_Biblioteca
     public partial class UcProduto : UserControl
     {
         ProdutoBLL produtoBLL = new ProdutoBLL();
+        GeneroBLL generoBLL = new GeneroBLL();
+
         public UcProduto()
         {
             InitializeComponent();
@@ -25,11 +29,16 @@ namespace Projeto_Biblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            var idGenero = 0;
+            var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
+            var listaIds = generoBLL.ListarGeneros().FirstOrDefault(x => x.IdGenero.Equals(listaGeneros.IdGenero));
+            idGenero = listaIds.IdGenero;
+
             var produto = new ProdutoDTO
             {
                NomeProduto = txtProduto.Text,
                AutorProduto = txtProduto.Text,
-                GeneroProduto = txtGenero.Text,
+               GeneroProduto = idGenero,
             };
             produtoBLL.CadastrarProduto(produto);
 
@@ -39,7 +48,11 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-
+            var idgenero = 0;
+            var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
+            var listaIDS = listaGeneros.IdGenero;
+            idgenero = listaIDS;
+            int id = dgProdutos.SelectedRows[0].Cells["Id_Produto"].Value.GetHashCode();
             try
             {
                 if (dgProdutos.CurrentRow == null)
@@ -48,83 +61,43 @@ namespace Projeto_Biblioteca
                      MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                int id = Convert.ToInt32(dgProdutos.CurrentRow.Cells["Id"].Value);
-
-                string diretorio = Path.Combine(Application.StartupPath, "Imagens");
-                if (!Directory.Exists(diretorio))
-
-                    Directory.CreateDirectory(diretorio);
-
-
-
-                string Produto = txtProduto.Text;
-                string autor = txtAutorProduto.Text;
-                string genero = txtGenero.Text;
-
-                string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
-
-                using (SqlConnection connection = new SqlConnection(conexao))
-                {
-
-                    string sql = @"UPDATE Livros 
-                       SET Titulo = @titulo, 
-                           Autor = @autor, 
-                           Genero = @genero, 
-                           Ano = @ano, 
-                           ISBN = @isbn
-                       WHERE Id = @id";
-
-                    using (SqlCommand cmd = new SqlCommand(sql, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@titulo", Produto);
-                        cmd.Parameters.AddWithValue("@autor", autor);
-                        cmd.Parameters.AddWithValue("@genero", genero);
-
-                    }
-                }
-
                 produtoBLL.AtualizarProduto(new ProdutoDTO
                 {
                     IdProduto = id,
-                    NomeProduto = Produto,
-                    AutorProduto = autor,
-                    GeneroProduto = genero
+                    NomeProduto = txtProduto.Text,
+                    AutorProduto = txtAutorProduto.Text,
+                    GeneroProduto = idgenero,
                 });
-
                 MessageBox.Show("Livro atualizado com sucesso!", "Sucesso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao atualizar o livro: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             MessageBox.Show("Livro atualizado com sucesso!");
+
+            AtualizarGrid();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            string produto = txtProduto.Text;
-            string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
-
-            using (SqlConnection connection = new SqlConnection(conexao))
+            if (dgProdutos.SelectedRows.Count == 0)
             {
-
-                string sql = "DELETE FROM Livros WHERE Id = @id";
-
-                using (SqlCommand cmd = new SqlCommand(sql, connection))
-                {
-                    cmd.Parameters.AddWithValue("@id", produto);
-                }
+                MessageBox.Show("Selecione um livro para excluir");
+                return;
             }
+            int id = dgProdutos.SelectedRows[0].Cells["Id_Produto"].Value.GetHashCode();
 
-            MessageBox.Show("Livro excluído com sucesso!");
+            var Confirmacao = MessageBox.Show($"Tem certeza que deseja excluir o livro " +
+                $"{dgProdutos.SelectedRows[0].Cells["Genero_Produto"].Value.ToString()}", "Confirmação", MessageBoxButtons.YesNo);
+            if (Confirmacao == DialogResult.Yes)
+            {
+                produtoBLL.RemoverProduto(id);
+                MessageBox.Show("Livro excluido");
+            }
+            AtualizarGrid();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -169,13 +142,15 @@ namespace Projeto_Biblioteca
             if (e.RowIndex < 0) return;
             var row = dgProdutos.Rows[e.RowIndex];
 
-            txtProduto.Text = row.Cells["Titulo"].Value?.ToString();
-            txtAutorProduto.Text = row.Cells["Autor"].Value?.ToString();
-            txtGenero.Text = row.Cells["Genero"].Value?.ToString();
+            txtProduto.Text = row.Cells["Genero_Produto"].Value?.ToString();
+            txtAutorProduto.Text = row.Cells["Autor_Produto"].Value?.ToString();
+            cboGeneros.Text = row.Cells["GeneroId_Genero"].Value?.ToString();
         }
 
         private void AtualizarGrid()
         {
+
+
             dgProdutos.Columns.Clear();
             dgProdutos.AutoGenerateColumns = false;
             dgProdutos.RowTemplate.Height = 60;
@@ -190,27 +165,56 @@ namespace Projeto_Biblioteca
             };
 
             dgProdutos.Columns.Add(colFoto);
-
-            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Titulo", HeaderText = "Titulo", Name = "Titulo" });
-            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Autor", HeaderText = "Autor", Name = "Autor" });
-            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genero", HeaderText = "Genero", Name = "Genero" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id_Produto", HeaderText = "ID", Name = "Id_Produto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genero_Produto", HeaderText = "Titulo", Name = "Genero_Produto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Autor_Produto", HeaderText = "Autor", Name = "Autor_Produto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "GeneroId_Genero", HeaderText = "Genero", Name = "GeneroId_Genero" });
 
             var produtos = produtoBLL.ListarProdutos();
 
             var dt = new DataTable();
 
             dt.Columns.Add("Foto", typeof(Image));
-            dt.Columns.Add("Titulo", typeof(string));
-            dt.Columns.Add("Autor", typeof(string));
-            dt.Columns.Add("Genero", typeof(string));
+            dt.Columns.Add("Id_Produto", typeof(int));
+            dt.Columns.Add("Genero_Produto", typeof(string));
+            dt.Columns.Add("Autor_Produto", typeof(string));
+            dt.Columns.Add("GeneroId_Genero", typeof(string));
 
+            foreach (var u in produtos)
+            {
+                var generoid = generoBLL.ListarGeneros().Find(x => x.IdGenero == u.GeneroProduto);
+                var genero = generoid.NomeGenero;
+
+                Image? img = null;
+
+                if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
+                {
+                    try
+                    {
+                        using (var fs = new FileStream(u.UrlFoto, FileMode.Open, FileAccess.Read))
+                        {
+                            img = Image.FromStream(fs);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        img = null;
+                    }
+                }
+                dt.Rows.Add(img, u.IdProduto, u.NomeProduto, u.AutorProduto, genero);
+            }
             dgProdutos.DataSource = dt;
-
         }
 
         private void UcProduto_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
+            Atualizarcbo();
+        }
+        private void Atualizarcbo()
+        {
+            var lista = generoBLL.ListarGeneros().Select(x => x.NomeGenero).ToList();
+            cboGeneros.DataSource = lista;
         }
     }
 }

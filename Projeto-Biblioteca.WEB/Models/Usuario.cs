@@ -22,17 +22,17 @@ namespace Projeto_Biblioteca.WEB.Models
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Senha")]
         [StringLength(50)]
-        public int Senha_Usuario { get; set; }
+        public string Senha_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Endereço")]
         [StringLength(50)]
-        public int Endereco_Usuario { get; set; }
+        public string Endereco_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Email")]
         [StringLength(50)]
-        public int Email_Usuario { get; set; }
+        public string Email_Usuario { get; set; }
         //=====================================================
         [Display(Name = "Cargo Funcionario")]
         public int TipoUsuarioId { get; set; }

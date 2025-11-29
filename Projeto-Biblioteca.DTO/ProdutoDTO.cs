@@ -12,8 +12,10 @@ namespace Projeto_Biblioteca.DTO
 
         public string NomeProduto { get; set; }
 
-        public string GeneroProduto { get; set; }
+        public int GeneroProduto { get; set; }
 
-        public string AutorProduto { get;  set; }
+        public string AutorProduto { get; set; }
+
+        public string UrlFoto { get; set; }
     }
 }

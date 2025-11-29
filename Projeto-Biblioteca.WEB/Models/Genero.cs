@@ -16,6 +16,6 @@ namespace Projeto_Biblioteca.WEB.Models
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Classificação indicativa do genero")]
         [StringLength(2)]
-        public int Classificacao_Genero { get; set; }
+        public string Classificacao_Genero { get; set; }
     }
 }

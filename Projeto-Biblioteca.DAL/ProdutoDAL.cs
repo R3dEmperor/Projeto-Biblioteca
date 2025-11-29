@@ -17,7 +17,7 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"
-                    INSERT INTO Produto (NomeProduto, GeneroProduto, AutorProduto)
+                    INSERT INTO Produto (Genero_Produto, GeneroId_Genero, Autor_Produto)
                     VALUES (@NomeProduto, @GeneroProduto, @AutorProduto);";
 
                 command = new SqlCommand(sql, conexao);
@@ -47,9 +47,7 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-
                 string sql = "SELECT * FROM Produto";
-
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
 
@@ -57,10 +55,10 @@ namespace Projeto_Biblioteca.DAL
                 {
                     produtos.Add(new ProdutoDTO
                     {
-                        IdProduto = Convert.ToInt32(dataReader["IdProduto"]),
-                        NomeProduto = dataReader["NomeProduto"].ToString(),
-                        GeneroProduto = dataReader["GeneroProduto"].ToString(),
-                        AutorProduto = dataReader["AutorProduto"].ToString()
+                        IdProduto = Convert.ToInt32(dataReader["Id_Produto"]),
+                        NomeProduto = dataReader["Genero_Produto"].ToString(),
+                        GeneroProduto = int.Parse(dataReader["GeneroId_Genero"].ToString()),
+                        AutorProduto = dataReader["Autor_Produto"].ToString()
                     });
                 }
             }
@@ -72,7 +70,6 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
-
             return produtos;
         }
 
@@ -85,7 +82,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "DELETE FROM Produto WHERE IdProduto = @Id";
+                string sql = "DELETE FROM Produto WHERE Id_Produto = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -122,11 +119,12 @@ namespace Projeto_Biblioteca.DAL
                 {
                     return new ProdutoDTO
                     {
-                        IdProduto = Convert.ToInt32(dataReader["IdProduto"]),
-                        NomeProduto = dataReader["NomeProduto"].ToString(),
-                        GeneroProduto = dataReader["GeneroProduto"].ToString(),
-                        AutorProduto = dataReader["AutorProduto"].ToString()
+                        IdProduto = Convert.ToInt32(dataReader["Id_Produto"]),
+                        NomeProduto = dataReader["Genero_Produto"].ToString(),
+                        GeneroProduto = int.Parse(dataReader["Genero_Produto"].ToString()),
+                        AutorProduto = dataReader["Autor_Produto"].ToString(),
                     };
+
                 }
 
                 return null;
@@ -152,16 +150,16 @@ namespace Projeto_Biblioteca.DAL
 
                 string sql = @"
                     UPDATE Produto
-                    SET NomeProduto = @NomeProduto,
-                        GeneroProduto = @GeneroProduto,
-                        AutorProduto = @AutorProduto
-                    WHERE IdProduto = @IdProduto";
+                    SET Genero_Produto = @NomeProduto,
+                        GeneroId_Genero = @GeneroId_Genero,
+                        Autor_Produto = @Autor_Produto
+                    WHERE Id_Produto = @Id_Produto";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@NomeProduto", livro.NomeProduto);
-                command.Parameters.AddWithValue("@GeneroProduto", livro.GeneroProduto);
-                command.Parameters.AddWithValue("@AutorProduto", livro.AutorProduto);
-                command.Parameters.AddWithValue("@IdProduto", livro.IdProduto);
+                command.Parameters.AddWithValue("@GeneroId_Genero", livro.GeneroProduto);
+                command.Parameters.AddWithValue("@Autor_Produto", livro.AutorProduto);
+                command.Parameters.AddWithValue("@Id_Produto", livro.IdProduto);
 
                 command.ExecuteNonQuery();
             }

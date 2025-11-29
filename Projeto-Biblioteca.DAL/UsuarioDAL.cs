@@ -145,8 +145,6 @@ namespace Projeto_Biblioteca.DAL
                         atividade = dataReader["Atividade"].Equals(true),
                     });
                 }
-
-                return lista;
             }
             catch (Exception erro)
             {
@@ -156,6 +154,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
+            return lista;
         }
 
         public void Update(UsuarioDTO usuario)

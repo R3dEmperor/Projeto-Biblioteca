@@ -296,6 +296,7 @@
             dgUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgUsuarios.CellClick += guna2DataGridView1_CellClick;
+            dgUsuarios.CellContentClick += dgUsuarios_CellContentClick;
             // 
             // cboTipoUsuario
             // 

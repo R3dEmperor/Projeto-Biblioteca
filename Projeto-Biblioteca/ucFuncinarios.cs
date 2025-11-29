@@ -43,6 +43,7 @@ namespace Projeto_Biblioteca
             conversao();
             var funcionario = new FuncionarioDTO
             {
+                
                 Nome = txtNome.Text,
                 TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,
@@ -145,7 +146,7 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome,u.TipoUsuarioId, u.Endereco, u.Senha, u.Email);
+                dt.Rows.Add(img, u.Id, u.Nome, u.TipoUsuarioId, u.Endereco, u.Senha, u.Email);
             }
             dgUsuarios.DataSource = dt;
         }
@@ -208,12 +209,17 @@ namespace Projeto_Biblioteca
 
                 pbFoto.Image = Image.FromFile(nomeArquivoImagem);
 
-              
+
                 lblCaminhodaFoto.Text = nomeArquivoImagem;
             }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
