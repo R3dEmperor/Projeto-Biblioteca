@@ -87,7 +87,6 @@
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Location = new Point(224, 367);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnExcluir.Size = new Size(92, 45);
             btnExcluir.TabIndex = 14;
             btnExcluir.Text = "Excluir";
@@ -107,7 +106,6 @@
             btnAtualizar.ForeColor = Color.White;
             btnAtualizar.Location = new Point(120, 367);
             btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnAtualizar.Size = new Size(92, 45);
             btnAtualizar.TabIndex = 15;
             btnAtualizar.Text = "Atualizar";
@@ -127,7 +125,6 @@
             btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Location = new Point(10, 367);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnCadastrar.Size = new Size(97, 45);
             btnCadastrar.TabIndex = 16;
             btnCadastrar.Text = "Cadastrar";
@@ -196,32 +193,13 @@
             txtProduto.Name = "txtProduto";
             txtProduto.PlaceholderText = "Título";
             txtProduto.SelectedText = "";
-            txtProduto.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtProduto.Size = new Size(312, 36);
             txtProduto.TabIndex = 13;
             // 
             // dgProdutos
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgProdutos.ColumnHeadersHeight = 4;
             dgProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgProdutos.DefaultCellStyle = dataGridViewCellStyle6;
             dgProdutos.GridColor = Color.FromArgb(231, 229, 255);
             dgProdutos.Location = new Point(385, 214);
             dgProdutos.Name = "dgProdutos";
@@ -276,7 +254,6 @@
             // 
             cboGeneros.BackColor = Color.Transparent;
             cboGeneros.BorderRadius = 15;
-            cboGeneros.CustomizableEdges = customizableEdges27;
             cboGeneros.DrawMode = DrawMode.OwnerDrawFixed;
             cboGeneros.DropDownStyle = ComboBoxStyle.DropDownList;
             cboGeneros.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -286,7 +263,6 @@
             cboGeneros.ItemHeight = 30;
             cboGeneros.Location = new Point(11, 258);
             cboGeneros.Name = "cboGeneros";
-            cboGeneros.ShadowDecoration.CustomizableEdges = customizableEdges28;
             cboGeneros.Size = new Size(264, 36);
             cboGeneros.TabIndex = 19;
             // 

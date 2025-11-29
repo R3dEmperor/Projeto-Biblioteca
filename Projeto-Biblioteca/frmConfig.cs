@@ -40,7 +40,7 @@ namespace Projeto_Biblioteca
             {
                 var usuarioBLL = new UsuarioBLL();
 
-                var usuarioAtualizado = new FuncionarioDTO
+                var usuarioAtualizado = new UsuarioDTO
                 {
                     Nome = txtNome.Text,
                     Usuario = txtUser.Text,
@@ -48,7 +48,7 @@ namespace Projeto_Biblioteca
                     CPF = txtSenha.Text,
                     Telefone = txtSenha.Text,
                     Senha = txtSenha.Text,
-                    UrlFoto = lblCaminhoFoto.Text
+                    UrlFoto = lblCaminhoFoto.Text,
                 };
 
                 usuarioBLL.AtualizarUsuario(usuarioAtualizado);
