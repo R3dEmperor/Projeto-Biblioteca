@@ -235,6 +235,7 @@
             // 
             // guna2CirclePictureBox1
             // 
+            guna2CirclePictureBox1.Cursor = Cursors.Hand;
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(209, 73);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";

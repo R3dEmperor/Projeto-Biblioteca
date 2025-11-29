@@ -68,6 +68,7 @@
             // 
             // pbFoto
             // 
+            pbFoto.Cursor = Cursors.Hand;
             pbFoto.FillColor = Color.Wheat;
             pbFoto.ImageRotate = 0F;
             pbFoto.Location = new Point(82, 22);
@@ -100,7 +101,7 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(4, 378);
+            btnCadastrar.Location = new Point(0, 378);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnCadastrar.Size = new Size(100, 45);
@@ -119,7 +120,7 @@
             btnAtualizar.FillColor = Color.SaddleBrown;
             btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(110, 378);
+            btnAtualizar.Location = new Point(103, 378);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnAtualizar.Size = new Size(86, 45);
@@ -138,7 +139,7 @@
             btnExcluir.FillColor = Color.SaddleBrown;
             btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(201, 377);
+            btnExcluir.Location = new Point(195, 378);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnExcluir.Size = new Size(80, 45);
@@ -238,12 +239,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(290, 49);
+            txtPesquisa.Location = new Point(277, 49);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPesquisa.Size = new Size(483, 36);
+            txtPesquisa.Size = new Size(508, 36);
             txtPesquisa.TabIndex = 14;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -270,10 +271,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgUsuarios.Location = new Point(293, 91);
+            dgUsuarios.Location = new Point(277, 91);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersVisible = false;
-            dgUsuarios.Size = new Size(483, 322);
+            dgUsuarios.Size = new Size(508, 322);
             dgUsuarios.TabIndex = 7;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
