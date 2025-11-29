@@ -86,6 +86,9 @@
             npNotifica = new Guna.UI2.WinForms.Guna2NotificationPaint(components);
             mdConfirma = new Guna.UI2.WinForms.Guna2MessageDialog();
             mdNotifica = new Guna.UI2.WinForms.Guna2MessageDialog();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pictureBox5 = new PictureBox();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -99,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)pbConf).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -242,21 +246,22 @@
             guna2Panel4.Location = new Point(28, 189);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel4.Size = new Size(200, 461);
+            guna2Panel4.Size = new Size(200, 277);
             guna2Panel4.TabIndex = 0;
             // 
             // bntSair
             // 
             bntSair.BorderRadius = 20;
+            bntSair.Cursor = Cursors.Hand;
             bntSair.CustomizableEdges = customizableEdges7;
             bntSair.DisabledState.BorderColor = Color.DarkGray;
             bntSair.DisabledState.CustomBorderColor = Color.DarkGray;
             bntSair.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bntSair.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            bntSair.FillColor = Color.SaddleBrown;
+            bntSair.FillColor = Color.DarkRed;
             bntSair.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntSair.ForeColor = Color.White;
-            bntSair.Location = new Point(3, 404);
+            bntSair.Location = new Point(11, 194);
             bntSair.Name = "bntSair";
             bntSair.ShadowDecoration.CustomizableEdges = customizableEdges8;
             bntSair.Size = new Size(180, 45);
@@ -267,6 +272,7 @@
             // bntProduto
             // 
             bntProduto.BorderRadius = 20;
+            bntProduto.Cursor = Cursors.Hand;
             bntProduto.CustomizableEdges = customizableEdges9;
             bntProduto.DisabledState.BorderColor = Color.DarkGray;
             bntProduto.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -275,7 +281,7 @@
             bntProduto.FillColor = Color.SaddleBrown;
             bntProduto.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntProduto.ForeColor = Color.White;
-            bntProduto.Location = new Point(11, 99);
+            bntProduto.Location = new Point(11, 105);
             bntProduto.Name = "bntProduto";
             bntProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             bntProduto.Size = new Size(180, 45);
@@ -286,6 +292,7 @@
             // btnFuncionario
             // 
             btnFuncionario.BorderRadius = 20;
+            btnFuncionario.Cursor = Cursors.Hand;
             btnFuncionario.CustomizableEdges = customizableEdges11;
             btnFuncionario.DisabledState.BorderColor = Color.DarkGray;
             btnFuncionario.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -337,6 +344,7 @@
             // 
             // pbdarkmode
             // 
+            pbdarkmode.Cursor = Cursors.Hand;
             pbdarkmode.Image = Properties.Resources.darkmodeprojeto;
             pbdarkmode.Location = new Point(638, 0);
             pbdarkmode.Name = "pbdarkmode";
@@ -348,6 +356,7 @@
             // 
             // pbNot
             // 
+            pbNot.Cursor = Cursors.Hand;
             pbNot.Image = Properties.Resources.notification;
             pbNot.Location = new Point(724, 0);
             pbNot.Name = "pbNot";
@@ -359,6 +368,7 @@
             // 
             // pbConf
             // 
+            pbConf.Cursor = Cursors.Hand;
             pbConf.Image = Properties.Resources.settings;
             pbConf.Location = new Point(681, 0);
             pbConf.Name = "pbConf";
@@ -389,6 +399,7 @@
             // 
             // btnExit
             // 
+            btnExit.Cursor = Cursors.Hand;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -396,7 +407,7 @@
             btnExit.FillColor = Color.SaddleBrown;
             btnExit.Font = new Font("Segoe UI", 9F);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(1069, 12);
+            btnExit.Location = new Point(1069, 3);
             btnExit.Name = "btnExit";
             btnExit.ShadowDecoration.CustomizableEdges = customizableEdges1;
             btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -448,12 +459,49 @@
             mdNotifica.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             mdNotifica.Text = null;
             // 
-            // gunafundo
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Century Schoolbook", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
+            guna2HtmlLabel1.Location = new Point(51, 481);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(156, 27);
+            guna2HtmlLabel1.TabIndex = 1;
+            guna2HtmlLabel1.Text = "PRATELEIRA\r\n ";
+            guna2HtmlLabel1.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Century Schoolbook", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = Color.SaddleBrown;
+            guna2HtmlLabel2.Location = new Point(77, 514);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(109, 27);
+            guna2HtmlLabel2.TabIndex = 1;
+            guna2HtmlLabel2.Text = "VIRTUAL";
+            guna2HtmlLabel2.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.Icone_Projeto_Claro;
+            pictureBox5.Location = new Point(74, 547);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(107, 60);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            // 
+            // FormMAin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
             ClientSize = new Size(1109, 671);
+            Controls.Add(pictureBox5);
+            Controls.Add(guna2HtmlLabel1);
+            Controls.Add(guna2HtmlLabel2);
             Controls.Add(lblFotoCaminho);
             Controls.Add(btnExit);
             Controls.Add(PbFoto);
@@ -461,7 +509,7 @@
             Controls.Add(panelConteudo);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "gunafundo";
+            Name = "FormMAin";
             Text = "FormMain";
             Load += FormMain_Load;
             guna2Panel2.ResumeLayout(false);
@@ -477,6 +525,7 @@
             ((System.ComponentModel.ISupportInitialize)pbConf).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -514,5 +563,8 @@
         private Guna.UI2.WinForms.Guna2NotificationPaint npNotifica;
         private Guna.UI2.WinForms.Guna2MessageDialog mdConfirma;
         private Guna.UI2.WinForms.Guna2MessageDialog mdNotifica;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private PictureBox pictureBox5;
     }
 }

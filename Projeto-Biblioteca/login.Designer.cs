@@ -75,14 +75,13 @@
             btxClose.FillColor = Color.SaddleBrown;
             btxClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btxClose.ForeColor = Color.White;
-            btxClose.Location = new Point(242, 0);
+            btxClose.Location = new Point(245, 0);
             btxClose.Name = "btxClose";
             btxClose.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btxClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            btxClose.Size = new Size(35, 32);
+            btxClose.Size = new Size(30, 23);
             btxClose.TabIndex = 2;
             btxClose.Text = "X";
-           
             // 
             // txtNome
             // 
@@ -113,7 +112,7 @@
             pbFotoLogin.Name = "pbFotoLogin";
             pbFotoLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pbFotoLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            pbFotoLogin.Size = new Size(116, 100);
+            pbFotoLogin.Size = new Size(112, 106);
             pbFotoLogin.TabIndex = 4;
             pbFotoLogin.TabStop = false;
             // 
@@ -140,11 +139,18 @@
             txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
             // 
+            // CaminhoFoto
+            // 
+            CaminhoFoto.Location = new Point(0, 0);
+            CaminhoFoto.Name = "CaminhoFoto";
+            CaminhoFoto.Size = new Size(100, 23);
+            CaminhoFoto.TabIndex = 0;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PapayaWhip;
+            BackColor = Color.Bisque;
             ClientSize = new Size(277, 415);
             Controls.Add(CaminhoFoto);
             Controls.Add(pbFotoLogin);
@@ -157,7 +163,6 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbFotoLogin).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
