@@ -70,6 +70,8 @@
             // 
             // pbFoto
             // 
+            pbFoto.Cursor = Cursors.Hand;
+            pbFoto.FillColor = Color.Wheat;
             pbFoto.ImageRotate = 0F;
             pbFoto.Location = new Point(82, 22);
             pbFoto.Name = "pbFoto";
@@ -239,12 +241,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(290, 49);
+            txtPesquisa.Location = new Point(277, 49);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPesquisa.Size = new Size(483, 36);
+            txtPesquisa.Size = new Size(508, 36);
             txtPesquisa.TabIndex = 14;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -271,10 +273,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgUsuarios.Location = new Point(293, 91);
+            dgUsuarios.Location = new Point(277, 91);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersVisible = false;
-            dgUsuarios.Size = new Size(483, 322);
+            dgUsuarios.Size = new Size(508, 322);
             dgUsuarios.TabIndex = 7;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
