@@ -7,9 +7,10 @@ namespace Projeto_Biblioteca.DAL
 {
     public class ProdutoDAL : Connection
     {
-       
+
         //        CADASTRAR PRODUTO
-   
+
+        // CADASTRAR PRODUTO
         public void Create(ProdutoDTO livro)
         {
             try
@@ -17,15 +18,16 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"
-                    INSERT INTO Produto (NomeProduto, GeneroProduto, AutorProduto)
-                    VALUES (@NomeProduto, @GeneroProduto, @AutorProduto);";
+                INSERT INTO Produto (Nome, Genero, Autor)
+                VALUES (@Nome, @Genero, @Autor);";
 
-                command = new SqlCommand(sql, conexao);
-                command.Parameters.AddWithValue("@NomeProduto", livro.NomeProduto);
-                command.Parameters.AddWithValue("@GeneroProduto", livro.GeneroProduto);
-                command.Parameters.AddWithValue("@AutorProduto", livro.AutorProduto);
+                using (command = new SqlCommand(sql, conexao))
+                {
+                    command.Parameters.AddWithValue("@Nome", livro.NomeProduto);
+                    command.Parameters.AddWithValue("@Genero", livro.GeneroProduto);
+                    command.Parameters.AddWithValue("@Autor", livro.AutorProduto);
 
-                command.ExecuteNonQuery();
+                }
             }
             catch (Exception erro)
             {

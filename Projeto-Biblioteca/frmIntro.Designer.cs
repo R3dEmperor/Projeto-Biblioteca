@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBox3 = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -73,7 +73,7 @@
             // btnEntrar
             // 
             btnEntrar.BorderRadius = 15;
-            btnEntrar.CustomizableEdges = customizableEdges3;
+            btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -83,7 +83,7 @@
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(165, 287);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(180, 45);
             btnEntrar.TabIndex = 3;
             btnEntrar.Text = "Entrar";
@@ -94,7 +94,7 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Location = new Point(0, 0);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(0, 0);
+            guna2HtmlLabel2.Size = new Size(3, 2);
             guna2HtmlLabel2.TabIndex = 4;
             guna2HtmlLabel2.Text = null;
             // 
@@ -147,6 +147,7 @@
             Controls.Add(pictureBox3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmIntro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmIntro";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);

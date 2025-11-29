@@ -78,33 +78,29 @@ namespace Projeto_Biblioteca
 
         private void pbdarkmode_Click(object sender, EventArgs e)
         {
-
-            bool isDarkMode = this.BackColor == Color.FromArgb(32, 32, 32);
+            bool isDarkMode = this.BackColor == Color.Bisque;
 
             if (isDarkMode)
             {
-                // Modo Claro
-                this.BackColor = SystemColors.ButtonHighlight;
-                this.ForeColor = Color.Black;
+                // --- MODO ESCURO ---
+                this.BackColor = Color.FromArgb(12, 13, 10);
+                this.ForeColor = Color.White;
 
-                if (PanelConteudo != null)
-                    PanelConteudo.BackColor = Color.Bisque;
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.FromArgb(12, 13, 10);
 
-                pbColorMode.Image = Properties.Resources.lightmodeprojeto;
+                pbdarkmode.Image = Properties.Resources.lightmodeprojeto; // ícone para voltar ao claro
             }
             else
             {
-                // Modo Escuro
-                Color darkBackColor = Color.FromArgb(32, 32, 32);
-                Color darkPanelColor = Color.FromArgb(45, 45, 45);
+                // --- MODO CLARO ---
+                this.BackColor = Color.Bisque;
+                this.ForeColor = Color.FromArgb(12, 13, 10);
 
-                this.BackColor = darkBackColor;
-                this.ForeColor = Color.White;
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.Bisque;
 
-                if (PanelConteudo != null)
-                    PanelConteudo.BackColor = darkPanelColor;
-
-                pbdarkmode.Image = Properties.Resources.darkmodeprojeto;
+                pbdarkmode.Image = Properties.Resources.darkmodeprojeto; // ícone para voltar ao escuro
             }
 
         }
@@ -142,8 +138,8 @@ namespace Projeto_Biblioteca
 
         private void pbConf_Click(object sender, EventArgs e)
         {
-            //frmConfig config = new();
-            //config.ShowDialog();
+            frmConfig config = new();
+            config.ShowDialog();
         }
     }
 }
