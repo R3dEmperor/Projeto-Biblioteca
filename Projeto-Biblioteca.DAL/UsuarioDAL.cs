@@ -11,9 +11,38 @@ namespace Projeto_Biblioteca.DAL
 {
     public class UsuarioDAL : Connection
     {
+       
+        
+         
+
+            public void Excluir(int id)
+            {
+            try
+            {
+                Conectar();
+
+                command = new SqlCommand(
+                    "DELETE FROM Usuario WHERE Id = @Id",
+                    conexao);
+
+                command.Parameters.AddWithValue("@Id", id);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw new Exception($"Erro ao remover usuario: {erro.Message}");
+            }
+          
+        }
+            
+        
 
         public void Create(UsuarioDTO usuario)
         {
+
+
+
             Conectar();
             SqlTransaction transaction = conexao.BeginTransaction();
             try
