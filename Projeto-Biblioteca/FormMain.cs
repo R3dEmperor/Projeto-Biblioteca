@@ -68,8 +68,13 @@ namespace Projeto_Biblioteca
 
         private void bntSair_Click(object sender, EventArgs e)
         {
-            Close();
+            var confirmacao = mdConfirma.Show("Tem certeza que deseja encerrar sua sessão?");
+            if (confirmacao == DialogResult.Yes)
+            {
+                FecharMain();
+            }
         }
+        
 
         private void panelConteudo_Paint_1(object sender, PaintEventArgs e)
         {
