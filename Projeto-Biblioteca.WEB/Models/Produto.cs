@@ -11,5 +11,6 @@ namespace Projeto_Biblioteca.WEB.Models
         public int Genero_Produto { get; set; }
         public virtual Genero Genero { get; set; }
         public string Autor_Produto { get; set; }
+        public string Url_Foto { get; set; }
     }
 }

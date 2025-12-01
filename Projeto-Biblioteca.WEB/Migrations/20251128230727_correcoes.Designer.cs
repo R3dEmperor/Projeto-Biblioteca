@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Biblioteca.WEB.Data;
 
@@ -11,9 +12,11 @@ using Projeto_Biblioteca.WEB.Data;
 namespace Projeto_Biblioteca.WEB.Migrations
 {
     [DbContext(typeof(Projeto_BibliotecaWEBContext))]
-    partial class Projeto_BibliotecaWEBContextModelSnapshot : ModelSnapshot
+    [Migration("20251128230727_correcoes")]
+    partial class correcoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,11 +165,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     b.Property<bool>("Atividade")
                         .HasColumnType("bit");
 
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -188,11 +186,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Senha_Usuario")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Telefone")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");

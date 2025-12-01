@@ -49,28 +49,18 @@ namespace Projeto_Biblioteca.DAL
             {
                 command = new SqlCommand
                     (
-                     @"INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade) VALUES
-                     (@Nome,@Senha,@Email,@Endereço,@TipoUsuarioId,@Atividade)SELECT CAST(SCOPE_IDENTITY() AS int);"
+                     @"INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade,CPF,Telefone) VALUES
+                     (@Nome,@Senha,@Email,@Endereco,@TipoUsuarioId,@Atividade,@CPF,@Telefone)"
                      , conexao, transaction
                     );
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
-                command.Parameters.AddWithValue("@Endereço", usuario.Endereco);
+                command.Parameters.AddWithValue("@Endereco", usuario.Endereco);
                 command.Parameters.AddWithValue("@TipoUsuarioId", usuario.TipoUsuarioId);
                 command.Parameters.AddWithValue("@Atividade", usuario.atividade);
-
-                int idPessoa = Convert.ToInt32(command.ExecuteScalar());
-
-                command = new SqlCommand(@"
-                INSERT INTO Usuario ( Nome, Senha_Usuario, TipoUsuarioId,Atividade)
-                VALUES ( @Nome, @Senha, @TipoUsuarioId,@Atividade);", conexao, transaction);
-
-                command.Parameters.AddWithValue("@Nome", usuario.Usuario);
-                command.Parameters.AddWithValue("@Senha", usuario.Senha);
-                command.Parameters.AddWithValue("@TipoUsuarioId", usuario.TipoUsuarioId);
-                command.Parameters.AddWithValue("@Atividade", usuario.atividade);
-
+                command.Parameters.AddWithValue("@CPF", usuario.CPF);
+                command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
 
                 command.ExecuteNonQuery();
 
@@ -117,9 +107,9 @@ namespace Projeto_Biblioteca.DAL
                 throw new Exception(erro.Message);
             }
         }
-        public List<UsuarioDTO> GetTipoUsuario()
+        public List<FuncionarioDTO> GetTipoUsuario()
         {
-            List<UsuarioDTO> tipos = new List<UsuarioDTO>();
+            List<FuncionarioDTO> tipos = new List<FuncionarioDTO>();
 
             try
             {
@@ -156,7 +146,7 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT Id,Nome,Senha_Usuario,Endereco_Usuario,Email_Usuario,Atividade
+                string sql = @"SELECT *
                                FROM Usuario";
 
                 command = new SqlCommand(sql, conexao);
@@ -172,10 +162,9 @@ namespace Projeto_Biblioteca.DAL
                         Endereco = dataReader["Endereco_Usuario"].ToString(),
                         Email = dataReader["Email_Usuario"].ToString(),
                         atividade = dataReader["Atividade"].Equals(true),
+                        TipoUsuarioId = int.Parse(dataReader["TipoUsuarioId"].ToString()),
                     });
                 }
-
-                return lista;
             }
             catch (Exception erro)
             {
@@ -185,22 +174,28 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
+            return lista;
         }
 
         public void Update(UsuarioDTO usuario)
         {
             Conectar();
             string sql = @"UPDATE Usuario 
-                           SET Nome = @Nome, Usuario = @Usuario, Senha = @Senha, UrlFoto = @UrlFoto
+                           SET Nome=@Nome,Senha_Usuario=@Senha,Email_Usuario=@Email,Endereco_Usuario=@Endereco,TipoUsuarioId=@TipoUsuario,
+                           Atividade=@Atividade,CPF=@CPF,Telefone=@Telefone
                            WHERE Id = @Id";
 
             command = new SqlCommand(sql, conexao);
 
             command.Parameters.AddWithValue("@Id", usuario.Id);
             command.Parameters.AddWithValue("@Nome", usuario.Nome);
-            command.Parameters.AddWithValue("@Usuario", usuario.Usuario);
             command.Parameters.AddWithValue("@Senha", usuario.Senha);
-            command.Parameters.AddWithValue("@UrlFoto", usuario.UrlFoto ?? "");
+            command.Parameters.AddWithValue("@Email", usuario.Email);
+            command.Parameters.AddWithValue("@Endereco", usuario.Endereco);
+            command.Parameters.AddWithValue("@TipoUsuario", usuario.TipoUsuarioId);
+            command.Parameters.AddWithValue("@Atividade", usuario.atividade);
+            command.Parameters.AddWithValue("@CPF", usuario.CPF);
+            command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
 
             int linhas = command.ExecuteNonQuery();
 

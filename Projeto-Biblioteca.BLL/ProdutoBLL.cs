@@ -58,9 +58,6 @@ namespace Projeto_Biblioteca.BLL
 
             if (string.IsNullOrWhiteSpace(produto.AutorProduto))
                 throw new Exception("O autor do livro é obrigatório.");
-
-            if (string.IsNullOrWhiteSpace(produto.GeneroProduto))
-                throw new Exception("O gênero é obrigatório.");
         }
     }
 }

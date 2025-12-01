@@ -47,7 +47,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT * FROM Generos";
+                string sql = "SELECT Id_Genero,Descricao_Genero,Classificacao_Genero FROM Generos";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
@@ -56,9 +56,9 @@ namespace Projeto_Biblioteca.DAL
                 {
                     generos.Add(new GeneroDTO
                     {
-                        IdGenero = Convert.ToInt32(dataReader["IdGenero"]),
-                        NomeGenero = dataReader["NomeGenero"].ToString(),
-                        ClassificacaoGenero = dataReader["ClassificacaoGenero"].ToString()
+                        IdGenero = Convert.ToInt32(dataReader["Id_Genero"]),
+                        NomeGenero = dataReader["Descricao_Genero"].ToString(),
+                        ClassificacaoGenero = dataReader["Classificacao_Genero"].ToString()
                     });
                 }
             }
@@ -70,13 +70,12 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
-
             return generos;
         }
 
-   
+
         //        BUSCAR POR ID
-      
+
         public GeneroDTO BuscarPorId(int id)
         {
             try
