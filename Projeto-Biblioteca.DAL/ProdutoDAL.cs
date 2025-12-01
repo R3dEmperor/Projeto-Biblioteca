@@ -26,6 +26,7 @@ namespace Projeto_Biblioteca.DAL
                     command.Parameters.AddWithValue("@Nome", livro.NomeProduto);
                     command.Parameters.AddWithValue("@Genero", livro.GeneroProduto);
                     command.Parameters.AddWithValue("@Autor", livro.AutorProduto);
+
                 }
             }
             catch (Exception erro)

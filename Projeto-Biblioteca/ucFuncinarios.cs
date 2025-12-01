@@ -24,7 +24,7 @@ namespace Projeto_Biblioteca
         FuncionarioBLL funcionarioBLL = new();
         UsuarioBLL usuarioBLL = new();
         private int? FuncionarioSelecionadoId = null;
-        int tipousuario = 2;
+        int tipousuario;
         public ucFuncinarios()
         {
             InitializeComponent();
@@ -35,27 +35,20 @@ namespace Projeto_Biblioteca
             {
                 tipousuario = 1;
             }
-            else
-            {
-                tipousuario = 2;
-            }
+            tipousuario = 2;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             conversao();
-            var funcionario = new UsuarioDTO
+            var funcionario = new FuncionarioDTO
             {
+                
                 Nome = txtNome.Text,
                 TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
                 Senha = txtSenha.Text,
-                Email = "EmailGenerico@teste.com",
-                atividade = true,
-                UrlFoto = null,
-                Usuario = "Genérico",
-                Endereco = "EndereçoGenerico",
             };
             usuarioBLL.CadastrarUsuario(funcionario);
 
@@ -65,7 +58,6 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            conversao();
             try
             {
                 if (dgUsuarios.CurrentRow == null)
@@ -93,11 +85,10 @@ namespace Projeto_Biblioteca
                 UsuarioDTO usuario = new UsuarioDTO
                 {
                     Id = id,
-                    Nome = txtNome.Text,
-                    Usuario = txtNome.Text,
-                    Senha = txtSenha.Text,
-                    UrlFoto = caminhoImagem,
-                    TipoUsuarioId = tipousuario,
+                    Nome = txtNome.Text.Trim(),
+                    Usuario = txtNome.Text.Trim(),
+                    Senha = txtSenha.Text.Trim(),
+                    UrlFoto = caminhoImagem 
                 };
 
                 usuarioBLL.AtualizarUsuario(usuario);
@@ -125,7 +116,8 @@ namespace Projeto_Biblioteca
                 {
                     FuncionarioSelecionadoId = Convert.ToInt32(dataRow["Id"]);
                     txtNome.Text = dataRow["Nome"].ToString();
-                    txtSenha.Text = dataRow["Senha_Usuario"].ToString();
+                    txtCPF.Text = dataRow["CPF"].ToString();
+                    txtSenha.Text = dataRow["Senha"].ToString();
                     lblCaminhodaFoto.Text = dataRow["UrlFoto"].ToString();
 
 
@@ -140,6 +132,9 @@ namespace Projeto_Biblioteca
                 }
             }
         }
+
+
+
         private void AtualizarGrid()
         {
 
@@ -162,6 +157,8 @@ namespace Projeto_Biblioteca
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TipoUsuarioId", HeaderText = "Cargo", Name = "TipoUsuarioId" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Endereco_Usuario", HeaderText = "Endereço", Name = "Endereco_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Telefone", HeaderText = "Telefone", Name = "Telefone" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha_Usuario", HeaderText = "Senha", Name = "Senha_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email_Usuario", HeaderText = "Email", Name = "Email_Usuario" });
        
@@ -173,18 +170,13 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Nome", typeof(string));
             dt.Columns.Add("TipoUsuarioId", typeof(string));
             dt.Columns.Add("Endereco_Usuario", typeof(string));
-            dt.Columns.Add("Senha_Usuario", typeof(string));
+            dt.Columns.Add("CPF", typeof(string));
+            dt.Columns.Add("Senha", typeof(string));
             dt.Columns.Add("Email_Usuario", typeof(string));
         
 
             foreach (var u in funcionarios)
             {
-                var TipoFuncionarioid = funcionarioBLL.ListarFuncionarios().Find(x => x.IdTipoUsuario == u.TipoUsuarioId);
-                var tipofuncionario = "Desconhecido";
-                if (TipoFuncionarioid != null)
-                {
-                   tipofuncionario = TipoFuncionarioid.DescricaoTipoUsuario;
-                }
                 Image? img = null;
 
                 if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
@@ -201,7 +193,7 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome, tipofuncionario, u.Endereco, u.Senha, u.Email);
+                dt.Rows.Add(img, u.Id, u.Nome, u.TipoUsuarioId, u.Endereco, u.Senha, u.Email);
             }
             dgUsuarios.DataSource = dt;
         }
@@ -219,7 +211,7 @@ namespace Projeto_Biblioteca
         {
             string termo = txtPesquisa.Text.Trim().ToLower();
 
-            var filtrados = usuarioBLL.ListarUsuarios()
+            var filtrados = funcionarioBLL.ListarFuncionarios()
                                     .Where(funcionario => funcionario.Nome.ToLower().Contains(termo))
                                     .Select(funcionario => new
                                     {

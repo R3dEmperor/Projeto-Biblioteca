@@ -162,11 +162,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     b.Property<bool>("Atividade")
                         .HasColumnType("bit");
 
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -188,11 +183,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Senha_Usuario")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Telefone")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");

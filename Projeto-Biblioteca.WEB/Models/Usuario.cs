@@ -34,17 +34,6 @@ namespace Projeto_Biblioteca.WEB.Models
         [StringLength(50)]
         public string Email_Usuario { get; set; }
         //=====================================================
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Telefone")]
-        [StringLength(50)]
-        public string Telefone { get; set; } = string.Empty;
-        //=====================================================
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "CPF")]
-        [StringLength(50)]
-        public string CPF { get; set; } = string.Empty;
-
-        //=====================================================
         [Display(Name = "Cargo Funcionario")]
         public int TipoUsuarioId { get; set; }
         public virtual Funcionario? TipoUsuario { get; set; }
