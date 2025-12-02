@@ -16,5 +16,10 @@ namespace Projeto_Biblioteca.Win2
         {
             InitializeComponent();
         }
+
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
