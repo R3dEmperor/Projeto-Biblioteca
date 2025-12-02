@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Biblioteca.Win2
 {
-    partial class UcGeneros
+    partial class UcFuncionarios
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,11 +30,11 @@
         {
             SuspendLayout();
             // 
-            // UcGeneros
+            // UcFuncionarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "UcGeneros";
+            Name = "UcFuncionarios";
             Size = new Size(791, 412);
             ResumeLayout(false);
         }
