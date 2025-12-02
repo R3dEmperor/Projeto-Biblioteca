@@ -21,7 +21,7 @@ namespace Projeto_Biblioteca
                 MessageBox.Show($"Bem-vindo(a), {usuario.Nome}!", "Login realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                FormMAin main = new FormMAin();
+                FormMain main = new FormMain();
                 main.Show();
 
                 

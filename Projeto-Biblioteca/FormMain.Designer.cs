@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Biblioteca
 {
-    partial class FormMAin
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+       
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -112,14 +112,9 @@
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // guna2Panel1
+           
             // 
-            guna2Panel1.CustomizableEdges = customizableEdges15;
-            guna2Panel1.Location = new Point(381, 169);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel1.Size = new Size(788, 435);
-            guna2Panel1.TabIndex = 0;
+     
             // 
             // guna2Button1
             // 
@@ -493,7 +488,7 @@
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
             // 
-            // FormMAin
+            // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -509,7 +504,7 @@
             Controls.Add(panelConteudo);
             Controls.Add(guna2Panel4);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormMAin";
+            Name = "FormMain";
             Text = "FormMain";
             Load += FormMain_Load;
             guna2Panel2.ResumeLayout(false);
@@ -533,7 +528,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+   
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
