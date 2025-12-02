@@ -262,7 +262,6 @@
             bntSair.Size = new Size(180, 45);
             bntSair.TabIndex = 0;
             bntSair.Text = "Sair";
-            bntSair.Click += bntSair_Click;
             // 
             // bntProduto
             // 
@@ -282,7 +281,6 @@
             bntProduto.Size = new Size(180, 45);
             bntProduto.TabIndex = 0;
             bntProduto.Text = "Produto";
-            bntProduto.Click += bntProduto_Click;
             // 
             // btnFuncionario
             // 
@@ -302,7 +300,6 @@
             btnFuncionario.Size = new Size(180, 45);
             btnFuncionario.TabIndex = 0;
             btnFuncionario.Text = "Funcionario";
-            btnFuncionario.Click += btnFuncionario_Click;
             // 
             // panelConteudo
             // 
@@ -312,7 +309,6 @@
             panelConteudo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             panelConteudo.Size = new Size(788, 435);
             panelConteudo.TabIndex = 1;
-            panelConteudo.Paint += panelConteudo_Paint_1;
             // 
             // guna2Panel6
             // 
@@ -347,7 +343,6 @@
             pbdarkmode.SizeMode = PictureBoxSizeMode.Zoom;
             pbdarkmode.TabIndex = 1;
             pbdarkmode.TabStop = false;
-            pbdarkmode.Click += pbdarkmode_Click;
             // 
             // pbNot
             // 
@@ -359,7 +354,6 @@
             pbNot.SizeMode = PictureBoxSizeMode.Zoom;
             pbNot.TabIndex = 1;
             pbNot.TabStop = false;
-            pbNot.Click += pbNot_Click;
             // 
             // pbConf
             // 
@@ -371,7 +365,6 @@
             pbConf.SizeMode = PictureBoxSizeMode.Zoom;
             pbConf.TabIndex = 1;
             pbConf.TabStop = false;
-            pbConf.Click += pbConf_Click;
             // 
             // pictureBox4
             // 
