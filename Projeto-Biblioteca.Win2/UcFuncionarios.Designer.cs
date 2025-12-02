@@ -60,9 +60,9 @@
             BtnExcluir = new Guna.UI2.WinForms.Guna2Button();
             BtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
-            DgProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
+            DgFuncionarios = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)PbFotoFuncionarios).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DgProdutos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgFuncionarios).BeginInit();
             SuspendLayout();
             // 
             // txtPesquisa
@@ -83,6 +83,7 @@
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtPesquisa.Size = new Size(483, 36);
             txtPesquisa.TabIndex = 17;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // LblCaminhoDaFoto
             // 
@@ -246,10 +247,10 @@
             btnCadastrar.TabIndex = 9;
             btnCadastrar.Text = "Cadastrar";
             // 
-            // DgProdutos
+            // DgFuncionarios
             // 
             dataGridViewCellStyle4.BackColor = Color.White;
-            DgProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            DgFuncionarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
@@ -257,9 +258,9 @@
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DgProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            DgProdutos.ColumnHeadersHeight = 4;
-            DgProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DgFuncionarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            DgFuncionarios.ColumnHeadersHeight = 4;
+            DgFuncionarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -267,34 +268,34 @@
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DgProdutos.DefaultCellStyle = dataGridViewCellStyle6;
-            DgProdutos.GridColor = Color.FromArgb(231, 229, 255);
-            DgProdutos.Location = new Point(305, 189);
-            DgProdutos.Name = "DgProdutos";
-            DgProdutos.RowHeadersVisible = false;
-            DgProdutos.Size = new Size(483, 245);
-            DgProdutos.TabIndex = 6;
-            DgProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            DgProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
-            DgProdutos.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            DgProdutos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            DgProdutos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            DgProdutos.ThemeStyle.BackColor = Color.White;
-            DgProdutos.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            DgProdutos.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            DgProdutos.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            DgProdutos.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            DgProdutos.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            DgProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DgProdutos.ThemeStyle.HeaderStyle.Height = 4;
-            DgProdutos.ThemeStyle.ReadOnly = false;
-            DgProdutos.ThemeStyle.RowsStyle.BackColor = Color.White;
-            DgProdutos.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DgProdutos.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            DgProdutos.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            DgProdutos.ThemeStyle.RowsStyle.Height = 25;
-            DgProdutos.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            DgProdutos.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DgFuncionarios.DefaultCellStyle = dataGridViewCellStyle6;
+            DgFuncionarios.GridColor = Color.FromArgb(231, 229, 255);
+            DgFuncionarios.Location = new Point(305, 189);
+            DgFuncionarios.Name = "DgFuncionarios";
+            DgFuncionarios.RowHeadersVisible = false;
+            DgFuncionarios.Size = new Size(483, 245);
+            DgFuncionarios.TabIndex = 6;
+            DgFuncionarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DgFuncionarios.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DgFuncionarios.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DgFuncionarios.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DgFuncionarios.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DgFuncionarios.ThemeStyle.BackColor = Color.White;
+            DgFuncionarios.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            DgFuncionarios.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            DgFuncionarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DgFuncionarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            DgFuncionarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DgFuncionarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DgFuncionarios.ThemeStyle.HeaderStyle.Height = 4;
+            DgFuncionarios.ThemeStyle.ReadOnly = false;
+            DgFuncionarios.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DgFuncionarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DgFuncionarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            DgFuncionarios.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DgFuncionarios.ThemeStyle.RowsStyle.Height = 25;
+            DgFuncionarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DgFuncionarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // UcFuncionarios
             // 
@@ -311,11 +312,11 @@
             Controls.Add(BtnExcluir);
             Controls.Add(BtnAtualizar);
             Controls.Add(btnCadastrar);
-            Controls.Add(DgProdutos);
+            Controls.Add(DgFuncionarios);
             Name = "UcFuncionarios";
             Size = new Size(791, 437);
             ((System.ComponentModel.ISupportInitialize)PbFotoFuncionarios).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DgProdutos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgFuncionarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,6 +334,6 @@
         private Guna.UI2.WinForms.Guna2Button BtnExcluir;
         private Guna.UI2.WinForms.Guna2Button BtnAtualizar;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
-        private Guna.UI2.WinForms.Guna2DataGridView DgProdutos;
+        private Guna.UI2.WinForms.Guna2DataGridView DgFuncionarios;
     }
 }

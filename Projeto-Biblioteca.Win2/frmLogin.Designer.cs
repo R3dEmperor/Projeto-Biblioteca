@@ -52,7 +52,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.PRATELEIRA2__1_1;
+
             pictureBox1.Location = new Point(-22, -9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(823, 494);
