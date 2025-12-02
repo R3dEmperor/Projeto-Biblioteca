@@ -21,5 +21,10 @@ namespace Projeto_Biblioteca.Win2
         {
 
         }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

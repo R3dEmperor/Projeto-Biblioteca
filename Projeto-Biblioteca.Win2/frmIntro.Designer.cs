@@ -67,7 +67,6 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.DeepSkyBlue;
-            pictureBox1.Image = Properties.Resources.PRATELEIRA__2_;
             pictureBox1.Location = new Point(-4, -6);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(853, 520);
