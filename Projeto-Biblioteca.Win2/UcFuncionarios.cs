@@ -16,5 +16,10 @@ namespace Projeto_Biblioteca.Win2
         {
             InitializeComponent();
         }
+
+        private void UcFuncionarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
