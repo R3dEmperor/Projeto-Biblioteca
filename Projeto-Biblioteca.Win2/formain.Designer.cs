@@ -204,7 +204,7 @@
             // 
             // PBFotoUsuarioMain
             // 
-            PBFotoUsuarioMain.Image = Properties.Resources._1___gabriel;
+          
             PBFotoUsuarioMain.ImageRotate = 0F;
             PBFotoUsuarioMain.Location = new Point(12, 21);
             PBFotoUsuarioMain.Name = "PBFotoUsuarioMain";
