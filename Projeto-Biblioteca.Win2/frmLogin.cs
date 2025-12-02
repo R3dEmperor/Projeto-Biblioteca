@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Projeto_Biblioteca.Win2
 {
-    public partial class frmIntro : Form
+    public partial class frmLogin : Form
     {
-        public frmIntro()
+        public frmLogin()
         {
             InitializeComponent();
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

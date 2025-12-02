@@ -63,9 +63,59 @@ namespace Projeto_Biblioteca.Win2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1___gabriel {
+        internal static System.Drawing.Bitmap PRATELEIRA {
             get {
-                object obj = ResourceManager.GetObject("1 - gabriel", resourceCulture);
+                object obj = ResourceManager.GetObject("PRATELEIRA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PRATELEIRA__2_ {
+            get {
+                object obj = ResourceManager.GetObject("PRATELEIRA (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PRATELEIRA__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("PRATELEIRA (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PRATELEIRA2 {
+            get {
+                object obj = ResourceManager.GetObject("PRATELEIRA2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PRATELEIRA2__1_ {
+            get {
+                object obj = ResourceManager.GetObject("PRATELEIRA2 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PRATELEIRA2__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("PRATELEIRA2 (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
