@@ -48,7 +48,7 @@
             // 
             btnLogin.BackColor = Color.Transparent;
             btnLogin.BorderColor = Color.Transparent;
-            btnLogin.BorderRadius = 15;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.CustomizableEdges = customizableEdges1;
             btnLogin.DisabledState.BorderColor = Color.DarkGray;
             btnLogin.DisabledState.CustomBorderColor = Color.DarkGray;

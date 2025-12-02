@@ -52,7 +52,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.PRATELEIRA2__1_;
+            pictureBox1.Image = Properties.Resources.PRATELEIRA2__1_1;
             pictureBox1.Location = new Point(-22, -9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(823, 494);
@@ -64,6 +64,7 @@
             // 
             guna2Button1.BackColor = Color.Transparent;
             guna2Button1.BorderRadius = 15;
+            guna2Button1.Cursor = Cursors.Hand;
             guna2Button1.CustomizableEdges = customizableEdges5;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -82,6 +83,7 @@
             // guna2TextBox1
             // 
             guna2TextBox1.BorderRadius = 15;
+            guna2TextBox1.Cursor = Cursors.IBeam;
             guna2TextBox1.CustomizableEdges = customizableEdges3;
             guna2TextBox1.DefaultText = "User";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -102,6 +104,7 @@
             // guna2TextBox2
             // 
             guna2TextBox2.BorderRadius = 15;
+            guna2TextBox2.Cursor = Cursors.IBeam;
             guna2TextBox2.CustomizableEdges = customizableEdges1;
             guna2TextBox2.DefaultText = "Senha";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
