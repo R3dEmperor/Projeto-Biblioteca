@@ -255,6 +255,7 @@
             bntSair.Size = new Size(180, 45);
             bntSair.TabIndex = 0;
             bntSair.Text = "Sair";
+            bntSair.Click += bntSair_Click;
             // 
             // bntProduto
             // 
@@ -294,6 +295,7 @@
             btnFuncionario.Size = new Size(180, 45);
             btnFuncionario.TabIndex = 0;
             btnFuncionario.Text = "Funcionario";
+            btnFuncionario.Click += btnFuncionario_Click;
             // 
             // panelConteudo
             // 
@@ -337,6 +339,7 @@
             pbdarkmode.SizeMode = PictureBoxSizeMode.Zoom;
             pbdarkmode.TabIndex = 1;
             pbdarkmode.TabStop = false;
+            pbdarkmode.Click += pbdarkmode_Click;
             // 
             // pbNot
             // 
@@ -359,6 +362,7 @@
             pbConf.SizeMode = PictureBoxSizeMode.Zoom;
             pbConf.TabIndex = 1;
             pbConf.TabStop = false;
+            pbConf.Click += pbConf_Click;
             // 
             // pictureBox4
             // 
@@ -425,7 +429,7 @@
             // 
             // mdConfirma
             // 
-            mdConfirma.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            mdConfirma.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
             mdConfirma.Caption = "Confimação";
             mdConfirma.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
             mdConfirma.Parent = this;

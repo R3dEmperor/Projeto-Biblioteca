@@ -97,10 +97,10 @@ namespace Projeto_Biblioteca
             {
                 string nomeArquivoImagem = openFileDialog.FileName;
 
-                
+
                 guna2CirclePictureBox1.Image = Image.FromFile(nomeArquivoImagem);
 
-               
+
                 lblCaminhoFoto.Text = nomeArquivoImagem;
             }
         }
@@ -118,6 +118,11 @@ namespace Projeto_Biblioteca
         private void frmConfig_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
