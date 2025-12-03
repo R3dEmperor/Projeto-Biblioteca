@@ -57,7 +57,7 @@
             btnLogin.FillColor = Color.FromArgb(0, 46, 83);
             btnLogin.Font = new Font("Lucida Console", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(375, 398);
+            btnLogin.Location = new Point(371, 390);
             btnLogin.Name = "btnLogin";
             btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnLogin.Size = new Size(101, 41);
@@ -66,14 +66,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.DeepSkyBlue;
-            pictureBox1.Location = new Point(-4, -6);
+            pictureBox1.Image = Properties.Resources.pvintro;
+            pictureBox1.Location = new Point(-22, -35);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(853, 520);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Size = new Size(889, 570);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // frmIntro
             // 

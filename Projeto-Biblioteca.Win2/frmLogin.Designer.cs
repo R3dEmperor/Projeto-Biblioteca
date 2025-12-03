@@ -36,10 +36,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
-            pictureBox1 = new PictureBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,16 +49,6 @@
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // pictureBox1
-            // 
-
-            pictureBox1.Location = new Point(-22, -9);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(823, 494);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // guna2Button1
             // 
@@ -123,6 +113,15 @@
             guna2TextBox2.TabIndex = 2;
             guna2TextBox2.UseSystemPasswordChar = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.pvLogin;
+            pictureBox1.Location = new Point(-32, -4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(791, 479);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,8 +144,8 @@
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private PictureBox pictureBox1;
     }
 }
