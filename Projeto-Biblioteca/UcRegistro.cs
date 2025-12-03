@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_Biblioteca.Win2
+namespace Projeto_Biblioteca
 {
-    public partial class UcGeneros : UserControl
+    public partial class UcRegistro : UserControl
     {
-        public UcGeneros()
+        public UcRegistro()
         {
             InitializeComponent();
-        }
-
-        private void txtPesquisa_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
