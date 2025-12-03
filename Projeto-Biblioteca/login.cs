@@ -16,7 +16,7 @@ namespace Projeto_Biblioteca
             try
             {
 
-                var usuario = usuarioBLL.Login(txtNome.Text,txtSenha.Text);
+                var usuario = usuarioBLL.Login(txtNome.Text, txtSenha.Text);
                 Session.UsuarioLogado = usuario;
                 MessageBox.Show($"Bem-vindo(a), {Session.UsuarioLogado.Nome}!", "Login realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -24,7 +24,7 @@ namespace Projeto_Biblioteca
                 FormMain main = new();
                 main.Show();
 
-                
+
                 Hide();
             }
             catch (Exception ex)
@@ -37,8 +37,8 @@ namespace Projeto_Biblioteca
                 );
             }
         }
-        
-        
+
+
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
@@ -53,6 +53,11 @@ namespace Projeto_Biblioteca
         private void PbFundo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btxClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

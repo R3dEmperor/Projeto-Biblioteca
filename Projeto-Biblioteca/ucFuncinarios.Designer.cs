@@ -85,7 +85,7 @@
             // lblCaminhodaFoto
             // 
             lblCaminhodaFoto.BackColor = Color.Transparent;
-            lblCaminhodaFoto.Location = new Point(94, 135);
+            lblCaminhodaFoto.Location = new Point(94, 126);
             lblCaminhodaFoto.Name = "lblCaminhodaFoto";
             lblCaminhodaFoto.Size = new Size(95, 17);
             lblCaminhodaFoto.TabIndex = 18;
@@ -103,10 +103,10 @@
             btnCadastrar.FillColor = Color.SaddleBrown;
             btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(0, 377);
+            btnCadastrar.Location = new Point(6, 359);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            btnCadastrar.Size = new Size(100, 45);
+            btnCadastrar.Size = new Size(97, 45);
             btnCadastrar.TabIndex = 15;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.Click += btnCadastrar_Click;
@@ -122,7 +122,7 @@
             btnAtualizar.FillColor = Color.SaddleBrown;
             btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
-            btnAtualizar.Location = new Point(106, 377);
+            btnAtualizar.Location = new Point(109, 359);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnAtualizar.Size = new Size(86, 45);
@@ -141,7 +141,7 @@
             btnExcluir.FillColor = Color.SaddleBrown;
             btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(198, 377);
+            btnExcluir.Location = new Point(201, 359);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnExcluir.Size = new Size(80, 45);
@@ -161,7 +161,7 @@
             txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNome.Font = new Font("Segoe UI", 9F);
             txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Location = new Point(12, 158);
+            txtNome.Location = new Point(12, 149);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.SelectedText = "";
@@ -181,7 +181,7 @@
             txtSenha.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSenha.Font = new Font("Segoe UI", 9F);
             txtSenha.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSenha.Location = new Point(12, 326);
+            txtSenha.Location = new Point(12, 317);
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Senha";
             txtSenha.SelectedText = "";
@@ -201,7 +201,7 @@
             txtTelefone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefone.Font = new Font("Segoe UI", 9F);
             txtTelefone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefone.Location = new Point(12, 284);
+            txtTelefone.Location = new Point(12, 275);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.PlaceholderText = "Telefone";
             txtTelefone.SelectedText = "";
@@ -221,7 +221,7 @@
             txtCPF.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCPF.Font = new Font("Segoe UI", 9F);
             txtCPF.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCPF.Location = new Point(12, 242);
+            txtCPF.Location = new Point(12, 233);
             txtCPF.Name = "txtCPF";
             txtCPF.PlaceholderText = "CPF";
             txtCPF.SelectedText = "";
@@ -241,12 +241,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(277, 49);
+            txtPesquisa.Location = new Point(284, 49);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPesquisa.Size = new Size(508, 36);
+            txtPesquisa.Size = new Size(396, 36);
             txtPesquisa.TabIndex = 14;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -273,10 +273,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgUsuarios.Location = new Point(277, 91);
+            dgUsuarios.Location = new Point(303, 91);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersVisible = false;
-            dgUsuarios.Size = new Size(508, 322);
+            dgUsuarios.Size = new Size(471, 281);
             dgUsuarios.TabIndex = 7;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -314,7 +314,7 @@
             cboTipoUsuario.Font = new Font("Segoe UI", 10F);
             cboTipoUsuario.ForeColor = Color.FromArgb(68, 88, 112);
             cboTipoUsuario.ItemHeight = 30;
-            cboTipoUsuario.Location = new Point(12, 200);
+            cboTipoUsuario.Location = new Point(12, 191);
             cboTipoUsuario.Name = "cboTipoUsuario";
             cboTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges19;
             cboTipoUsuario.Size = new Size(255, 36);
