@@ -26,5 +26,10 @@ namespace Projeto_Biblioteca.Win2
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
