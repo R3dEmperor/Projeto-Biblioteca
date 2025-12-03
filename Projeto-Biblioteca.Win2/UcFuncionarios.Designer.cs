@@ -96,6 +96,7 @@
             // 
             // PbFotoFuncionarios
             // 
+        
             PbFotoFuncionarios.Location = new Point(13, 21);
             PbFotoFuncionarios.Name = "PbFotoFuncionarios";
             PbFotoFuncionarios.Size = new Size(138, 135);

@@ -178,7 +178,7 @@
             // 
             // PbFotoProduto
             // 
-            PbFotoProduto.Image = Properties.Resources.icons8_alunos_96__1_;
+         
             PbFotoProduto.Location = new Point(13, 12);
             PbFotoProduto.Name = "PbFotoProduto";
             PbFotoProduto.Size = new Size(138, 135);
