@@ -93,6 +93,57 @@ namespace Projeto_Biblioteca
 
         private void bntProduto_Click(object sender, EventArgs e)
         {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcProduto());
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new ucFuncinarios());
+        }
+
+        private void bntSair_Click(object sender, EventArgs e)
+        {
+            var confirmacao = mdConfirma.Show("Tem certeza que deseja encerrar sua sessão?");
+            if (confirmacao == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        private void pbConf_Click(object sender, EventArgs e)
+        {
+            frmConfig config = new();
+            config.ShowDialog();
+        }
+
+        private void pbdarkmode_Click(object sender, EventArgs e)
+        {
+            bool isDarkMode = this.BackColor == Color.Bisque;
+
+            if (isDarkMode)
+            {
+                // --- MODO ESCURO ---
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.White;
+
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.Black;
+
+                pbdarkmode.Image = Properties.Resources.lightmodeprojeto; // ícone para voltar ao claro
+            }
+            else
+            {
+                // --- MODO CLARO ---
+                this.BackColor = Color.Bisque;
+                this.ForeColor = Color.Black;
+
+                if (panelConteudo != null)
+                    panelConteudo.BackColor = Color.Bisque;
+
+                pbdarkmode.Image = Properties.Resources.darkmodeprojeto; // ícone para voltar ao escuro
+            }
 
         }
     }

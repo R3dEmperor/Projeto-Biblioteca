@@ -214,7 +214,7 @@ namespace Projeto_Biblioteca
         private void Atualizarcbo()
         {
             var lista = generoBLL.ListarGeneros().Select(x => x.NomeGenero).ToList();
-            cboGeneros.DataSource = lista;
+            cboGenero.DataSource = lista;
         }
     }
 }
