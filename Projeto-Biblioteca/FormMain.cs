@@ -90,5 +90,10 @@ namespace Projeto_Biblioteca
                 Application.Exit();
             }
         }
+
+        private void bntProduto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

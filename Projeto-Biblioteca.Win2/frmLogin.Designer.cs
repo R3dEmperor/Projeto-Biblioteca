@@ -115,7 +115,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.pvLogin;
+
             pictureBox1.Location = new Point(-32, -4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(791, 479);
