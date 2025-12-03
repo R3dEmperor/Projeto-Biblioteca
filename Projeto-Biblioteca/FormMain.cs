@@ -146,5 +146,10 @@ namespace Projeto_Biblioteca
             }
 
         }
+
+        private void pbNot_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

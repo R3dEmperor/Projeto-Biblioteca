@@ -351,6 +351,7 @@
             pbNot.SizeMode = PictureBoxSizeMode.Zoom;
             pbNot.TabIndex = 1;
             pbNot.TabStop = false;
+            pbNot.Click += pbNot_Click;
             // 
             // pbConf
             // 

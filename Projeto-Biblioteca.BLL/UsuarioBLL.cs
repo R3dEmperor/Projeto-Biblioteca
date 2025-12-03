@@ -27,12 +27,7 @@ namespace Projeto_Biblioteca.BLL
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(senha))
                 throw new Exception("Login e senha são obrigatórios.");
 
-            var usuario = dal.Autenticar(login, senha);
-
-            if (usuario == null)
-                throw new Exception("Usuário ou senha inválidos.");
-
-            return usuario;
+            return usuarioDAL.Autenticar(login, senha, usuarioDAL.GetDataReader());          
         }
 
         // ATUALIZAR USUÁRIO

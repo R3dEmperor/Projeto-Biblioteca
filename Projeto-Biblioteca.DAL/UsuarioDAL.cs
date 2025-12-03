@@ -33,10 +33,10 @@ namespace Projeto_Biblioteca.DAL
             {
                 throw new Exception($"Erro ao remover usuario: {erro.Message}");
             }
-          
+
         }
-            
-        
+
+
 
         public void Create(UsuarioDTO usuario)
         {
@@ -86,13 +86,17 @@ namespace Projeto_Biblioteca.DAL
                 Desconectar();
             }
         }
-        public UsuarioDTO Autenticar(string login, string senha)
+        public SqlDataReader GetDataReader()
+        {
+            return dataReader;
+        }
+        public UsuarioDTO Autenticar(string login, string senha, SqlDataReader dataReader)
         {
             try
             {
                 Conectar();
-                command = new SqlCommand("SELECT * FROM Usuario WHERE Usuario " +
-                    "= @Usuario AND Senha = @Senha", conexao);
+                command = new SqlCommand(
+            "SELECT * FROM Usuario WHERE Nome = @Usuario AND Senha_Usuario = @Senha", conexao);
 
                 command.Parameters.AddWithValue("@Usuario", login);
                 command.Parameters.AddWithValue("@Senha", senha);
@@ -103,9 +107,9 @@ namespace Projeto_Biblioteca.DAL
                 {
                     {
                         usuario = new UsuarioDTO();
-                        usuario.Usuario = dataReader["Usuario"].ToString();
-                        usuario.Senha = dataReader["Senha"].ToString();
-                        usuario.TipoUsuarioId = (int)dataReader["TpUsuario"];
+                        usuario.Usuario = dataReader["Nome"].ToString();
+                        usuario.Senha = dataReader["Senha_Usuario"].ToString();
+                        //usuario.TipoUsuario = (string)dataReader["TipoUsuario"];
                     }
                 }
                 return usuario;

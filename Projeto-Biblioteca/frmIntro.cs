@@ -25,9 +25,7 @@ namespace Projeto_Biblioteca
         {
             login obj = new();
             obj.ShowDialog();
+            Hide();
         }
-
-      
-        
     }
 }
