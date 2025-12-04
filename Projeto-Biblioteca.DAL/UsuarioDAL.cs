@@ -121,37 +121,6 @@ namespace Projeto_Biblioteca.DAL
                 throw new Exception(erro.Message);
             }
         }
-        public List<UsuarioDTO> GetTipoUsuario()
-        {
-            List<UsuarioDTO> tipos = new List<UsuarioDTO>();
-
-            try
-            {
-                Conectar();
-                string sql = "SELECT IdTipoUsuario, DescricaoTipoUsuario FROM TipoUsuario";
-                command = new SqlCommand(sql, conexao);
-                dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    tipos.Add(new FuncionarioDTO
-                    {
-                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["DescricaoTipoUsuario"].ToString()
-                    });
-                }
-
-                return tipos;
-            }
-            catch (Exception erro)
-            {
-                throw new Exception($"Erro ao listar tipos de usuário: {erro.Message}");
-            }
-            finally
-            {
-                Desconectar();
-            }
-        }
 
         public List<UsuarioDTO> Listar()
         {
@@ -160,7 +129,7 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT Id,Nome,Senha_Usuario,Endereco_Usuario,Email_Usuario,Atividade
+                string sql = @"SELECT Id,Nome,Senha_Usuario,Endereco_Usuario,Email_Usuario,Atividade,TipoUsuarioId
                                FROM Usuario";
 
                 command = new SqlCommand(sql, conexao);
@@ -176,6 +145,7 @@ namespace Projeto_Biblioteca.DAL
                         Endereco = dataReader["Endereco_Usuario"].ToString(),
                         Email = dataReader["Email_Usuario"].ToString(),
                         atividade = dataReader["Atividade"].Equals(true),
+                        TipoUsuarioId = Convert.ToInt32(dataReader["TipoUsuarioId"])
                     });
                 }
             }

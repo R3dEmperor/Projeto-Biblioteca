@@ -2,13 +2,13 @@
 
 namespace Projeto_Biblioteca.DTO
 {
-    public class FuncionarioDTO  : UsuarioDTO
+    public class FuncionarioDTO
     {
         [Key]
-        public int IdTipoUsuario { get; set; }
+        public int IdCargo { get; set; }
 
         [Required, MaxLength(100)]
-        public string DescricaoTipoUsuario { get; set; } = string.Empty;
+        public string NomeCargo { get; set; } = string.Empty;
 
         public virtual ICollection<UsuarioDTO>? Usuarios { get; set; }
     }

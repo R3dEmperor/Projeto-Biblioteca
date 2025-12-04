@@ -27,8 +27,8 @@ namespace Projeto_Biblioteca.DAL
                 {
                     lista.Add(new FuncionarioDTO
                     {
-                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["Descricao_Tipo"].ToString()
+                        IdCargo = Convert.ToInt32(dataReader["IdTipoUsuario"]),
+                        NomeCargo = dataReader["Descricao_Tipo"].ToString()
                     });
                 }
                 return lista;
@@ -52,9 +52,9 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = @"SELECT IdTipoUsuario, DescricaoTipoUsuario
-                               FROM TipoUsuario
-                               WHERE IdTipoUsuario = @Id";
+                string sql = @"SELECT IdTipoUsuario,Descricao_Tipo
+                               FROM Funcionario
+                               WHERE IdCargo = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -65,8 +65,8 @@ namespace Projeto_Biblioteca.DAL
                 {
                     return new FuncionarioDTO
                     {
-                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
-                        DescricaoTipoUsuario = dataReader["DescricaoTipoUsuario"].ToString()
+                        IdCargo = Convert.ToInt32(dataReader["IdTipoUsuario"]),
+                        NomeCargo = dataReader["Descricao_Tipo"].ToString()
                     };
                 }
 
@@ -91,11 +91,11 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = @"INSERT INTO TipoUsuario (DescricaoTipoUsuario)
+                string sql = @"INSERT INTO TipoUsuario (NomeCargo)
                                VALUES (@Descricao)";
 
                 command = new SqlCommand(sql, conexao);
-                command.Parameters.AddWithValue("@Descricao", tipo.DescricaoTipoUsuario);
+                command.Parameters.AddWithValue("@Descricao", tipo.NomeCargo);
 
                 command.ExecuteNonQuery();
             }
@@ -118,12 +118,12 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"UPDATE TipoUsuario 
-                               SET DescricaoTipoUsuario = @Descricao
-                               WHERE IdTipoUsuario = @Id";
+                               SET NomeCargo = @Descricao
+                               WHERE IdCargo = @Id";
 
                 command = new SqlCommand(sql, conexao);
-                command.Parameters.AddWithValue("@Descricao", tipo.DescricaoTipoUsuario);
-                command.Parameters.AddWithValue("@Id", tipo.IdTipoUsuario);
+                command.Parameters.AddWithValue("@Descricao", tipo.NomeCargo);
+                command.Parameters.AddWithValue("@Id", tipo.IdCargo);
 
                 command.ExecuteNonQuery();
             }
@@ -147,7 +147,7 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"DELETE FROM TipoUsuario
-                               WHERE IdTipoUsuario = @Id";
+                               WHERE IdCargo = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);

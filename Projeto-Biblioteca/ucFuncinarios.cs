@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.CodeAnalysis.FlowAnalysis;
 using Projeto_Biblioteca.BLL;
 using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
@@ -41,7 +43,7 @@ namespace Projeto_Biblioteca
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             conversao();
-            var funcionario = new FuncionarioDTO
+            var funcionario = new UsuarioDTO
             {
                 
                 Nome = txtNome.Text,
@@ -117,11 +119,12 @@ namespace Projeto_Biblioteca
                     FuncionarioSelecionadoId = Convert.ToInt32(dataRow["Id"]);
                     txtNome.Text = dataRow["Nome"].ToString();
                     txtCPF.Text = dataRow["CPF"].ToString();
-                    txtSenha.Text = dataRow["Senha"].ToString();
+                    txtTelefone.Text = dataRow["Telefone"].ToString();
+                    txtSenha.Text = dataRow["Senha_Usuario"].ToString();
                     lblCaminhodaFoto.Text = dataRow["UrlFoto"].ToString();
 
 
-                    string caminho = dataRow["UrlFoto"].ToString();
+                    string ? caminho = dataRow["UrlFoto"].ToString();
 
 
                     pbFoto.Image = (!string.IsNullOrWhiteSpace(caminho) && File.Exists(caminho))
@@ -171,14 +174,15 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("TipoUsuarioId", typeof(string));
             dt.Columns.Add("Endereco_Usuario", typeof(string));
             dt.Columns.Add("CPF", typeof(string));
-            dt.Columns.Add("Senha", typeof(string));
+            dt.Columns.Add("Telefone", typeof(string));
+            dt.Columns.Add("Senha_Usuario", typeof(string));
             dt.Columns.Add("Email_Usuario", typeof(string));
-        
+
 
             foreach (var u in funcionarios)
             {
+                string Cargoid = funcionarioBLL.ListarCargos().Find(x => x.IdCargo == u.TipoUsuarioId).NomeCargo.ToString();
                 Image? img = null;
-
                 if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
                 {
                     try
@@ -193,13 +197,13 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome, u.TipoUsuarioId, u.Endereco, u.Senha, u.Email);
+                dt.Rows.Add(img, u.Id, u.Nome, Cargoid, u.Endereco, u.CPF,u.Telefone, u.Senha,u.Email);
             }
             dgUsuarios.DataSource = dt;
         }
         private void Atualizarcbo()
         {
-            var lista = funcionarioBLL.ListarFuncionarios().Select(x => x.DescricaoTipoUsuario).ToList();
+            var lista = funcionarioBLL.ListarCargos().Select(x => x.NomeCargo).ToList();
             cboTipoUsuario.DataSource = lista;
         }
         private void ucFuncinarios_Load(object sender, EventArgs e)
@@ -211,7 +215,7 @@ namespace Projeto_Biblioteca
         {
             string termo = txtPesquisa.Text.Trim().ToLower();
 
-            var filtrados = funcionarioBLL.ListarFuncionarios()
+            var filtrados = usuarioBLL.ListarUsuarios()
                                     .Where(funcionario => funcionario.Nome.ToLower().Contains(termo))
                                     .Select(funcionario => new
                                     {

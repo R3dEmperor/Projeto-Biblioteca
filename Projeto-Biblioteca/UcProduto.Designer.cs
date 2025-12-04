@@ -253,6 +253,7 @@
             dgProdutos.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgProdutos.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgProdutos.CellClick += DataGridView_CellClick;
+            dgProdutos.CellContentClick += dgProdutos_CellContentClick;
             // 
             // pbCaminhodaFoto
             // 
