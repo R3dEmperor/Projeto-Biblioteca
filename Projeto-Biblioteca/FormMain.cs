@@ -149,7 +149,51 @@ namespace Projeto_Biblioteca
 
         private void pbNot_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (int.TryParse(npNotifica.Text, out int qtdNotifica))
+                {
+                    if (qtdNotifica > 0)
+                    {
+                        qtdNotifica--;
+                        npNotifica.Text = qtdNotifica > 0 ?
+                            qtdNotifica.ToString() : string.Empty;
 
+                        npNotifica.FillColor = qtdNotifica > 0 ?
+                            npNotifica.FillColor : Color.Transparent;
+
+                        string mensagem = qtdNotifica > 0 ?
+                            "Aqui serão exibidas as notificações" : "Não há notificações";
+
+                        mdNotifica.Show(mensagem);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        private void bntProduto_Click_1(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcProduto());
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcRegistro());
+        }
+
+        private void btnReserva_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcReserva());
         }
     }
 }

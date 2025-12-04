@@ -44,10 +44,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnExcluir = new Guna.UI2.WinForms.Guna2Button();
             btnAtualizar = new Guna.UI2.WinForms.Guna2Button();
@@ -61,6 +63,7 @@
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             cboGeneros = new Guna.UI2.WinForms.Guna2ComboBox();
             cboGenero = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnPesquisar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgProdutos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCaminhodaFoto).BeginInit();
             SuspendLayout();
@@ -172,12 +175,12 @@
             txtPesquisarTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisarTitulo.Font = new Font("Segoe UI", 9F);
             txtPesquisarTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisarTitulo.Location = new Point(385, 172);
+            txtPesquisarTitulo.Location = new Point(385, 111);
             txtPesquisarTitulo.Name = "txtPesquisarTitulo";
             txtPesquisarTitulo.PlaceholderText = "Pesquisar";
             txtPesquisarTitulo.SelectedText = "";
             txtPesquisarTitulo.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtPesquisarTitulo.Size = new Size(370, 36);
+            txtPesquisarTitulo.Size = new Size(269, 36);
             txtPesquisarTitulo.TabIndex = 12;
             txtPesquisarTitulo.TextChanged += txtPesquisarTitulo_TextChanged;
             // 
@@ -226,10 +229,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgProdutos.DefaultCellStyle = dataGridViewCellStyle3;
             dgProdutos.GridColor = Color.FromArgb(231, 229, 255);
-            dgProdutos.Location = new Point(385, 214);
+            dgProdutos.Location = new Point(385, 165);
             dgProdutos.Name = "dgProdutos";
             dgProdutos.RowHeadersVisible = false;
-            dgProdutos.Size = new Size(370, 179);
+            dgProdutos.Size = new Size(370, 228);
             dgProdutos.TabIndex = 9;
             dgProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -286,7 +289,7 @@
             // 
             cboGeneros.BackColor = Color.Transparent;
             cboGeneros.BorderRadius = 15;
-            cboGeneros.CustomizableEdges = customizableEdges15;
+            cboGeneros.CustomizableEdges = customizableEdges17;
             cboGeneros.DrawMode = DrawMode.OwnerDrawFixed;
             cboGeneros.DropDownStyle = ComboBoxStyle.DropDownList;
             cboGeneros.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -296,7 +299,7 @@
             cboGeneros.ItemHeight = 30;
             cboGeneros.Location = new Point(11, 258);
             cboGeneros.Name = "cboGeneros";
-            cboGeneros.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cboGeneros.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cboGeneros.Size = new Size(264, 36);
             cboGeneros.TabIndex = 19;
             // 
@@ -318,6 +321,26 @@
             cboGenero.Size = new Size(305, 36);
             cboGenero.TabIndex = 19;
             // 
+            // btnPesquisar
+            // 
+            btnPesquisar.BackColor = Color.Transparent;
+            btnPesquisar.BorderRadius = 15;
+            btnPesquisar.CustomizableEdges = customizableEdges15;
+            btnPesquisar.DisabledState.BorderColor = Color.DarkGray;
+            btnPesquisar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnPesquisar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnPesquisar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnPesquisar.FillColor = Color.SaddleBrown;
+            btnPesquisar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPesquisar.ForeColor = Color.White;
+            btnPesquisar.Location = new Point(660, 111);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnPesquisar.Size = new Size(95, 36);
+            btnPesquisar.TabIndex = 14;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.Click += btnExcluir_Click;
+            // 
             // UcProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -327,6 +350,7 @@
             Controls.Add(cboGenero);
             Controls.Add(txtCaminhodaFoto);
             Controls.Add(guna2HtmlLabel1);
+            Controls.Add(btnPesquisar);
             Controls.Add(btnExcluir);
             Controls.Add(btnAtualizar);
             Controls.Add(btnCadastrar);
@@ -359,5 +383,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ComboBox cboGeneros;
         private Guna.UI2.WinForms.Guna2ComboBox cboGenero;
+        private Guna.UI2.WinForms.Guna2Button btnPesquisar;
     }
 }

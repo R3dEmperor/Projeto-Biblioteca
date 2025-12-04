@@ -16,5 +16,15 @@ namespace Projeto_Biblioteca
         {
             InitializeComponent();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
