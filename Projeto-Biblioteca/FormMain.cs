@@ -195,5 +195,10 @@ namespace Projeto_Biblioteca
             panelConteudo.Controls.Clear();
             AbrirUserControl(new UcReserva());
         }
+        private void btnGenero_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            AbrirUserControl(new UcGenero());
+        }
     }
 }

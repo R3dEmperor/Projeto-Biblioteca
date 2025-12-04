@@ -147,6 +147,7 @@
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtPesquisa.Size = new Size(332, 36);
             txtPesquisa.TabIndex = 1;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // cboClassificacao
             // 
@@ -161,6 +162,7 @@
             cboClassificacao.Font = new Font("Segoe UI", 10F);
             cboClassificacao.ForeColor = Color.FromArgb(68, 88, 112);
             cboClassificacao.ItemHeight = 30;
+            cboClassificacao.Items.AddRange(new object[] { "L", "+12", "+14", "+16;", "+18" });
             cboClassificacao.Location = new Point(37, 254);
             cboClassificacao.Name = "cboClassificacao";
             cboClassificacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -203,7 +205,7 @@
             BtnAtualizar.Size = new Size(74, 45);
             BtnAtualizar.TabIndex = 3;
             BtnAtualizar.Text = "Atualizar";
-            BtnAtualizar.Click += this.BtnAtualizar_Click;
+            BtnAtualizar.Click += BtnAtualizar_Click;
             // 
             // BtnExcluir
             // 
@@ -222,7 +224,7 @@
             BtnExcluir.Size = new Size(74, 45);
             BtnExcluir.TabIndex = 3;
             BtnExcluir.Text = "Excluir";
-            BtnExcluir.Click += this.BtnExcluir_Click;
+            BtnExcluir.Click += BtnExcluir_Click;
             // 
             // btnPesquisar
             // 
@@ -241,6 +243,7 @@
             btnPesquisar.Size = new Size(96, 36);
             btnPesquisar.TabIndex = 3;
             btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // pictureBox1
             // 
@@ -280,6 +283,7 @@
             Controls.Add(DgGenero);
             Name = "UcGenero";
             Size = new Size(786, 433);
+            Load += UcGenero_Load;
             ((System.ComponentModel.ISupportInitialize)DgGenero).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

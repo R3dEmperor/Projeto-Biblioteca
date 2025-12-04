@@ -45,7 +45,6 @@ namespace Projeto_Biblioteca
             conversao();
             var funcionario = new UsuarioDTO
             {
-                
                 Nome = txtNome.Text,
                 TipoUsuarioId = tipousuario,
                 CPF = txtCPF.Text,

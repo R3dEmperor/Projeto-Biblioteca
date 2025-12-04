@@ -29,10 +29,9 @@ namespace Projeto_Biblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            var idGenero = 0;
+            int idGenero = 0;
             var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
-            var listaIds = generoBLL.ListarGeneros().FirstOrDefault(x => x.IdGenero.Equals(listaGeneros.IdGenero));
-            idGenero = listaIds.IdGenero;
+            idGenero = listaGeneros.IdGenero;
 
             var produto = new ProdutoDTO
             {
@@ -48,9 +47,9 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            var idgenero = 0;
+            int idgenero = 0;
             var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
-            var listaIDS = listaGeneros.IdGenero;
+            int listaIDS = listaGeneros.IdGenero;
             idgenero = listaIDS;
             int id = dgProdutos.SelectedRows[0].Cells["Id_Produto"].Value.GetHashCode();
             try

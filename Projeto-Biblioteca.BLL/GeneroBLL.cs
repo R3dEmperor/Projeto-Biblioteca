@@ -22,6 +22,14 @@ namespace Projeto_Biblioteca.BLL
 
             dal.Create(genero);
         }
+        // =====================================================
+        //                Atualizar GÊNERO
+        // =====================================================
+        public void AtualizarProduto(GeneroDTO genero)
+        {
+            ValidarCampos(genero);
+            dal.Atualizar(genero);
+        }
 
         // =====================================================
         //                LISTAR GÊNEROS

@@ -17,7 +17,7 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"
-                    INSERT INTO Genero (NomeGenero, ClassificacaoGenero)
+                    INSERT INTO Generos (Descricao_Genero,Classificacao_Genero)
                     VALUES (@NomeGenero, @ClassificacaoGenero);";
 
                 command = new SqlCommand(sql, conexao);
@@ -36,7 +36,10 @@ namespace Projeto_Biblioteca.DAL
             }
         }
 
-
+        public SqlDataReader GetDataReader()
+        {
+            return dataReader;
+        }
         //        LISTAR GÊNEROS
 
         public List<GeneroDTO> Listar()
@@ -82,7 +85,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT * FROM Genero WHERE IdGenero = @Id";
+                string sql = "SELECT * FROM Genero WHERE Id_Genero = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -94,8 +97,8 @@ namespace Projeto_Biblioteca.DAL
                     return new GeneroDTO
                     {
                         IdGenero = Convert.ToInt32(dataReader["IdGenero"]),
-                        NomeGenero = dataReader["NomeGenero"].ToString(),
-                        ClassificacaoGenero = dataReader["ClassificacaoGenero"].ToString()
+                        NomeGenero = dataReader["Descricao_Genero"].ToString(),
+                        ClassificacaoGenero = dataReader["Classificacao_Genero"].ToString()
                     };
                 }
 
@@ -121,9 +124,9 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"
-                    UPDATE Genero
-                    SET NomeGenero = @NomeGenero,
-                        ClassificacaoGenero = @ClassificacaoGenero
+                    UPDATE Generos
+                    SET Descricao_Genero = @NomeGenero,
+                        Classificacao_Genero = @ClassificacaoGenero
                     WHERE IdGenero = @IdGenero";
 
                 command = new SqlCommand(sql, conexao);
@@ -151,7 +154,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "DELETE FROM Genero WHERE IdGenero = @Id";
+                string sql = "DELETE FROM Generos WHERE Id_Genero = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
