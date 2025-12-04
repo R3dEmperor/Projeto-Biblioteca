@@ -94,7 +94,6 @@
             txtNomeGenero.ShadowDecoration.CustomizableEdges = customizableEdges96;
             txtNomeGenero.Size = new Size(200, 36);
             txtNomeGenero.TabIndex = 22;
-            txtNomeGenero.TextChanged += this.txtNomeGenero_TextChanged;
             // 
             // BtnExcluir
             // 
@@ -111,7 +110,6 @@
             BtnExcluir.Size = new Size(82, 45);
             BtnExcluir.TabIndex = 19;
             BtnExcluir.Text = "Excluir";
-            BtnExcluir.Click += this.BtnExcluir_Click;
             // 
             // BtnAtualizar
             // 
@@ -128,7 +126,6 @@
             BtnAtualizar.Size = new Size(82, 45);
             BtnAtualizar.TabIndex = 20;
             BtnAtualizar.Text = "Atualizar";
-            BtnAtualizar.Click += this.BtnAtualizar_Click;
             // 
             // btnCadastrar
             // 
@@ -145,7 +142,6 @@
             btnCadastrar.Size = new Size(82, 45);
             btnCadastrar.TabIndex = 21;
             btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.Click += this.btnCadastrar_Click;
             // 
             // DgGeneros
             // 
@@ -196,7 +192,6 @@
             DgGeneros.ThemeStyle.RowsStyle.Height = 25;
             DgGeneros.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             DgGeneros.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            DgGeneros.CellContentClick += this.DgGeneros_CellContentClick;
             // 
             // CboClassificacaoGenero
             // 
@@ -214,7 +209,6 @@
             CboClassificacaoGenero.ShadowDecoration.CustomizableEdges = customizableEdges104;
             CboClassificacaoGenero.Size = new Size(200, 36);
             CboClassificacaoGenero.TabIndex = 25;
-            CboClassificacaoGenero.SelectedIndexChanged += this.CboClassificacaoGenero_SelectedIndexChanged;
             // 
             // guna2TextBox1
             // 
@@ -250,7 +244,6 @@
             Controls.Add(DgGeneros);
             Name = "UcGeneros";
             Size = new Size(791, 412);
-            Load += this.UcGeneros_Load;
             ((System.ComponentModel.ISupportInitialize)DgGeneros).EndInit();
             ResumeLayout(false);
         }

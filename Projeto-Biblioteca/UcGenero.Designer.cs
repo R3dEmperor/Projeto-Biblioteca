@@ -247,7 +247,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Icone_Projeto_Claro2;
+            pictureBox1.Image = Properties.Resources.darkmode;
             pictureBox1.Location = new Point(83, 67);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(104, 81);
