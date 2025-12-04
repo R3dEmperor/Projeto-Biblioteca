@@ -36,9 +36,9 @@ namespace Projeto_Biblioteca
 
             var produto = new ProdutoDTO
             {
-               NomeProduto = txtProduto.Text,
-               AutorProduto = txtProduto.Text,
-               GeneroProduto = idGenero,
+                NomeProduto = txtProduto.Text,
+                AutorProduto = txtProduto.Text,
+                GeneroProduto = idGenero,
             };
             produtoBLL.CadastrarProduto(produto);
 
@@ -215,6 +215,11 @@ namespace Projeto_Biblioteca
         {
             var lista = generoBLL.ListarGeneros().Select(x => x.NomeGenero).ToList();
             cboGenero.DataSource = lista;
+        }
+
+        private void dgProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

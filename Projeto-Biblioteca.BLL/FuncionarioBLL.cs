@@ -15,7 +15,7 @@ namespace Projeto_Biblioteca.BLL
 
         //                    LISTAR FUNCIONÁRIOS
 
-        public List<FuncionarioDTO> ListarFuncionarios()
+        public List<FuncionarioDTO> ListarCargos()
         {
             return dal.Listar();
         }
@@ -26,14 +26,7 @@ namespace Projeto_Biblioteca.BLL
 
         public FuncionarioDTO BuscarPorId(int id)
         {
-            if (id <= 0)
-                throw new Exception("Id inválido.");
-
             var func = dal.BuscarPorId(id);
-
-            if (func == null)
-                throw new Exception("Funcionário não encontrado.");
-
             return func;
         }
     }

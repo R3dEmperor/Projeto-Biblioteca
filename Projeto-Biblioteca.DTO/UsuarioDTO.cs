@@ -37,7 +37,7 @@ namespace Projeto_Biblioteca.DTO
         // Tipo de Usuário (FK)
         // ========================
         public int TipoUsuarioId { get; set; }
-        public virtual FuncionarioDTO? TipoUsuario { get; set; }
+        public virtual FuncionarioDTO? IdCargo { get; set; }
 
         public string? UrlFoto { get; set; }
     }
