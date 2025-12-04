@@ -21,5 +21,10 @@ namespace Projeto_Biblioteca
         {
 
         }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
