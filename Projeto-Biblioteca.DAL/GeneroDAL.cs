@@ -50,7 +50,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT Id_Genero,Descricao_Genero,Classificacao_Genero FROM Generos";
+                string sql = "SELECT * FROM Generos";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
@@ -127,7 +127,7 @@ namespace Projeto_Biblioteca.DAL
                     UPDATE Generos
                     SET Descricao_Genero = @NomeGenero,
                         Classificacao_Genero = @ClassificacaoGenero
-                    WHERE IdGenero = @IdGenero";
+                    WHERE Id_Genero = @IdGenero";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@NomeGenero", genero.NomeGenero);

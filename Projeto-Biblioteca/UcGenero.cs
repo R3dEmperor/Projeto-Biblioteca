@@ -16,6 +16,7 @@ namespace Projeto_Biblioteca
     public partial class UcGenero : UserControl
     {
         GeneroBLL generoBLL = new GeneroBLL();
+        private int? usuarioselecionadoid = null;
         public UcGenero()
         {
             InitializeComponent();
@@ -80,16 +81,16 @@ namespace Projeto_Biblioteca
                     return;
                 }
 
-                int id = Convert.ToInt32(DgGenero.CurrentRow.Cells["Id"].Value);
+                int id = Convert.ToInt32(DgGenero.CurrentRow.Cells["Id_Genero"].Value);
 
-                GeneroDTO usuario = new GeneroDTO
+                GeneroDTO Genero = new GeneroDTO
                 {
                     IdGenero = id,
                     NomeGenero = txtGenero.Text,
                     ClassificacaoGenero = cboClassificacao.Text,
                 };
 
-                generoBLL.CadastrarGenero(usuario);
+                generoBLL.AtualizarProduto(Genero);
 
                 MessageBox.Show("Funcionario atualizado com sucesso!", "Sucesso",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,15 +108,15 @@ namespace Projeto_Biblioteca
         {
             if (DgGenero.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecione um aluno para excluir");
+                MessageBox.Show("Selecione um genero para excluir");
                 return;
             }
 
-            int id = Convert.ToInt32(DgGenero.SelectedRows[0].Cells["Id"].Value);
-            string nome = DgGenero.SelectedRows[0].Cells["Nome"].Value.ToString();
+            int id = Convert.ToInt32(DgGenero.SelectedRows[0].Cells["Id_Genero"].Value);
+            string nome = DgGenero.SelectedRows[0].Cells["Descricao_Genero"].Value.ToString();
 
             var confirmacao = MessageBox.Show(
-                $"Tem certeza que deseja excluir o aluno {nome}?",
+                $"Tem certeza que deseja excluir o genero {nome}?",
                 "Confirmação",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -123,19 +124,44 @@ namespace Projeto_Biblioteca
             if (confirmacao == DialogResult.Yes)
             {
                 generoBLL.RemoverGenero(id);
-                MessageBox.Show($"Usuário {nome} removido com sucesso!");
+                MessageBox.Show($"Genero {nome} removido com sucesso!");
                 AtualizarDataGrid();
             }
         }
+        private void BuscarGenero()
+        {
+            string termo = txtPesquisa.Text.Trim().ToLower();
 
+            var filtrado = generoBLL.ListarGeneros().Where(Genero => Genero.NomeGenero.Trim().ToLower().Contains(termo))
+                .Select(Genero => new
+                {
+                    Genero.IdGenero,
+                    Genero.NomeGenero,
+                    Genero.ClassificacaoGenero
+                }).ToList();
+            DgGenero.DataSource = filtrado;
+        }
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-
+            BuscarGenero();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            BuscarGenero();
+        }
 
+        private void DgGenero_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DgGenero.Rows[e.RowIndex];
+
+                usuarioselecionadoid = Convert.ToInt32(row.Cells["Id_Genero"].Value);
+                txtGenero.Text = row.Cells["Descricao_Genero"].Value.ToString();
+                cboClassificacao.Text = row.Cells["Classificacao_Genero"].Value.ToString();
+                BtnAtualizar.Enabled = true;
+            }
         }
     }
 }

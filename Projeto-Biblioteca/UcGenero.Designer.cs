@@ -108,6 +108,7 @@
             DgGenero.ThemeStyle.RowsStyle.Height = 25;
             DgGenero.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             DgGenero.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DgGenero.CellContentClick += DgGenero_CellContentClick;
             // 
             // txtGenero
             // 
