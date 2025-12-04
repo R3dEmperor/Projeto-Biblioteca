@@ -74,6 +74,7 @@
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             btnGenero = new Guna.UI2.WinForms.Guna2Button();
             bntSair = new Guna.UI2.WinForms.Guna2Button();
+            btnGenero = new Guna.UI2.WinForms.Guna2Button();
             btnReserva = new Guna.UI2.WinForms.Guna2Button();
             btnRegistro = new Guna.UI2.WinForms.Guna2Button();
             bntProduto = new Guna.UI2.WinForms.Guna2Button();
@@ -238,6 +239,7 @@
             // 
             guna2Panel4.Controls.Add(btnGenero);
             guna2Panel4.Controls.Add(bntSair);
+            guna2Panel4.Controls.Add(btnGenero);
             guna2Panel4.Controls.Add(btnReserva);
             guna2Panel4.Controls.Add(btnRegistro);
             guna2Panel4.Controls.Add(bntProduto);
@@ -289,6 +291,26 @@
             bntSair.Text = "Sair";
             bntSair.Click += bntSair_Click;
             // 
+            // btnGenero
+            // 
+            btnGenero.BorderRadius = 20;
+            btnGenero.Cursor = Cursors.Hand;
+            btnGenero.CustomizableEdges = customizableEdges9;
+            btnGenero.DisabledState.BorderColor = Color.DarkGray;
+            btnGenero.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGenero.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGenero.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGenero.FillColor = Color.SaddleBrown;
+            btnGenero.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenero.ForeColor = Color.White;
+            btnGenero.Location = new Point(11, 222);
+            btnGenero.Name = "btnGenero";
+            btnGenero.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnGenero.Size = new Size(180, 45);
+            btnGenero.TabIndex = 0;
+            btnGenero.Text = "Genero";
+            btnGenero.Click += btnGenero_Click;
+            // 
             // btnReserva
             // 
             btnReserva.BorderRadius = 20;
@@ -307,7 +329,6 @@
             btnReserva.Size = new Size(180, 45);
             btnReserva.TabIndex = 0;
             btnReserva.Text = "Reserva";
-            btnReserva.Click += btnReserva_Click;
             // 
             // btnRegistro
             // 
@@ -361,7 +382,7 @@
             btnFuncionario.FillColor = Color.SaddleBrown;
             btnFuncionario.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnFuncionario.ForeColor = Color.White;
-            btnFuncionario.Location = new Point(11, 13);
+            btnFuncionario.Location = new Point(11, 8);
             btnFuncionario.Name = "btnFuncionario";
             btnFuncionario.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnFuncionario.Size = new Size(180, 45);
@@ -448,7 +469,7 @@
             // PbFoto
             // 
             PbFoto.ImageRotate = 0F;
-            PbFoto.Location = new Point(65, 32);
+            PbFoto.Location = new Point(65, 12);
             PbFoto.Name = "PbFoto";
             PbFoto.ShadowDecoration.CustomizableEdges = customizableEdges2;
             PbFoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -477,7 +498,7 @@
             // lblFotoCaminho
             // 
             lblFotoCaminho.BackColor = Color.Transparent;
-            lblFotoCaminho.Location = new Point(74, 149);
+            lblFotoCaminho.Location = new Point(75, 129);
             lblFotoCaminho.Name = "lblFotoCaminho";
             lblFotoCaminho.Size = new Size(95, 17);
             lblFotoCaminho.TabIndex = 5;
