@@ -43,8 +43,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DgGenero = new Guna.UI2.WinForms.Guna2DataGridView();
             txtGenero = new Guna.UI2.WinForms.Guna2TextBox();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,7 +50,6 @@
             BtnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             BtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             BtnExcluir = new Guna.UI2.WinForms.Guna2Button();
-            btnPesquisar = new Guna.UI2.WinForms.Guna2Button();
             pictureBox1 = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)DgGenero).BeginInit();
@@ -132,6 +129,7 @@
             // 
             // txtPesquisa
             // 
+            txtPesquisa.BorderRadius = 15;
             txtPesquisa.CustomizableEdges = customizableEdges3;
             txtPesquisa.DefaultText = "Pesquisar";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -146,7 +144,7 @@
             txtPesquisa.PlaceholderText = "";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtPesquisa.Size = new Size(332, 36);
+            txtPesquisa.Size = new Size(434, 36);
             txtPesquisa.TabIndex = 1;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -164,7 +162,7 @@
             cboClassificacao.ForeColor = Color.FromArgb(68, 88, 112);
             cboClassificacao.ItemHeight = 30;
             cboClassificacao.Items.AddRange(new object[] { "L", "+12", "+14", "+16;", "+18" });
-            cboClassificacao.Location = new Point(37, 254);
+            cboClassificacao.Location = new Point(37, 252);
             cboClassificacao.Name = "cboClassificacao";
             cboClassificacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cboClassificacao.Size = new Size(231, 36);
@@ -227,28 +225,9 @@
             BtnExcluir.Text = "Excluir";
             BtnExcluir.Click += BtnExcluir_Click;
             // 
-            // btnPesquisar
-            // 
-            btnPesquisar.BorderRadius = 15;
-            btnPesquisar.CustomizableEdges = customizableEdges13;
-            btnPesquisar.DisabledState.BorderColor = Color.DarkGray;
-            btnPesquisar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnPesquisar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnPesquisar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnPesquisar.FillColor = Color.SaddleBrown;
-            btnPesquisar.Font = new Font("Segoe UI", 9F);
-            btnPesquisar.ForeColor = Color.White;
-            btnPesquisar.Location = new Point(677, 112);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnPesquisar.Size = new Size(96, 36);
-            btnPesquisar.TabIndex = 3;
-            btnPesquisar.Text = "Pesquisar";
-            btnPesquisar.Click += btnPesquisar_Click;
-            // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Icone_Projeto_Claro2;
+            pictureBox1.Image = Properties.Resources.darkmode;
             pictureBox1.Location = new Point(83, 67);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(104, 81);
@@ -274,7 +253,6 @@
             BackColor = Color.Transparent;
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(pictureBox1);
-            Controls.Add(btnPesquisar);
             Controls.Add(BtnExcluir);
             Controls.Add(BtnAtualizar);
             Controls.Add(BtnCadastrar);

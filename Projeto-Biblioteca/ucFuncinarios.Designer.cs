@@ -51,8 +51,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pbFoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblCaminhodaFoto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
@@ -66,7 +64,6 @@
             dgUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             cboTipoUsuario = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
-            btnPesquisar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
@@ -244,12 +241,12 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(299, 49);
+            txtPesquisa.Location = new Point(299, 81);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPesquisa.Size = new Size(361, 36);
+            txtPesquisa.Size = new Size(471, 36);
             txtPesquisa.TabIndex = 14;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -276,7 +273,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgUsuarios.Location = new Point(299, 91);
+            dgUsuarios.Location = new Point(299, 123);
             dgUsuarios.Name = "dgUsuarios";
             dgUsuarios.RowHeadersVisible = false;
             dgUsuarios.Size = new Size(471, 281);
@@ -331,25 +328,6 @@
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // btnPesquisar
-            // 
-            btnPesquisar.BorderRadius = 15;
-            btnPesquisar.CustomizableEdges = customizableEdges20;
-            btnPesquisar.DisabledState.BorderColor = Color.DarkGray;
-            btnPesquisar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnPesquisar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnPesquisar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnPesquisar.FillColor = Color.SaddleBrown;
-            btnPesquisar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnPesquisar.ForeColor = Color.White;
-            btnPesquisar.Location = new Point(673, 49);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            btnPesquisar.Size = new Size(97, 36);
-            btnPesquisar.TabIndex = 17;
-            btnPesquisar.Text = "Pesquisar";
-            btnPesquisar.Click += btnExcluir_Click;
-            // 
             // ucFuncinarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -361,7 +339,6 @@
             Controls.Add(lblCaminhodaFoto);
             Controls.Add(btnCadastrar);
             Controls.Add(btnAtualizar);
-            Controls.Add(btnPesquisar);
             Controls.Add(btnExcluir);
             Controls.Add(txtNome);
             Controls.Add(txtSenha);
