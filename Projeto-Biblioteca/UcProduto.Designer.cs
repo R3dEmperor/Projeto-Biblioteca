@@ -80,6 +80,7 @@
             // 
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BorderRadius = 15;
+            btnExcluir.Cursor = Cursors.Hand;
             btnExcluir.CustomizableEdges = customizableEdges1;
             btnExcluir.DisabledState.BorderColor = Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -100,6 +101,7 @@
             // 
             btnAtualizar.BackColor = Color.Transparent;
             btnAtualizar.BorderRadius = 15;
+            btnAtualizar.Cursor = Cursors.Hand;
             btnAtualizar.CustomizableEdges = customizableEdges3;
             btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
             btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -120,6 +122,7 @@
             // 
             btnCadastrar.BackColor = Color.Transparent;
             btnCadastrar.BorderRadius = 15;
+            btnCadastrar.Cursor = Cursors.Hand;
             btnCadastrar.CustomizableEdges = customizableEdges5;
             btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -141,6 +144,7 @@
             txtAutorProduto.BackColor = Color.Transparent;
             txtAutorProduto.BorderColor = Color.PapayaWhip;
             txtAutorProduto.BorderRadius = 15;
+            txtAutorProduto.Cursor = Cursors.IBeam;
             txtAutorProduto.CustomizableEdges = customizableEdges7;
             txtAutorProduto.DefaultText = "";
             txtAutorProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -163,6 +167,7 @@
             txtPesquisarTitulo.BackColor = Color.Transparent;
             txtPesquisarTitulo.BorderColor = Color.PapayaWhip;
             txtPesquisarTitulo.BorderRadius = 15;
+            txtPesquisarTitulo.Cursor = Cursors.IBeam;
             txtPesquisarTitulo.CustomizableEdges = customizableEdges9;
             txtPesquisarTitulo.DefaultText = "";
             txtPesquisarTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -186,6 +191,7 @@
             txtProduto.BackColor = Color.Transparent;
             txtProduto.BorderColor = Color.PapayaWhip;
             txtProduto.BorderRadius = 15;
+            txtProduto.Cursor = Cursors.IBeam;
             txtProduto.CustomizableEdges = customizableEdges11;
             txtProduto.DefaultText = "";
             txtProduto.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

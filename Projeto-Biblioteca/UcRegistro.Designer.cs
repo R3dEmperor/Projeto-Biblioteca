@@ -70,6 +70,7 @@
             // txtUser
             // 
             txtUser.BorderRadius = 15;
+            txtUser.Cursor = Cursors.IBeam;
             txtUser.CustomizableEdges = customizableEdges1;
             txtUser.DefaultText = "User";
             txtUser.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -90,6 +91,7 @@
             // txtLivro
             // 
             txtLivro.BorderRadius = 15;
+            txtLivro.Cursor = Cursors.IBeam;
             txtLivro.CustomizableEdges = customizableEdges3;
             txtLivro.DefaultText = "Livro";
             txtLivro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -110,6 +112,7 @@
             // btnRegistrar
             // 
             btnRegistrar.BorderRadius = 15;
+            btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.CustomizableEdges = customizableEdges5;
             btnRegistrar.DisabledState.BorderColor = Color.DarkGray;
             btnRegistrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -129,6 +132,7 @@
             // txtPesquisa
             // 
             txtPesquisa.BorderRadius = 15;
+            txtPesquisa.Cursor = Cursors.IBeam;
             txtPesquisa.CustomizableEdges = customizableEdges7;
             txtPesquisa.DefaultText = "pesquisar";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -138,13 +142,14 @@
             txtPesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPesquisa.Font = new Font("Segoe UI", 9F);
             txtPesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPesquisa.Location = new Point(285, 120);
+            txtPesquisa.Location = new Point(284, 120);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "";
             txtPesquisa.SelectedText = "";
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtPesquisa.Size = new Size(476, 36);
             txtPesquisa.TabIndex = 20;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // dtReserva
             // 
@@ -240,6 +245,7 @@
             dgRegistro.ThemeStyle.RowsStyle.Height = 25;
             dgRegistro.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgRegistro.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgRegistro.CellClick += dgRegistro_CellClick;
             // 
             // UcRegistro
             // 

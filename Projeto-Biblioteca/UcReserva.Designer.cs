@@ -62,6 +62,7 @@
             // txtUser
             // 
             txtUser.BorderRadius = 15;
+            txtUser.Cursor = Cursors.IBeam;
             txtUser.CustomizableEdges = customizableEdges1;
             txtUser.DefaultText = "User";
             txtUser.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -82,6 +83,7 @@
             // txtLivro
             // 
             txtLivro.BorderRadius = 15;
+            txtLivro.Cursor = Cursors.IBeam;
             txtLivro.CustomizableEdges = customizableEdges3;
             txtLivro.DefaultText = "Produto";
             txtLivro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -119,6 +121,7 @@
             // btnRegistrar
             // 
             btnRegistrar.BorderRadius = 15;
+            btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.CustomizableEdges = customizableEdges7;
             btnRegistrar.DisabledState.BorderColor = Color.DarkGray;
             btnRegistrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -210,6 +213,7 @@
             // txtPesquisa
             // 
             txtPesquisa.BorderRadius = 15;
+            txtPesquisa.Cursor = Cursors.IBeam;
             txtPesquisa.CustomizableEdges = customizableEdges9;
             txtPesquisa.DefaultText = "pesquisar";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -226,10 +230,12 @@
             txtPesquisa.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtPesquisa.Size = new Size(436, 36);
             txtPesquisa.TabIndex = 19;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 15;
+            guna2Button1.Cursor = Cursors.Hand;
             guna2Button1.CustomizableEdges = customizableEdges11;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -248,6 +254,7 @@
             // guna2Button2
             // 
             guna2Button2.BorderRadius = 15;
+            guna2Button2.Cursor = Cursors.Hand;
             guna2Button2.CustomizableEdges = customizableEdges13;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;

@@ -37,5 +37,11 @@ namespace Projeto_Biblioteca
         {
 
         }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
