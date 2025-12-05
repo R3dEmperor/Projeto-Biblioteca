@@ -258,6 +258,7 @@
             Controls.Add(guna2HtmlLabel1);
             Name = "UcRegistro";
             Size = new Size(784, 431);
+            Load += UcRegistro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgRegistro).EndInit();
             ResumeLayout(false);

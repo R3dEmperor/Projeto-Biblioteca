@@ -282,6 +282,7 @@
             Name = "UcReserva";
             RightToLeft = RightToLeft.No;
             Size = new Size(784, 431);
+            Load += UcReserva_Load;
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbFotoReserva).EndInit();
             ResumeLayout(false);

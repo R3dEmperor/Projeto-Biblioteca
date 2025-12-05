@@ -27,7 +27,7 @@ namespace Projeto_Biblioteca
         UsuarioBLL usuarioBLL = new();
         private int? FuncionarioSelecionadoId = null;
         int tipousuario;
-        int Atividade;
+        int AtividadeUsuario;
         public ucFuncinarios()
         {
             InitializeComponent();
@@ -38,21 +38,24 @@ namespace Projeto_Biblioteca
             {
                 tipousuario = 1;
             }
-            tipousuario = 2;
+            else
+            {
+                tipousuario = 2;
+            }
         }
         public void conversaoAtividade()
         {
             if (cboAtividade.Text == "Desativado")
             {
-                Atividade = 2;
+                AtividadeUsuario = 2;
             }
             if (cboAtividade.Text == "Férias")
             {
-                Atividade = 3;
+                AtividadeUsuario = 3;
             }
-            else
+            if (cboAtividade.Text == "Em Atividade")
             {
-                Atividade = 1;
+                AtividadeUsuario = 1;
             }
         }
 
@@ -68,7 +71,7 @@ namespace Projeto_Biblioteca
                 CPF = txtCPF.Text,
                 Telefone = txtTelefone.Text,
                 Senha = txtSenha.Text,
-                atividade = Atividade,
+                atividade = AtividadeUsuario,
                 Email = txtEmail.Text,
                 Endereco = Txtendereco.Text,
                 UrlFoto = lblCaminhodaFoto.Text,
@@ -81,6 +84,7 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            conversaoTipoUsuario();
             conversaoAtividade();
             try
             {
@@ -105,11 +109,11 @@ namespace Projeto_Biblioteca
                     Usuario = txtNome.Text.Trim(),
                     Senha = txtSenha.Text.Trim(),
                     UrlFoto = caminhoImagem,
-                    atividade = Atividade,
-                    Email = txtEmail.Text,
-                    Endereco = Txtendereco.Text,
-                    CPF = txtCPF.Text,
-                    Telefone = txtTelefone.Text,
+                    atividade = AtividadeUsuario,
+                    Email = txtEmail.Text.Trim(),
+                    Endereco = Txtendereco.Text.Trim(),
+                    CPF = txtCPF.Text.Trim(),
+                    Telefone = txtTelefone.Text.Trim(),
                     TipoUsuarioId= tipousuario,
                 };
                 usuarioBLL.AtualizarUsuario(usuario);
@@ -121,8 +125,8 @@ namespace Projeto_Biblioteca
             }
             catch (Exception ex)
             {
-//                MessageBox.Show($"Erro ao atualizar Funcionario: {ex.Message}",
-//                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              MessageBox.Show($"Erro ao atualizar Funcionario: {ex.Message}",
+                  "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -146,8 +150,7 @@ namespace Projeto_Biblioteca
                     string? caminho = dataRow["UrlFoto"].ToString();
 
                     pbFoto.Image = (!string.IsNullOrWhiteSpace(caminho) && File.Exists(caminho))
-                        ? Image.FromFile(caminho)
-                        : Properties.Resources.Icone;
+                        ? Image.FromFile(caminho): Properties.Resources.Icone;
 
                     btnAtualizar.Enabled = true;
                 }
@@ -190,7 +193,7 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Email_Usuario", typeof(string));
             foreach (var u in funcionarios)
             {
-                string atividade;
+                string atividade = "Sem informação";
                     if (u.atividade == 3)
                     {
                         atividade = "Férias";
@@ -199,10 +202,11 @@ namespace Projeto_Biblioteca
                     {
                         atividade = "Desativado";
                     }
-                    else
+                    if (u.atividade == 1)
                     {
                         atividade = "Em Atividade";
                     }
+
                 string Cargoid = funcionarioBLL.ListarCargos().Find(x => x.IdTipoUsuario == u.TipoUsuarioId).NomeCargo;
                 Image? img = null;
                 if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
@@ -227,6 +231,7 @@ namespace Projeto_Biblioteca
         {
             var lista = funcionarioBLL.ListarCargos().Select(x => x.NomeCargo).ToList();
             cboTipoUsuario.DataSource = lista;
+            cboTipoUsuario.StartIndex = 0;
         }
         private void ucFuncinarios_Load(object sender, EventArgs e)
         {

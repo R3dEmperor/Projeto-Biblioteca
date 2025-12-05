@@ -25,7 +25,7 @@ namespace Projeto_Biblioteca
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -33,5 +33,9 @@ namespace Projeto_Biblioteca
 
         }
 
+        private void UcReserva_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

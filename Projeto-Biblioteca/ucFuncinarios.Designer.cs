@@ -51,6 +51,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -73,6 +75,7 @@
             Txtendereco = new Guna.UI2.WinForms.Guna2TextBox();
             txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             cboAtividade = new Guna.UI2.WinForms.Guna2ComboBox();
+            txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgUsuarios).BeginInit();
             SuspendLayout();
@@ -170,7 +173,7 @@
             txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNome.Font = new Font("Segoe UI", 9F);
             txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Location = new Point(12, 168);
+            txtNome.Location = new Point(12, 149);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.SelectedText = "";
@@ -190,7 +193,7 @@
             txtSenha.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSenha.Font = new Font("Segoe UI", 9F);
             txtSenha.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSenha.Location = new Point(161, 294);
+            txtSenha.Location = new Point(161, 275);
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Senha";
             txtSenha.SelectedText = "";
@@ -210,7 +213,7 @@
             txtTelefone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefone.Font = new Font("Segoe UI", 9F);
             txtTelefone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefone.Location = new Point(12, 294);
+            txtTelefone.Location = new Point(12, 275);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.PlaceholderText = "Telefone";
             txtTelefone.SelectedText = "";
@@ -230,7 +233,7 @@
             txtCPF.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCPF.Font = new Font("Segoe UI", 9F);
             txtCPF.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCPF.Location = new Point(12, 252);
+            txtCPF.Location = new Point(12, 233);
             txtCPF.Name = "txtCPF";
             txtCPF.PlaceholderText = "CPF";
             txtCPF.SelectedText = "";
@@ -261,6 +264,8 @@
             // 
             // dgUsuarios
             // 
+            dgUsuarios.AllowUserToAddRows = false;
+            dgUsuarios.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -271,8 +276,9 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgUsuarios.ColumnHeadersHeight = 4;
+            dgUsuarios.ColumnHeadersHeight = 15;
             dgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgUsuarios.Cursor = Cursors.Hand;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -284,7 +290,9 @@
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
             dgUsuarios.Location = new Point(299, 123);
             dgUsuarios.Name = "dgUsuarios";
+            dgUsuarios.ReadOnly = true;
             dgUsuarios.RowHeadersVisible = false;
+            dgUsuarios.ScrollBars = ScrollBars.Horizontal;
             dgUsuarios.Size = new Size(471, 281);
             dgUsuarios.TabIndex = 7;
             dgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -299,8 +307,8 @@
             dgUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgUsuarios.ThemeStyle.HeaderStyle.Height = 4;
-            dgUsuarios.ThemeStyle.ReadOnly = false;
+            dgUsuarios.ThemeStyle.HeaderStyle.Height = 15;
+            dgUsuarios.ThemeStyle.ReadOnly = true;
             dgUsuarios.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgUsuarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -323,7 +331,7 @@
             cboTipoUsuario.Font = new Font("Segoe UI", 10F);
             cboTipoUsuario.ForeColor = Color.FromArgb(68, 88, 112);
             cboTipoUsuario.ItemHeight = 30;
-            cboTipoUsuario.Location = new Point(12, 210);
+            cboTipoUsuario.Location = new Point(12, 191);
             cboTipoUsuario.Name = "cboTipoUsuario";
             cboTipoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges19;
             cboTipoUsuario.Size = new Size(120, 36);
@@ -340,7 +348,7 @@
             // Txtendereco
             // 
             Txtendereco.BorderRadius = 15;
-            Txtendereco.CustomizableEdges = customizableEdges24;
+            Txtendereco.CustomizableEdges = customizableEdges26;
             Txtendereco.DefaultText = "";
             Txtendereco.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             Txtendereco.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -349,18 +357,18 @@
             Txtendereco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             Txtendereco.Font = new Font("Segoe UI", 9F);
             Txtendereco.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            Txtendereco.Location = new Point(161, 168);
+            Txtendereco.Location = new Point(161, 149);
             Txtendereco.Name = "Txtendereco";
             Txtendereco.PlaceholderText = "Endereço";
             Txtendereco.SelectedText = "";
-            Txtendereco.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            Txtendereco.ShadowDecoration.CustomizableEdges = customizableEdges27;
             Txtendereco.Size = new Size(120, 36);
             Txtendereco.TabIndex = 21;
             // 
             // txtEmail
             // 
             txtEmail.BorderRadius = 15;
-            txtEmail.CustomizableEdges = customizableEdges22;
+            txtEmail.CustomizableEdges = customizableEdges24;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -369,11 +377,11 @@
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Segoe UI", 9F);
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(161, 210);
+            txtEmail.Location = new Point(161, 191);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "E-mail";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges25;
             txtEmail.Size = new Size(120, 36);
             txtEmail.TabIndex = 21;
             // 
@@ -381,7 +389,7 @@
             // 
             cboAtividade.BackColor = Color.Transparent;
             cboAtividade.BorderRadius = 15;
-            cboAtividade.CustomizableEdges = customizableEdges20;
+            cboAtividade.CustomizableEdges = customizableEdges22;
             cboAtividade.DrawMode = DrawMode.OwnerDrawFixed;
             cboAtividade.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAtividade.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -390,11 +398,32 @@
             cboAtividade.ForeColor = Color.FromArgb(68, 88, 112);
             cboAtividade.ItemHeight = 30;
             cboAtividade.Items.AddRange(new object[] { "Em Atividade", "Desativado", "Férias" });
-            cboAtividade.Location = new Point(161, 252);
+            cboAtividade.Location = new Point(88, 317);
             cboAtividade.Name = "cboAtividade";
-            cboAtividade.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            cboAtividade.ShadowDecoration.CustomizableEdges = customizableEdges23;
             cboAtividade.Size = new Size(120, 36);
+            cboAtividade.StartIndex = 0;
             cboAtividade.TabIndex = 22;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.BorderRadius = 15;
+            txtUsuario.CustomizableEdges = customizableEdges20;
+            txtUsuario.DefaultText = "";
+            txtUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtUsuario.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtUsuario.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtUsuario.Font = new Font("Segoe UI", 9F);
+            txtUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtUsuario.Location = new Point(161, 233);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Usuario";
+            txtUsuario.SelectedText = "";
+            txtUsuario.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            txtUsuario.Size = new Size(120, 36);
+            txtUsuario.TabIndex = 23;
             // 
             // ucFuncinarios
             // 
@@ -402,6 +431,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(txtUsuario);
             Controls.Add(cboAtividade);
             Controls.Add(txtEmail);
             Controls.Add(Txtendereco);
@@ -444,5 +474,6 @@
         private Guna.UI2.WinForms.Guna2TextBox Txtendereco;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2ComboBox cboAtividade;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsuario;
     }
 }

@@ -19,7 +19,7 @@ namespace Projeto_Biblioteca.DTO
 
         [Phone, MaxLength(20)]
         public string Telefone { get; set; } = string.Empty;
-
+        public int atividade { get; set; } = 0;
         [MaxLength(14)]
         public string CPF { get; set; } = string.Empty;
         public string Endereco { get; set; } = string.Empty;
@@ -31,7 +31,6 @@ namespace Projeto_Biblioteca.DTO
 
         [Required, MaxLength(50)]
         public string Senha { get; set; } = string.Empty;
-        public int atividade { get; set; } = 0;
         // ========================
         // Tipo de Usuário (FK)
         // ========================

@@ -39,5 +39,10 @@ namespace Projeto_Biblioteca
                 MessageBox.Show("Erro ao criar registro: " + ex.Message);
             }
         }
+
+        private void UcRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
