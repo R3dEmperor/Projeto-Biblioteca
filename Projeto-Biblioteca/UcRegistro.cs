@@ -44,5 +44,15 @@ namespace Projeto_Biblioteca
         {
 
         }
+
+        private void dgRegistro_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
