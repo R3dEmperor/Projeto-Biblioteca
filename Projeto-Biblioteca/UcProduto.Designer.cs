@@ -257,6 +257,7 @@
             // 
             // pbCaminhodaFoto
             // 
+            pbCaminhodaFoto.BackColor = Color.Peru;
             pbCaminhodaFoto.BorderStyle = BorderStyle.Fixed3D;
             pbCaminhodaFoto.Cursor = Cursors.Hand;
             pbCaminhodaFoto.Location = new Point(33, 14);
