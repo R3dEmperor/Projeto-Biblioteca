@@ -59,7 +59,6 @@ namespace Projeto_Biblioteca.DAL
                 command.Parameters.AddWithValue("@CPF", usuario.CPF);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
                 command.Parameters.AddWithValue("@URL", usuario.UrlFoto);
-
                 int idPessoa = Convert.ToInt32(command.ExecuteScalar());
                 command.ExecuteNonQuery();
 

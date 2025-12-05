@@ -8,6 +8,7 @@ namespace Projeto_Biblioteca.WEB.Models
     {
         [Key]
         public int Id_Produto { get; set; }
+        public string Nome_Produto { get; set; }
         public int Genero_Produto { get; set; }
         public virtual Genero Genero { get; set; }
         public string Autor_Produto { get; set; }

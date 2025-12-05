@@ -81,6 +81,10 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     b.Property<int>("Genero_Produto")
                         .HasColumnType("int");
 
+                    b.Property<string>("Nome_Produto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Url_Foto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

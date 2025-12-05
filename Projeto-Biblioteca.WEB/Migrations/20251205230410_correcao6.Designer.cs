@@ -12,8 +12,8 @@ using Projeto_Biblioteca.WEB.Data;
 namespace Projeto_Biblioteca.WEB.Migrations
 {
     [DbContext(typeof(Projeto_BibliotecaWEBContext))]
-    [Migration("20251205223500_correcao5")]
-    partial class correcao5
+    [Migration("20251205230410_correcao6")]
+    partial class correcao6
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,10 @@ namespace Projeto_Biblioteca.WEB.Migrations
 
                     b.Property<int>("Genero_Produto")
                         .HasColumnType("int");
+
+                    b.Property<string>("Nome_Produto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url_Foto")
                         .IsRequired()
