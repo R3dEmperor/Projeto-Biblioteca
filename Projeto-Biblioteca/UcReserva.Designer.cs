@@ -50,13 +50,13 @@
             dtDataReserva = new Guna.UI2.WinForms.Guna2DateTimePicker();
             btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            pictureBox1 = new PictureBox();
+            pbFotoReserva = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbFotoReserva).BeginInit();
             SuspendLayout();
             // 
             // txtUser
@@ -133,6 +133,7 @@
             btnRegistrar.Size = new Size(87, 39);
             btnRegistrar.TabIndex = 2;
             btnRegistrar.Text = "Registrar";
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // guna2DataGridView1
             // 
@@ -184,15 +185,16 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // pictureBox1
+            // pbFotoReserva
             // 
-            pictureBox1.Image = Properties.Resources.Icone_Projeto_Claro1;
-            pictureBox1.Location = new Point(89, 51);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(115, 88);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            pbFotoReserva.Cursor = Cursors.Hand;
+            pbFotoReserva.Image = Properties.Resources.Icone_Projeto_Claro1;
+            pbFotoReserva.Location = new Point(89, 51);
+            pbFotoReserva.Name = "pbFotoReserva";
+            pbFotoReserva.Size = new Size(115, 88);
+            pbFotoReserva.SizeMode = PictureBoxSizeMode.Zoom;
+            pbFotoReserva.TabIndex = 4;
+            pbFotoReserva.TabStop = false;
             // 
             // guna2HtmlLabel1
             // 
@@ -269,7 +271,7 @@
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(txtPesquisa);
             Controls.Add(guna2HtmlLabel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbFotoReserva);
             Controls.Add(guna2DataGridView1);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
@@ -281,7 +283,7 @@
             RightToLeft = RightToLeft.No;
             Size = new Size(784, 431);
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbFotoReserva).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,7 +295,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtDataReserva;
         private Guna.UI2.WinForms.Guna2Button btnRegistrar;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private PictureBox pictureBox1;
+        private PictureBox pbFotoReserva;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
         private Guna.UI2.WinForms.Guna2Button btnPesquisa;

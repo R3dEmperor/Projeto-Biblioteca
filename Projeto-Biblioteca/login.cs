@@ -6,6 +6,9 @@ namespace Projeto_Biblioteca
 {
     public partial class login : Form
     {
+        string diretorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\Biblioteca\usuarios";
+
+        string diretorioImagens = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}";
         public login()
         {
             InitializeComponent();
@@ -58,6 +61,29 @@ namespace Projeto_Biblioteca
         private void btxClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void pbFotoLogin_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(diretorio))
+            {
+                Directory.CreateDirectory(diretorio);
+            }
+
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.InitialDirectory = diretorioImagens;
+            openFileDialog.Filter = "Arquivos de imagens |*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Escolha a imagem e se transforme";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = openFileDialog.FileName;
+
+                pbFotoLogin.Image = Image.FromFile(nomeArquivoImagem);
+
+
+                lblFotoCaminhoLogin.Text = nomeArquivoImagem;
+            }
         }
     }
 }

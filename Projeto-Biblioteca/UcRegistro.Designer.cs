@@ -61,7 +61,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
-            guna2HtmlLabel1.Location = new Point(285, 47);
+            guna2HtmlLabel1.Location = new Point(302, 47);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(188, 59);
             guna2HtmlLabel1.TabIndex = 19;
@@ -182,7 +182,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.darkmode;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.Icone_Projeto_Claro;
             pictureBox1.Location = new Point(75, 47);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(128, 86);

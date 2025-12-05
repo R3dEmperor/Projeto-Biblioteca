@@ -44,6 +44,7 @@
             txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             CaminhoFoto = new Label();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            lblFotoCaminhoLogin = new Label();
             ((System.ComponentModel.ISupportInitialize)pbFotoLogin).BeginInit();
             SuspendLayout();
             // 
@@ -110,6 +111,7 @@
             // pbFotoLogin
             // 
             pbFotoLogin.BackColor = Color.Bisque;
+            pbFotoLogin.FillColor = Color.Sienna;
             pbFotoLogin.ImageRotate = 0F;
             pbFotoLogin.Location = new Point(69, 42);
             pbFotoLogin.Name = "pbFotoLogin";
@@ -118,6 +120,7 @@
             pbFotoLogin.Size = new Size(112, 106);
             pbFotoLogin.TabIndex = 4;
             pbFotoLogin.TabStop = false;
+            pbFotoLogin.Click += pbFotoLogin_Click;
             // 
             // txtSenha
             // 
@@ -156,12 +159,23 @@
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // lblFotoCaminhoLogin
+            // 
+            lblFotoCaminhoLogin.AutoSize = true;
+            lblFotoCaminhoLogin.Location = new Point(70, 162);
+            lblFotoCaminhoLogin.Name = "lblFotoCaminhoLogin";
+            lblFotoCaminhoLogin.Size = new Size(111, 15);
+            lblFotoCaminhoLogin.TabIndex = 5;
+            lblFotoCaminhoLogin.Text = "Foto caminho login";
+            lblFotoCaminhoLogin.Visible = false;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
             ClientSize = new Size(277, 415);
+            Controls.Add(lblFotoCaminhoLogin);
             Controls.Add(CaminhoFoto);
             Controls.Add(pbFotoLogin);
             Controls.Add(txtNome);
@@ -174,6 +188,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbFotoLogin).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -184,5 +199,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSenha;
         private Label CaminhoFoto;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Label lblFotoCaminhoLogin;
     }
 }

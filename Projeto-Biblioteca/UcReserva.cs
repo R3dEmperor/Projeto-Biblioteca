@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_Biblioteca.BLL;
 
 namespace Projeto_Biblioteca
 {
@@ -24,7 +25,13 @@ namespace Projeto_Biblioteca
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
 
         }
+
     }
 }

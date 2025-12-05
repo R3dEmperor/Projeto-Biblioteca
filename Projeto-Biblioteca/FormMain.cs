@@ -206,5 +206,10 @@ namespace Projeto_Biblioteca
             panelConteudo.Controls.Clear();
             AbrirUserControl(new UcReserva());
         }
+
+        private void lblFotoCaminho_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
