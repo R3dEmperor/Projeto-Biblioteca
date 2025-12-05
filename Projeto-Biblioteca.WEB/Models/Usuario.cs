@@ -48,6 +48,6 @@ namespace Projeto_Biblioteca.WEB.Models
         public virtual Funcionario? TipoUsuario { get; set; }
         //=====================================================
         [Display(Name = "Em atividade")]
-        public bool Atividade { get; set; }
+        public int Atividade { get; set; }
     }
 }

@@ -40,9 +40,6 @@ namespace Projeto_Biblioteca.DAL
 
         public void Create(UsuarioDTO usuario)
         {
-
-
-
             Conectar();
             SqlTransaction transaction = conexao.BeginTransaction();
             try
@@ -50,9 +47,9 @@ namespace Projeto_Biblioteca.DAL
                 command = new SqlCommand
                     (
                      @"INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade,CPF,Telefone,URL_Usuario) VALUES
-                     (@Nome,@Senha,@Email,@Endereço,@TipoUsuarioId,@Atividade,@CPF,@Telefone,@URL)SELECT CAST(SCOPE_IDENTITY() AS int);"
-                     , conexao, transaction
+                     (@Nome,@Senha,@Email,@Endereço,@TipoUsuarioId,@Atividade,@CPF,@Telefone,@URL)", conexao, transaction
                     );
+
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
@@ -175,7 +172,7 @@ namespace Projeto_Biblioteca.DAL
             command.Parameters.AddWithValue("@Atividade", usuario.atividade);
             command.Parameters.AddWithValue("@CPF", usuario.CPF);
             command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-            command.Parameters.AddWithValue("@Cargo", usuario);
+            command.Parameters.AddWithValue("@Cargo", usuario.TipoUsuarioId);
 
             int linhas = command.ExecuteNonQuery();
 
