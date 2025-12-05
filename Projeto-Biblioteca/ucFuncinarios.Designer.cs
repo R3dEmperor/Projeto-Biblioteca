@@ -80,7 +80,7 @@
             // pbFoto
             // 
             pbFoto.Cursor = Cursors.Hand;
-            pbFoto.FillColor = Color.Wheat;
+            pbFoto.FillColor = Color.Peru;
             pbFoto.ImageRotate = 0F;
             pbFoto.Location = new Point(88, 3);
             pbFoto.Name = "pbFoto";

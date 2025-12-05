@@ -111,7 +111,7 @@
             // pbFotoLogin
             // 
             pbFotoLogin.BackColor = Color.Bisque;
-            pbFotoLogin.FillColor = Color.Sienna;
+            pbFotoLogin.FillColor = Color.Peru;
             pbFotoLogin.ImageRotate = 0F;
             pbFotoLogin.Location = new Point(69, 42);
             pbFotoLogin.Name = "pbFotoLogin";
