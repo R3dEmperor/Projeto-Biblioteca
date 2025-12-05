@@ -121,20 +121,17 @@
   <data name="istockphoto-528740757-612x612 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\istockphoto-528740757-612x612 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lightmodeprojeto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lightmodeprojeto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="19 de nov1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\19 de nov. de 2025, 21_44_411.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ligthmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ligthmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icone_Projeto_Claro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icone_Projeto_Claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icone2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icone2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lightmodeprojeto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lightmodeprojeto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icone_Projeto_Claro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icone_Projeto_Claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +139,17 @@
   <data name="19 de nov. de 2025, 21_44_41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\19 de nov. de 2025, 21_44_41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pngtree-an-old-bookcase-in-a-library-picture-image_2760144" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Projeto_Icone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Projeto_Icone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icone_Projeto_Claro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icone_Projeto_Claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icone_Projeto_Claro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icone_Projeto_Claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +172,8 @@
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ligthmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ligthmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="darkmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\darkmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,7 @@
   <data name="Icone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icone1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icone_Projeto_Claro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icone_Projeto_Claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ChatGPT Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChatGPT Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

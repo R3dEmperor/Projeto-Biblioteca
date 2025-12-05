@@ -23,11 +23,21 @@ namespace Projeto_Biblioteca
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var registro = new RegistroDTO()
+                {
+                    ReservaRegistro = int.Parse(txtUser.Text),
+                    DevolucaoRegistro = dtDevolução.Value
+                };
 
-            var registro = new RegistroDTO();
-         
-
-            registroBLL.CriarRegistro(registro);
+                registroBLL.CriarRegistro(registro);
+                MessageBox.Show("Registro criado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar registro: " + ex.Message);
+            }
         }
     }
 }
