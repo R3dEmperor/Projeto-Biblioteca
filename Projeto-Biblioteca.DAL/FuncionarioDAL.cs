@@ -17,8 +17,7 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT IdTipoUsuario, Descricao_Tipo 
-                               FROM Funcionario";
+                string sql = @"SELECT IdTipoUsuario, Descricao_Tipo FROM Funcionario";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
@@ -27,7 +26,7 @@ namespace Projeto_Biblioteca.DAL
                 {
                     lista.Add(new FuncionarioDTO
                     {
-                        IdCargo = Convert.ToInt32(dataReader["IdTipoUsuario"]),
+                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
                         NomeCargo = dataReader["Descricao_Tipo"].ToString()
                     });
                 }
@@ -54,7 +53,7 @@ namespace Projeto_Biblioteca.DAL
 
                 string sql = @"SELECT IdTipoUsuario,Descricao_Tipo
                                FROM Funcionario
-                               WHERE IdCargo = @Id";
+                               WHERE IdTipoUsuario = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -65,7 +64,7 @@ namespace Projeto_Biblioteca.DAL
                 {
                     return new FuncionarioDTO
                     {
-                        IdCargo = Convert.ToInt32(dataReader["IdTipoUsuario"]),
+                        IdTipoUsuario = Convert.ToInt32(dataReader["IdTipoUsuario"]),
                         NomeCargo = dataReader["Descricao_Tipo"].ToString()
                     };
                 }
@@ -119,11 +118,11 @@ namespace Projeto_Biblioteca.DAL
 
                 string sql = @"UPDATE TipoUsuario 
                                SET NomeCargo = @Descricao
-                               WHERE IdCargo = @Id";
+                               WHERE IdTipoUsuario = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Descricao", tipo.NomeCargo);
-                command.Parameters.AddWithValue("@Id", tipo.IdCargo);
+                command.Parameters.AddWithValue("@Id", tipo.IdTipoUsuario);
 
                 command.ExecuteNonQuery();
             }
@@ -136,10 +135,12 @@ namespace Projeto_Biblioteca.DAL
                 Desconectar();
             }
         }
-
-       
+        public SqlDataReader GetDataReader()
+        {
+            return dataReader;
+        }
         //                      DELETE
-       
+
         public void Delete(int id)
         {
             try
@@ -147,7 +148,7 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"DELETE FROM TipoUsuario
-                               WHERE IdCargo = @Id";
+                               WHERE IdTipoUsuario = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);

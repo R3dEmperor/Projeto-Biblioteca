@@ -20,14 +20,23 @@ namespace Projeto_Biblioteca.WEB.Models
         public string Email { get; set; }
         //======================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Senha")]
+        [Display(Name = "Usuario")]
+        [StringLength(50)]
+        public string Usuario_Usuario { get; set; }
+        //======================================================
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Display(Name = "Senha_Usuario")]
         [StringLength(50)]
         public string Senha_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Endereço")]
+        [Display(Name = "Endereço_Usuario")]
         [StringLength(50)]
         public string Endereco_Usuario { get; set; }
+        //=====================================================
+        [Display(Name = "Url_Usuario")]
+        [StringLength(150)]
+        public string URL_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Email")]
