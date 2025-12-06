@@ -4,43 +4,42 @@
     ViewData["Title"] = "Editar Registro";
 }
 
-<h1 class="mb-3 text-brown">Editar Registro</h1>
+<div class="container py-5">
+    <div class="card p-4 shadow-sm mb-4 mx-auto" style="max-width:500px;">
+        <h1 class="mb-4 home-title text-center">Editar Registro</h1>
 
-<div class="card p-4 shadow-sm mb-4" style="max-width:500px;">
-    <form asp-action="Edit">
+        <form asp-action="Edit">
 
-        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <!-- Validação do modelo -->
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-        <input type="hidden" asp-for="Id_Genero" />
+            <!-- Campo: Gênero da Reserva -->
+            <div class="form-group mb-3">
+                <label asp-for="Reserva_Genero" class="form-label"></label>
+                <input asp-for="Reserva_Genero" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Reserva_Genero" class="text-danger"></span>
+            </div>
 
-        <!-- Gênero da Reserva -->
-        <div class="form-group mb-3">
-            <label asp-for="Reserva_Genero" class="form-label"></label>
-            <input asp-for="Reserva_Genero" class="form-control" autocomplete="off" />
-            <span asp-validation-for="Reserva_Genero" class="text-danger"></span>
-        </div>
+            <!-- Campo: Data de Devolução -->
+            <div class="form-group mb-3">
+                <label asp-for="Devolucao_Registro" class="form-label"></label>
+                <input asp-for="Devolucao_Registro" class="form-control" type="date" />
+                <span asp-validation-for="Devolucao_Registro" class="text-danger"></span>
+            </div>
 
-        <!-- Data de Devolução -->
-        <div class="form-group mb-3">
-            <label asp-for="Devolucao_Registro" class="form-label"></label>
-            <input asp-for="Devolucao_Registro" class="form-control" type="date" />
-            <span asp-validation-for="Devolucao_Registro" class="text-danger"></span>
-        </div>
+            <!-- Botões -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-brown px-4">Salvar</button>
+                <a asp-action="Index" class="btn btn-brown-light px-4">Voltar</a>
+            </div>
 
-        <!-- Botões -->
-        <div class="d-flex gap-3 mt-4">
-            <button type="submit" class="btn btn-brown px-4">Salvar</button>
-            <a asp-action="Index" class="btn btn-brown-light px-4">Voltar</a>
-        </div>
+            <!-- Hidden Id -->
+            <input type="hidden" asp-for="Id_Genero" />
 
-    </form>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.RenderPartialAsync("_ValidationScriptsPartial")
 }
-
-
-

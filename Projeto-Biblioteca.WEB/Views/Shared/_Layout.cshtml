@@ -26,24 +26,57 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+
+                    <!-- Botão de Dark/Light Mode -->
+                    <button id="modeToggle" class="btn btn-brown-light">
+                        Dark Mode
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-3">
         <div class="container">
             &copy; 2025 - Projeto_Biblioteca.WEB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Dark/Light Mode Script -->
+    <script>
+        const body = document.body;
+        const modeToggle = document.getElementById("modeToggle");
+
+        // Inicializa o tema a partir do localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+            modeToggle.textContent = "Light Mode";
+        }
+
+        // Alterna entre dark e light
+        modeToggle.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                modeToggle.textContent = "Light Mode";
+                localStorage.setItem("theme", "dark");
+            } else {
+                modeToggle.textContent = "Dark Mode";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
