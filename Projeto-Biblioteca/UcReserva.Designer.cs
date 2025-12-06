@@ -53,8 +53,8 @@
             pbFotoReserva = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btnAtualizar = new Guna.UI2.WinForms.Guna2Button();
+            btnExcluir = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFotoReserva).BeginInit();
             SuspendLayout();
@@ -232,43 +232,44 @@
             txtPesquisa.TabIndex = 19;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
-            // guna2Button1
+            // btnAtualizar
             // 
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.Cursor = Cursors.Hand;
-            guna2Button1.CustomizableEdges = customizableEdges11;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.SaddleBrown;
-            guna2Button1.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(105, 313);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button1.Size = new Size(87, 39);
-            guna2Button1.TabIndex = 2;
-            guna2Button1.Text = "Atualizar";
+            btnAtualizar.BorderRadius = 15;
+            btnAtualizar.Cursor = Cursors.Hand;
+            btnAtualizar.CustomizableEdges = customizableEdges11;
+            btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
+            btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAtualizar.FillColor = Color.SaddleBrown;
+            btnAtualizar.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnAtualizar.ForeColor = Color.White;
+            btnAtualizar.Location = new Point(105, 313);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnAtualizar.Size = new Size(87, 39);
+            btnAtualizar.TabIndex = 2;
+            btnAtualizar.Text = "Atualizar";
+            btnAtualizar.Click += btnAtualizar_Click;
             // 
-            // guna2Button2
+            // btnExcluir
             // 
-            guna2Button2.BorderRadius = 15;
-            guna2Button2.Cursor = Cursors.Hand;
-            guna2Button2.CustomizableEdges = customizableEdges13;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.SaddleBrown;
-            guna2Button2.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(198, 313);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Button2.Size = new Size(87, 39);
-            guna2Button2.TabIndex = 2;
-            guna2Button2.Text = "Excluir";
+            btnExcluir.BorderRadius = 15;
+            btnExcluir.Cursor = Cursors.Hand;
+            btnExcluir.CustomizableEdges = customizableEdges13;
+            btnExcluir.DisabledState.BorderColor = Color.DarkGray;
+            btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnExcluir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnExcluir.FillColor = Color.SaddleBrown;
+            btnExcluir.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(198, 313);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnExcluir.Size = new Size(87, 39);
+            btnExcluir.TabIndex = 2;
+            btnExcluir.Text = "Excluir";
             // 
             // UcReserva
             // 
@@ -280,8 +281,8 @@
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(pbFotoReserva);
             Controls.Add(guna2DataGridView1);
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnAtualizar);
             Controls.Add(btnRegistrar);
             Controls.Add(dtDataReserva);
             Controls.Add(txtLivro);
@@ -307,7 +308,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtPesquisa;
         private Guna.UI2.WinForms.Guna2Button btnPesquisa;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnAtualizar;
+        private Guna.UI2.WinForms.Guna2Button btnExcluir;
     }
 }
