@@ -50,6 +50,7 @@ namespace Projeto_Biblioteca
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             conversao();
+            
             int id = dgProdutos.SelectedRows[0].Cells["Id_Produto"].Value.GetHashCode();
             try
             {
@@ -107,7 +108,7 @@ namespace Projeto_Biblioteca
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 pbCaminhodaFoto.Image = Image.FromFile(ofd.FileName);
-                txtCaminhodaFoto.Text = ofd.FileName; // salva o caminho no textbox
+                txtCaminhodaFoto.Text = ofd.FileName;
             }
         }
 

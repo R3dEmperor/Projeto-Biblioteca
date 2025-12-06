@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Humanizer;
+using Microsoft.Data.SqlClient;
 using Projeto_Biblioteca.BLL;
 using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
