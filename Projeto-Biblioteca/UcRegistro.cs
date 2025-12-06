@@ -42,7 +42,8 @@ namespace Projeto_Biblioteca
 
         private void UcRegistro_Load(object sender, EventArgs e)
         {
-
+            dtDevolução.Value = DateTime.Today;
+            dtReserva.Value = DateTime.Today;
         }
 
         private void dgRegistro_CellClick(object sender, DataGridViewCellEventArgs e)

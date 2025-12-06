@@ -166,7 +166,7 @@
             dtReserva.ShadowDecoration.CustomizableEdges = customizableEdges10;
             dtReserva.Size = new Size(247, 36);
             dtReserva.TabIndex = 23;
-            dtReserva.Value = new DateTime(2025, 12, 3, 21, 45, 5, 304);
+            dtReserva.Value = new DateTime(2025, 11, 13, 0, 0, 0, 0);
             // 
             // dtDevolução
             // 
@@ -183,7 +183,7 @@
             dtDevolução.ShadowDecoration.CustomizableEdges = customizableEdges12;
             dtDevolução.Size = new Size(244, 36);
             dtDevolução.TabIndex = 23;
-            dtDevolução.Value = new DateTime(2025, 12, 3, 21, 45, 5, 304);
+            dtDevolução.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             // 
             // pictureBox1
             // 

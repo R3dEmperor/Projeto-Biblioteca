@@ -163,7 +163,7 @@
             cboClassificacao.Font = new Font("Segoe UI", 10F);
             cboClassificacao.ForeColor = Color.FromArgb(68, 88, 112);
             cboClassificacao.ItemHeight = 30;
-            cboClassificacao.Items.AddRange(new object[] { "L", "+12", "+14", "+16;", "+18" });
+            cboClassificacao.Items.AddRange(new object[] { "L", "+12", "+14", "+16", "+18" });
             cboClassificacao.Location = new Point(37, 252);
             cboClassificacao.Name = "cboClassificacao";
             cboClassificacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
