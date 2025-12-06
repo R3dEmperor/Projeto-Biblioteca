@@ -19,13 +19,25 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Usuario_Usuario)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Senha_Usuario)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Endereco_Usuario)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.URL_Usuario)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Email_Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TipoUsuario)
@@ -46,16 +58,28 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Usuario_Usuario)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Senha_Usuario)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Endereco_Usuario)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.URL_Usuario)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Email_Usuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoUsuario.IdTipoUsuario)
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuario.Descricao_Tipo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Atividade)

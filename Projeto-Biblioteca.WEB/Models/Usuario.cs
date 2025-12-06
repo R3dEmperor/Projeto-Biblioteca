@@ -44,12 +44,12 @@ namespace Projeto_Biblioteca.WEB.Models
         public string Email_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "CPF")]
+        [Display(Name = "CPF_Usuario")]
         [StringLength(50)]
         public string CPF { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Telefone")]
+        [Display(Name = "Telefone_Usuario")]
         [StringLength(50)]
         public string Telefone { get; set; }
         //=====================================================
