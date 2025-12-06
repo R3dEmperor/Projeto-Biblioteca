@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Humanizer;
+using Microsoft.Data.SqlClient;
 using Projeto_Biblioteca.BLL;
+using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca
 {
@@ -18,15 +21,7 @@ namespace Projeto_Biblioteca
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnPesquisa_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -43,5 +38,9 @@ namespace Projeto_Biblioteca
 
         }
 
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

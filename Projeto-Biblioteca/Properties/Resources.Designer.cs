@@ -63,6 +63,16 @@ namespace Projeto_Biblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1___gabriel {
+            get {
+                object obj = ResourceManager.GetObject("1 - gabriel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _19_de_nov__de_2025__21_44_41 {
             get {
                 object obj = ResourceManager.GetObject("19 de nov. de 2025, 21_44_41", resourceCulture);
