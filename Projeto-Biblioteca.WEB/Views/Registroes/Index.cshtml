@@ -4,14 +4,14 @@
     ViewData["Title"] = "Registros";
 }
 
-<h1 class="mb-4 text-brown">Lista de Registros</h1>
+<h1 class="mb-4 text-center home-title text-brown">Lista de Registros</h1>
 
-<p>
+<p class="mb-3">
     <a asp-action="Create" class="btn btn-brown px-4">Adicionar Novo</a>
 </p>
 
-<table class="table table-hover table-striped shadow-sm" style="background-color:#FFF7EF;">
-    <thead class="table-header">
+<table class="table table-hover table-striped shadow-sm table-light-mode">
+    <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Reserva_Genero)</th>
             <th>@Html.DisplayNameFor(model => model.Devolucao_Registro)</th>
@@ -24,11 +24,10 @@
             <tr>
                 <td>@item.Reserva_Genero</td>
                 <td>@item.Devolucao_Registro?.ToString("dd/MM/yyyy")</td>
-
                 <td class="text-end">
                     <a asp-action="Edit" asp-route-id="@item.Id_Genero" class="btn btn-sm btn-brown-light me-1">Editar</a>
                     <a asp-action="Details" asp-route-id="@item.Id_Genero" class="btn btn-sm btn-brown-light me-1">Detalhes</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id_Genero" class="btn btn-sm btn-danger">Excluir</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id_Genero" class="btn btn-sm btn-brown">Excluir</a>
                 </td>
             </tr>
         }
