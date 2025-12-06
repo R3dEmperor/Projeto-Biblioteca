@@ -107,6 +107,7 @@
             // btnCadastrar
             // 
             btnCadastrar.BorderRadius = 15;
+            btnCadastrar.Cursor = Cursors.Hand;
             btnCadastrar.CustomizableEdges = customizableEdges2;
             btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -126,6 +127,7 @@
             // btnAtualizar
             // 
             btnAtualizar.BorderRadius = 15;
+            btnAtualizar.Cursor = Cursors.Hand;
             btnAtualizar.CustomizableEdges = customizableEdges4;
             btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
             btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -145,6 +147,7 @@
             // btnExcluir
             // 
             btnExcluir.BorderRadius = 15;
+            btnExcluir.Cursor = Cursors.Hand;
             btnExcluir.CustomizableEdges = customizableEdges6;
             btnExcluir.DisabledState.BorderColor = Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -164,6 +167,7 @@
             // txtNome
             // 
             txtNome.BorderRadius = 15;
+            txtNome.Cursor = Cursors.IBeam;
             txtNome.CustomizableEdges = customizableEdges8;
             txtNome.DefaultText = "";
             txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -184,6 +188,7 @@
             // txtSenha
             // 
             txtSenha.BorderRadius = 15;
+            txtSenha.Cursor = Cursors.IBeam;
             txtSenha.CustomizableEdges = customizableEdges10;
             txtSenha.DefaultText = "";
             txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -204,6 +209,7 @@
             // txtTelefone
             // 
             txtTelefone.BorderRadius = 15;
+            txtTelefone.Cursor = Cursors.IBeam;
             txtTelefone.CustomizableEdges = customizableEdges12;
             txtTelefone.DefaultText = "";
             txtTelefone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -224,6 +230,7 @@
             // txtCPF
             // 
             txtCPF.BorderRadius = 15;
+            txtCPF.Cursor = Cursors.IBeam;
             txtCPF.CustomizableEdges = customizableEdges14;
             txtCPF.DefaultText = "";
             txtCPF.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -244,6 +251,7 @@
             // txtPesquisa
             // 
             txtPesquisa.BorderRadius = 15;
+            txtPesquisa.Cursor = Cursors.IBeam;
             txtPesquisa.CustomizableEdges = customizableEdges16;
             txtPesquisa.DefaultText = "";
             txtPesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -348,6 +356,7 @@
             // Txtendereco
             // 
             Txtendereco.BorderRadius = 15;
+            Txtendereco.Cursor = Cursors.IBeam;
             Txtendereco.CustomizableEdges = customizableEdges26;
             Txtendereco.DefaultText = "";
             Txtendereco.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -368,6 +377,7 @@
             // txtEmail
             // 
             txtEmail.BorderRadius = 15;
+            txtEmail.Cursor = Cursors.IBeam;
             txtEmail.CustomizableEdges = customizableEdges24;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -408,6 +418,7 @@
             // txtUsuario
             // 
             txtUsuario.BorderRadius = 15;
+            txtUsuario.Cursor = Cursors.IBeam;
             txtUsuario.CustomizableEdges = customizableEdges20;
             txtUsuario.DefaultText = "";
             txtUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

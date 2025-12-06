@@ -53,6 +53,7 @@
             btnEntrar.BackColor = Color.Bisque;
             btnEntrar.BorderColor = Color.Bisque;
             btnEntrar.BorderRadius = 20;
+            btnEntrar.Cursor = Cursors.Hand;
             btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;

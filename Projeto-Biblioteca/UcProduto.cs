@@ -21,23 +21,25 @@ namespace Projeto_Biblioteca
     {
         ProdutoBLL produtoBLL = new ProdutoBLL();
         GeneroBLL generoBLL = new GeneroBLL();
-
+        int IdGenero;
         public UcProduto()
         {
             InitializeComponent();
         }
-
+        private void conversao()
+        {
+            var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGenero.Text);
+            IdGenero = listaGeneros.IdGenero;
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            int idGenero = 0;
-            var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
-            idGenero = listaGeneros.IdGenero;
-
+            conversao();
             var produto = new ProdutoDTO
             {
                 NomeProduto = txtProduto.Text,
                 AutorProduto = txtProduto.Text,
-                GeneroProduto = idGenero,
+                GeneroProduto = IdGenero,
+                UrlFoto = txtCaminhodaFoto.Text,
             };
             produtoBLL.CadastrarProduto(produto);
 
@@ -47,10 +49,7 @@ namespace Projeto_Biblioteca
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            int idgenero = 0;
-            var listaGeneros = generoBLL.ListarGeneros().Find(x => x.NomeGenero == cboGeneros.Text);
-            int listaIDS = listaGeneros.IdGenero;
-            idgenero = listaIDS;
+            conversao();
             int id = dgProdutos.SelectedRows[0].Cells["Id_Produto"].Value.GetHashCode();
             try
             {
@@ -65,7 +64,8 @@ namespace Projeto_Biblioteca
                     IdProduto = id,
                     NomeProduto = txtProduto.Text,
                     AutorProduto = txtAutorProduto.Text,
-                    GeneroProduto = idgenero,
+                    GeneroProduto = IdGenero,
+                    UrlFoto = txtCaminhodaFoto.Text
                 });
                 MessageBox.Show("Livro atualizado com sucesso!", "Sucesso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
