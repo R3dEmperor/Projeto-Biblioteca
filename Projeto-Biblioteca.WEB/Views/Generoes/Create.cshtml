@@ -1,38 +1,45 @@
 ﻿@model Projeto_Biblioteca.WEB.Models.Genero
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Gênero";
 }
 
-<h1>Create</h1>
+<h1 class="mb-4">Cadastrar Gênero</h1>
 
-<h4>Genero</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Descricao_Genero" class="control-label"></label>
-                <input asp-for="Descricao_Genero" class="form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Descrição -->
+            <div class="form-group mb-3">
+                <label asp-for="Descricao_Genero" class="form-label"></label>
+                <input asp-for="Descricao_Genero" class="form-control" autocomplete="off" />
                 <span asp-validation-for="Descricao_Genero" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Classificacao_Genero" class="control-label"></label>
-                <input asp-for="Classificacao_Genero" class="form-control" />
+
+            <!-- Classificação -->
+            <div class="form-group mb-3">
+                <label asp-for="Classificacao_Genero" class="form-label"></label>
+                <input asp-for="Classificacao_Genero" class="form-control" autocomplete="off" />
                 <span asp-validation-for="Classificacao_Genero" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <!-- Botões -->
+            <div class="mt-4 d-flex gap-3">
+                <button type="submit" class="btn btn-success px-4">Salvar</button>
+                <a asp-action="Index" class="btn btn-secondary px-4">Voltar</a>
             </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+
+

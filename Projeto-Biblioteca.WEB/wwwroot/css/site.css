@@ -1,22 +1,169 @@
+/* ================================================== */
+/*  TEMA PRATELEIRA VIRTUAL – SITE.CSS COMPLETO      */
+/* ================================================== */
+
+/* ===== FONTES ===== */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
+/* ===== LAYOUT BASE ===== */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #FFE4C4; /* bisque */
+    color: #3B2F2F;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #8B4513 !important; /* marrom escuro */
+}
+
+    a:hover {
+        color: #693310 !important;
+        text-decoration: underline;
+    }
+
+/* ===== CARTÕES / CONTAINERS ===== */
+.card {
+    background-color: #FFF7EF;
+    border-left: 6px solid #8B4513;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2, h3, h4 {
+    color: #8B4513 !important;
+    font-weight: 700;
+}
+
+/* ===== BOTÕES ===== */
+.btn-brown {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+}
+
+    .btn-brown:hover {
+        background-color: #693310;
+        color: white;
+    }
+
+.btn-brown-light {
+    background-color: #D2691E;
+    color: white;
+    border: none;
+}
+
+    .btn-brown-light:hover {
+        background-color: #A85418;
+        color: white;
+    }
+
+.btn-danger {
+    background-color: #B22222 !important;
+    border: none;
+}
+
+    .btn-danger:hover {
+        background-color: #8B1A1A !important;
+    }
+
+/* ===== FORMULÁRIOS ===== */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #CD853F;
+}
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #8B4513;
+        border-color: #8B4513;
+    }
+
+/* ===== TABELAS ===== */
+table.table {
+    background-color: #FFF7EF;
+    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-header {
+    background-color: #8B4513 !important;
+    color: white;
+}
+
+table.table tbody tr:hover {
+    background-color: #F1D3B8 !important; /* bisque mais escuro */
+    transition: 0.2s;
+}
+
+.table td, .table th {
+    vertical-align: middle !important;
+}
+
+/* ===== OUTROS ELEMENTOS ===== */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
+.form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: #8B4513;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+/* Texto marrom para títulos */
+.text-brown {
+    color: #8B4513 !important;
+}
+
+/* Card central da Home */
+.card {
+    background-color: #FFF7EF;
+    border-left: 6px solid #8B4513;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Botão grande da Home */
+.btn-brown {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+}
+
+    .btn-brown:hover {
+        background-color: #693310;
+        color: white;
+    }
+
+.table-header {
+    background-color: #8B4513 !important;
+    color: white;
+}
+
+table.table tbody tr:hover {
+    background-color: #F1D3B8 !important; /* bisque mais escuro */
+    transition: 0.2s;
 }

@@ -1,6 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Política de Privacidade";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="d-flex justify-content-center align-items-center" style="min-height:70vh;">
+    <div class="card p-5 shadow-sm" style="max-width:700px;">
+        <h1 class="display-4 text-brown mb-4">@ViewData["Title"]</h1>
+        <p>
+            Esta página descreve a política de privacidade do site <strong>Prateleira Virtual</strong>.
+            Aqui você pode detalhar como os dados dos usuários são coletados, armazenados e utilizados.
+        </p>
+        <p>
+            Lembre-se de seguir as diretrizes de proteção de dados aplicáveis, como a LGPD no Brasil.
+        </p>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-brown mt-3 px-4">
+            Voltar para Home
+        </a>
+    </div>
+</div>
