@@ -19,8 +19,8 @@ namespace Projeto_Biblioteca.DAL
             {
                    command = new SqlCommand
                     (
-                       @"INSERT INTO Produto (Nome_Produto,GeneroId_Genero, Autor_Produto, Url_Foto)
-                       VALUES (@Nome, @Genero, @Autor,@url)", conexao , transaction
+                       @"INSERT INTO Produto (Nome_Produto,Genero_Produto,GeneroId_Genero, Autor_Produto, Url_Foto)
+                       VALUES (@Nome, @Genero,@Genero, @Autor,@url)", conexao , transaction
                     );
                 
               command.Parameters.AddWithValue("@Nome", livro.NomeProduto);
@@ -63,7 +63,7 @@ namespace Projeto_Biblioteca.DAL
                     {
                         IdProduto = Convert.ToInt32(dataReader["Id_Produto"]),
                         NomeProduto = dataReader["Nome_Produto"].ToString(),
-                        GeneroProduto = int.Parse(dataReader["GeneroId_Genero"].ToString()),
+                        GeneroProduto = int.Parse(dataReader["Genero_Produto"].ToString()),
                         AutorProduto = dataReader["Autor_Produto"].ToString()
                     });
                 }
@@ -157,14 +157,15 @@ namespace Projeto_Biblioteca.DAL
                 string sql = @"
                     UPDATE Produto
                     SET Nome_Produto = @NomeProduto,
-                        GeneroId_Genero = @GeneroId_Genero,
+                        GeneroId_Genero = @Genero_Produto,
                         Autor_Produto = @Autor_Produto,
-                        Url_Foto = @url
+                        Url_Foto = @url,
+                        Genero_Produto = @Genero_Produto
                     WHERE Id_Produto = @Id_Produto";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@NomeProduto", livro.NomeProduto);
-                command.Parameters.AddWithValue("@GeneroId_Genero", livro.GeneroProduto);
+                command.Parameters.AddWithValue("@Genero_Produto", livro.GeneroProduto);
                 command.Parameters.AddWithValue("@Autor_Produto", livro.AutorProduto);
                 command.Parameters.AddWithValue("@Id_Produto", livro.IdProduto);
                 command.Parameters.AddWithValue("@url", livro.UrlFoto);

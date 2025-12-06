@@ -48,7 +48,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario");
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "Descricao_Tipo");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Email,Senha_Usuario,Endereco_Usuario,Email_Usuario,TipoUsuarioId,Atividade")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Email,Usuario_Usuario,Senha_Usuario,Endereco_Usuario,URL_Usuario,Email_Usuario,CPF,Telefone,TipoUsuarioId,Atividade")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "Descricao_Tipo", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
@@ -82,7 +82,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "Descricao_Tipo", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
@@ -91,7 +91,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Senha_Usuario,Endereco_Usuario,Email_Usuario,TipoUsuarioId,Atividade")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Usuario_Usuario,Senha_Usuario,Endereco_Usuario,URL_Usuario,Email_Usuario,CPF,Telefone,TipoUsuarioId,Atividade")] Usuario usuario)
         {
             if (id != usuario.Id)
             {
@@ -118,7 +118,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoUsuarioId"] = new SelectList(_context.Set<Funcionario>(), "IdTipoUsuario", "IdTipoUsuario", usuario.TipoUsuarioId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.Funcionario, "IdTipoUsuario", "Descricao_Tipo", usuario.TipoUsuarioId);
             return View(usuario);
         }
 
