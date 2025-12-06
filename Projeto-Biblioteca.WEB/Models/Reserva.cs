@@ -12,6 +12,7 @@ namespace Projeto_Biblioteca.WEB.Models
         public virtual Usuario Usuario { get; set; }
         public int ProdutoReserva { get; set; }
         public virtual Produto Produto { get; set; }
+        public string Nome_Cliente { get; set; }
         public DateTime DataReserva { get; set; }
         public DateTime DataDevolucao { get; set; }
     }

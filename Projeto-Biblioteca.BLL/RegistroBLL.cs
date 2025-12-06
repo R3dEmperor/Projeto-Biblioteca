@@ -19,10 +19,6 @@ namespace Projeto_Biblioteca.BLL
         {
             ValidarCamposObrigatorios(registro);
 
-            // define a data atual como data do registro
-            registro.DevolucaoRegistro = DateTime.Now.AddDays(7);
-            // exemplo: devolução prevista para daqui 7 dias
-
             dal.Create(registro);
         }
 

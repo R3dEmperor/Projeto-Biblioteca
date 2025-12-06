@@ -17,10 +17,11 @@ namespace Projeto_Biblioteca.DAL
                 Conectar();
 
                 string sql = @"
-                    INSERT INTO Registro (ReservaRegistro, DevolucaoRegistro)
-                    VALUES (@ReservaRegistro, @DevolucaoRegistro);";
+                    INSERT INTO Registro (Reserva_Genero, Devolucao_Registro,ReservaIDReserva)
+                    VALUES (@livro, @DevolucaoRegistro,@ReservaRegistro);";
 
                 command = new SqlCommand(sql, conexao);
+                command.Parameters.AddWithValue("@livro", registro.ReservaRegistro);
                 command.Parameters.AddWithValue("@ReservaRegistro", registro.ReservaRegistro);
                 command.Parameters.AddWithValue("@DevolucaoRegistro", registro.DevolucaoRegistro);
 
