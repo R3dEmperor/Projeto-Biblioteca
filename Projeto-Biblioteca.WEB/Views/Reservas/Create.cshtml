@@ -1,48 +1,56 @@
 ﻿@model Projeto_Biblioteca.WEB.Models.Reserva
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Reserva";
 }
 
-<h1>Create</h1>
+<h1 class="mb-3 text-brown">Cadastrar Reserva</h1>
 
-<h4>Reserva</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UsuarioReserva" class="control-label"></label>
-                <input asp-for="UsuarioReserva" class="form-control" />
-                <span asp-validation-for="UsuarioReserva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProdutoReserva" class="control-label"></label>
-                <input asp-for="ProdutoReserva" class="form-control" />
-                <span asp-validation-for="ProdutoReserva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataReserva" class="control-label"></label>
-                <input asp-for="DataReserva" class="form-control" />
-                <span asp-validation-for="DataReserva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataDevolucao" class="control-label"></label>
-                <input asp-for="DataDevolucao" class="form-control" />
-                <span asp-validation-for="DataDevolucao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<div class="card p-4 shadow-sm mb-4" style="max-width:600px;">
+    <form asp-action="Create">
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <!-- Usuário -->
+        <div class="form-group mb-3">
+            <label asp-for="UsuarioReserva" class="form-label"></label>
+            <input asp-for="UsuarioReserva" class="form-control" autocomplete="off" />
+            <span asp-validation-for="UsuarioReserva" class="text-danger"></span>
+        </div>
+
+        <!-- Produto -->
+        <div class="form-group mb-3">
+            <label asp-for="ProdutoReserva" class="form-label"></label>
+            <input asp-for="ProdutoReserva" class="form-control" autocomplete="off" />
+            <span asp-validation-for="ProdutoReserva" class="text-danger"></span>
+        </div>
+
+        <!-- Data da Reserva -->
+        <div class="form-group mb-3">
+            <label asp-for="DataReserva" class="form-label"></label>
+            <input asp-for="DataReserva" type="date" class="form-control" />
+            <span asp-validation-for="DataReserva" class="text-danger"></span>
+        </div>
+
+        <!-- Data de Devolução -->
+        <div class="form-group mb-3">
+            <label asp-for="DataDevolucao" class="form-label"></label>
+            <input asp-for="DataDevolucao" type="date" class="form-control" />
+            <span asp-validation-for="DataDevolucao" class="text-danger"></span>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex gap-3 mt-4">
+            <button type="submit" class="btn btn-brown px-4">Salvar</button>
+            <a asp-action="Index" class="btn btn-brown-light px-4">Voltar</a>
+        </div>
+
+    </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+

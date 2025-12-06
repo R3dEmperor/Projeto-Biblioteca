@@ -1,37 +1,39 @@
 ﻿@model Projeto_Biblioteca.WEB.Models.Registro
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Registro";
 }
 
-<h1>Create</h1>
+<h1 class="mb-3 text-brown">Cadastrar Registro</h1>
 
-<h4>Registro</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Reserva_Genero" class="control-label"></label>
-                <input asp-for="Reserva_Genero" class="form-control" />
-                <span asp-validation-for="Reserva_Genero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Devolucao_Registro" class="control-label"></label>
-                <input asp-for="Devolucao_Registro" class="form-control" />
-                <span asp-validation-for="Devolucao_Registro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="card p-4 shadow-sm mb-4" style="max-width:500px;">
+    <form asp-action="Create">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <!-- Gênero da Reserva -->
+        <div class="form-group mb-3">
+            <label asp-for="Reserva_Genero" class="form-label"></label>
+            <input asp-for="Reserva_Genero" class="form-control" autocomplete="off" />
+            <span asp-validation-for="Reserva_Genero" class="text-danger"></span>
+        </div>
+
+        <!-- Data de Devolução -->
+        <div class="form-group mb-3">
+            <label asp-for="Devolucao_Registro" class="form-label"></label>
+            <input asp-for="Devolucao_Registro" class="form-control" type="date" />
+            <span asp-validation-for="Devolucao_Registro" class="text-danger"></span>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex gap-3 mt-4">
+            <button type="submit" class="btn btn-brown px-4">Salvar</button>
+            <a asp-action="Index" class="btn btn-brown-light px-4">Voltar</a>
+        </div>
+
+    </form>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
