@@ -10,7 +10,7 @@ namespace Projeto_Biblioteca.DTO
     {
         public int IdReserva { get; set; }
 
-        public int UsuarioReserva { get; set; }
+        public string UsuarioReserva { get; set; }
 
         public int ProdutoReserva { get; set; }
 

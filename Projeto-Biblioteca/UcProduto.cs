@@ -37,7 +37,7 @@ namespace Projeto_Biblioteca
             var produto = new ProdutoDTO
             {
                 NomeProduto = txtProduto.Text,
-                AutorProduto = txtProduto.Text,
+                AutorProduto = txtAutorProduto.Text,
                 GeneroProduto = IdGenero,
                 UrlFoto = txtCaminhodaFoto.Text,
             };
@@ -114,29 +114,73 @@ namespace Projeto_Biblioteca
 
         private void txtPesquisarTitulo_TextChanged(object sender, EventArgs e)
         {
-            string texto = txtPesquisarTitulo.Text;
-
-            string conexao = "Data Source=SEU_SERVIDOR;Initial Catalog=SEU_BANCO;Integrated Security=True";
-
-            using (SqlConnection connection = new SqlConnection(conexao))
-            {
-
-                string sql = @"SELECT Id, Titulo, Autor, Genero, Ano, ISBN, CaminhoImagem
-                       FROM Livros
-                       WHERE Titulo LIKE @titulo + '%'";
-
-                using (SqlCommand cmd = new SqlCommand(sql, connection))
-                {
-                    cmd.Parameters.AddWithValue("@titulo", texto);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-
-                    dgProdutos.DataSource = dt;
-                }
-            }
+            BuscarProduto();
         }
+        private void BuscarProduto()
+        {
+            dgProdutos.Columns.Clear();
+            string termo = txtPesquisarTitulo.Text.Trim().ToLower();
 
+            var filtrados = produtoBLL.ListarProdutos()
+                                    .Where(funcionario => funcionario.NomeProduto.ToLower().Contains(termo) 
+                                        || funcionario.AutorProduto.ToLower().Contains(termo))
+                                    .Select(funcionario => new
+                                    {
+                                        funcionario.NomeProduto,
+                                        funcionario.IdProduto,
+                                        funcionario.AutorProduto,
+                                        funcionario.GeneroProduto,
+                                        funcionario.UrlFoto,
+                                    }).ToList();
+            var colFoto = new DataGridViewImageColumn
+            {
+                HeaderText = "Foto",
+                Name = "Foto",
+                Width = 60,
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+
+            dgProdutos.Columns.Add(colFoto);
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IdProduto", HeaderText = "ID", Name = "IdProduto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NomeProduto", HeaderText = "Titulo", Name = "NomeProduto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "AutorProduto", HeaderText = "Autor", Name = "AutorProduto" });
+            dgProdutos.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "GeneroProduto", HeaderText = "Genero", Name = "GeneroId_Genero" });
+
+            var produtos = produtoBLL.ListarProdutos();
+
+            var dt = new DataTable();
+
+            dt.Columns.Add("Foto", typeof(Image));
+            dt.Columns.Add("IdProduto", typeof(int));
+            dt.Columns.Add("NomeProduto", typeof(string));
+            dt.Columns.Add("AutorProduto", typeof(string));
+            dt.Columns.Add("GeneroProduto", typeof(string));
+
+            foreach (var u in filtrados)
+            {
+                var generoid = generoBLL.ListarGeneros().Find(x => x.IdGenero == u.GeneroProduto);
+                var genero = generoid.NomeGenero;
+
+                Image? img = null;
+
+                if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
+                {
+                    try
+                    {
+                        using (var fs = new FileStream(u.UrlFoto, FileMode.Open, FileAccess.Read))
+                        {
+                            img = Image.FromStream(fs);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        img = null;
+                    }
+                }
+                dt.Rows.Add(img, u.IdProduto, u.NomeProduto, u.AutorProduto, genero);
+            }
+            dgProdutos.DataSource = dt;
+        }
         private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;

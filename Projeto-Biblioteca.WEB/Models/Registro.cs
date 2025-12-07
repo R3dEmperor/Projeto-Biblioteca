@@ -11,5 +11,6 @@ namespace Projeto_Biblioteca.WEB.Models
         public int Reserva_Genero { get; set; }
         public virtual Reserva Reserva { get; set; }
         public DateTime? Devolucao_Registro { get; set; }
+        public bool Devolvido {  get; set; } = false;
     }
 }

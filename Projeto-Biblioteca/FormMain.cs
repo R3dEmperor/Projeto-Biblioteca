@@ -187,12 +187,6 @@ namespace Projeto_Biblioteca
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             panelConteudo.Controls.Clear();
-            AbrirUserControl(new UcReserva());
-        }
-
-        private void btnReserva_Click(object sender, EventArgs e)
-        {
-            panelConteudo.Controls.Clear();
             AbrirUserControl(new UcRegistros());
         }
         private void btnGenero_Click(object sender, EventArgs e)
@@ -204,7 +198,7 @@ namespace Projeto_Biblioteca
         private void btnReserva_Click_1(object sender, EventArgs e)
         {
             panelConteudo.Controls.Clear();
-            AbrirUserControl(new UcRegistros());
+            AbrirUserControl(new UcReserva());
         }
     }
 }

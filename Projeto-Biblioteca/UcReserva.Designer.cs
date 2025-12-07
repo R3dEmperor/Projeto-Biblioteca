@@ -59,11 +59,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
             guna2HtmlLabel1.Location = new Point(302, 47);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(177, 59);
+            guna2HtmlLabel1.Size = new Size(190, 57);
             guna2HtmlLabel1.TabIndex = 19;
             guna2HtmlLabel1.Text = "Reserva";
             // 
@@ -98,12 +98,12 @@
             btnRegistrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRegistrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnRegistrar.FillColor = Color.SaddleBrown;
-            btnRegistrar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.White;
-            btnRegistrar.Location = new Point(44, 330);
+            btnRegistrar.Location = new Point(22, 330);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnRegistrar.Size = new Size(180, 45);
+            btnRegistrar.Size = new Size(244, 45);
             btnRegistrar.TabIndex = 21;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.Click += btnRegistrar_Click;
@@ -135,7 +135,6 @@
             dtReserva.BorderRadius = 15;
             dtReserva.Checked = true;
             dtReserva.CustomizableEdges = customizableEdges7;
-            dtReserva.Enabled = false;
             dtReserva.FillColor = Color.White;
             dtReserva.Font = new Font("Segoe UI", 9F);
             dtReserva.Format = DateTimePickerFormat.Long;
@@ -191,7 +190,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgRegistro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgRegistro.ColumnHeadersHeight = 4;
+            dgRegistro.ColumnHeadersHeight = 15;
             dgRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -219,7 +218,7 @@
             dgRegistro.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgRegistro.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgRegistro.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgRegistro.ThemeStyle.HeaderStyle.Height = 4;
+            dgRegistro.ThemeStyle.HeaderStyle.Height = 15;
             dgRegistro.ThemeStyle.ReadOnly = false;
             dgRegistro.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgRegistro.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -229,6 +228,7 @@
             dgRegistro.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgRegistro.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgRegistro.CellClick += dgRegistro_CellClick;
+            dgRegistro.CellContentClick += dgRegistro_CellContentClick;
             // 
             // cboLivro
             // 

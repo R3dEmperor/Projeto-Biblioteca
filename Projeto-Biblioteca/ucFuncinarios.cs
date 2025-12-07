@@ -75,6 +75,7 @@ namespace Projeto_Biblioteca
                 Email = txtEmail.Text,
                 Endereco = Txtendereco.Text,
                 UrlFoto = lblCaminhodaFoto.Text,
+                Usuario = txtUsuario.Text,
             };
             usuarioBLL.CadastrarUsuario(funcionario);
 
@@ -106,7 +107,7 @@ namespace Projeto_Biblioteca
                 {
                     Id = id,
                     Nome = txtNome.Text.Trim(),
-                    Usuario = txtNome.Text.Trim(),
+                    Usuario = txtUsuario.Text.Trim(),
                     Senha = txtSenha.Text.Trim(),
                     UrlFoto = caminhoImagem,
                     atividade = AtividadeUsuario,
@@ -146,6 +147,7 @@ namespace Projeto_Biblioteca
                     lblCaminhodaFoto.Text = dataRow["UrlFoto"].ToString();
                     Txtendereco.Text = dataRow["Endereco_Usuario"].ToString();
                     txtEmail.Text = dataRow["Email_Usuario"].ToString();
+                    txtUsuario.Text = dataRow["Usuario_Usuario"].ToString();
 
                     string? caminho = dataRow["UrlFoto"].ToString();
 
@@ -172,6 +174,7 @@ namespace Projeto_Biblioteca
             dgUsuarios.Columns.Add(colFoto);
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Name = "Id" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Usuario_Usuario", HeaderText = "Usuario", Name = "Usuario_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TipoUsuarioId", HeaderText = "Cargo", Name = "TipoUsuarioId" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Endereco_Usuario", HeaderText = "Endereço", Name = "Endereco_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
@@ -179,11 +182,13 @@ namespace Projeto_Biblioteca
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Atividade", HeaderText = "Atividade", Name = "Atividade" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha_Usuario", HeaderText = "Senha", Name = "Senha_Usuario" });
             dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email_Usuario", HeaderText = "Email", Name = "Email_Usuario" });
+
             var funcionarios = usuarioBLL.ListarUsuarios();
             var dt = new DataTable();
             dt.Columns.Add("UrlFoto", typeof(Image));
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Usuario_Usuario", typeof(string));
             dt.Columns.Add("TipoUsuarioId", typeof(string));
             dt.Columns.Add("Endereco_Usuario", typeof(string));
             dt.Columns.Add("CPF", typeof(string));
@@ -223,7 +228,7 @@ namespace Projeto_Biblioteca
                         img = null;
                     }
                 }
-                dt.Rows.Add(img, u.Id, u.Nome, Cargoid, u.Endereco, u.CPF,u.Telefone,atividade, u.Senha,u.Email);
+                dt.Rows.Add(img, u.Id, u.Nome,u.Usuario, Cargoid, u.Endereco, u.CPF,u.Telefone,atividade, u.Senha,u.Email);
             }
             dgUsuarios.DataSource = dt;
         }
@@ -240,6 +245,7 @@ namespace Projeto_Biblioteca
         }
         private void BuscarFuncionarios()
         {
+            dgUsuarios.Columns.Clear();
             string termo = txtPesquisa.Text.Trim().ToLower();
 
             var filtrados = usuarioBLL.ListarUsuarios()
@@ -252,9 +258,77 @@ namespace Projeto_Biblioteca
                                         funcionario.Email,
                                         funcionario.Telefone,
                                         funcionario.CPF,
-                                        funcionario.UrlFoto
+                                        funcionario.UrlFoto,
+                                        funcionario.atividade,
+                                        funcionario.Endereco,
+                                        funcionario.TipoUsuarioId,
+                                        funcionario.Usuario
                                     }).ToList();
-            dgUsuarios.DataSource = filtrados;
+            var colFoto = new DataGridViewImageColumn
+            {
+                HeaderText = "Foto",
+                Name = "Foto",
+                DataPropertyName = "Foto",
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+            };
+            dgUsuarios.Columns.Add(colFoto);
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Name = "Id" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome", Name = "Nome" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Usuario_Usuario", HeaderText = "Usuario", Name = "Usuario_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TipoUsuarioId", HeaderText = "Cargo", Name = "TipoUsuarioId" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Endereco_Usuario", HeaderText = "Endereço", Name = "Endereco_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CPF", HeaderText = "CPF", Name = "CPF" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Telefone", HeaderText = "Telefone", Name = "Telefone" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Atividade", HeaderText = "Atividade", Name = "Atividade" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Senha_Usuario", HeaderText = "Senha", Name = "Senha_Usuario" });
+            dgUsuarios.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email_Usuario", HeaderText = "Email", Name = "Email_Usuario" });
+            var dt = new DataTable();
+            dt.Columns.Add("UrlFoto", typeof(Image));
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Usuario_Usuario", typeof(string));
+            dt.Columns.Add("TipoUsuarioId", typeof(string));
+            dt.Columns.Add("Endereco", typeof(string));
+            dt.Columns.Add("CPF", typeof(string));
+            dt.Columns.Add("Telefone", typeof(string));
+            dt.Columns.Add("Atividade", typeof(string));
+            dt.Columns.Add("Senha", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+            foreach (var u in filtrados)
+            {
+                string atividade = "Sem informação";
+                if (u.atividade == 3)
+                {
+                    atividade = "Férias";
+                }
+                if (u.atividade == 2)
+                {
+                    atividade = "Desativado";
+                }
+                if (u.atividade == 1)
+                {
+                    atividade = "Em Atividade";
+                }
+
+                string Cargoid = funcionarioBLL.ListarCargos().Find(x => x.IdTipoUsuario == u.TipoUsuarioId).NomeCargo;
+                Image? img = null;
+                if (!string.IsNullOrEmpty(u.UrlFoto) && File.Exists(u.UrlFoto))
+                {
+                    try
+                    {
+                        using (var fs = new FileStream(u.UrlFoto, FileMode.Open, FileAccess.Read))
+                        {
+                            img = Image.FromStream(fs);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        img = null;
+                    }
+                }
+                dt.Rows.Add(img, u.Id, u.Nome,u.Usuario, Cargoid, u.Endereco, u.CPF, u.Telefone, atividade, u.Senha, u.Email);
+            }
+            dgUsuarios.DataSource = dt;
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)

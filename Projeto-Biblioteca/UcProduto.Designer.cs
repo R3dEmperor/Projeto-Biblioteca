@@ -68,11 +68,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
             guna2HtmlLabel1.Location = new Point(308, 14);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(142, 59);
+            guna2HtmlLabel1.Size = new Size(137, 57);
             guna2HtmlLabel1.TabIndex = 17;
             guna2HtmlLabel1.Text = "Livros";
             // 
@@ -87,7 +87,7 @@
             btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnExcluir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnExcluir.FillColor = Color.SaddleBrown;
-            btnExcluir.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExcluir.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Location = new Point(224, 367);
             btnExcluir.Name = "btnExcluir";
@@ -108,7 +108,7 @@
             btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnAtualizar.FillColor = Color.SaddleBrown;
-            btnAtualizar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAtualizar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtualizar.ForeColor = Color.White;
             btnAtualizar.Location = new Point(120, 367);
             btnAtualizar.Name = "btnAtualizar";
@@ -129,7 +129,7 @@
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCadastrar.FillColor = Color.SaddleBrown;
-            btnCadastrar.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCadastrar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Location = new Point(10, 367);
             btnCadastrar.Name = "btnCadastrar";
@@ -221,7 +221,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgProdutos.ColumnHeadersHeight = 4;
+            dgProdutos.ColumnHeadersHeight = 15;
             dgProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -249,7 +249,7 @@
             dgProdutos.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgProdutos.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgProdutos.ThemeStyle.HeaderStyle.Height = 4;
+            dgProdutos.ThemeStyle.HeaderStyle.Height = 15;
             dgProdutos.ThemeStyle.ReadOnly = false;
             dgProdutos.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgProdutos.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;

@@ -20,8 +20,9 @@ namespace Projeto_Biblioteca
             {
 
                 var usuario = usuarioBLL.Login(txtNome.Text, txtSenha.Text);
-                Session.UsuarioLogado = usuario;
-                MessageBox.Show($"Bem-vindo(a), {Session.UsuarioLogado.Nome}!", "Login realizado",
+                var user = usuarioBLL.ListarUsuarios().FirstOrDefault(x => x.Nome == txtNome.Text);
+                Session.UsuarioLogado = user;
+                MessageBox.Show($"Bem-vindo(a), {Session.UsuarioLogado.Usuario}!", "Login realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 FormMain main = new();

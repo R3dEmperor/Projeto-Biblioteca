@@ -68,7 +68,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DgGenero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DgGenero.ColumnHeadersHeight = 4;
+            DgGenero.ColumnHeadersHeight = 15;
             DgGenero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -96,7 +96,7 @@
             DgGenero.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             DgGenero.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             DgGenero.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DgGenero.ThemeStyle.HeaderStyle.Height = 4;
+            DgGenero.ThemeStyle.HeaderStyle.Height = 15;
             DgGenero.ThemeStyle.ReadOnly = false;
             DgGenero.ThemeStyle.RowsStyle.BackColor = Color.White;
             DgGenero.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -244,11 +244,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.SaddleBrown;
             guna2HtmlLabel1.Location = new Point(339, 47);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(166, 59);
+            guna2HtmlLabel1.Size = new Size(170, 57);
             guna2HtmlLabel1.TabIndex = 18;
             guna2HtmlLabel1.Text = "Gênero";
             // 

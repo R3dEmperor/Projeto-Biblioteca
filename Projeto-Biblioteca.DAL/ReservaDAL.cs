@@ -13,26 +13,31 @@ namespace Projeto_Biblioteca.DAL
     {
         public void Create(ReservaDTO reserva)
         {
+            Conectar();
+            SqlTransaction transaction = conexao.BeginTransaction();
             try
             {
-                Conectar();
 
                 string sql = @"
-                INSERT INTO Reserva (UsuarioReserva, ProdutoReserva, DataReserva, DataDevolucao, Ativa)
-                VALUES (@UsuarioReserva, @ProdutoReserva, @DataReserva, @DataDevolucao, @Ativa);";
+                INSERT INTO Reserva (ProdutoReserva, DataReserva,DataDevolucao,Nome_Cliente, ProdutoId_Produto,UsuarioReserva,UsuarioId)
+                VALUES (@ProdutoReserva, @DataReserva, @DataDevolucao, @Nome, @ProdutoId,@Ignorar,@Ignorar);";
 
-                command = new SqlCommand(sql, conexao);
+                command = new SqlCommand(sql, conexao, transaction);
 
-                command.Parameters.AddWithValue("@UsuarioReserva", reserva.UsuarioReserva);
                 command.Parameters.AddWithValue("@ProdutoReserva", reserva.ProdutoReserva);
                 command.Parameters.AddWithValue("@DataReserva", reserva.DataReserva);
                 command.Parameters.AddWithValue("@DataDevolucao", reserva.DataDevolucao);
-                command.Parameters.AddWithValue("@Ativa", reserva.Ativa);
+                command.Parameters.AddWithValue("@Nome", reserva.UsuarioReserva);
+                command.Parameters.AddWithValue("@ProdutoId", reserva.ProdutoReserva);
+                command.Parameters.AddWithValue("@UsuarioReserva", reserva.UsuarioReserva);
+                command.Parameters.AddWithValue("@Ignorar", reserva.ProdutoReserva);
 
                 command.ExecuteNonQuery();
+                transaction.Commit();
             }
             catch (Exception erro)
             {
+                transaction.Rollback();
                 throw new Exception($"Erro ao cadastrar reserva: {erro.Message}");
             }
             finally
@@ -41,9 +46,9 @@ namespace Projeto_Biblioteca.DAL
             }
         }
 
-       
+
         //  LISTAR TODAS
-        
+
         public List<ReservaDTO> Listar()
         {
             List<ReservaDTO> lista = new();
@@ -60,11 +65,10 @@ namespace Projeto_Biblioteca.DAL
                     lista.Add(new ReservaDTO
                     {
                         IdReserva = Convert.ToInt32(dataReader["IdReserva"]),
-                        UsuarioReserva = Convert.ToInt32(dataReader["UsuarioReserva"]),
+                        UsuarioReserva = (dataReader["Nome_Cliente"].ToString()),
                         ProdutoReserva = Convert.ToInt32(dataReader["ProdutoReserva"]),
                         DataReserva = Convert.ToDateTime(dataReader["DataReserva"]),
                         DataDevolucao = Convert.ToDateTime(dataReader["DataDevolucao"]),
-                        Ativa = Convert.ToBoolean(dataReader["Ativa"])
                     });
                 }
 
@@ -99,7 +103,7 @@ namespace Projeto_Biblioteca.DAL
                     return new ReservaDTO
                     {
                         IdReserva = Convert.ToInt32(dataReader["IdReserva"]),
-                        UsuarioReserva = Convert.ToInt32(dataReader["UsuarioReserva"]),
+                        UsuarioReserva = (dataReader["UsuarioReserva"].ToString()),
                         ProdutoReserva = Convert.ToInt32(dataReader["ProdutoReserva"]),
                         DataReserva = Convert.ToDateTime(dataReader["DataReserva"]),
                         DataDevolucao = Convert.ToDateTime(dataReader["DataDevolucao"]),
@@ -130,11 +134,7 @@ namespace Projeto_Biblioteca.DAL
 
                 string sql = @"
                 UPDATE Reserva
-                SET UsuarioReserva = @UsuarioReserva,
-                    ProdutoReserva = @ProdutoReserva,
-                    DataReserva = @DataReserva,
-                    DataDevolucao = @DataDevolucao,
-                    Ativa = @Ativa
+                SET UsuarioReserva = @UsuarioReserva,ProdutoReserva = @ProdutoReserva,DataReserva = @DataReserva,DataDevolucao = @DataDevolucao
                 WHERE IdReserva = @IdReserva";
 
                 command = new SqlCommand(sql, conexao);

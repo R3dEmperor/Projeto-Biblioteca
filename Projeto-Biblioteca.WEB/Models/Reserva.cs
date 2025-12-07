@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Projeto_Biblioteca.WEB.Models
 {
@@ -8,6 +9,7 @@ namespace Projeto_Biblioteca.WEB.Models
     {
         [Key]
         public int IdReserva { get; set; }
+        [AllowNull]
         public int UsuarioReserva { get; set; }
         public virtual Usuario Usuario { get; set; }
         public int ProdutoReserva { get; set; }

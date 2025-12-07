@@ -139,7 +139,27 @@ namespace Projeto_Biblioteca
                     Genero.NomeGenero,
                     Genero.ClassificacaoGenero
                 }).ToList();
-            DgGenero.DataSource = filtrado;
+            DgGenero.Columns.Clear();
+            DgGenero.AutoGenerateColumns = false;
+            DgGenero.RowTemplate.Height = 60;
+            DgGenero.AllowUserToAddRows = false;
+
+            DgGenero.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id_Genero", HeaderText = "ID", Name = "Id_Genero" });
+            DgGenero.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Descricao_Genero", HeaderText = "Nome", Name = "Descricao_Genero" });
+            DgGenero.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Classificacao_Genero", HeaderText = "Genero", Name = "Classificacao_Genero" });
+
+            var Generos = generoBLL.ListarGeneros();
+
+            var dt = new DataTable();
+            dt.Columns.Add("Id_Genero", typeof(int));
+            dt.Columns.Add("Descricao_Genero", typeof(string));
+            dt.Columns.Add("Classificacao_Genero", typeof(string));
+
+            foreach (var u in filtrado)
+            {
+                dt.Rows.Add(u.IdGenero, u.NomeGenero, u.ClassificacaoGenero);
+            }
+            DgGenero.DataSource = dt;
         }
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {

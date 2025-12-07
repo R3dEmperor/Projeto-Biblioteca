@@ -47,16 +47,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "UsuarioReserva",
-                table: "Reserva",
-                type: "nvarchar(150)",
-                nullable: false,
-                defaultValue: 0,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(100)",
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<string>(
                 name: "Classificacao_Genero",
                 table: "Generos",
                 type: "nvarchar(2)",

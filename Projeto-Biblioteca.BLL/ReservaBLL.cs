@@ -17,13 +17,6 @@ namespace Projeto_Biblioteca.BLL
         {
             ValidarCamposObrigatorios(reserva);
 
-
-            // A data da reserva é sempre a data atual
-            reserva.DataReserva = DateTime.Now;
-
-            // Marca a reserva como ativa (não cancelada, não finalizada)
-            reserva.Ativa = true;
-
             // Aqui de fato salva no banco (chamando o DAL)
             dal.Create(reserva);
 
@@ -47,7 +40,7 @@ namespace Projeto_Biblioteca.BLL
         private void ValidarCamposObrigatorios(ReservaDTO reserva)
         {
             // A reserva precisa ter algum usuário válido
-            if (reserva.UsuarioReserva <= 0)
+            if (reserva.UsuarioReserva == null)
                 throw new Exception("Usuário inválido.");
 
             // E também deve estar associada a um livro válido

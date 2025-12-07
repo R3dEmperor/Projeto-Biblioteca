@@ -11,12 +11,12 @@ namespace Projeto_Biblioteca.DAL
 {
     public class UsuarioDAL : Connection
     {
-       
-        
-         
 
-            public void Excluir(int id)
-            {
+
+
+
+        public void Excluir(int id)
+        {
             try
             {
                 Conectar();
@@ -33,17 +33,20 @@ namespace Projeto_Biblioteca.DAL
             {
                 throw new Exception($"Erro ao remover usuario: {erro.Message}");
             }
-
         }
+
+        
 
 
 
         public void Create(UsuarioDTO usuario)
         {
             Conectar();
+
             SqlTransaction transaction = conexao.BeginTransaction();
             try
             {
+
                 command = new SqlCommand
                     (
                      @"INSERT INTO Usuario (Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade,CPF_Usuario,Telefone_Usuario,URL_Usuario) VALUES
@@ -62,7 +65,6 @@ namespace Projeto_Biblioteca.DAL
                 int idPessoa = Convert.ToInt32(command.ExecuteScalar());
                 command.ExecuteNonQuery();
 
-                transaction.Commit();
             }
             catch (Exception erro)
             {
@@ -73,6 +75,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
+            transaction.Commit();
         }
         public SqlDataReader GetDataReader()
         {
@@ -91,17 +94,14 @@ namespace Projeto_Biblioteca.DAL
                 dataReader = command.ExecuteReader();
 
                 UsuarioDTO usuario = null;
+
                 if (dataReader.Read())
                 {
-                    {
-                        usuario = new UsuarioDTO();
-                        usuario.Usuario = dataReader["Nome"].ToString();
-                        usuario.Senha = dataReader["Senha_Usuario"].ToString();
-                        //usuario.TipoUsuario = (string)dataReader["TipoUsuario"];
-                    }
-                }
+                    usuario = new UsuarioDTO();
+                    usuario.Usuario = dataReader["Nome"].ToString();
+                    usuario.Senha = dataReader["Senha_Usuario"].ToString();
+                }                   
                 return usuario;
-
             }
             catch (Exception erro)
             {
@@ -117,7 +117,7 @@ namespace Projeto_Biblioteca.DAL
             try
             {
                 Conectar();
-                string sql = @"SELECT Id,Nome,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade,CPF_Usuario,Telefone_Usuario,URL_Usuario
+                string sql = @"SELECT Id,Nome,Usuario_Usuario,Senha_Usuario,Email_Usuario,Endereco_Usuario,TipoUsuarioId,Atividade,CPF_Usuario,Telefone_Usuario,URL_Usuario
                                FROM Usuario";
 
                 command = new SqlCommand(sql, conexao);
@@ -136,7 +136,8 @@ namespace Projeto_Biblioteca.DAL
                         TipoUsuarioId = Convert.ToInt32(dataReader["TipoUsuarioId"]),
                         CPF = dataReader["CPF_Usuario"].ToString(),
                         Telefone = dataReader["Telefone_Usuario"].ToString(),
-                        UrlFoto = dataReader["URL_Usuario"].ToString()
+                        UrlFoto = dataReader["URL_Usuario"].ToString(),
+                        Usuario = dataReader["Usuario_Usuario"].ToString()
                     });
                 }
             }

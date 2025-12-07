@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Humanizer;
+using Microsoft.Build.Framework;
+using Microsoft.Data.SqlClient;
+using Projeto_Biblioteca.BLL;
+using Projeto_Biblioteca.DAL;
+using Projeto_Biblioteca.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Humanizer;
-using Microsoft.Data.SqlClient;
-using Projeto_Biblioteca.BLL;
-using Projeto_Biblioteca.DAL;
-using Projeto_Biblioteca.DTO;
 
 namespace Projeto_Biblioteca
 {
@@ -19,41 +21,75 @@ namespace Projeto_Biblioteca
     {
         RegistroBLL registroBLL = new();
         ProdutoBLL produtoBLL = new();
+        ReservaBLL reservaBLL = new();
 
+        RegistroDTO Registro = new RegistroDTO();
         public UcReserva()
         {
             InitializeComponent();
         }
         int Reserva;
+       
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Conversao();
             try
             {
-                var registro = new RegistroDTO()
+                var reserva = new ReservaDTO()
                 {
-                    DevolucaoRegistro = dtDevolução.Value,
-                    ReservaRegistro = Reserva
-
+                    ProdutoReserva = Convert.ToInt32(Reserva),
+                    UsuarioReserva = txtUser.Text,
+                    DataDevolucao = dtDevolução.Value,
+                    DataReserva = dtReserva.Value,
                 };
+                reservaBLL.CriarReserva(reserva);
 
-                registroBLL.CriarRegistro(registro);
                 MessageBox.Show("Registro criado com sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao criar registro: " + ex.Message);
             }
+            AtualizarGrid();
         }
+
 
         private void UcRegistro_Load(object sender, EventArgs e)
         {
             dtReserva.Value = DateTime.Today;
             Atualizarcbo();
+            AtualizarGrid();
+        }
+        private void AtualizarGrid()
+        {
+            dgRegistro.Columns.Clear();
+            dgRegistro.AutoGenerateColumns = false;
+            dgRegistro.RowTemplate.Height = 60;
+            dgRegistro.AllowUserToAddRows = false;
+
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IdReserva", HeaderText = "ID", Name = "IdReserva" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome_CLiente", HeaderText = "Cliente", Name = "Nome_Cliente" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataReserva", HeaderText = "Data da reserva", Name = "DataReserva" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataDevolucao", HeaderText = "Genero", Name = "DataDevolucao" });
+
+            var Reservas = reservaBLL.ListarReservas();
+
+            var dt = new DataTable();
+
+            dt.Columns.Add("IdReserva", typeof(int));
+            dt.Columns.Add("Nome_CLiente", typeof(string));
+            dt.Columns.Add("DataReserva", typeof(DateTime));
+            dt.Columns.Add("DataDevolucao", typeof(DateTime));
+
+            foreach (var u in Reservas)
+            {
+                dt.Rows.Add(u.IdReserva, u.UsuarioReserva, u.DataReserva, u.DataDevolucao);
+            }
+            dgRegistro.DataSource = dt;
         }
         private void Conversao()
         {
-            var produto = produtoBLL.ListarProdutos().Find(x => x.NomeProduto == cboLivro.Text).IdProduto;
+            var produto = produtoBLL.ListarProdutos().First(x => x.NomeProduto == cboLivro.Text).IdProduto;
             Reserva = produto;
         }
         private void Atualizarcbo()
@@ -69,9 +105,43 @@ namespace Projeto_Biblioteca
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-
+            BuscarRegistro();
+            if (txtPesquisa.Text == null)
+            {
+                AtualizarGrid();
+            }
         }
+        private void BuscarRegistro()
+        {
+            dgRegistro.Columns.Clear();
+            string termo = txtPesquisa.Text.Trim().ToLower();
 
+            var filtrados = reservaBLL.ListarReservas()
+                                    .Where(funcionario => funcionario.UsuarioReserva.ToLower().Contains(termo))
+                                    .Select(funcionario => new
+                                    {
+                                        funcionario.IdReserva,
+                                        funcionario.UsuarioReserva,
+                                        funcionario.DataReserva,
+                                        funcionario.DataDevolucao,
+                                    }).ToList();
+            var dt = new DataTable();
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IdReserva", HeaderText = "ID", Name = "IdReserva" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UsuarioReserva", HeaderText = "Cliente", Name = "UsuarioReserva" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataReserva", HeaderText = "Data da reserva", Name = "DataReserva" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataDevolucao", HeaderText = "Genero", Name = "DataDevolucao" });
+
+            dt.Columns.Add("IdReserva", typeof(int));
+            dt.Columns.Add("Nome_CLiente", typeof(string));
+            dt.Columns.Add("DataReserva", typeof(DateTime));
+            dt.Columns.Add("DataDevolucao", typeof(DateTime));
+
+            foreach (var u in filtrados)
+            {
+                dt.Rows.Add(u.IdReserva, u.UsuarioReserva, u.DataReserva, u.DataDevolucao);
+            }
+            dgRegistro.DataSource = filtrados;
+        }
         private void dtDevolução_ValueChanged(object sender, EventArgs e)
         {
 
@@ -80,6 +150,15 @@ namespace Projeto_Biblioteca
         private void dtReserva_ValueChanged(object sender, EventArgs e)
         {
             dtDevolução.Value = dtReserva.Value.AddDays(14);
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+        }
+        private void dgRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+       
         }
     }
 }

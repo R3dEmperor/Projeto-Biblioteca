@@ -17,19 +17,16 @@ namespace Projeto_Biblioteca.DAL
             SqlTransaction transaction = conexao.BeginTransaction();
             try
             {
-                   command = new SqlCommand
-                    (
-                       @"INSERT INTO Produto (Nome_Produto,Genero_Produto,GeneroId_Genero, Autor_Produto, Url_Foto)
-                       VALUES (@Nome, @Genero,@Genero, @Autor,@url)", conexao , transaction
-                    );
-                
-              command.Parameters.AddWithValue("@Nome", livro.NomeProduto);
-              command.Parameters.AddWithValue("@Genero", livro.GeneroProduto);
-              command.Parameters.AddWithValue("@Autor", livro.AutorProduto);
-              command.Parameters.AddWithValue("@url", livro.UrlFoto);
-              int idPproduto = Convert.ToInt32(command.ExecuteScalar());
-              command.ExecuteNonQuery();
+                string sql = @"INSERT INTO Produto (Nome_Produto,Genero_Produto,GeneroId_Genero, Autor_Produto, Url_Foto)
+                       VALUES (@Nome, @Genero,@Genero, @Autor,@url)";
+                command = new SqlCommand(sql, conexao, transaction);
 
+                command.Parameters.AddWithValue("@Nome", livro.NomeProduto);
+                command.Parameters.AddWithValue("@Genero", livro.GeneroProduto);
+                command.Parameters.AddWithValue("@Autor", livro.AutorProduto);
+                command.Parameters.AddWithValue("@url", livro.UrlFoto);
+
+                command.ExecuteNonQuery();
                 transaction.Commit();
             }
             catch (Exception erro)
@@ -41,11 +38,12 @@ namespace Projeto_Biblioteca.DAL
             {
                 Desconectar();
             }
+
         }
 
- 
+
         //        LISTAR PRODUTOS
-     
+
         public List<ProdutoDTO> Listar()
         {
             List<ProdutoDTO> produtos = new List<ProdutoDTO>();

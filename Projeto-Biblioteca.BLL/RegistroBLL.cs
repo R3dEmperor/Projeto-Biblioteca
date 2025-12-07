@@ -17,9 +17,13 @@ namespace Projeto_Biblioteca.BLL
         // ======================================================
         public void CriarRegistro(RegistroDTO registro)
         {
-            ValidarCamposObrigatorios(registro);
 
             dal.Create(registro);
+        }
+        public void AtualizarRegistro(RegistroDTO registro)
+        {
+
+            dal.Atualizar(registro);
         }
 
         // ======================================================
@@ -39,15 +43,6 @@ namespace Projeto_Biblioteca.BLL
                 throw new Exception("Id do registro inválido.");
 
             dal.Remover(id);
-        }
-
-        // ======================================================
-        //           VALIDA CAMPOS IMPORTANTES
-        // ======================================================
-        private void ValidarCamposObrigatorios(RegistroDTO registro)
-        {
-            if (registro.ReservaRegistro <= 0)
-                throw new Exception("Reserva inválida para criar um registro.");
         }
     }
 }

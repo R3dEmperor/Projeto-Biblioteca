@@ -12,23 +12,28 @@ namespace Projeto_Biblioteca.DAL
        
         public void Create(RegistroDTO registro)
         {
+            Conectar();
+            SqlTransaction transaction = conexao.BeginTransaction();
             try
             {
-                Conectar();
-
+                
                 string sql = @"
-                    INSERT INTO Registro (Reserva_Genero, Devolucao_Registro,ReservaIDReserva)
-                    VALUES (@livro, @DevolucaoRegistro,@ReservaRegistro);";
+                    INSERT INTO Registro (ReservaIDReserva,Reserva_Genero,Devolucao_Registro,Devolvido)
+                    VALUES (@ReservaRegistro,@Reserva,@Devolucao,@estado);";
 
-                command = new SqlCommand(sql, conexao);
-                command.Parameters.AddWithValue("@livro", registro.ReservaRegistro);
+                command = new SqlCommand(sql, conexao, transaction);
                 command.Parameters.AddWithValue("@ReservaRegistro", registro.ReservaRegistro);
-                command.Parameters.AddWithValue("@DevolucaoRegistro", registro.DevolucaoRegistro);
+                command.Parameters.AddWithValue("@Reserva", registro.ReservaRegistro);
+                command.Parameters.AddWithValue("@Devolucao", registro.DevolucaoRegistro);
+                command.Parameters.AddWithValue("@Estado", registro.Devolvido);
 
+                int idPessoa = Convert.ToInt32(command.ExecuteScalar());
                 command.ExecuteNonQuery();
+                transaction.Commit();
             }
             catch (Exception erro)
             {
+                transaction.Rollback();
                 throw new Exception("Erro ao inserir registro: " + erro.Message);
             }
             finally
@@ -37,6 +42,35 @@ namespace Projeto_Biblioteca.DAL
             }
         }
 
+        public void Atualizar(RegistroDTO registro)
+        {
+            try
+            {
+                Conectar();
+
+                string sql = @"
+                UPDATE Registro
+                SET Reserva_Genero = @ReservaRegistro,ReservaIdReserva = @Reserva,Devolucao_Registro = @Devolucao, Devolvido = @Devolvido
+                WHERE Id_Genero = @IdRegistro";
+                command = new SqlCommand(sql, conexao);
+
+                command.Parameters.AddWithValue("@ReservaRegistro", registro.ReservaRegistro);
+                command.Parameters.AddWithValue("@Reserva", registro.ReservaRegistro);
+                command.Parameters.AddWithValue("@Devolucao", registro.DevolucaoRegistro);
+                command.Parameters.AddWithValue("@IdRegistro", registro.IdRegistro);
+                command.Parameters.AddWithValue("@Devolvido", registro.Devolvido);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw new Exception($"Erro ao atualizar reserva: {erro.Message}");
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
 
         //        LISTAR REGISTROS
 
@@ -48,7 +82,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT * FROM Registro";
+                string sql = "SELECT Id_Genero,ReservaIdReserva,Devolucao_Registro,Devolvido FROM Registro";
 
                 command = new SqlCommand(sql, conexao);
                 dataReader = command.ExecuteReader();
@@ -57,9 +91,10 @@ namespace Projeto_Biblioteca.DAL
                 {
                     lista.Add(new RegistroDTO
                     {
-                        IdRegistro = Convert.ToInt32(dataReader["IdRegistro"]),
-                        ReservaRegistro = Convert.ToInt32(dataReader["ReservaRegistro"]),
-                        DevolucaoRegistro = Convert.ToDateTime(dataReader["DevolucaoRegistro"])
+                        IdRegistro = Convert.ToInt32(dataReader["Id_Genero"]),
+                        ReservaRegistro = Convert.ToInt32(dataReader["ReservaIdReserva"]),
+                        DevolucaoRegistro = Convert.ToDateTime(dataReader["Devolucao_Registro"]),
+                        Devolvido = Convert.ToBoolean(dataReader["Devolvido"])
                     });
                 }
             }

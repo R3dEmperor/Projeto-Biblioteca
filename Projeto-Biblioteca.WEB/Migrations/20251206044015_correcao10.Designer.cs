@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Biblioteca.WEB.Data;
 
@@ -11,9 +12,11 @@ using Projeto_Biblioteca.WEB.Data;
 namespace Projeto_Biblioteca.WEB.Migrations
 {
     [DbContext(typeof(Projeto_BibliotecaWEBContext))]
-    partial class Projeto_BibliotecaWEBContextModelSnapshot : ModelSnapshot
+    [Migration("20251206044015_correcao10")]
+    partial class correcao10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,14 +110,15 @@ namespace Projeto_Biblioteca.WEB.Migrations
                     b.Property<DateTime?>("Devolucao_Registro")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Devolvido")
-                        .HasColumnType("bit");
-
                     b.Property<int>("ReservaIdReserva")
                         .HasColumnType("int");
 
                     b.Property<int>("Reserva_Genero")
                         .HasColumnType("int");
+
+                    b.Property<string>("nome_Registro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_Genero");
 
