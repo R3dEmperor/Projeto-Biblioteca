@@ -19,11 +19,9 @@ namespace Projeto_Biblioteca
 {
     public partial class UcReserva : UserControl
     {
-        RegistroBLL registroBLL = new();
         ProdutoBLL produtoBLL = new();
         ReservaBLL reservaBLL = new();
 
-        RegistroDTO Registro = new RegistroDTO();
         public UcReserva()
         {
             InitializeComponent();
@@ -151,10 +149,6 @@ namespace Projeto_Biblioteca
         {
             dtDevolução.Value = dtReserva.Value.AddDays(14);
 
-        }
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
         }
         private void dgRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
