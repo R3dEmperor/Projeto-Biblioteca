@@ -17,7 +17,6 @@ namespace Projeto_Biblioteca.WEB.Migrations
                 nullable: false,
                 defaultValue: false);
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {

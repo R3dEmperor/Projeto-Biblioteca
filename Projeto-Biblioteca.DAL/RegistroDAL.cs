@@ -26,8 +26,6 @@ namespace Projeto_Biblioteca.DAL
                 command.Parameters.AddWithValue("@Reserva", registro.ReservaRegistro);
                 command.Parameters.AddWithValue("@Devolucao", registro.DevolucaoRegistro);
                 command.Parameters.AddWithValue("@Estado", registro.Devolvido);
-
-                int idPessoa = Convert.ToInt32(command.ExecuteScalar());
                 command.ExecuteNonQuery();
                 transaction.Commit();
             }

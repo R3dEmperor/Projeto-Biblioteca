@@ -72,12 +72,12 @@ namespace Projeto_Biblioteca
             dt.Columns.Add("Nome_Livro", typeof(string));
             dt.Columns.Add("Nome_Autor", typeof(string));
             dt.Columns.Add("Devolucao_Registro", typeof(DateTime));
-            dt.Columns.Add("Devolvido", typeof(bool));
+            dt.Columns.Add("Devolvido", typeof(string));
 
             foreach (var u in produtos)
             {
-                string devolucao = "Vazio";
-                if (u.Devolvido = true)
+                string devolucao = "Devendo devolução";
+                if (u.Devolvido == true)
                 {
                     devolucao = "Devolvido";
                 }
@@ -91,7 +91,7 @@ namespace Projeto_Biblioteca
                 string Nome_Autor;
                 Nome_Autor = produtoBLL.ListarProdutos().Find(x => x.IdProduto == Id_Livro).AutorProduto;
 
-                dt.Rows.Add(u.IdRegistro, u.ReservaRegistro, Nome_Cliente, Nome_Livro, Nome_Autor, u.DevolucaoRegistro, u.Devolvido);
+                dt.Rows.Add(u.IdRegistro, u.ReservaRegistro, Nome_Cliente, Nome_Livro, Nome_Autor, u.DevolucaoRegistro, devolucao);
             }
             dgRegistros.DataSource = dt;
         }
@@ -107,7 +107,7 @@ namespace Projeto_Biblioteca
         {
             dgRegistros.Columns.Clear();
             string termo = txtPesquisa.Text.Trim().ToLower();
-            var filtro = reservaBLL.ListarReservas().Find(x => x.UsuarioReserva.ToLower() == termo).IdReserva;
+            var filtro = reservaBLL.ListarReservas().Find(x => x.UsuarioReserva.ToString() == termo).IdReserva;
             var filtrados = registroBLL.ListarRegistros().Where(x => x.ReservaRegistro == filtro).ToList();
 
             dgRegistros.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IdRegistro", HeaderText = "ID", Name = "IdRegistro" });

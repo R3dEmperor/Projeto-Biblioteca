@@ -100,7 +100,12 @@ namespace Projeto_Biblioteca
         }
         private void dgRegistro_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgRegistro.Rows[e.RowIndex];
 
+                idregistro = Convert.ToInt32(row.Cells["IdReserva"].Value);
+            }
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -154,12 +159,6 @@ namespace Projeto_Biblioteca
         }
         private void dgRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgRegistro.Rows[e.RowIndex];
-
-                idregistro = Convert.ToInt32(row.Cells["IdReserva"].Value);
-            }
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -171,13 +170,13 @@ namespace Projeto_Biblioteca
                 return;
             }
 
-            var atualizar = registroBLL.ListarRegistros().FirstOrDefault(x=>x.ReservaRegistro== idregistro);
+            var atualizar = registroBLL.ListarRegistros().FirstOrDefault(x=>x.ReservaRegistro == idregistro);
             var registro = new RegistroDTO
             {
                 IdRegistro = atualizar.IdRegistro,
                 DevolucaoRegistro = DateTime.Today,
                 Devolvido = true,
-                ReservaRegistro = idregistro
+                ReservaRegistro = idregistro,
             };
             registroBLL.AtualizarRegistro(registro);
         }
