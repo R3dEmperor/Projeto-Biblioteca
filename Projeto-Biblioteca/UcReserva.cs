@@ -1,6 +1,7 @@
 ﻿using Humanizer;
 using Microsoft.Build.Framework;
 using Microsoft.Data.SqlClient;
+using NuGet.Versioning;
 using Projeto_Biblioteca.BLL;
 using Projeto_Biblioteca.DAL;
 using Projeto_Biblioteca.DTO;
@@ -21,13 +22,14 @@ namespace Projeto_Biblioteca
     {
         ProdutoBLL produtoBLL = new();
         ReservaBLL reservaBLL = new();
-
+        RegistroBLL registroBLL = new();
+        int idregistro;
         public UcReserva()
         {
             InitializeComponent();
         }
         int Reserva;
-       
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Conversao();
@@ -35,10 +37,10 @@ namespace Projeto_Biblioteca
             {
                 var reserva = new ReservaDTO()
                 {
-                    ProdutoReserva = Convert.ToInt32(Reserva),
+                    ProdutoReserva = Reserva,
                     UsuarioReserva = txtUser.Text,
                     DataDevolucao = dtDevolução.Value,
-                    DataReserva = dtReserva.Value,
+                    DataReserva = dtReserva.Value,       
                 };
                 reservaBLL.CriarReserva(reserva);
 
@@ -68,7 +70,7 @@ namespace Projeto_Biblioteca
             dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IdReserva", HeaderText = "ID", Name = "IdReserva" });
             dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Nome_CLiente", HeaderText = "Cliente", Name = "Nome_Cliente" });
             dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataReserva", HeaderText = "Data da reserva", Name = "DataReserva" });
-            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataDevolucao", HeaderText = "Genero", Name = "DataDevolucao" });
+            dgRegistro.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DataDevolucao", HeaderText = "Devolução", Name = "DataDevolucao" });
 
             var Reservas = reservaBLL.ListarReservas();
 
@@ -87,7 +89,7 @@ namespace Projeto_Biblioteca
         }
         private void Conversao()
         {
-            var produto = produtoBLL.ListarProdutos().First(x => x.NomeProduto == cboLivro.Text).IdProduto;
+            var produto = produtoBLL.ListarProdutos().FirstOrDefault(x => x.NomeProduto == cboLivro.Text).IdProduto;
             Reserva = produto;
         }
         private void Atualizarcbo()
@@ -152,7 +154,32 @@ namespace Projeto_Biblioteca
         }
         private void dgRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-       
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgRegistro.Rows[e.RowIndex];
+
+                idregistro = Convert.ToInt32(row.Cells["IdReserva"].Value);
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if (idregistro == null)
+            {
+                MessageBox.Show("Selecione uma reserva na tabela.", "Aviso",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var atualizar = registroBLL.ListarRegistros().FirstOrDefault(x=>x.ReservaRegistro== idregistro);
+            var registro = new RegistroDTO
+            {
+                IdRegistro = atualizar.IdRegistro,
+                DevolucaoRegistro = DateTime.Today,
+                Devolvido = true,
+                ReservaRegistro = idregistro
+            };
+            registroBLL.AtualizarRegistro(registro);
         }
     }
 }

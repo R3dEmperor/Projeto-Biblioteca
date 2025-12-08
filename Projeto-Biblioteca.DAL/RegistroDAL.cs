@@ -119,7 +119,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "DELETE FROM Registro WHERE IdRegistro = @Id";
+                string sql = "DELETE FROM Registro WHERE IdGenero = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -144,7 +144,7 @@ namespace Projeto_Biblioteca.DAL
             {
                 Conectar();
 
-                string sql = "SELECT * FROM Registro WHERE IdRegistro = @Id";
+                string sql = "SELECT * FROM Registro WHERE Id_Genero = @Id";
 
                 command = new SqlCommand(sql, conexao);
                 command.Parameters.AddWithValue("@Id", id);
@@ -154,7 +154,7 @@ namespace Projeto_Biblioteca.DAL
                 {
                     return new RegistroDTO
                     {
-                        IdRegistro = Convert.ToInt32(dataReader["IdRegistro"]),
+                        IdRegistro = Convert.ToInt32(dataReader["Id_Genero"]),
                         ReservaRegistro = Convert.ToInt32(dataReader["ReservaRegistro"]),
                         DevolucaoRegistro = Convert.ToDateTime(dataReader["DevolucaoRegistro"])
                     };

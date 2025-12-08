@@ -43,6 +43,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +54,7 @@
             pictureBox1 = new PictureBox();
             dgRegistro = new Guna.UI2.WinForms.Guna2DataGridView();
             cboLivro = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnFinalizar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgRegistro).BeginInit();
             SuspendLayout();
@@ -103,7 +106,7 @@
             btnRegistrar.Location = new Point(22, 330);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnRegistrar.Size = new Size(244, 45);
+            btnRegistrar.Size = new Size(121, 45);
             btnRegistrar.TabIndex = 21;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.Click += btnRegistrar_Click;
@@ -248,12 +251,32 @@
             cboLivro.Size = new Size(244, 36);
             cboLivro.TabIndex = 25;
             // 
+            // btnFinalizar
+            // 
+            btnFinalizar.BorderRadius = 15;
+            btnFinalizar.CustomizableEdges = customizableEdges13;
+            btnFinalizar.DisabledState.BorderColor = Color.DarkGray;
+            btnFinalizar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFinalizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFinalizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFinalizar.FillColor = Color.SaddleBrown;
+            btnFinalizar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFinalizar.ForeColor = Color.White;
+            btnFinalizar.Location = new Point(149, 330);
+            btnFinalizar.Name = "btnFinalizar";
+            btnFinalizar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnFinalizar.Size = new Size(117, 45);
+            btnFinalizar.TabIndex = 26;
+            btnFinalizar.Text = "Finalizar ";
+            btnFinalizar.Click += btnFinalizar_Click;
+            // 
             // UcReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(btnFinalizar);
             Controls.Add(cboLivro);
             Controls.Add(pictureBox1);
             Controls.Add(dtDevolução);
@@ -283,5 +306,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtDevolução;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2ComboBox cboLivro;
+        private Guna.UI2.WinForms.Guna2Button btnFinalizar;
     }
 }

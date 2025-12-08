@@ -61,7 +61,7 @@ namespace Projeto_Biblioteca.DAL
                     {
                         IdProduto = Convert.ToInt32(dataReader["Id_Produto"]),
                         NomeProduto = dataReader["Nome_Produto"].ToString(),
-                        GeneroProduto = int.Parse(dataReader["Genero_Produto"].ToString()),
+                        GeneroProduto = Convert.ToInt32(dataReader["Genero_Produto"]),
                         AutorProduto = dataReader["Autor_Produto"].ToString()
                     });
                 }

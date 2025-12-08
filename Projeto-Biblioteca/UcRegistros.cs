@@ -34,13 +34,17 @@ namespace Projeto_Biblioteca
             var reservas = reservaBLL.ListarReservas();
             foreach (var u in reservas)
             {
-                var registro = new RegistroDTO
-                {
-                    ReservaRegistro = u.IdReserva,
-                    DevolucaoRegistro = u.DataDevolucao,
-                    Devolvido = false,
-                };
-                registroBLL.CriarRegistro(registro);
+                var registros = registroBLL?.ListarRegistros()?.Find(x => x.ReservaRegistro == u.IdReserva)!?.ReservaRegistro ?? 0;
+                    if (u.IdReserva != registros)
+                    {
+                        var registro = new RegistroDTO
+                        {
+                            ReservaRegistro = u.IdReserva,
+                            DevolucaoRegistro = u.DataDevolucao,
+                            Devolvido = false,
+                        };
+                        registroBLL.CriarRegistro(registro);
+                    }
             }
         }
         private void AtualizarGrid()
