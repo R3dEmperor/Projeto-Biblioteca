@@ -14,10 +14,6 @@ namespace Projeto_Biblioteca.WEB.Models
         [StringLength(50)]
         public string Nome { get; set; }
         //======================================================
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Email")]
-        [StringLength(50)]
-        public string Email { get; set; }
         //======================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Usuario")]
@@ -39,19 +35,19 @@ namespace Projeto_Biblioteca.WEB.Models
         public string URL_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Email")]
+        [Display(Name = "Email_Usuario")]
         [StringLength(50)]
         public string Email_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "CPF_Usuario")]
         [StringLength(50)]
-        public string CPF { get; set; }
+        public string CPF_Usuario { get; set; }
         //=====================================================
         [Required(ErrorMessage = "Campo obrigatorio")]
         [Display(Name = "Telefone_Usuario")]
         [StringLength(50)]
-        public string Telefone { get; set; }
+        public string Telefone_Usuario { get; set; }
         //=====================================================
         [Display(Name = "Cargo Funcionario")]
         public int TipoUsuarioId { get; set; }

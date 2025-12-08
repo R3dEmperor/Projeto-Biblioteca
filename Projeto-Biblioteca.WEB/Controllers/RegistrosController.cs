@@ -10,22 +10,22 @@ using Projeto_Biblioteca.WEB.Models;
 
 namespace Projeto_Biblioteca.WEB.Controllers
 {
-    public class ProdutoesController : Controller
+    public class RegistrosController : Controller
     {
         private readonly Projeto_BibliotecaWEBContext _context;
 
-        public ProdutoesController(Projeto_BibliotecaWEBContext context)
+        public RegistrosController(Projeto_BibliotecaWEBContext context)
         {
             _context = context;
         }
 
-        // GET: Produtoes
+        // GET: Registroes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Produto.ToListAsync());
+            return View(await _context.Registro.ToListAsync());
         }
 
-        // GET: Produtoes/Details/5
+        // GET: Registroes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto
-                .FirstOrDefaultAsync(m => m.Id_Produto == id);
-            if (produto == null)
+            var registro = await _context.Registro
+                .FirstOrDefaultAsync(m => m.Id_Genero == id);
+            if (registro == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(registro);
         }
 
-        // GET: Produtoes/Create
+        // GET: Registroes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Produtoes/Create
+        // POST: Registroes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id_Produto,Genero_Produto,Autor_Produto")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id_Genero,Reserva_Genero,Devolucao_Registro")] Registro registro)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(produto);
+                _context.Add(registro);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(registro);
         }
 
-        // GET: Produtoes/Edit/5
+        // GET: Registroes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto.FindAsync(id);
-            if (produto == null)
+            var registro = await _context.Registro.FindAsync(id);
+            if (registro == null)
             {
                 return NotFound();
             }
-            return View(produto);
+            return View(registro);
         }
 
-        // POST: Produtoes/Edit/5
+        // POST: Registroes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id_Produto,Genero_Produto,Autor_Produto")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id_Genero,Reserva_Genero,Devolucao_Registro")] Registro registro)
         {
-            if (id != produto.Id_Produto)
+            if (id != registro.Id_Genero)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Projeto_Biblioteca.WEB.Controllers
             {
                 try
                 {
-                    _context.Update(produto);
+                    _context.Update(registro);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProdutoExists(produto.Id_Produto))
+                    if (!RegistroExists(registro.Id_Genero))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(registro);
         }
 
-        // GET: Produtoes/Delete/5
+        // GET: Registroes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,34 +124,34 @@ namespace Projeto_Biblioteca.WEB.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto
-                .FirstOrDefaultAsync(m => m.Id_Produto == id);
-            if (produto == null)
+            var registro = await _context.Registro
+                .FirstOrDefaultAsync(m => m.Id_Genero == id);
+            if (registro == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(registro);
         }
 
-        // POST: Produtoes/Delete/5
+        // POST: Registroes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var produto = await _context.Produto.FindAsync(id);
-            if (produto != null)
+            var registro = await _context.Registro.FindAsync(id);
+            if (registro != null)
             {
-                _context.Produto.Remove(produto);
+                _context.Registro.Remove(registro);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProdutoExists(int id)
+        private bool RegistroExists(int id)
         {
-            return _context.Produto.Any(e => e.Id_Produto == id);
+            return _context.Registro.Any(e => e.Id_Genero == id);
         }
     }
 }
