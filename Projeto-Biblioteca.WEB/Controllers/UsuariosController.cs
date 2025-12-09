@@ -160,5 +160,7 @@ namespace Projeto_Biblioteca.WEB.Controllers
         {
             return _context.Usuario.Any(e => e.Id == id);
         }
+
+
     }
 }
