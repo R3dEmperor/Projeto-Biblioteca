@@ -22,7 +22,7 @@ namespace Projeto_Biblioteca
                 var usuario = usuarioBLL.Login(txtNome.Text, txtSenha.Text);
                 var user = usuarioBLL.ListarUsuarios().FirstOrDefault(x => x.Nome == txtNome.Text);
                 Session.UsuarioLogado = user;
-                MessageBox.Show($"Bem-vindo(a), {Session.UsuarioLogado.Usuario}!", "Login realizado",
+                MessageBox.Show($"Bem-vindo(a){Session.UsuarioLogado.Usuario}!","Login realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 FormMain main = new();

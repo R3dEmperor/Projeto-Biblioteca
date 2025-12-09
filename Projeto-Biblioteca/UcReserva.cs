@@ -179,6 +179,8 @@ namespace Projeto_Biblioteca
                 ReservaRegistro = idregistro,
             };
             registroBLL.AtualizarRegistro(registro);
+            MessageBox.Show($"Reserva Finalizada com sucesso!", "Sucesso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
