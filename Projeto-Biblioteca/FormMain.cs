@@ -105,13 +105,18 @@ namespace Projeto_Biblioteca
 
         private void bntSair_Click(object sender, EventArgs e)
         {
-            var confirmacao = mdConfirma.Show("Tem certeza que deseja encerrar sua sessão?");
+            fechar();
+        }
+        private void fechar()
+        {
+            var confirmacao = mdConfirma.Show("Tem certeza que deseja sair ?");
             if (confirmacao == DialogResult.Yes)
             {
                 Close();
+                frmIntro frmIntro = new frmIntro();
+                frmIntro.ShowDialog();
             }
         }
-
         private void pbConf_Click(object sender, EventArgs e)
         {
             frmConfig config = new();
@@ -199,6 +204,11 @@ namespace Projeto_Biblioteca
         {
             panelConteudo.Controls.Clear();
             AbrirUserControl(new UcReserva());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            fechar();
         }
     }
 }

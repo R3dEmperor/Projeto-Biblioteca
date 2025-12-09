@@ -64,9 +64,11 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgRegistros.DefaultCellStyle = dataGridViewCellStyle3;
+            dgRegistros.Enabled = false;
             dgRegistros.GridColor = Color.FromArgb(231, 229, 255);
             dgRegistros.Location = new Point(17, 125);
             dgRegistros.Name = "dgRegistros";
+            dgRegistros.ReadOnly = true;
             dgRegistros.RowHeadersVisible = false;
             dgRegistros.Size = new Size(745, 293);
             dgRegistros.TabIndex = 3;
@@ -83,7 +85,7 @@
             dgRegistros.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgRegistros.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgRegistros.ThemeStyle.HeaderStyle.Height = 15;
-            dgRegistros.ThemeStyle.ReadOnly = false;
+            dgRegistros.ThemeStyle.ReadOnly = true;
             dgRegistros.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgRegistros.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgRegistros.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -154,6 +156,7 @@
             Controls.Add(txtPesquisa);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(dgRegistros);
+            Enabled = false;
             Name = "UcRegistros";
             RightToLeft = RightToLeft.No;
             Size = new Size(784, 431);

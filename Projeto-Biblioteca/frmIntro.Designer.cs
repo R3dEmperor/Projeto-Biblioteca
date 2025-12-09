@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBox3 = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -39,6 +40,8 @@
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnfechar = new Guna.UI2.WinForms.Guna2CircleButton();
+            mdConfirma = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -74,7 +77,7 @@
             // 
             btnEntrar.BorderRadius = 15;
             btnEntrar.Cursor = Cursors.Hand;
-            btnEntrar.CustomizableEdges = customizableEdges1;
+            btnEntrar.CustomizableEdges = customizableEdges4;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -84,7 +87,7 @@
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(165, 287);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnEntrar.Size = new Size(180, 45);
             btnEntrar.TabIndex = 3;
             btnEntrar.Text = "Entrar";
@@ -133,12 +136,41 @@
             guna2HtmlLabel5.TabIndex = 2;
             guna2HtmlLabel5.Text = null;
             // 
+            // btnfechar
+            // 
+            btnfechar.DisabledState.BorderColor = Color.DarkGray;
+            btnfechar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnfechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnfechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnfechar.FillColor = Color.SaddleBrown;
+            btnfechar.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnfechar.ForeColor = Color.White;
+            btnfechar.Location = new Point(467, 9);
+            btnfechar.Margin = new Padding(0);
+            btnfechar.Name = "btnfechar";
+            btnfechar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnfechar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnfechar.Size = new Size(30, 30);
+            btnfechar.TabIndex = 6;
+            btnfechar.Text = "X";
+            btnfechar.Click += btnfechar_Click;
+            // 
+            // mdConfirma
+            // 
+            mdConfirma.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            mdConfirma.Caption = null;
+            mdConfirma.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            mdConfirma.Parent = null;
+            mdConfirma.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            mdConfirma.Text = null;
+            // 
             // frmIntro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
             ClientSize = new Size(506, 431);
+            Controls.Add(btnfechar);
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2HtmlLabel2);
@@ -165,5 +197,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2CircleButton btnfechar;
+        private Guna.UI2.WinForms.Guna2MessageDialog mdConfirma;
     }
 }

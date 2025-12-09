@@ -62,6 +62,8 @@ namespace Projeto_Biblioteca
         private void btxClose_Click(object sender, EventArgs e)
         {
             Close();
+            frmIntro frmIntro = new frmIntro();
+            frmIntro.ShowDialog();
         }
 
         private void pbFotoLogin_Click(object sender, EventArgs e)

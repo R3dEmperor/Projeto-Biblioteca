@@ -27,5 +27,14 @@ namespace Projeto_Biblioteca
             obj.ShowDialog();
             Hide();
         }
+
+        private void btnfechar_Click(object sender, EventArgs e)
+        {
+            var confirmacao = mdConfirma.Show("Tem certeza que deseja sair ?");
+            if (confirmacao == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

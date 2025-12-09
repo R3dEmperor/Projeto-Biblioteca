@@ -298,7 +298,6 @@
             dgUsuarios.GridColor = Color.FromArgb(231, 229, 255);
             dgUsuarios.Location = new Point(299, 123);
             dgUsuarios.Name = "dgUsuarios";
-            dgUsuarios.ReadOnly = true;
             dgUsuarios.RowHeadersVisible = false;
             dgUsuarios.ScrollBars = ScrollBars.Horizontal;
             dgUsuarios.Size = new Size(471, 281);
@@ -316,7 +315,7 @@
             dgUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgUsuarios.ThemeStyle.HeaderStyle.Height = 15;
-            dgUsuarios.ThemeStyle.ReadOnly = true;
+            dgUsuarios.ThemeStyle.ReadOnly = false;
             dgUsuarios.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgUsuarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgUsuarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);

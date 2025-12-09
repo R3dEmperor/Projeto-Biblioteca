@@ -203,6 +203,7 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgRegistro.DefaultCellStyle = dataGridViewCellStyle3;
+            dgRegistro.Enabled = false;
             dgRegistro.GridColor = Color.FromArgb(231, 229, 255);
             dgRegistro.Location = new Point(285, 162);
             dgRegistro.Name = "dgRegistro";
